@@ -133,7 +133,6 @@
         min-width: 0;                                /* 避免溢出 */
     }
 
-
     .carousel-caption h5::after {
         content: '';
         position: absolute;
@@ -248,11 +247,11 @@
     /*  背景圖  */
     .ink-background {
         width: 140%;
-
-        position: relative; /* 設置容器的定位為相對定位，這樣內部的絕對定位元素可以根據此容器進行定位 */
+        overflow-x: hidden;   /* 隱藏水平滾動條 */
+        position: relative;   /* 設置容器的定位為相對定位，這樣內部的絕對定位元素可以根據此容器進行定位 */
         filter: grayscale(0%) contrast(100%) brightness(100%) blur(0px); 
-        /* 應用過濾效果： grayscale(0%): 不應用灰階效果（0% 灰階）      /  contrast(100%): 保持原始對比度（100% 對比度）  */
-        /*              brightness(100%): 保持原始亮度（100% 亮度）  /  blur(0px): 不應用模糊效果（0 像素模糊）         */
+        /* 應用過濾效果： grayscale(0%): 不應用灰階效果（0% 灰階）       /  contrast(100%): 保持原始對比度（100% 對比度）  */
+        /*              brightness(100%): 保持原始亮度（100% 亮度）   /  blur(0px): 不應用模糊效果（0 像素模糊）         */
         z-index: -1;
     }
 
@@ -261,7 +260,6 @@
         opacity: 0.2;            /* 設置圖片的透明度        */
         -webkit-user-drag: none; /* 禁用圖片拖拽功能        */
         user-drag: none;         /* 禁用圖片拖拽功能        */
-        overflow: hidden;
     }
 
     .ink-background .img-1 {
