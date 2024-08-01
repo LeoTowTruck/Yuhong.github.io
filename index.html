@@ -4,8 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="aGbZyGzSnGXkbIK6yzXXQTowauuhGu9BUkCQPlJ8BxA" />
-  
   <title> 高雄屏東道路救援 | 24小時專業拖吊車服務 | 一通電話快速到達 | 汽車故障拖吊 | 誠信、安全、高效 </title>
   <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczMmpgeIJhvbzNK8dr50D-NplG92CU1-ufAnga61ovELszXWWft-HFBLu5XFFVM_IDlyKAvJ4vz7EMqqAARmb0HrzTpfovK3z2Kdl2976ITBv3u1dgiyMQglpozlIbIJ03Vb8arKr28kuqVLk1y7i38-=w720-h720-s-no-gm?authuser=0" type="image/png">
 
@@ -1564,27 +1562,13 @@
       // 選擇所有帶有 'lazy-load' 類的 img 標籤
       const lazyImages = document.querySelectorAll('img.lazy-load');
 
-      // 創建一個 IntersectionObserver 來監控圖片是否進入視口
-      const imageObserver = new IntersectionObserver((entries, observer) => {
-          // 對每個觀察到的元素進行處理
-          entries.forEach(entry => {
-              // 檢查圖片是否進入視口
-              if (entry.isIntersecting) {
-                  // 取得進入視口的 img 元素
-                  const img = entry.target;
-                  // 將 data-src 屬性的值賦給 src 屬性，開始加載圖片
-                  img.src = img.getAttribute('data-src');
-                  // 移除 'lazy-load' 類，表示該圖片已被加載
-                  img.classList.remove('lazy-load');
-                  // 停止觀察該 img 元素，避免重複處理
-                  observer.unobserve(img);
-              }
-          });
-      });
-
-      // 開始觀察每個懶加載圖片
+      // 遍歷每個懶加載的圖片
       lazyImages.forEach(img => {
-          imageObserver.observe(img);
+          // 將 data-src 屬性的值賦給 src 屬性，開始加載圖片
+          img.src = img.getAttribute('data-src');
+          
+          // 移除 'lazy-load' 類，表示該圖片已被加載
+          img.classList.remove('lazy-load');
       });
   });
 
