@@ -84,6 +84,47 @@
 
     /*********************************************************************/
 
+    /* 將container設置為一個flex容器，內容居中 */
+    .containerLoader {
+        display: flex; /* 添加這一行來設置flex容器 */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7); /* 設置背景色為50%透明度的黑色 */
+        justify-content: center;
+        align-items: center;
+        z-index: 1001; /* 確保容器在最上層 */
+    }
+
+    /* 設置loading效果的基本樣式 */
+    .loader {
+        width: 80px; /* 設置loader的寬度 */
+        height: 80px; /* 設置loader的高度 */
+        border: 10px solid rgba(255, 255, 255, 0.2); /* 設置透明的邊框，顏色為白色的20%透明度 */
+        border-top: 10px solid #3498db; /* 設置頂部邊框為藍色，創造旋轉效果 */
+        border-right: 10px solid #3498db; /* 設置右側邊框為藍色 */
+        border-bottom: 10px solid #3498db; /* 設置底部邊框為藍色 */
+        border-radius: 50%; /* 將邊框設置為圓形 */
+        animation: spin 1s linear infinite; /* 添加旋轉動畫，持續時間為1秒，線性重複無限次 */
+        box-shadow: 0 0 20px #3498db; /* 添加陰影效果，顏色為藍色 */
+        position: relative; /* 確保 z-index 生效需要設置 position 屬性 */
+        z-index: 9999; /* 設置較高的 z-index 值 */
+    }
+
+    /* 定義旋轉動畫 */
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg); /* 初始狀態，不旋轉 */
+        }
+        100% {
+            transform: rotate(360deg); /* 完成一圈旋轉 */
+        }
+    }
+
+    /*********************************************************************/
+
     /* -- 頭部 -- */
     .navbar {
         font-size: 18px;
@@ -493,6 +534,11 @@
 
   <!--   SEO   -->
   <h1 class="Sr">屏東拖吊車, 屏東道路救援, 高雄拖吊車, 高雄道路救援, 24小時道路救援, 24h道路救援, 拖吊車, 汽車故障</h1>
+
+  <!-- 加載效果的容器 -->
+  <div class="containerLoader">
+      <div class="loader"></div>
+  </div>  
 
 <!----------------------------------------------------------------------------------------------------------------------------->
 
@@ -1189,11 +1235,11 @@
 
 <!----------------------------------------------------------------------------------------------------------------------------->
 
-<!-- 引入 Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
 <!-- 引入 Aos JS -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- 引入 Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 <script>
 
@@ -1202,6 +1248,20 @@
       duration: 800,
     });
   };
+
+  //========================================================================
+
+
+  document.documentElement.style.overflowY = 'hidden'; // 禁止html垂直滾動
+
+  function stopRotation() {
+    const containerLoader = document.querySelector('.containerLoader');
+    const loader = document.querySelector('.loader');
+    loader.style.animationPlayState = 'paused';       // 暫停動畫旋轉
+    loader.style.display = 'none';                    // 隱藏loader
+    containerLoader.style.display = 'none';           // 隱藏容器
+    document.documentElement.style.overflow = 'auto'; // 啟用html垂直滾動
+  }
 
   //========================================================================
 
@@ -1483,7 +1543,7 @@
       // 54
       "https://lh3.googleusercontent.com/pw/AP1GczP5qRkWgcsbSWMwLolX0ekSIGOvl0Ffg14z2IBJT2U-fg3cbK-O1OG2qcmLu6MurYHwsFq7jXpEKu8EbqdJ3xjfas9CddgmapZ34LcyDMP6fcJN8Xw0nemOWplJvVnX3EgSAqUG2PiLmMZRYKt_edt4=w1080-h319-s-no-gm?authuser=0",
 
-        // 55
+      // 55
       "https://lh3.googleusercontent.com/pw/AP1GczOHJWR_2X06ajV_JHYc8Nfy7baYEgnHSB_Qq3ARY7aIKeaTi5Ru3ySsvCY0N83aGBiNTZ2bfMMSSx5RhXDbRDKh0C3ZWHEhUi4raZgqOpytYfoNqJmFhP_kEVoz9FNLv5lD-_riA8PzAyMciHihr1mk=w952-h322-s-no-gm?authuser=0",
       
       // 56
@@ -1572,6 +1632,9 @@
 
   // 當 DOM 完全加載並解析後，執行這個函數
   document.addEventListener("DOMContentLoaded", function() {
+      
+      stopRotation();
+
       // 選擇所有帶有 'lazy-load' 類的 img 標籤
       const lazyImages = document.querySelectorAll('img.lazy-load');
 
