@@ -1241,17 +1241,7 @@
 <!-- 引入 Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-<script>
-
-  window.onload = function() {
-    AOS.init({
-      duration: 800,
-    });
-    stopRotation();
-  };
-
-  //========================================================================
-
+<script> 
 
   document.documentElement.style.overflowY = 'hidden'; // 禁止html垂直滾動
 
@@ -1263,6 +1253,54 @@
     containerLoader.style.display = 'none';           // 隱藏容器
     document.documentElement.style.overflow = 'auto'; // 啟用html垂直滾動
   }
+
+ //========================================================================
+
+  // 顯示所有評價
+  function displayAllReviews() {
+      const container = document.getElementById('reviews-container'); // 獲取評價容器
+      let k = 0; // 初始化數字計數器
+      reviews.forEach(review => {
+          const reviewElement = document.createElement('div'); // 創建評價元素
+          reviewElement.className = 'col-12 col-md-6 col-xl-4 mb-1'; // 設置元素的class，使用Bootstrap的網格系統
+          
+          k += 1; // 增加數字計數器 下方key ${k}
+          reviewElement.innerHTML = `
+              <div class="review">
+                  <img src="${review}" alt="客戶評價" loading="lazy">
+              </div>`; // 設置圖片元素
+          container.appendChild(reviewElement); // 將評價元素添加到容器中
+      });
+  }
+
+ //========================================================================
+
+  window.onload = function() {
+
+    AOS.init({
+      duration: 800,
+    });
+
+    stopRotation(); // 隱藏載入畫面
+
+
+    // 選擇所有帶有 'lazy-load' 類的 img 標籤
+    const lazyImages = document.querySelectorAll('img.lazy-load');
+
+    // 遍歷每個懶加載的圖片
+    lazyImages.forEach(img => {
+        // 將 data-src 屬性的值賦給 src 屬性，開始加載圖片
+        img.src = img.getAttribute('data-src');
+        
+        // 移除 'lazy-load' 類，表示該圖片已被加載
+        img.classList.remove('lazy-load');
+    });
+
+
+    displayAllReviews(); // 初次顯示所有評價
+    
+  };
+
 
   //========================================================================
 
@@ -1609,42 +1647,6 @@
 
       // 這裡繼續添加超過100條評價圖片URL
   ];
-
-  // 顯示所有評價
-  function displayAllReviews() {
-      const container = document.getElementById('reviews-container'); // 獲取評價容器
-      let k = 0; // 初始化數字計數器
-      reviews.forEach(review => {
-          const reviewElement = document.createElement('div'); // 創建評價元素
-          reviewElement.className = 'col-12 col-md-6 col-xl-4 mb-1'; // 設置元素的class，使用Bootstrap的網格系統
-          
-          k += 1; // 增加數字計數器 下方key ${k}
-          reviewElement.innerHTML = `
-              <div class="review">
-                  <img src="${review}" alt="客戶評價" loading="lazy">
-              </div>`; // 設置圖片元素
-          container.appendChild(reviewElement); // 將評價元素添加到容器中
-      });
-  }
-
-  displayAllReviews(); // 初次顯示所有評價
-
-  //========================================================================
-
-  // 當 DOM 完全加載並解析後，執行這個函數
-  document.addEventListener("DOMContentLoaded", function() {
-      // 選擇所有帶有 'lazy-load' 類的 img 標籤
-      const lazyImages = document.querySelectorAll('img.lazy-load');
-
-      // 遍歷每個懶加載的圖片
-      lazyImages.forEach(img => {
-          // 將 data-src 屬性的值賦給 src 屬性，開始加載圖片
-          img.src = img.getAttribute('data-src');
-          
-          // 移除 'lazy-load' 類，表示該圖片已被加載
-          img.classList.remove('lazy-load');
-      });
-  });
 
   //========================================================================
 
