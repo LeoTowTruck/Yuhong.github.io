@@ -1247,6 +1247,9 @@
     AOS.init({
       duration: 800,
     });
+    setTimeout(function() {
+      stopRotation();
+    }, 1000); // 1000 毫秒 = 1 秒
   };
 
   //========================================================================
@@ -1632,9 +1635,6 @@
 
   // 當 DOM 完全加載並解析後，執行這個函數
   document.addEventListener("DOMContentLoaded", function() {
-      
-      stopRotation();
-
       // 選擇所有帶有 'lazy-load' 類的 img 標籤
       const lazyImages = document.querySelectorAll('img.lazy-load');
 
