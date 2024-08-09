@@ -1472,8 +1472,8 @@
       // 處理圖片點擊事件
       function handleClick(event) {
           // 清除之前設定的定時器
-          if (timer) clearInterval(timer);
-          if (timerClick) clearTimeout(timerClick);
+          clearInterval(timer);
+          clearTimeout(timerClick);
 
           // 移除所有圖片的焦點樣式
           photos.forEach(photo => photo.classList.remove('focused')); 
@@ -1518,13 +1518,13 @@
           return;
         }
         
-        // 如果沒有圖片，則更新焦點
+        // 焦點
         if (visiblePhotos.length > 0) {
           // 獲取第一張可見圖片的索引
           currentIndex = first_photos;
           // 更新焦點，根據 currentIndex 顯示對應的圖片
           updateFocus();  // 立刻執行
-          if (timer) clearInterval(timer); // 清除定時器
+          clearInterval(timer); // 清除定時器
           timer = setInterval(updateFocus, 4000);
         }
       }
