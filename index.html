@@ -1473,22 +1473,17 @@
       }
 
 
-      var timerClick;
 
       // 處理圖片點擊事件
       function handleClick(event) {
-          clearTimeout(timerClick);  // 清除之前設定的定時器
+
           // 移除所有圖片的焦點樣式
           photos.forEach(photo => photo.classList.remove('focused')); 
+          const clickedIndex = Array.from(photos).indexOf(event.target);
+          currentIndex = clickedIndex+1; // 設置為點擊圖片的索引
+          clearInterval(timer); // 清除之前設定的定時器
+          timer = setInterval(updateFocus, 4000);
 
-          // 設定一個延遲3秒後執行的定時器
-          timerClick = setTimeout(function() {
-              const clickedIndex = Array.from(photos).indexOf(event.target);
-              currentIndex = clickedIndex+1; // 設置為點擊圖片的索引
-              clearInterval(timer); // 清除之前設定的定時器
-              timer = setInterval(updateFocus, 4000);
-              clearTimeout(timerClick);
-          },4000);
       }
 
       // 為每個圖片添加點擊事件監聽器
@@ -1530,7 +1525,7 @@
           currentIndex = first_photos;
           // 更新焦點，根據 currentIndex 顯示對應的圖片
           updateFocus();  // 立刻執行
-          timer = setInterval(updateFocus, 4000);
+          timer = setInterval(updateFocus, 3500);
         }
       }
 
@@ -1545,7 +1540,7 @@
           window.requestAnimationFrame(function() {
             updateVisibleFocus();
           });
-        }, 100); // 毫秒的延遲
+        }, 200); // 毫秒的延遲
       });
              
     });
