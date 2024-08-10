@@ -1535,12 +1535,12 @@
         // 清除之前的滾動計時器
         clearTimeout(isScrolling);
 
-        // 設定新的計時器，在滾動結束後 200 毫秒執行 updateVisibleFocus()
+        // 設定新的計時器，在滾動結束後N毫秒執行 updateVisibleFocus()
         isScrolling = setTimeout(function() {
           window.requestAnimationFrame(function() {
             updateVisibleFocus();
           });
-        }, 200); // 毫秒的延遲
+        }, 100); // 毫秒的延遲
       });
              
     });
