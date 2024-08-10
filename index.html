@@ -1350,6 +1350,7 @@
   //========================================================================
 
   document.addEventListener("DOMContentLoaded", function() {
+
     // 初始化變量
     let lastScrollY = window.scrollY; // 追蹤上一次滾動的位置
     let hidden = false; // 追蹤導航欄是否隱藏
@@ -1436,34 +1437,39 @@
 
       // 函數用來添加和移除焦點
       function updateFocus() {
-        if (first_photos !== -1) {
-            if (currentIndex > last_photos) {
-                currentIndex = first_photos;
-            }
+          if (first_photos !== -1) {
+              if (currentIndex > last_photos) {
+                  currentIndex = first_photos;
+              }
 
-            document.activeElement.blur(); // 讓當前有焦點的元素失去焦點
-            photos.forEach(photo => photo.classList.remove('focused'));  // 移除當前焦點樣式
-            
-            // 添加焦點樣式到當前元素
-            photos[currentIndex].classList.add('focused');
+              document.activeElement.blur(); // 讓當前有焦點的元素失去焦點
+              photos.forEach(photo => photo.classList.remove('focused'));  // 移除當前焦點樣式
+              
+              // 添加焦點樣式到當前元素
+              photos[currentIndex].classList.add('focused');
 
-            // 獲取當前圖片的父容器元素
-            const currentPhoto = photos[currentIndex].closest('.photo');
-            const rescueBlock = currentPhoto.closest('.rescueBlock'); // 獲取到父容器 .rescueBlock
-            const displayPhotoDiv = rescueBlock.querySelector('.display-photo'); // 獲取對應的 .display-photo
-            
-            // 清空顯示圖片元素中的內容
-            displayPhotoDiv.innerHTML = '';
+              // 獲取當前圖片的父容器元素
+              const currentPhoto = photos[currentIndex].closest('.photo');
+              const rescueBlock = currentPhoto.closest('.rescueBlock'); // 獲取到父容器 .rescueBlock
+              const displayPhotoDiv = rescueBlock.querySelector('.display-photo'); // 獲取對應的 .display-photo
 
-            // 複製當前圖片節點
-            const img = photos[currentIndex].cloneNode(true);
-            
-            // 將複製的圖片節點添加到顯示圖片的元素中
-            displayPhotoDiv.appendChild(img);
+              // 獲取父容器裡面的圖片元素
+              const imgElement = displayPhotoDiv.querySelector('img');
 
-            // 更新索引，並循環
-            currentIndex = currentIndex + 1;
-        }
+              // 複製當前圖片節點
+              const img = photos[currentIndex].cloneNode(true);
+
+              if (imgElement.src !== img.src) {
+                  // 清空顯示圖片元素中的內容
+                  displayPhotoDiv.innerHTML = '';
+
+                  // 將複製的圖片節點添加到顯示圖片的元素中
+                  displayPhotoDiv.appendChild(img);
+              }
+
+              // 更新索引，並循環
+              currentIndex = currentIndex + 1;
+          }
       }
 
 
@@ -1483,6 +1489,7 @@
               const clickedIndex = Array.from(photos).indexOf(event.target);
               currentIndex = clickedIndex+1; // 設置為點擊圖片的索引
               timer = setInterval(updateFocus, 4000);
+              clearTimeout(timerClick);
           },4000);
       }
 
@@ -1540,7 +1547,7 @@
           window.requestAnimationFrame(function() {
             updateVisibleFocus();
           });
-        }, 300); // 毫秒的延遲，
+        }, 100); // 毫秒的延遲
       });
              
     });
