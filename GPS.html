@@ -1031,7 +1031,7 @@
       const scrollTop = window.scrollY || window.pageYOffset;
 
       // 判斷是否滾動到頁面底部
-      if (scrollTop + windowHeight >= documentHeight - 30) { // 加入小的容錯範圍
+      if (scrollTop + windowHeight >= documentHeight - 80) { // 加入小的容錯範圍
           footer.classList.add('show');
       } else {
           footer.classList.remove('show');
