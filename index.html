@@ -18,7 +18,7 @@
   <meta name="twitter:image" content="https://lh3.googleusercontent.com/pw/AP1GczM06pX2zDPg3j8thWQ4dcku7lKPy1tV7C6UGYtllPoF5Rhrbcb9Yhzr9noIBvXc0l8H3CYArwtEAnya0X_F-lRx_W6ngHZkHJSsIq5Q29QeR-MVMVXq5Zlsj6i5W3C2b-jHryfWY_7LF4PS9QqtHGjL=w1481-h833-s-no-gm?authuser=0">
   <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczMmpgeIJhvbzNK8dr50D-NplG92CU1-ufAnga61ovELszXWWft-HFBLu5XFFVM_IDlyKAvJ4vz7EMqqAARmb0HrzTpfovK3z2Kdl2976ITBv3u1dgiyMQglpozlIbIJ03Vb8arKr28kuqVLk1y7i38-=w720-h720-s-no-gm?authuser=0" type="image/png">
   <link rel="canonical" href="https://leotowtruck.github.io/Yuhong.github.io">
-  <title>高雄屏東道路救援 | 24小時專業拖吊車服務 | 一通電話GPS定位快速到達 | 汽車故障拖吊 | 誠信、安全、高效</title>
+  <title>高雄屏東道路救援 | 一通電話GPS定位快速到達 | 24小時專業拖吊車服務 | 汽車故障拖吊 | 誠信、安全、高效</title>
 
   <!-- 結構化數據 -->
   <script type="application/ld+json">
@@ -49,540 +49,721 @@
 
 </script>
 
+<!-- 引入 Google Fonts CSS、SVG -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&family=Noto+Serif+HK:wght@200..900&display=swap" rel="stylesheet">
 
-  <!-- 引入 Google Fonts CSS、SVG -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&family=Noto+Serif+HK:wght@200..900&display=swap" rel="stylesheet">
+<!-- 引入 Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> 
 
-  <!-- 引入 Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> 
-    
-  <!-- 引入 Animate.css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<!-- google map api -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjSGiVQD0Hl5nYWlpgnuQggcaixwv4DFw&libraries=places"></script>
 
-  <!-- 引入 Aos.css -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+//===============================================================================================
 
-  <style>
-    
-    /* Reset CSS */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+<style>
+  /* Reset CSS */
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
 
-    html {
-        scroll-padding-top: 65px; /* 設置距離頁面頂部的距離 */
-        scroll-behavior: smooth; /* 启用平滑滚动 */
-    }
+  html {
+      scroll-padding-top: 65px; /* 設置距離頁面頂部的距離 */
+      scroll-behavior: smooth; /* 启用平滑滚动 */
+  }
 
-    html, body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        overflow-x: hidden; /* 隱藏水平滾動條 */
-        touch-action: manipulation; /* 禁止雙擊縮放 */
-    }
+  html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden; /* 隱藏水平滾動條 */
+      touch-action: manipulation; /* 禁止雙擊縮放 */
+  }
 
-    body {
-        background-color: #1e1e1e; /* 設置背景顏色*/
-        font-family: 'Montserrat', sans-serif;
-    }
+  body {
+      background-color: #1e1e1e; /* 設置背景顏色*/
+      font-family: 'Montserrat', sans-serif;
+  }
 
-    .Sr {
-        position: absolute;
-        clip: rect(0, 0, 0, 0);         /* 兼容舊版瀏覽器      */
-        clip: rect(1px, 1px, 1px, 1px); /* 這行是為了確保兼容性 */
-        overflow: hidden;
-        width: 1px;                     /* 必須要有寬度和高度   */
-        height: 1px;                    /* 必須要有寬度和高度   */
-    }
+  .container-fluid {
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 5%;
+      transition: padding 0.5s ease; /* 過渡效果 */
+      margin-top: 50px;
+      margin-bottom: 50px;
 
-    .container-fluid {
-        width: 100%;
-        max-width: 1400px;
-        padding: 0 5%;
-        transition: padding 0.5s ease;
-    }
+  }
 
-    .col-12 {
-        padding-top: 1vh; 
-        padding-bottom: 1vh;
-    }
+  .Sr {
+      position: absolute;
+      clip: rect(0, 0, 0, 0);         /* 兼容舊版瀏覽器      */
+      clip: rect(1px, 1px, 1px, 1px); /* 這行是為了確保兼容性 */
+      overflow: hidden;
+      width: 1px;                     /* 必須要有寬度和高度   */
+      height: 1px;                    /* 必須要有寬度和高度   */
+  }
 
-    /*********************************************************************/
+/********************************************************************************************/
 
-    /* 將container設置為一個flex容器，內容居中 */
-    .containerLoader {
-        display: flex; /* 添加這一行來設置flex容器 */
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7); /* 設置背景色為50%透明度的黑色 */
-        justify-content: center;
-        align-items: center;
-        z-index: 1001; /* 確保容器在最上層 */
-    }
-
-    /* 設置loading效果的基本樣式 */
-    .loader {
-        width: 80px; /* 設置loader的寬度 */
-        height: 80px; /* 設置loader的高度 */
-        border: 10px solid rgba(255, 255, 255, 0.2); /* 設置透明的邊框，顏色為白色的20%透明度 */
-        border-top: 10px solid #3498db; /* 設置頂部邊框為藍色，創造旋轉效果 */
-        border-right: 10px solid #3498db; /* 設置右側邊框為藍色 */
-        border-bottom: 10px solid #3498db; /* 設置底部邊框為藍色 */
-        border-radius: 50%; /* 將邊框設置為圓形 */
-        animation: spin 1s linear infinite; /* 添加旋轉動畫，持續時間為1秒，線性重複無限次 */
-        box-shadow: 0 0 20px #3498db; /* 添加陰影效果，顏色為藍色 */
-        position: relative; /* 確保 z-index 生效需要設置 position 屬性 */
-        z-index: 9999; /* 設置較高的 z-index 值 */
-    }
-
-    /* 定義旋轉動畫 */
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg); /* 初始狀態，不旋轉 */
-        }
-        100% {
-            transform: rotate(360deg); /* 完成一圈旋轉 */
-        }
-    }
-
-    /*********************************************************************/
-
-    /* -- 頭部 -- */
-    .navbar {
-        font-size: 18px;
-        font-weight: 700; /* 粗體字重 */
-        width: 100%;
-        padding: 5px 10px;
-        transition: transform 0.5s ease; /* 添加平滑過渡效果 */
-        position: fixed; /* 固定在頂部 */
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000; /* 確保導航欄在頂層 */
-    }
-
-    .navbar.hidden {
-        transform: translateY(-100%); /* 隱藏導航欄 */
-    }
-
-    .noto-serif-hk-logo {
-        font-family: "Noto Serif HK", serif;
-        font-weight: 900; /* 使用最粗字重 */
-        font-style: normal;
-        letter-spacing: 0.1em; /* 增加字母間距 */
-        font-size: 1.3em; /* 調整字體大小 */
-        color: #EAC100; /* 設置顏色，可根據需要調整 */
-        text-shadow: 2px 2px 4px rgba(150, 150, 150, 0.5); /* 灰色陰影 */
-        text-decoration: none;
-    }
-
-    .navbar .d-flex .logo img {
-        width: 50px;
-        border-radius: 50%; /* 使圖片成為圓形 */
-    }
-
-    .nav-item {
-        padding: 5px 0 5px 20px;
-    }
-
-  /*********************************************************************/    
-
-    /* -- 輪播  -- */
-    #carouselExampleCaptions {
-        margin-top: 60px;
-    }
-
-    .carousel-item {
-        transition: transform 0.5s ease-out; /* 添加過渡效果 */
-    }
-
-    .carousel-caption h5 {
-        font-family: "Noto Serif HK", serif;         /* 設置字體為 "Noto Serif HK" 和預設字體為 serif */
-        font-weight: 900;                            /* 使用最粗字重 */
-        font-style: normal;                          /* 設置字體風格為正常 */
-        letter-spacing: 0.1em;                       /* 增加字母間距 */
-        font-size: 1.1em;                            /* 調整字體大小 */
-        color: #fff;                                 /* 設置文字顏色為白色 */
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);   /* 設置文字陰影 */
-        text-decoration: none;                       /* 移除文字裝飾 */
-        display: inline-flex;                        /* 使用內聯彈性盒子模型 */
-        align-items: center;                         /* 垂直居中對齊 */
-        padding: 10px 10px;                          /* 設置內邊距為 10px */
-        position: relative;                          /* 確保伪元素相对于 h5 定位 */
-        white-space: nowrap;                         /* 不換行 */
-        min-width: 0;                                /* 避免溢出 */
-    }
-
-    .carousel-caption h5::after {
-        content: '';
-        position: absolute;
-        left: 0;  
-        right: 0;
-        bottom: 5px; /* 根據需要調整 */
-        height: 10px; /* 高度應等於陰影的模糊半徑 */
-        box-shadow: 2px 5px 10px rgba(0, 0, 0, 1); /* 僅在底部添加陰影效果 */
-        z-index: 1; /* 確保陰影在文字後面 */
-        border-bottom: 3px solid rgba(255, 215, 0, 1);
-    }
-
-    .carousel-caption p {
-        font-weight: 700; /* 粗體字重 */
-        font-size: 16px;
-        border-radius: 10px;
-        background-color: rgba(0, 0, 0, 0.1);           /* 半透明背景色 */
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);      /* 設置文字陰影        */
-        padding: 10px 20px;
-        text-align: center;
-        margin: 0 auto; /* 水平置中 */
-    }
-
-  /*********************************************************************/     
-
-    /* --  Google icon  -- */
-    .material-symbols-outlined {
-        margin-right: 2%; /* 調整右側間距 */
-        font-variation-settings:
-            'FILL' 0,
-            'wght' 700,
-            'GRAD' 1,
-            'opsz' 48;
-    }
-
-  /*********************************************************************/     
-
-    /* --  卡片 -- */
-    .card {
-      border: none;  /* 取消邊框 */
-      overflow: hidden; /* 截斷超出容器的內容 */
-      z-index: 2;
-    }
-
-    .card .image {
-        max-width: 100%;
-        transition: transform 1s;
-        z-index: 1;
-    }
-
-    /*********************************************************************/
-
-    .section {
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* 垂直置中 */
-      color: rgb(255,255,255);
-      padding: 1vh 5%;
-      border-left: 1vh solid rgba(255, 215, 0, 1); /* 左邊框黃色 */
-      border-right: 0.5vh solid transparent;         /* 右邊框透明 */
-      text-align: center;
-      height: 100%;
-    }
-
-    .section .d-flex {
-      align-items: flex-end;
-      justify-content: center; /* 垂直置中 */
-    }
-
-
-    .w-settingHead {
-      width: 60px;
-    }
-
-    .w-setting {
-      min-width: 40px;
-      width: 15%;
-    }
-
-    .ml-setting {
-      margin-left: 5px; /* 可根據需要調整 */
-    }
-
-    h1, h2 {
-        font-family: "Noto Serif HK", serif;         /* 設置字體為 "Noto Serif HK" 和預設字體為 serif */
-        font-weight: 900;                            /* 使用最粗字重 */
-        font-style: normal;                          /* 設置字體風格為正常 */
-        letter-spacing: 0.1em;                       /* 增加字母間距 */
-        font-size: 1.5em;                            /* 調整字體大小 */
-        color: #fff;                                 /* 設置文字顏色為白色 */
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);   /* 設置文字陰影 */
-        text-decoration: none;                       /* 移除文字裝飾 */
-        align-items: center;                         /* 垂直居中對齊 */
-        padding: 5px 5px;                            /* 設置內邊距為 5px */
-        white-space: nowrap;                         /* 不換行 */
-        min-width: 0;                                /* 避免溢出 */
-        z-index: 1;                                  /* 設置z-index，以確保元素在正確的層級 */
-    }
-
-    .section h3 { 
+  /* -- 頭部 -- */
+  .navbar {
+      font-size: 18px;
       font-weight: 700; /* 粗體字重 */
-      font-size: 1em;
-      margin-top: 10px;
-      z-index: 1;
-    }
+      width: 100%;
+      padding: 5px 10px;
+      transition: transform 0.5s ease; /* 添加平滑過渡效果 */
+      position: fixed; /* 固定在頂部 */
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000; /* 確保導航欄在頂層 */
+  }
 
-    .section p {
-      font-weight: 700; /* 粗體字重 */
-      font-size: 1.1em;
-      line-height: 1.5em;
-      padding: 5px 5px;
-      z-index: 1;
-    }
+  .navbar.hidden {
+      transform: translateY(-100%); /* 隱藏導航欄 */
+  }
 
-    /*********************************************************************/
+  .noto-serif-hk-logo {
+      font-family: "Noto Serif HK", serif;
+      font-weight: 900; /* 使用最粗字重 */
+      font-style: normal;
+      letter-spacing: 0.1em; /* 增加字母間距 */
+      font-size: 1.3em; /* 調整字體大小 */
+      color: #EAC100; /* 設置顏色，可根據需要調整 */
+      text-shadow: 2px 2px 4px rgba(150, 150, 150, 0.5); /* 灰色陰影 */
+      text-decoration: none;
+  }
 
-    /*  背景圖  */
-    .ink-background {
-        width: 140%;
-        position: relative;   /* 設置容器的定位為相對定位，這樣內部的絕對定位元素可以根據此容器進行定位 */
-        filter: grayscale(0%) contrast(100%) brightness(100%) blur(0px); 
-        /* 應用過濾效果： grayscale(0%): 不應用灰階效果（0% 灰階）       /  contrast(100%): 保持原始對比度（100% 對比度）  */
-        /*              brightness(100%): 保持原始亮度（100% 亮度）   /  blur(0px): 不應用模糊效果（0 像素模糊）         */
-        z-index: -1;
-    }
+  .navbar .d-flex .logo img {
+      width: 50px;
+      border-radius: 50%; /* 使圖片成為圓形 */
+  }
 
-    .ink-background img {
-        position: absolute;      /* 設置圖片的定位為絕對定位 */
-        opacity: 0.2;            /* 設置圖片的透明度        */
-        -webkit-user-drag: none; /* 禁用圖片拖拽功能        */
-        user-drag: none;         /* 禁用圖片拖拽功能        */
-    }
+  .nav-item {
+      padding: 5px 0 5px 20px;
+  }
 
-    .ink-background .img-1 {
-        width: 130%;
-        left: -30%; /* 設置圖片的左邊位置為容器的左邊 */
-        top: 10%; /* 設置圖片的頂部位置為容器的頂部 */
-        transform: translateY(-22%); /* 確保圖片居中顯示 */
-    }
 
-    .ink-background .img-2 {
-        width: 90%;
-        left: -9%; /* 設置圖片的左邊位置為容器的左邊 */
-        top: 85%; /* 設置圖片的頂部位置為容器的頂部 */
-        transform: translateY(-21%); /* 確保圖片居中顯示 */
-    }
+/********************************************************************************************/
 
-    .ink-background .img-3 {  
-        width: 100%;
-        left: -15%; /* 設置圖片的左邊位置為容器的左邊 */
-        top: 50%; /* 設置圖片的頂部位置為容器的頂部 */
-        transform: translateY(-15%); /* 確保圖片居中顯示 */
-    }
+  .uploadBox {
+    min-width: 30vw;
+    width: 100%;
+    height: 22vh;
+    border: 3px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 3px;
+    margin: 10px 0;
+    background: #3e3e3e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 陰影效果 */
+  }
 
-    /*********************************************************************/
+  .uploadBox label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5e5e5e;
+  }
 
-    /* 服務項目圖反白 */
-    .white-image {
-        filter: brightness(0) invert(1); 
-    }
+  .uploadBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none; /* 初始時隱藏圖片 */
+  }
 
-    /*********************************************************************/   
+  .uploadBox input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
 
-    /*  右下電話 & Line  */
-    .fixed-buttons-container {
-        position: fixed;
-        bottom: 30px;           /* 距離底部的距離 */
-        right: 20px;            /* 距離右邊的距離 */
-        display: flex;
-        flex-direction: column; /* 垂直排列按鈕   */
-        gap: 10px;              /* 按鈕間距      */
-        z-index: 999;
-    }
-    
-    .call-button, .Line-button {
-        width: 55px;
-        height: 55px;
-        box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3); /* 僅在底部添加陰影效果 */
-        border-radius: 10px;
-        border: none; /* 移除邊框 */
-        padding: 10px 10px;
-        animation: shake 5s infinite; /* 添加動畫 */
-    }
+  .delPhotoBtn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border: none;
+    color: #767A7F;
+    border-radius: 50%;
+    font-size: 2em; 
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background: rgba(62,62,62, 0.9);
+  }
 
-    .call-button .icon, .Line-button .icon {
-        width: 100%;
-        height: 100%;
-        fill: #fff; 
-    }  
+  .delPhotoBtn:hover {
+    background: rgb(65, 65, 65);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 鼠標懸停陰影 */
+  }
 
-    .call-button {
-        background-color: #FF2D2D;
-    }
+/********************************************************************************************/
 
-    .Line-button {
-        background-color: #00C300;
-    }
-
-    .call-button:hover {
-        background-color: #D32F2F; /* 深紅色 */
-    }
-
-    .Line-button:hover {
-        background-color: #009B00; /* 深綠色 */
-    }
-
-    /* 定義動畫 */
-    @keyframes shake {
-        0% { transform: translateX(0) rotate(0deg); }
-        12% { transform: translateX(-7px) rotate(-7deg); }
-        24% { transform: translateX(7px) rotate(7deg); }
-        36% { transform: translateX(-7px) rotate(-7deg); }
-        100% { transform: translateX(0) rotate(0deg); }
-    }
-
-    /*********************************************************************/
-
-    /* 救援案例 */
-    .photo {
-      margin-left: -5%; /* 調整間距 */
-      margin-right: -5%; /* 調整間距 */ 
-    }
-
-    .rescueBlock {
-      text-align: center;
-      border-radius: 10px;
-      padding-top: 15px;
+  .formBlock {
+      height: auto;
+      border-radius: 15px;
+      padding: 20px;
       background-color: #2e2e2e;
-      border: 1px solid #444; /* 設置邊框顏色 */
-      padding: 20px 3.5% 20px 3.5%; /* 內邊距10px */
-    }
-            
-    .photo img {
+      border: 1px solid #444;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 添加陰影 */
+      margin: 10px 0 10px 0;
+  }
+
+  .formBlock h2 {
+      text-align: center; /* 文字置中 */
+      color: #FFDC35; /* 標題顏色 */
+      font-size: 1.75em;
+      margin: 10px 0 10px 0;
+  }  
+  
+  .formInput {
       width: 100%;
-      height: 140px; /* 設定高度為長方形 */
-      object-fit: cover; /* 確保圖片不會變形 */
-      transform: skewY(-12deg); /* 斜著顯示圖片 */
-      transition: 0.5s cubic-bezier(.87, -1.38, .03, 1.54); /* 增加過渡效果 */
-      box-shadow: 4px 4px 10px rgba(0, 0, 0, 1); /* 黑色陰影 */
-      border-radius: 5px;
-      cursor: pointer; /* 設定鼠標樣式為可點擊 */
-    }
+      height: 50px;
+      color: #fff;
+      font-size: 1em;
+      background-color: #3e3e3e; /* 輕微的背景色 */
+      border: 1px solid #444; /* 邊框顏色 */
+      border-radius: 5px; /* 圓角邊框 */
+      padding: 10px;
+      margin-top: 30px;
+      outline: none; /* 取消聚焦框線 */
+  }
 
-    .photo:focus img, .photo img.focused {
-      transform: scale(1.2) translateY(-7%); /* 略微放大並向上移動 */
-    }
+  .formInput:focus {
+      border-color: #FFDC35; /* 聚焦時邊框顏色 */
+      background-color: #333; /* 聚焦時背景色 */
+  }
 
-    .display-photo img {
+  .formInput::placeholder {
+      color: #ccc; /* 占位符顏色 */
+      opacity: 1; /* 確保占位符不透明 */
+  }
+
+  #goGps {
+    padding-right: 36px;
+  }
+
+  .error {
+      color: red;
+      font-size: 0.9em;
+      margin-left: 5px;
+  }
+
+  .input-container {
+      position: relative;
+  }
+
+  #mapPrevious, #submitPrevious {
+      position: absolute;
+      top: -6px;
+      left: -10px; 
+      width: 45px;
+      height: 45px;
+      border: none; 
+      background: transparent; 
+      font-size: 2em; 
+      color: #767A7F;
+      border-radius: 50%;
+      display: flex; /* 使用 Flexbox 來居中內容 */
+      align-items: center;
+      justify-content: center;
+      z-index: 0;
+  }
+
+  #mapPrevious:hover, #submitPrevious:hover {
+      background: rgb(60, 60, 60);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 鼠標懸停陰影 */
+  }
+
+  .moveLabel {
+      width: 90%;
+      position: absolute;
+      top: 45px;
+      left: 12px;
+      color: #ccc;
+      pointer-events: none;
+      transition: all 0.3s ease;
+      white-space: nowrap;     /* 防止文字換行     */
+      overflow: hidden;        /* 隱藏超出範圍的內容 */
+      text-overflow: ellipsis; /* 超出部分顯示省略號 */
+  }
+
+  .formInput:focus + .moveLabel,
+  .formInput:not(:placeholder-shown) + .moveLabel {
       width: 100%;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 1); /* 黑色陰影 */
-      object-fit: cover; /* 確保圖片不會變形 */
-      opacity: 0; /* 初始透明度 */
-      transform: scale(0.95); /* 初始縮放 */
-      animation: fadeIn 1.3s forwards; /* 動畫效果 */
+      top: 12px;
+      left: 4px;
+      font-size: 0.75em;
+      color: #FFDC35;
+  }
+
+    /* 為 textarea 元素設置單獨的高度規則 */
+    textarea.formInput {
+        height: auto; /* 取消固定高度，允許 rows 屬性生效 */
+    }
+
+/********************************************************************************/
+
+  .formButton, #confirmButton {
+      color: #1e1e1e; /* 文字顏色 */
+      font-size: 1.2em; /* 字體大小 */
+      font-weight: 900; /* 粗體字重 */
+      width: 100%;
+      height: 50px;
+      background-color: #FFDC35;
+      color: #1e1e1e;
+      border: none;
       border-radius: 5px;
+      font-size: 1em;
+      margin-top: 24px;
+      transition: all 0.3s;
+  }
+
+  .formButton:hover, #confirmButton:hover {
+      background-color: #f5c300;
+  }
+
+  #myGpsBtn, #goGpsBtn {
+      width: 50px;   
+      height: 50px;
+      border-radius: 5px; 
+      padding: 5px;
+      margin: 30px 12px 0 0;
+      background-color: #3e3e3e; /* 輕微的背景色 */
+      border: 1px solid #444; /* 邊框顏色 */
+      transition: all 0.3s ease; /* 添加過渡效果 */
+  }
+
+  #myGpsBtn img, #goGpsBtn img {
+      width: 100%; /* 確保圖片不超出按鈕 */
+      height: 100%; /* 確保圖片不超出按鈕 */
+      object-fit: cover; /* 保持圖片比例，填滿按鈕 */
+      animation: shake 5s infinite; /* 應用動畫 */
+  }
+
+  #myGpsBtn:hover, #goGpsBtn:hover {
+      background-color: #4e4e4e; /* 輕微的背景色 */
+  }
+
+  /* 定義輕微晃動的動畫 */
+  @keyframes shake {
+      0% { transform: translateX(0) rotate(0deg); }
+      15% { transform: translateX(-2px) rotate(-7deg); }
+      30% { transform: translateX(2px) rotate(7deg); }
+      45% { transform: translateX(-2px) rotate(-7deg); }
+      100% { transform: translateX(0) rotate(0deg); }
+  }
+
+/********************************************************************************/
+
+  .map-content {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      opacity: 0;         /*  隱藏  */
+      visibility: hidden; /*  隱藏  */
+      display: none;      /*  隱藏  */
+  }
+
+  .map-content.fullscreen {
+      opacity: 1;          /*  顯示  */
+      visibility: visible; /*  顯示  */
+      display: block;      /*  顯示  */
+  }
+
+  #map {
+      width: 100%;
+      height: 100vh;
+      transition: opacity 0.5s, visibility 0.5s; /* 使顯示和隱藏過渡平滑 */
+      z-index: 1;
+  }
+
+  #mapShow {
+      margin: 18px 0 6px 0;
+      width: 100%;
+      height: 40vh;
+      transition: all 0.3s;
+  }
+  
+  /* 左上角的XY座標 */
+  #showMapXY {
+      position: fixed;
+      top: -1px;   /* 距離底部 */
+      left: 0px;  /* 距離右邊 */
+      width: 100%;
+      font-size: 0.75em;
+      color: #fff;
+      background-color: rgba(17, 17, 17, 0.5); /* 30% 不透明度的背景顏色 */
+      border: none;
+      padding-left: 10px;
+      z-index: 3; /* 確保控制項在地圖上方 */
+  }
+
+  /* 搜尋容器 */
+  .search-container {
+      width: 80%; /* 確保搜尋框留出足夠的空間 */
+      position: fixed; /* 固定位置 */
+      left: 50%;
+      top: 30px;             
+      transform: translateX(-50%); /* 水平置中 */
+      z-index: 4;
+  }
+
+  /* 搜索框 */
+  #searchInput {
+      width: 100%; /* 確保搜尋框留出足夠的空間 */
+      border-radius: 50px; /* 設置足夠大的圓角半徑以實現圓形效果 */
+      padding: 10px 105px 10px 20px;
+      border: none; 
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+      position: relative; /* 相對定位 */
+      outline: none; /* 移除焦點框 */
+  }
+
+  /* 刪除搜索文字 */
+  #searchBtn, #delSearchTxtBtn, #delGoGpsInputBtn  {
+      position: absolute;
+      top: 50%;
+      right: 10px; 
+      width: 45px;
+      height: 45px;
+      transform: translateY(-50%); 
+      border: none; 
+      background: transparent; 
+      font-size: 2em; 
+      color: #767A7F;
+      border-radius: 50%;
+      display: flex; /* 使用 Flexbox 來居中內容 */
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+  }
+
+  #delGoGpsInputBtn {
+      top: 69%;
+      right: 1px; 
+      z-index: 0;
+  }
+
+  #searchBtn {
+      right: 60px; 
+  }
+
+  #searchBtn:hover, #delSearchTxtBtn:hover {
+      background: #F0F0F0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 鼠標懸停陰影 */
+  }
+  #delGoGpsInputBtn:hover {
+      background: rgb(70, 70, 70);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 鼠標懸停陰影 */
+  }
+
+
+  /* 重新定位按鈕 */
+  #shareLocation {
+      position: fixed;
+      right: 10px;  /* 距離右邊 */
+      bottom: 80px; /* 距離底部 */
+      width: 70px;  /* 按鈕寬度 */
+      height: 70px; /* 按鈕高度 */
+      color: #767A7F;
+      font-size: 2em; 
+      border: 2px solid #ffffff; /* 白色邊框 */
+      border-radius: 50%; /* 使按鈕圓形 */
+      background-color: #F0F0F0; /* 背景顏色 */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 添加陰影 */
+      z-index: 3; /* 確保控制項在地圖上方 */
+      transition: background-color 0.3s, box-shadow 0.3s; /* 添加過渡效果 */
+  }
+  
+  /* 鼠標懸停時的效果 */
+  #shareLocation:hover {
+      background-color: #E0E0E0; /* 鼠標懸停背景顏色 */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* 鼠標懸停陰影 */
+  }
+
+  /* 確認定位按鈕 */
+  #checkGpsOkBtn {
+      width: 200px;
+      height: 60px;
+      background-color: #FFDC35; 
+      border: none; 
+      border-radius: 10px; 
+      color: #1e1e1e; 
+      font-size: 1.2em; 
+      font-weight: 900;
+      transition: background-color 0.3s;        /* 背景顏色過渡效果 */
+      position: fixed;                          /* 固定位置 */
+      left: 50%;
+      bottom: 25px;             
+      transform: translateX(-50%);              /* 水平置中 */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 添加陰影 */
+      z-index: 4; 
+      opacity: 1; /* 默認可見 */
+      visibility: visible; /* 默認可見 */
+  }
+
+  /* 鼠標懸停時的效果 */
+  #checkGpsOkBtn:hover {
+      background-color: #f5c300; /* 鼠標懸停背景顏色 */
+  }
+
+  /* 隱藏狀態的樣式 */
+  #checkGpsOkBtn.hidden {
+      opacity: 0;
+      visibility: hidden;
+  }
+
+
+  #checkGpsOkBtn:disabled {
+      opacity: 0.3; /* 設置透明度 */
+      cursor: not-allowed; /* 更改游標樣式 */
+  }
+
+  button:disabled {
+      opacity: 0.3; /* 設置透明度 */
+      cursor: not-allowed; /* 更改游標樣式 */
+  }
+
+/********************************************************************************/
+
+  /* 警告視窗的樣式 */
+  .alert-box {
+      display: flex; /* 使用 Flexbox 來居中內容 */
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0; /* 修改為 0，讓它佔據整個視窗 */
+      left: 0; /* 修改為 0，讓它佔據整個視窗 */
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.7);
+      opacity: 0; /* 初始隱藏，透明度設為 0 */
+      visibility: hidden; /* 初始隱藏，隱藏狀態 */
+      transition: opacity 0.3s ease, visibility 0.3s ease; /* 添加過渡效果 */
+      z-index: 9998;
+  }
+
+  .alert-box.show {
+      opacity: 1; /* 顯示時透明度設為 1 */
+      visibility: visible; /* 顯示時可見 */
+  }
+
+  .alert-content {
+      width: 70%;
+      max-width: 500px; /* 可選：限制最大寬度 */
+      height: auto;
+      text-align: center;
+      background-color: #2e2e2e;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      z-index: 9999;
+  }
+
+  .alert-box p {
+      font-size: 1.1em;
+      color: #fff;
+      white-space: pre-line; /* 處理換行符號 */
+      margin: 0 0 10px;
+      
+  }
+
+
+/*********************************************************************/
+
+
+  /* 將container設置為一個flex容器，內容居中 */
+  .containerLoader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.7); /* 設置背景色為50%透明度的黑色 */
+      z-index: 9997; /* 確保容器在最上層 */ 
+      width: 100%;
+      height: 100vh;
+  }
+
+  .central {
+      height: 100%;
+      display: flex; /* 使用 Flexbox 來居中內容 */
+      align-items: center;
+      justify-content: center;
+  }
+
+  /* 設置loading效果的基本樣式 */
+  .loader {
+      width: 80px; /* 設置loader的寬度 */
+      height: 80px; /* 設置loader的高度 */
+      border: 10px solid rgba(255, 255, 255, 0.2); /* 設置透明的邊框，顏色為白色的20%透明度 */
+      border-top: 10px solid #3498db; /* 設置頂部邊框為藍色，創造旋轉效果 */
+      border-right: 10px solid #3498db; /* 設置右側邊框為藍色 */
+      border-bottom: 10px solid #3498db; /* 設置底部邊框為藍色 */
+      border-radius: 50%; /* 將邊框設置為圓形 */
+      animation: spin 1s linear infinite; /* 添加旋轉動畫，持續時間為1秒，線性重複無限次 */
+      box-shadow: 0 0 20px #3498db; /* 添加陰影效果，顏色為藍色 */
+  }
+
+  /* 定義旋轉動畫 */
+  @keyframes spin {
+      0% {
+          transform: rotate(0deg); /* 初始狀態，不旋轉 */
+      }
+      100% {
+          transform: rotate(360deg); /* 完成一圈旋轉 */
+      }
+  }
+
+
+/*********************************************************************/   
+
+
+  /*  右下電話 & Line  */
+  .fixed-buttons-container {
+      position: fixed;
+      bottom: 30px;           /* 距離底部的距離 */
+      right: 20px;            /* 距離右邊的距離 */
+      display: flex;
+      flex-direction: column; /* 垂直排列按鈕   */
+      gap: 10px;              /* 按鈕間距      */
+      z-index: 999;
+  }
+  
+  .call-button, .Line-button {
+      width: 55px;
+      height: 55px;
+      box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3); /* 僅在底部添加陰影效果 */
+      border-radius: 10px;
+      border: none; /* 移除邊框 */
+      padding: 10px 10px;
+      animation: shake 5s infinite; /* 添加動畫 */
+  }
+
+  .call-button .icon, .Line-button .icon {
+      width: 100%;
+      height: 100%;
+      fill: #fff; 
+  }  
+
+  .call-button {
+      background-color: #FF2D2D;
+  }
+
+  .Line-button {
+      background-color: #00C300;
+  }
+
+  .call-button:hover {
+      background-color: #D32F2F; /* 深紅色 */
+  }
+
+  .Line-button:hover {
+      background-color: #009B00; /* 深綠色 */
+  }
+
+  /* 定義動畫 */
+  @keyframes shake {
+      0% { transform: translateX(0) rotate(0deg); }
+      12% { transform: translateX(-7px) rotate(-7deg); }
+      24% { transform: translateX(7px) rotate(7deg); }
+      36% { transform: translateX(-7px) rotate(-7deg); }
+      100% { transform: translateX(0) rotate(0deg); }
+  }
+
+
+/*********************************************************************/
+
+  /*  頁腳  */
+  footer {
+      color: #fff;
+      display: flex;
+      padding-top: 10px;
+      justify-content: center; /* 確保子元素均勻分佈 */
+      align-items: center; /* 垂直居中對齊 */
+      white-space: nowrap; /* 不換行 */
+  }
+
+/*********************************************************************/
+
+  /*  螢幕大於768像素  */
+  @media (min-width: 768px) {
+      .uploadBox {
+          min-width: 35vw;
+          height: 27vh;
+      }
+      #mapShow {
+          height: 48vh;
+      }
+  }
+
+  /*  螢幕大於992像素  */
+  @media (min-width: 992px) {
+      #checkGpsOkBtn {
+          transition: all 0.3s;
+      }
+      .uploadBox {
+          min-width: 20vw;
+          height: 30vh;
+      }
+      #mapShow {
+          height: 53vh;
+          margin-top: 25px;
+      }
+  }
+
+  /*  螢幕大於1200像素  */
+  @media (min-width: 1200px) {
+      .uploadBox {
+          min-width: 300px;
+          height: 33vh;
+      }
+      #mapShow {
+          height: 58vh;
+          margin-top: 30px;
+      }
+      .formInput {
+          margin-top: 45px;
+      }
+      .moveLabel {
+          top: 60px;
     }
 
-    @keyframes fadeIn {
-      to {  
-        opacity: 1; /* 最終透明度 */
-        transform: scale(1); /* 最終縮放 */
-      }
+    .formInput:focus + .moveLabel,
+    .formInput:not(:placeholder-shown) + .moveLabel {
+        top: 22px;
+        font-size: 0.9em;
     }
 
-    /*********************************************************************/
-
-    /*  客戶評價  */
-    .reviews-container {
-        text-align: center;
-        padding: 0 1% 20px 1%; /* 內邊距10px */
-        background-color: #2e2e2e; /* 設置容器背景顏色 */
-        border-radius: 10px; /* 設置圓角 */
-        margin-bottom: 10vh; 
+    #myGpsBtn, #goGpsBtn {
+        margin: 45px 12px 0 0;
     }
 
-    .review {
-        background-color: #3e3e3e; /* 設置評價項背景顏色 */
-        border: 1px solid #444; /* 設置邊框顏色 */
-        border-radius: 5px; /* 設置圓角 */
-        padding: 8px; /* 內邊距10px */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 設置陰影 */
+    #delGoGpsInputBtn {
+      top: 73%;
+      right: 1px; 
+      z-index: 0;
     }
 
-    .review img {
-        width: 100%; /* 設置圖片的最大寬度 */
-        object-fit: cover; /* 圖片覆蓋容器 */
-        border-radius: 10px; /* 設置圖片的圓角 */
-    }
+  }
 
-    /*********************************************************************/
 
-    /*  頁腳  */
-    footer {
-        color: #fff;
-        padding-top: 10px;
-        display: flex;
-        justify-content: center; /* 確保子元素均勻分佈 */
-        align-items: center; /* 垂直居中對齊 */
-        white-space: nowrap; /* 不換行 */
-    }
-
-    /*********************************************************************/
-
-    /* 垂直螢幕手機，小於 576px */
-    @media (max-width: 575.98px) {  
-      .carousel-caption h5 {
-          margin-bottom: -30px; /* 調整 h5 的位置 */
-      }
-      .carouselExampleCaptions_bottom {
-          margin-bottom: -10px; /* 調整 h5 的位置 */
-      }
-    }
-
-    // 橫向手機、576px 以上
-    @media (min-width: 576px) { 
-      .container-fluid {
-          padding: 0 6%;
-      }
-     }
-
-    // 平板電腦、768px 以上
-    @media (min-width: 768px) { 
-      .container-fluid {
-          padding: 0 5%;
-      }
-      .ink-background .img-2 {
-          left: -6%;
-          top: 85%; /* 設置圖片的頂部位置為容器的頂部 */
-          transform: translateY(-15%); /* 確保圖片居中顯示 */
-      }
-      .call-button, .Line-button {
-        width: 60px;
-        height: 60px;
-      }
-    }
-
-    // 桌面、992px 以上
-    @media (min-width: 992px) { 
-      .carousel-caption {
-          position: absolute;
-          top: 45%;
-          transform: translateY(-50%);
-      }
-      .call-button, .Line-button {
-        width: 65px;
-        height: 65px;
-      }
-    }
-
-    /*********************************************************************/
-
-    </style>
+</style>
 </head>
 <body>
 
   <!--   SEO   -->
-  <h1 class="Sr">屏東拖吊車, 屏東道路救援, 高雄拖吊車, 高雄道路救援, 24小時道路救援, 24h道路救援, 拖吊車, 汽車故障</h1>
-
-  <!-- 加載效果的容器 -->
-  <div class="containerLoader">
-      <div class="loader"></div>
-  </div>  
+  <h1 class="Sr">GPS衛星定位, 屏東拖吊車, 屏東道路救援, 高雄拖吊車, 高雄道路救援, 24小時道路救援, 24h道路救援, 拖吊車, 汽車故障</h1>
 
 <!----------------------------------------------------------------------------------------------------------------------------->
 
@@ -592,7 +773,7 @@
         <a href="#" class="logo">
           <img src="https://lh3.googleusercontent.com/pw/AP1GczMoHMqFF6inZpKPBCWCJB1yV3HS8PTjICLBYJZ950fo9i36syVEkS7wI6oIuzX_L2d1kOkmyNUc52gdYmBDNVBsieTLmrU23atOStR1JKDelVdK6P390CSqjv2JNRJndiol_8HqOZEpuVkO49iWBM4n=w720-h720-s-no-gm?authuser=0" alt="高雄屏東拖吊車提供的24小時道路救援服務">
         </a>
-        <a class="noto-serif-hk-logo" href="#">拾捌拖吊車</a>
+        <a class="noto-serif-hk-logo" href="https://leotowtruck.github.io/Yuhong.github.io/">拾捌拖吊車</a>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -600,25 +781,25 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#about-us">關於我們</a>
+            <a class="nav-link" aria-current="page" href="https://leotowtruck.github.io/Yuhong.github.io/#about-us">關於我們</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#services">服務項目</a>
+            <a class="nav-link" href="https://leotowtruck.github.io/Yuhong.github.io/#services">服務項目</a>
           </li>          
           <li class="nav-item">
-            <a class="nav-link" href="#cases">救援案例</a>
+            <a class="nav-link" href="https://leotowtruck.github.io/Yuhong.github.io/#cases">救援案例</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#operations">吊掛作業</a>
+            <a class="nav-link" href="https://leotowtruck.github.io/Yuhong.github.io/#operations">吊掛作業</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#reviews">客戶評價</a>
+            <a class="nav-link" href="https://leotowtruck.github.io/Yuhong.github.io/#reviews">客戶評價</a>
           </li>
         </ul>
       </div>
   </nav>
 
-  <!----------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------------------->
 
   <!-- icons.svg -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -631,1187 +812,1252 @@
     </symbol>
   </svg>
 
-
-  <!----------------------------------------------------------------------------------------------------------------------------->
-
-  <!-- 輪播圖 -->
-  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" aria-label="Slide 1" class="carouselExampleCaptions_bottom active" aria-current="true"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2" class="carouselExampleCaptions_bottom"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3" class="carouselExampleCaptions_bottom"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczPJhIDmRFa-AbBYruceFbmtbbZMoHozSMvrgItHN5YPVXD6roUjT8sgUGmAyoKnr3rB5iLuUOgUoIoUVkyna1SQu_5eFGC6gk0G7PV_AaUmzmB1spvDCikV4IDxTarko_52NLs-9g_m-iwFEJ1Zicof=w1402-h789-s-no-gm?authuser=0" class="d-block w-100" alt="國道救援">
-        <div class="carousel-caption animate__animated animate__rotateInDownLeft">
-          <h5><span class="material-symbols-outlined">person_celebrate</span>每次救援 都是承諾</h5>
-          <p class="d-none d-sm-block">我們不僅是您的救援夥伴，更是您的信任之選，每次救援都是我們的承諾。每一位客戶都是我們服務的中心，我們以真誠的態度面對每一次救援任務。</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczP6K0fCIU2ZS1pYp734tk-WX0ZoE_ow1Szq83l0a_MKEuNaqBxSpaVlOAOrCpdx6GTMaRdGEu2Duj-11v_4IDh2PhLaVziD4EBHRM2DUisVCLbOqZiJBJUDMr42yy_aLm3v9IWtf4VZiEWZD2QS03Zy=w1402-h789-s-no-gm?authuser=0" class="d-block w-100" alt="高速公路救援">
-        <div class="carousel-caption animate__animated animate__rotateInDownLeft">
-          <h5><span class="material-symbols-outlined">person_play</span>您的安全 是我們的使命</h5>
-          <p class="d-none d-sm-block">您的安全是我們的使命，您的滿意是我們的動力。我們提供高效、專業的拖吊服務，讓您的旅程更安心順暢。感謝您的選擇，我們期待為您服務。</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczNnURXsutzUlm73Nd3zhSdnAabAC21t8QvtXID-UaN9MD2GbsXrnGzJAbhaicHQa4Qa3WW7vqIvYKiis-V9Qt1GHexJMIDhI1UkPRCFQhr1q3_T1VTZ2adHt5GWskcMJwIDGEOYo_2LCycOa_X1tdJO=w1402-h789-s-no-gm?authuser=0" class="d-block w-100" alt="車輛救援">
-        <div class="carousel-caption animate__animated animate__rotateInDownLeft">
-          <h5><span class="material-symbols-outlined">partner_exchange</span>我們在 您安心</h5>
-          <p class="d-none d-sm-block">當您遇到困難時，我們隨時在您身邊。無論何時何地，我們都會迅速出動，確保您的安全與安心。</p>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-
-  <!----------------------------------------------------------------------------------------------------------------------------->
-
-  <div class="container-fluid">
-    <div class="row mt-4">
-      <div>
-        <div class="section">
-            <div class="col-12 mb-2">
-              <img src="https://lh3.googleusercontent.com/pw/AP1GczP6fZbHMxTEfVUA5HN7E9zIE8ETqR_OZrCnP9o8H7AykF5ZLUlO4a33Jzw6XJSQzeLHpppIq7vLjYAe2DF2fHCUb-aSS7Um3INrOKlcNTtEEFyDoP_jSq3E_TGuy0mXsdxq5C_Qu_r6AEt3xzX-Rvfm=w512-h512-s-no-gm?authuser=0" class="white-image w-settingHead" alt="高雄屏東道路救援">
-            </div>
-              <h1>高雄屏東道路救援</h1>
-              <p>24小時快速、高效的拖吊服務！</p>
-        </div> 
-      </div>
-    </div>
-
-    <!-- 1 -->
-    <div class="row mt-md-2 mb-md-5">
-      <div class="col-12 col-md-6 mt-3 mb-3">
-        <div class="card">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczOdFTS1HB_DOBRMy5aCoxE6LvBWsqznaut-DY8NiDQ9qtk3dOsM2MglZqvjGY53a8jGcwQzLPo4K9vIO3tEELd9iKNlL5HMWsTIGIwY4T1mGN4QqjeBXyDhLSvMXuVbInNhtrzFbqRuMk1vh2tJ0N_p=w1433-h804-s-no-gm?authuser=0" class="image" alt="高速公路故障拖吊">
-        </div>
-      </div>
-      <div class="col-12 col-md-6 mt-3 mb-3">
-        <div class="ink-background">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczOO9lm4smEUJz5N6ZDtZMoBrOhRewKzS2LS-rFlLoAeSZGGyK8u-vZwQ1UuJ26lthH4Oe-PbM6VtMoX1cHm4RxEtg-3NPF3kXGc4I7EKzRKe_okEbFLuO2CWhDzrI8HFpq_8hd_w7fzARpoMvDAXlk6=w1114-h776-s-no-gm?authuser=0" class="img-1" alt="公道價">
-        </div>
-        <div class="section" data-aos="zoom-out-left" data-aos-anchor-placement="center-bottom"> 
-          <div class="d-flex">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczOJVG8spo7QQyaVBRIje_-l1fOR_Qn1A1WRTTf6ySc7mn2ePoTUrpxTTzobWgMRDyF5El4nnwv5QNCrGBqS0xBS2Saspa1ryOYjBjKDjCiIhhhIJC1-NQnHRnyLyYLVlW7W4zf4xPnRC7xB8Lo4Hftq=w512-h512-s-no-gm?authuser=0" class="white-image w-setting" alt="價格公道 顧客至上">
-            <h2 class="mt-1 mb-1 ml-setting">價格公道 顧客至上</h2>
-          </div>
-          <p class="mt-1 mb-1">我們根據客戶描述的具體情況，提供合理的收費方案，確保雙方都能接受後立即派車！不管您身處何地，我們都能迅速回應，提供您所需的拖車服務。</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2 -->
-    <div class="row mt-md-2 mb-md-5">
-      <div class="col-12 col-md-6 order-md-2 mt-3 mb-3">
-        <div class="card">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczOaSSfDR77TS-oUkuK9Yogy9CoJbQknc0j7E9BGW1r2UkEdseoMqgeEVwmdkbtv42aPdteHhOkt1f0RqwRWUx1pK4q4EAepQKUl8Nb-AbhQbp0hYrb1MDjgemRrm1RLxWc_IeThFZkSeYB5y2Un4Mk1=w1560-h878-s-no-gm?authuser=0" class="image" alt="崁頂拖吊車">
-        </div>
-      </div>
-      <div class="col-12 col-md-6 mt-3 mb-3">
-        <div class="ink-background">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczPaKl4mpR8KiiLGhxyZN5yYEfWrN69e7jU9GHYU4Gtn0GbWJLAb-elZlVnDrIoOtaZFBd5eHo7NeGN4cSsAnqGu0WTEcUg7uCd_Qz18iIqedPuWZuy6o7lsLlg-xxw5TGYbpaS4pczg3445DwdOEVqN=w697-h477-s-no-gm?authuser=0" class="img-2" alt="崁頂園吊車">
-        </div>
-        <div class="section" data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom">
-          <div class="d-flex">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczPxdue6UW-rZMxYIzJ8aXvWD36VqGmL28h16gx3NOaJ7vtkumlrXhvURfc4n3quwxUxb7XFTDaE6KCmzbjnMKSDSnD0I0i22uZ8y2hHJ3W60MsYkCKI8Zqaq079iYTPIWpEs_3Bx6dXRgiiaVML6msy=w512-h512-s-no-gm?authuser=0" class="white-image w-setting" alt="崁頂道路救援">
-            <h2 class="mt-1 mb-1 ml-setting">專業技術 信心保證</h2>
-          </div>
-          <p class="mt-1 mb-1">我們擁有超過十年以上的拖車經驗和專業技能，您可以放心，我們將以最專業的態度處理每一次服務需求。</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- 3 -->
-    <div class="row mt-md-5 mb-md-5">
-      <div class="col-12 col-md-6 mt-3 mb-3">
-        <div class="card">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczN1cA8k6M3xT26ywteInXyIhT1ZeZweQ0DgNgTI2-Ya3L5PVABRp1Tu9Pbv8pHvxL4sKcpvagN5hTK1oFvNf9hQ6EYEIEQP2pmsV3hGukJ5B_4OL7V8uty6du4Roda2OW_x8aaVclcqI-wuMXQjClvz=w1560-h878-s-no-gm?authuser=0" class="image" alt="內埔吊車">
-        </div>
-      </div>
-      <div class="col-12 col-md-6 mt-3 mb-3">
-        <div class="ink-background">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczO5vcNDB-wYJwsPce-AB8CdT9DX2Qi1aoODUhb9WBfmUJmjgfgJLfufV4zwk7LvcBaosNjEykttkhIjvpHrh_L5upDJ1JCSjcIkWPP3fPOXIL2jt5dYpFodUzkc0QHYiwdiPszcKk4Wv_DhSMdVl-sT=w1206-h813-s-no-gm?authuser=0" class="img-3" alt="內埔拖吊車">
-        </div>
-        <div class="section" data-aos="fade-left" data-aos-anchor-placement="center-bottom">
-          <div class="d-flex">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczPFJ72ZMHzH_otRD2yyldhGAnmRPiiL4Z-vGwIhjtCUaXCtEtPgqo4yhaE2Y4hVptUVCiB9cHrOI_2ir3CGtD2HPm4KVzFkzlH0H7_vxkMgW-OSZ-D9iQ89iPh4TVqUcCCCrSxImzGqFLB5HOSaiv2Q=w512-h512-s-no-gm?authuser=0" class="white-image w-setting" alt="內埔道路救援">
-            <h2 class="mt-1 mb-1 ml-setting">全年無休 為您服務</h2>
-          </div>
-          <p class="mt-1 mb-1">無論颳風下雨，我們隨時待命，為您提供全天候服務。您可以放心，當您需要我們的時候，我們永遠在這裡，確保您的安全與便利。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  
-
-  <div id="services" class="container-fluid">
-    <div class="section mb-5 mt-5" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
-      <h2><span class="material-symbols-outlined">check_circle</span>服務項目</h2>
-      <div class="row">
-        <div class="col-4 col-md-2 mb-3 mt-3">
-          <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMR6EPug6DHXjmPDMtkT_oW9dmJyuJiUa9LgdZFGfaL7poCnCEIJwoTlNV6VLslzGESR9Z8gDoDp9K_67-UmMByvmG35JtLAmpVdBqZbe69U7pWz_WB_zYaTXQy-1aKkkL1IHNw2bLSiY4rLiix-9MV=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="南州拖吊車">
-          <h3>緊急拖吊</h3>
-        </div>
-        <div class="col-4 col-md-2 mb-3 mt-3">
-          <img data-src="https://lh3.googleusercontent.com/pw/AP1GczN21UOzu5WREtxLJxpNGsKczRSNXxUYEJo25B6BhajoNUiDcllDhnDzGdPF6UjRk2yDJt0TRdYQ7WVtJunBjIXlRIWfxhafjw_QhxIcrfaLzHxww2_vGarxvxKkNiDCg65NwRj6ugdCXadng0UuSRHN=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="南州吊車">
-          <h3>車輛救援</h3>
-        </div>
-        <div class="col-4 col-md-2 mb-3 mt-3">
-          <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNM0NEKn0N0dfUD1CNIpBETHJ8KwBoUXic6O7WAfwE-0fB0LyilgbeF7ZxdB9Ud_1kKklFTotukxowPwVM30qL9A61wDIgeFMpHBnOj13KTqyktGNTbyyaxBoMg8PLXaWWVIk00OLxkOJvZFB09hdSR=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="南州道路救援">
-          <h3>特殊救援</h3>
-        </div>
-        <div class="col-4 col-md-2 mb-3 mt-3">
-          <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNEi4y2jt3EOEfK_MlNyKjB1Lyb-3t46awr0Mznexos_vxDbtxQ19z3guNZXjRle_WCDMtEYxsX1sVijGoLWCkf4jwBPLsXNBg-Lw_chRDKrbzVTwCrITEBaQcRMcj6wwbatpXiGZKTbCx9WzCXk_zJ=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="竹田拖吊車">
-          <h3>長途拖吊</h3>
-        </div>
-        <div class="col-4 col-md-2 mb-3 mt-3">
-          <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNRR3JtTSgJuwtLyXb5dQW6UP56ZzQR2aIDXhf3IsYwDWkUUL0jYY5PuJhzLK7gYMxLM1xVzLcdr_n9PwnLvHHmuqsaM3zu-nVnkRqlSyNajF6DUbvVd9MyGSKCUR7BbyMa4Wd_2kKHr2xpiP4wTrer=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="竹田吊車">
-          <h3>物品吊掛</h3>
-        </div>
-        <div class="col-4 col-md-2 mb-3 mt-3">
-          <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPKPIXPAkTuenEtGLCcZfGAIEhtz2dpURHgRhzuu5ZLk5p_l_LxQC4hu2M1C3js80Ac15PC2kQ_qDH1hGcqkXCw-suv2fZ_4Idi5XhjcfsSNf1MacS7hsugMVfahsI221uXY2uZflbcsp6jZeODj0cU=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="竹田道路救援">
-          <h3>吊運服務</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!----------------------------------------------------------------------------------------------------------------------------->
-
-  <div id="about-us" class="container-fluid">
-    <div class="row mb-5 mt-5">
-      <div class="col-12 col-lg-4 mb-3 mt-3" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
-        <div class="section">
-          <h2><span class="material-symbols-outlined">groups</span>關於我們</h2>
-          <p>我們的拖吊車公司成立於2009年，從一輛小拖吊車起步，憑著專業技術和真誠服務，迅速成為本地領先的道路救援與拖吊服務提供商。我們的服務範圍涵蓋高雄和屏東地區，憑藉專業的技術、優質的服務和可靠的信譽，贏得了廣大客戶的信任和支持。</p>
-        </div>
-      </div>
-      <div class="col-12 col-lg-4 mb-3 mt-3" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
-        <div class="section">
-          <h2><span class="material-symbols-outlined">workspace_premium</span>使命</h2>
-          <p>我們的使命是提供快速、高效且安全的拖吊和道路救援服務，確保每一位客戶在遇到車輛故障或事故時，都能獲得即時的幫助和安心。我們致力於以客戶為中心，提供全天候24小時服務，確保您在任何時間、地點都能得到我們的支援。</p>
-        </div>
-      </div>
-      <div class="col-12 col-lg-4 mb-3 mt-3" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
-        <div class="section">
-          <h2><span class="material-symbols-outlined">diversity_4</span>團隊</h2>
-          <p>我們的團隊由一群經驗豐富、技術精湛且熱愛工作的專業人士組成。我們擁有豐富的道路救援和拖吊經驗，並定期接受培訓以保持最新的行業知識和技能。我們的司機和技術人員不僅擅長操作各類拖吊設備，還具備良好的應變能力和服務態度，確保每次任務都能安全、高效地完成。</p>
-        </div>
-      </div>
-    </div>
-  </div> 
-
-  <!----------------------------------------------------------------------------------------------------------------------------->
-  
-  <div id="cases" class="container-fluid">
-    <!-- 第一區塊 -->
-    <div class="row mt-5 justify-content-around">
-      <!-- 救援案例1 -->
-      <div class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>救援案例 一</h2>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_1">
-                  <!-- 顯示照片 -->
-              </div>
-            </div>
-          </div>
-          <div class="row mt-3 mb-3">
-            <div class="col">
-              <div class="photo photo_1">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMbVUDU76NJ8I3fcS_w17iso-tBpoGN9dmB8qCyFm0e3VFYIIHxSgvRpKhVIIZzqy419p2I4Zrjw4sqebxos2MUGj6VrrURyNjzwv0nAdv-YBemyCMsQ7tADr5lBmuH5CtNxBwWiUHTXbChb9H0N1Os=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="東港拖吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_1">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMyPh5Y-0mTmvfaAFYivpqo_jd7mNBjIj2UqnDmUh11-KF-9QHGfChYNn6nKktrGSJHj02OuQqyJpe57Iw1HlYicWGABP7WHJmKaAot1nm9LALh7SgdTY8Gh22A5PQeWXUuWhNSV68n6Vng4MsKFhh8=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="東港吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_1">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczOtdNXWwfBZZhX2HVyatfEUwIrli6x5PSiPguiXZ8AxPVsB2VWXVvRzvhllKmUcQIqyCa1BJGN1mkr8jGZ9v2luCkj_Wv2GQJwKblEOE3bnj6QcdeZo1CB8HuS8AnWmNDLG7pbL6bDatNOlKwpzkp3G=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="東港道路救援">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_1">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPfFD1fv1DEftdzdZcehU3oTe3kd0nmKbIV2IWVbQhuDoqZ96weJH3MQImf92OT2j500mUk4qX_mnODDN67bQI_rhu5iTXzqPvEd7J9gQS3EglYTwfMxZn9zKe1yPvLJ_rEWk3IIaHq4goHyxOMkAX2=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="東港保養廠">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_1">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNv8bN3_cuF78OGihKfkaf7_pL-8xvD9WnpzQ6D03hgohrdB8GVGBtq_BzwhRZxfR2D7kibuGUm-iH2bIyCRf_0MC-XUFkQPNgfiIHYOR6oZX9DiIMkB89A2amLoZJVBsusyd0440PqQk4Mxj1vea1r=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="東港汽車故障">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 救援案例2 -->
-      <div class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>救援案例 二</h2>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_2">
-                <!-- 顯示照片 -->
-              </div>
-            </div>
-          </div>
-
-          <div class="row mt-3 mb-3">
-            <div class="col">
-              <div class="photo photo_2">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMAYB7-d2i293CS--ujZt3c9AysmTeN7nsLtB7pZAeve7wlu0ICAmKmxRMLUdZezrUCCsaYRHc0hep8lLUpPz-BYhp0m_6HSkgRBZzXgG2XNMkhbTz52EvQnMXIMXolAPG-Zwv6TS1SwO4KXKoWTtPh=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="萬丹吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_2">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNTk2LjhaOD6q-XqtjLWK3xnQH4tCzKwCJ2jyZ_2QKVhXAqH_mabbeyyKRAX2t2uiRBJoHMIT51mMzGm_IFNV-wSA_2gcETxDDZSQVq0PyKi5ZWwiiTlBzV1Ud2XvHuhMwrI9bxLU196kSSBtg2xLBh=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="萬丹拖吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_2">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMEuwfK4XqQgqW4J-1KzbtRovKZ-CoCutQALZWM7E-bUwoEo8f7lRaiRaM23hOs7qWdwyo_IctI5lERSWbfQnrQPt2bAGt9R2Ps4-50Y0o_q6Lckt_JD0ZlLuyj6R9o71s1IY8uq-lwn-VO-faGKpqZ=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="萬丹道路救援">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_2">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczO6zgkJMwJ1pcvxqAGszjq7iSjQq0f1m9f26UD_vNs0NKTuwRbNLSszsNIEItHPJz_pZgcLe5Z3eQqPVU27zSeK0u8ao5JR_umHCDfsiMbFrj_Fp84mLB5wlXHsPyYJ5u6PEqJuKxAosP2a61-462Jx=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="萬丹汽車保養廠">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_2">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMRZyDjbayBUQcSOeG2ksKw96gOAmtYIWXM7rDcX2ckKfp0YyXEKPhsZPY1OTgLXvyxbQX7syLsjzDlnW_lbCE1wpW01x7wnBmY9qjNSYr2t9XV9Bl1txwbaNzfXJ_G4WYzcpl0IQBWQLt_S1nsKTSJ=w960-h540-s-no-gm?authuser=0" class="lazy-load" alt="萬丹汽車故障">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- 第二區塊 -->
-    <div class="row justify-content-around">
-      <!-- 救援案例3 -->
-      <div class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>救援案例 三</h2>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_3">
-                  <!-- 顯示照片 -->
-              </div>
-            </div>
-          </div>
-          <div class="row mt-3 mb-3">
-            <div class="col">
-              <div class="photo photo_3">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNst-F4NZdVuudoIMOmvr2dpYlykaN8NnQ_rUM8PX_wCgZk3VLI1reCcvoqU_KVBYVexKB4B4lMmUvCIeRyer5oAPTVFXDjJcQW5GdtcRUN7DcZWu6xDWA4DoGuwt96VUojlwwMupRqJf_W61ykeQPb=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="新園吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_3">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPv_XsNouxyhSIbkQkF8tY0HMnOCfuWo7nF2Tk_0i_SUz0m3jlRsGSQEP4_JjhVS3r1X9OYrP_ZQdnV7tdgu7C1gYDZKU1XekTXgd_JtDEaqvWb6STjrmnYLtpZAQorM4zvIXyiRw0oCAAvgbaZODyI=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="新園拖吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_3">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczP2zCm1Xuz0c55OwVekbcGPdsVp189Y08iuJkGvMl17v_6kbh69QIPUWcpb9cgfxmLnWqqBvCb5LmqW0ZC9L4aVvGiRB4_q7jQDm5iIYymAut2jQC7F0bSMlbwEEVmWThONtPwkjbRD4tm-GSos-tLS=w960-h540-s-no-gm?authuser=0" class="lazy-load" alt="新園道路救援">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_3">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczO2K6Qpd6tsxM7mvcF9PyDbHSFdO2VBYTM_PRhHSVJIlkxr-RfaNMi6P4rQ8JWAZdsu4kptlvVOMFpo7VvLt15Dldl0lZ7k04p9RnNQeZCBEmRrarfAaetTDHpx23NSEdMQ8Fhs2iSot9FXffUbSvpL=w960-h540-s-no-gm?authuser=0" class="lazy-load" alt="新園保養廠">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_3">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPAqhV1_bTu_XTo0-xpwwBXDSglPmecZ3MqY6lOLlm9SP83Fwia55W8rE9kQC33xgheKKdw-VfbhQTqhqKomr77_Pg7flfxo0XSP0jlxg4KSsfovW5-H8Lfu5KpsdDzFosd0OGnSRvIMkvm-3hgjq3k=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="新園汽車故障">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- 救援案例4 -->
-      <div class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>救援案例 四</h2>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_4">
-                <!-- 顯示照片 -->
-              </div>
-            </div>
-          </div>
-
-          <div class="row mt-3 mb-3">
-            <div class="col">
-              <div class="photo photo_4">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMoy_J_eLRA-Pi6foxmVUxKPW3k4ZohcTerGuuO1Fr8VM0B-Nch815MrW6p9D0Wa0LbgzBhC4WUFAIdzm4AkdePi_WIssbK2LGtsTRrx3qbgExTOy0mQjD64NOb_asvc1H3OYFNg8hbJ8WEaWccnxyG=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="大寮吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_4">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczN_BDyzlaxghsbVFB2k7ImvZJvRRELXBCFdiHvy7Vs5fz2LwsdYkmGBA-Pm8aE76TVqZItcsj5a7trnaEy3KwkMcQwAuW4V0jhjUTQTJWsDoYz6YrjMAo_Afn_cOc8wRA1yKmr6C7TDJfhqFg7KOOL5=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="大寮拖吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_4">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMVq2dHgvcIPxf45IMuEOBS7mp7c6JijjIMCS9OWP7gRkwVDuy_bnopL_ZkY_zAAtwS6uA-SYsCrGfzVVLsc9FPcUOSECd0jbeSI7HKqlF7vrDsxS0swOK0H42TBf61K8q-J-v26epjOgdlzVTNrt7o=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="大寮道路救援">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_4">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNyBkeVKwMjHSsqxolP2CQj6l13EUdiOl9qr7thT3Z-7-O8HPQEneriYjfl0_NYBTSnoeNZGl7GRelGfsmNRhS7z4ztzdBvTYU_1ZTtohclfn6bI8rAhKdNBayM1TVIaYPTL6N52oYQaSdC7lX59feS=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="大寮保養廠">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_4">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczOdjDb6eeDdythhLA4BEYSd9N9xEBkVRe5wTIN5dWYjGjyoXAcKZXJdrDqJRgqQDxMndYOQ7O8W1IGcWGbtSYUchmC1AyOJsJIgHXsr59zgCmwA2wgu6ZlldtL9_KBKUpHP_JTGGNzbZvVbQ2KcHIpD=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="大寮汽車故障">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- 第三區塊 -->
-    <div class="row justify-content-around">
-      <!-- 救援案例5 -->
-      <div class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>救援案例 五</h2>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_5">
-                  <!-- 顯示照片 -->
-              </div>
-            </div>
-          </div>
-          <div class="row mt-3 mb-3">
-            <div class="col">
-              <div class="photo photo_5">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPYALksR6MHTyWLeq09BjVaXpKn9i4zBQcl9tmlh1cvZ9xexN7uC_E5KUCwUlIHGzfrOzfpKaRSUAScqReSFQ3Y8dfEj3W_QujvpgEY-Uj4R4JwZ9D6sTFQ-WgH23Qwk68pj44s5xUJCs5qih602AHd=w843-h474-s-no-gm?authuser=0" class="lazy-load" alt="潮州道路救援">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_5">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMnhm_FLWtG34evf4pE8oWJjcKb3aY1Yt9otshLWjN5mfelzcu1aBucJOS8jJE1pDceWVHDVet2D5b7quq8ti9VwE1eQGNOFUJeC3qfve0Fte5cHynLdm8SRokjWPyhl5fX1f0afGLFQadMRuu_Xngz=w1441-h807-s-no-gm?authuser=0" class="lazy-load" alt="潮州吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_5">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczOlWsOR6hhh18grEvS1Z-eehfq65Y49RDMV2koIRMfzVas2k8nNJ5MmsY38YsZLCtKV70pMbW2BHqv3XRAmD6Ast5TQRWVAdsJscPMPD9DcLOLaxORpdXTQtR9hi0BlaGAXE2HIR4nQpmuvjSo392Hn=w843-h474-s-no-gm?authuser=0" class="lazy-load" alt="潮州拖吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_5">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczP13CNxsRQ_b0hwpDUY388IkQtKbCDZbfKH0KB8rKV6IVy2_KLZbgv7Yz36kSoGAqGPMw1snj01Hf5Xqwq7AhdDtBB5zQy_ul1KRukTSs5fHJIydoVWTmcktpXzzrUunbHExUMb5kvxV0BHEtb95WUo=w843-h474-s-no-gm?authuser=0" class="lazy-load" alt="潮州汽車故障">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_5">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMw5bjlW2-r1djNJvaHtfZgNgUFBnLsqgL1yKq25Wg4tZgwwYmJK1V1w_IcyjGynIh3dJugyZywI_z8o9Rj5aa2Ki7lvHqFRxW-ql3Cu31ilMqsHwLN89smmGAPRkJS2K1gJXt6Omwk-HECUevwnWNp=w843-h474-s-no-gm?authuser=0" class="lazy-load" alt="潮州保養廠">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- 救援案例6 -->
-      <div class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>救援案例 六</h2>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_6">
-                <!-- 顯示照片 -->
-              </div>
-            </div>
-          </div>
-
-          <div class="row mt-3 mb-3">
-            <div class="col">
-              <div class="photo photo_6">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPUyot3DNCzZlIHd9_VM9CTN78qz82kSg-QyoEFWhqkSJg1WdUcGALwgmlDbWnTSQd5bS8-Xclk9NWvxlVa5NgLjOaEaWdzZEC14xRpp-Kjwr7TtQZo6WrhgWTN6zElFDtw7EB_VV_9a-XA5IW23kaN=w1607-h911-s-no-gm?authuser=0" class="lazy-load" alt="林園保養廠">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_6">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNuKtNk3AOQTNCe7o92DZdXN3-dUvqzFd5Sjne1lvbmQ69fTFVhLlmJ28jt1ax-3W1x48HtveUvcCEhU8xQqwYN04CC8CxR57HAoul4qbh0dqgvtujcG6tIMx4CS-XRb4haNhljMSEXetZtIYYXMBEu=w843-h474-s-no-gm?authuser=0" class="lazy-load" alt="林園吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_6">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPBRLqisyXh3BJ6nCii0nOspBGucTXojWu03Hkv3_jrUedfmXVG8w11N3wUqcfmQARf3yX259OnDEvYwId5eQBxHW4HyaojJCyzDt6Nh8R36k_erux2C0OeUUOSCCago44Yi_A4-7yq-om0U_t4-LsL=w843-h474-s-no-gm?authuser=0" class="lazy-load" alt="林園拖吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_6">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNwoxfybMIf1qzASaAfSKP3e7Ql9HW0p3pSXUUgDqzLhmmJtn7edbKqGQg1AamtAXT4Q5EMMpjfOHzJbfAbMwHD48Ln7Wp-trsNevuZLUg93d9JRHsPz_DyCii5fHES4yJimFgJmgLihzsR7S_T61a6=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="林園道路救援">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_6">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMof_QAH2sXNp8sNaO6cIpxC_lpINZwIVHp4NSa0I00YAVnZ7_XmmJWOoX3MZgEcYUApg7b76PM2NLBphDe_nSoN0Q8e-l4vypSZPTv0XlLUakxqfUb-7Kc-mB9hIarXN0yfp_0BkkM4F-idhbjtpMn=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="林園汽車故障">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    
-    <!-- 第四區塊 -->
-    <div class="row justify-content-around">
-      <!-- 救援案例7 -->
-      <div class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>救援案例 七</h2>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_7">
-                  <!-- 顯示照片 -->
-              </div>
-            </div>
-          </div>
-          <div class="row mt-3 mb-3">
-            <div class="col">
-              <div class="photo photo_7">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNhmIkWPWD_B8X_cuxXxwN5g75BlOYbM_CL3_iNSm2BrZh55DB1n8DsTd6NHd9tbLo-TnR4E0pubNcb3zpddB3RUbsCL2N6ThrJLiqEb463dkJe-rIczlP7Csy2Sqm_S7VoI3Z8uPVSFO6LLxborAlS=w952-h536-s-no-gm?authuser=0" class="lazy-load" alt="仁武道路救援">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_7">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPFJfHTNELELILIhZ6TRH7C1xEBAAMxaqcpKugLnaKRcUL4XGsWUWgT3DpSbQaa3YuIQgdWKU2LsB3q8AclcaUuZ0ZyOJ8v2dBGzpjS7m1POjCsku6YRvTfo-RslbH775RajIMVZxxyGa3VnP-_riyU=w952-h536-s-no-gm?authuser=0" class="lazy-load" alt="仁武吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_7">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMu6DA-j0YcTDR627txsEcPWvk2U3xCAVJ70cN5JN7sfs-L3-WfgzwhPTqM_2DXXqp7YiRV82CyPi4LmFXEXu3XzCswKHVbIhP5_mIIsp3uPzamPUi2G8ooYVFiBK6j1oj9GtjYRAFfbCdGWy8qALXO=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="仁武拖吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_7">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPTyvkINzF30lLB7n5jyblJQ9tKSgX461Sirorr7whmRpPJ0zingXPck7abcjVi_uZjUsS-Lr8IA04sREvUFsBRKANrKn2qhZQ39OqD7mrego4PSeXIyCvX8WcwNSpv6qJkadXImsRZBWeE8rkjZG-5=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="仁武汽車故障">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_7">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMqV80AeV762-1ybahRiA-2ZQREjZcGNLLXam8RoKcd9HcIwsathZIJlrhwHcyCklITa3YfigLXwLvAT3isMB5wC_tH-lc6Xo8xMVW8sVZlo84tGUcvJipsYznpyeY_dXoigQedwO8nBY8bWD2vnXBb=w952-h536-s-no-gm?authuser=0" class="lazy-load" alt="仁武保養廠">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-
-      <!-- 吊掛作業1 -->
-      <div id="operations" class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>吊掛作業 一</h2>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_8">
-                <!-- 顯示照片 -->
-              </div>
-            </div>
-          </div>
-
-          <div class="row mt-3 mb-3">
-            <div class="col">
-              <div class="photo photo_8">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczP0sF2-x0DO4auNN6t72jHqW6mA2WVPY-Jsg0H1bA9079tquWVp0Vs-PZI7oejh0dLBOgGSDS1LjorIh02XHAwn-Mj0xa3luZ-kbrMTwg0IOTHT_QpGuU9eWvC-dsnVXj_xdSx0mxdGn51ZUFFLYicK=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="楠梓保養廠">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_8">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMvxW3KFLSWFRMi4XhHvROFpqb5NE4SEsDjLKbmPEJu-e8TTtqKDcTjolznzExc6NGvRhmQaMVzkDpzNCfslJU2lPGBTucjcBWNdQr9Z2ofLLoiBRj6cPOomV6DhjIlRKCL8CCxFKRO391B1lTfgx4w=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="楠梓吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_8">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczN9eyO1uizCZUOZ0r0EIzhiio-RIJXmSQUa5JCrA5zV0Jd1VKqFoEIa8BdjDU8tokLUpCQOVFl6g3E-sDsb3j8VP2SmPeL9tDofQI_O4lmiRA5htIP7fy3dtowrxNnRW6wYnUfQzPUx_D64CI6IwMRO=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="楠梓拖吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_8">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMnMFceRfTt0u3HQA8w7jv3avJ7g_-e6HwxUhjZ_Ri1czq1BwweDrnadLWYSBdv4NdTJR2Q2v9skSmgOlwsY4mVq8ceLdWn9W7BUMAYKwEO9BIHVsewiE_ddOxiNFdz8AxWaAuahdPUAZAwjaB71PLu=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="楠梓汽車故障">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_8">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNxJ59hyukhQ-2VBkuxUK2_5hE91zNiSUVgYXCihb1tFN26bWbwPIUVSjTipz18HiDRF3RlSpYIEJwJzfXC5sxPzkhDJRxjgmir9WhN1nbUe0Q9I5JQYw8mgwlicZrTjrt9_ZT38TrukvQ1LtCx1_Ta=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="楠梓道路救援">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    
-    <!-- 第五區塊 -->
-    <div class="row justify-content-around">
-      <!-- 吊掛作業2 -->
-      <div class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>吊掛作業 二</h2>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_9">
-                  <!-- 顯示照片 -->
-              </div>
-            </div>
-          </div>
-          <div class="row mt-3 mb-3">
-            <div class="col">
-              <div class="photo photo_9">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczOAVl6-qUJ0KDOD7d4VJ-TVRGO4-4urqLEzatrh0yxycC2f6v51cd6hfFyvxW2yJ4B5lIdy6U7WVAlptSUbFfrbyVBDtlHUgQLpxhcuTSZaL1gEUElbf-asfdv5sY5MYtAhqFF2-VSQ1rzDbZtPlCwG=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳳山道路救援">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_9">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczOG9QNg1boPelKcgUT4v-PzcEx7Inj1cS5flT__CwzAxucu0cOsq00fZv4ZoV61N2TKgJBiNu8nu7HCPryu-Rhr74nkwsexxlS7z39JtyVr2VdJbvlzCiDWYPEwKrYxqUHQwh_5VQorW1M452j9feiD=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳳山吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_9">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPzCjcwR_GQr-EsTLvNyIqEK31NRxasqbupLqGis2KpbAheZtqwOtGw-Vo-SgIjoCUqbkcgd5kAWo6b_Oh9ApfC2TjmcF42WGGdK1EwBXO0WcCADj1Sc5J2Ih5lSLRJcmYjJUQzceKAdW-DrISI1oMr=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳳山拖吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_9">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMrHKhq_qSntrz4TzMCCJSBdkv-munNgRyCA0SYzoW3T3AGpguuPM-YNhZRIWT-nMqtPEo2Z06uQBmBgWmvSrOJ7jfMhfGY-uAl9jxTcTMZJvim_tYvxOhuWPK0sSI2R0-6Av_14gi5SthU6IZyNHqm=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳳山汽車故障">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_9">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNWEHttxi_RVqzvwvQnRs1CA0QaClTbZpFf8MTitqU7_5v_CHqiblqWlbwuJN4rQ4S0MvMDCAYehPGo1191FhGKneprqxD8SDWWQv9hNAV7rUNhLNQdO0u9hwQfxwBufbDgidFl5WNsSAYu9qZwDzvJ=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳳山保養廠">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- 吊掛作業3 -->
-      <div class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>吊掛作業 三</h2>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_10">
-                <!-- 顯示照片 -->
-              </div>
-            </div>
-          </div>
-
-          <div class="row mt-3 mb-3">
-            <div class="col">
-              <div class="photo photo_10">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPEnDGct21GWC_on6MILtOpwfPHm_gO7y005Z6gpEQJ68HV7r1U_o4xWsQECvsu7eyncDGS3yCyxS6yhj4yNAn-R5vQzHBZ1oV06N3JhIKw2lCgKfI_cZcQD-cuaPbptERIZZb7hTlGi2eFCoy4e7MB=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳥松保養廠">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_10">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczP8ibRzqlOXaZ0wXrvJD9EVpIWEnEQ1xKsU6-i1wlC_ZQAFxjQ3559iN9PaTwaNreQxMyKMZmmlKG0A4YFYlckESBbuz4nEibeyk7flqwKwU22_plgfNs5SO1xPr5hBdnJ3eddeGsCnqQRj5cmi18yS=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳥松吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_10">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMm1iKQL3MU0NcGMLukUm-6XaavtgRvnI_kUhuD2VZRbBSePbN0MeWzV5JyZk7wK8rWcqEqp5n46Z1pNKkam9ftb0WPbMh4ARb7TPwd3iHYnzBUP1D5jCEar2exA_OLHlhGFusSOuZvN2-fjqm3gNeI=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳥松拖吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_10">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczN3iVswwwGxkxMyJDCOz93Ln75OFClQWESI3UZIoPsQ_axb4hDHdWa3AyqL1WkwWFNmHHZNMu105jUWpXLlD7Y0YHHhDdq6OE6Dw0xrYnCfgnfBydzx9d9MGbiJhaJW6lY2SEeDDdS2fJCEDaBQDBu1=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳥松汽車故障">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_10">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczOMlnif_qv56QvTxfthH4szocE3YjJG1eLcO43vkqNc3bPmWXcq4ajIa1-TjU17-GKzI0D4w_svpcjhX-4uqYlDW2eIFb2GgsK1G7DwUoHQlDEr8ABjP2C0mMXsqo2YEIFnSt3og860uvceF59T64eG=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳥松道路救援">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!----------------------------------------------------------------------------------------------------------------------------->
-
-  <div id="reviews" class="container-fluid">
-    <div class="row align-items-center reviews-container" id="reviews-container">
-      <h2 class="mt-4 mb-2">客戶評價 <span class="material-symbols-outlined">thumb_up</span></h2>
-    </div>
-  </div>
-
-  <!----------------------------------------------------------------------------------------------------------------------------->
-
-  <div class="fixed-buttons-container">
-    <button class="call-button" onclick="makeCall()" aria-label="撥打電話">
-      <svg class="icon"><use xlink:href="#icon-phone"></use></svg>
-    </button>
-
-    <button class="Line-button" onclick="openLine()" aria-label="加Line好友">
-      <svg class="icon"><use xlink:href="#icon-line"></use></svg>
-    </button>
-  </div>
-
-  <footer class="bg-gradient bg-dark">
-      <p>&copy; 2024  拾捌拖吊車｜道路救援 服務公司版權所有.</p>
-  </footer>
-
 <!----------------------------------------------------------------------------------------------------------------------------->
 
-<!-- 引入 Aos JS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <div id="photoPage" class="container-fluid">
+      <div class="formBlock">
+          <h2>GPS定位派車</h2>
+          <div class="row" id="gridContainer"></div>
+          <div class="row">
+              <div class="col-12">
+                  <button id="PhotoNext" class="formButton" disabled>下一步</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+  <div id="mapPage" class="container-fluid" style="display: none;">
+      <div class="formBlock">
+          <div class="input-container">
+            <h2>GPS定位派車</h2>     
+            <button id="mapPrevious" class="material-symbols-outlined" title="上一頁">arrow_back</button>
+          </div>
+          <div class="row">
+              <div class="col">
+                  <div class="input-container">
+                      <input class="formInput" type="text" id="myGps" placeholder="" readonly>
+                      <label for="myGps" class="moveLabel">您的車輛救援位置*</label>
+                      <input id="myGpsHidden" type="hidden" value="-1">
+                  </div>
+              </div>
+              <button id="myGpsBtn">
+                  <img src="https://lh3.googleusercontent.com/pw/AP1GczMJ3-R91LpMseVbTlDr3z0UP2YCpEVyDueZf7RROSZqrW9DXe_b2QoQPDtwzZoNAQVkFtCdB4WXeivJOkYzFeKgbnh_EoHCtkBNN20LpweGo6a2BHITVmexRex9ADqyQdwt6OmNd9hYzG2NFxOkT_oc=w512-h512-s-no-gm?authuser=0" alt="my GPS Icon" title="地圖定位">
+              </button>
+          </div>
+          <div class="row">
+              <div class="col">
+                  <div class="input-container">
+                      <input class="formInput" type="text" id="goGps" placeholder="" readonly>
+                      <label for="goGps" class="moveLabel">想去的維修廠 (依情況, 可不填)</label>
+                      <button id="delGoGpsInputBtn" class="material-symbols-outlined" title="清除" style="display: none;">close</button>
+                      <input id="goGpsHidden" type="hidden" value="-1">
+                  </div>
+              </div>
+              <button id="goGpsBtn">
+                  <img src="https://lh3.googleusercontent.com/pw/AP1GczMqhcGedtTjCXJXT_GhtoxateyV_BRpDnOvpSbB0TU55ktyfyTh2_CDvRObTg4uEdZYgPBpI4PZmaRyzKkPwhhoVZG1R2MVzxK39ypkCfZXtbOOoQmnX4RXPc8Bsu0SEpjMW1ld7oPJDYcAxNRr6A4d=w512-h512-s-no-gm?authuser=0" alt="go GPS Icon" title="地圖定位">
+              </button>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <div id="mapShow"></div>
+              </div>
+              <div class="col-12 col-md-4">
+                  <div class="input-container">
+                      <input class="formInput" type="text" id="gpsCar" value="大貨車模式" placeholder="" readonly>
+                      <label for="gpsCar" class="moveLabel">導航路線*</label>
+                  </div>
+              </div>
+              <div class="col-6 col-md-4">
+                  <div class="input-container">
+                      <input class="formInput" type="text" id="gpsDistance" placeholder="" value="0公里" readonly>
+                      <label for="gpsDistance" class="moveLabel">計算距離* (自動)</label>
+                  </div>
+              </div>     
+              <div class="col-6 col-md-4">
+                  <div class="input-container">
+                      <input class="formInput" type="text" id="gpstime" placeholder="" value="0分鐘" readonly>
+                      <label for="gpstime" class="moveLabel">預計* (起拖到維修廠)</label>
+                  </div>
+              </div>
+              <div class="col-12">
+                  <button id="mapNext" class="formButton" disabled>下一步</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div id="submitPage" class="container-fluid" style="display: none;">
+      <div class="formBlock">
+          <div class="input-container">
+              <h2>GPS定位派車</h2>
+              <button id="submitPrevious" class="material-symbols-outlined" title="上一頁">arrow_back</button>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <div class="input-container">
+                      <input class="formInput" type="text" id="customerName" placeholder="" autocomplete="new-password">
+                      <label for="customerName" class="moveLabel">您的稱呼*</label>
+                      <div id="customerNameError" class="error"></div>
+                  </div>
+              </div>
+              <div class="col-6">
+                  <div class="input-container">
+                      <input class="formInput" id="phone" placeholder="" inputmode="numeric" pattern="\d{10}" title="請輸入 10 位數字" autocomplete="new-password" oninput="validatePhoneInput(this)">
+                      <label for="phone" class="moveLabel">連絡電話*</label>
+                      <div id="phoneError" class="error"></div>
+                  </div>
+              </div>
+
+              <div class="col-6">
+                  <div class="input-container">
+                      <input class="formInput" type="text" id="licensePlate" placeholder="" autocomplete="new-password" oninput="this.value = this.value.toUpperCase();">
+                      <label for="licensePlate" class="moveLabel">車牌*</label>
+                      <div id="licensePlateError" class="error"></div>
+                  </div>
+              </div>
+
+              <div class="col-12">
+                  <div class="input-container">
+                      <input class="formInput" type="text" id="carModel" placeholder="" autocomplete="new-password">
+                      <label for="carModel" class="moveLabel">車型* (一般轎車、休旅車、紅牌重機、35頓砂石車)</label>
+                      <div id="carModelError" class="error"></div>
+                  </div>
+              </div>
+              <div class="col-12">
+                  <div class="input-container">
+                      <input class="formInput" type="text" id="reason" placeholder="" autocomplete="new-password">
+                      <label for="reason" class="moveLabel">拖吊原因* (例如: 後輪爆胎、汽車故障、車輛陷入困境)</label>
+                      <div id="reasonError" class="error"></div>
+                  </div>
+              </div>
+
+              <div class="col-12">
+                  <div class="input-container">
+                      <textarea class="formInput" id="remark" placeholder="" rows="4"></textarea>
+                      <label for="remark" class="moveLabel">其他備註 (例如: 國一北上362K路肩 26頓大貨車 滿載)</label>
+                  </div>
+              </div>
+
+              <div class="col-12">
+                  <button id="submitBtn" class="formButton">送出資料</button>
+              </div>
+          </div>
+      </div>
+        <div class="fixed-buttons-container">
+        <button class="call-button" onclick="makeCall()" aria-label="撥打電話">
+          <svg class="icon"><use xlink:href="#icon-phone"></use></svg>
+        </button>
+
+        <button class="Line-button" onclick="openLine()" aria-label="加Line好友">
+          <svg class="icon"><use xlink:href="#icon-line"></use></svg>
+        </button>
+      </div>
+  </div>
+
+
+  <!--  地圖浮動  -->
+  <div class="map-content">
+      <div id="map"></div>
+          <!-- 包裹搜尋框和按鈕的容器 -->
+          <div class="search-container">
+              <input id="searchInput" type="text" placeholder="在這裡搜尋">
+              <button id="delSearchTxtBtn" class="material-symbols-outlined" title="清除">close</button>
+              <button id="searchBtn" class="material-symbols-outlined" title="搜尋">search</button>
+          </div>
+          <input id="showMapXY" readonly></input>
+          <button id="shareLocation" class="material-symbols-outlined" title="重新定位">my_location</button>
+          <button id="checkGpsOkBtn">確定位置</button>
+      </div>
+  </div>
+
+  <!----------------------------------------------------------------------------------------------------------------------------->
+
+  <!-- 警告視窗 -->
+  <div id="alertBox" class="alert-box">
+      <div class="alert-content">
+          <p id="alertMessage"></p>
+          <button id="confirmButton">確定</button>
+      </div>
+  </div>
+
+  <!-- 加載效果的容器 -->
+  <div class="containerLoader">
+    <div class="central">
+      <div class="loader" id="leader"></div>
+    </div>
+  </div>  
+
+  <!-- 頁腳 -->
+  <footer class="bg-gradient bg-dark">
+      <p>&copy; 2024 拾捌拖吊車 服務公司版權所有.</p>
+  </footer>
+
+
+<!----------------------------------------------------------------------------------------------------------------------------->
 
 <!-- 引入 Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-<script> 
+<script>
 
-  document.documentElement.style.overflowY = 'hidden'; // 禁止html垂直滾動
+  startLoading();
 
-  function stopRotation() {
-    const containerLoader = document.querySelector('.containerLoader');
-    const loader = document.querySelector('.loader');
-    loader.style.animationPlayState = 'paused';       // 暫停動畫旋轉
-    loader.style.display = 'none';                    // 隱藏loader
-    containerLoader.style.display = 'none';           // 隱藏容器
-    document.documentElement.style.overflow = 'auto'; // 啟用html垂直滾動
+// ========================================================================================================
+
+  function createUploadBox() {
+      // 創建外層 div 和設置類名
+      const colDiv = document.createElement('div');
+      colDiv.className = 'col';
+
+      // 創建內層 uploadBox div 和設置類名
+      const uploadBox = document.createElement('div');
+      uploadBox.className = 'uploadBox';
+
+      // 創建 file input 元素
+      const fileInput = document.createElement('input');
+      fileInput.type = 'file';
+      fileInput.accept = 'image/*';
+
+      // 創建 label 元素
+      const label = document.createElement('label');
+      label.textContent = '上傳圖片';
+
+      // 創建 delete button 元素
+      const delPhotoBtn = document.createElement('button');
+      delPhotoBtn.className = 'delPhotoBtn material-symbols-outlined';
+      delPhotoBtn.title = '清除';
+      delPhotoBtn.textContent = 'close';
+
+      // 創建 image 元素
+      const image = document.createElement('img');
+
+      // 將 file input、label、delete button 和 image 添加到 uploadBox 中
+      uploadBox.appendChild(fileInput);
+      uploadBox.appendChild(label);
+      uploadBox.appendChild(image);
+      uploadBox.appendChild(delPhotoBtn);
+
+      // 將 uploadBox 添加到 colDiv 中
+      colDiv.appendChild(uploadBox);
+
+      // 設置 file input 的 change 事件
+      fileInput.addEventListener('change', function(event) {
+          const file = event.target.files[0];
+          if (file) {
+              const reader = new FileReader();
+              reader.onload = function(e) {
+                  const imageUrl = e.target.result;
+                  let isDuplicate = false; // 初始化 isDuplicate 變數
+
+                  // 遍歷所有圖片格子，檢查是否有重複的圖片
+                  const allImages = document.querySelectorAll('.uploadBox img');
+                  for (let img of allImages) {
+                      if (img.src === imageUrl) {
+                          isDuplicate = true;
+                          break; // 找到重複的圖片，退出循環
+                      }
+                  }
+
+                  if (isDuplicate) {
+                      alertMsg('這張圖片已經上傳過了！');
+                      return; // 退出，不上傳重複圖片
+                  }
+                  
+                  image.src = imageUrl;            // 設置 image 元素的 src 屬性
+                  uploadBox.removeChild(label);    // 移除 label 元素
+                  image.style.display = 'block';   // 顯示圖片
+
+                  if (countUploadedImages() >= 2 ) {
+                      document.getElementById('PhotoNext').disabled = false; // 啟用按鈕
+                  }
+                  // 檢查當前剩餘的空格子數量
+                  const container = document.getElementById('gridContainer');
+
+                  // 檢查當前的 box 是否是 container 的最後一個子元素
+                  if (countUploadedImages() === container.children.length) {
+                      initializeGrid(); // 如果是最後一個 box，創建新的格子
+                  }
+              };
+              reader.readAsDataURL(file); // 讀取文件並轉換為 Data URL
+          }
+      });
+
+      
+
+      // 設置 delete button 的 click 事件
+      delPhotoBtn.addEventListener('click', function() {
+          const container = document.getElementById('gridContainer');
+          const isLastBox = colDiv === container.lastElementChild;
+
+          colDiv.remove(); // 刪除整個格子，包括 uploadBox 和 fileInput 等
+          
+          if (countUploadedImages() < 2) {
+              document.getElementById('PhotoNext').disabled = true; // 禁用按鈕 
+          }
+          
+          // 檢查刪除的格子是否為最後一格或是沒有格子，若是，則創建一個新的格子
+          if (isLastBox || container.children.length < 6) {
+              initializeGrid(); // 創建新的格子
+          }
+      });
+
+      return colDiv;
   }
 
- //========================================================================
+  function countUploadedImages() {
+      // 遍歷所有的 .uploadBox 元素
+      const uploadBoxes = document.querySelectorAll('.uploadBox');
+      let imageCount = 0;
 
-  // 顯示所有評價
-  function displayAllReviews() {
-      const container = document.getElementById('reviews-container'); // 獲取評價容器
-      let k = 0; // 初始化數字計數器
-      reviews.forEach(review => {
-          const reviewElement = document.createElement('div'); // 創建評價元素
-          reviewElement.className = 'col-12 col-md-6 col-xl-4 mb-1'; // 設置元素的class，使用Bootstrap的網格系統
-          
-          k += 1; // 增加數字計數器 下方key ${k}
-          reviewElement.innerHTML = `
-              <div class="review">
-                  <img src="${review}" alt="客戶評價" loading="lazy">
-              </div>`; // 設置圖片元素
-          container.appendChild(reviewElement); // 將評價元素添加到容器中
+      uploadBoxes.forEach(box => {
+          // 找到每個 .uploadBox 元素中的 img 元素
+          const images = box.querySelectorAll('img');
+          // 遍歷每個 img 元素，檢查是否有有效的 src
+          images.forEach(img => {
+              if (img.src) {
+                  imageCount += 1; // 有圖片則計數
+              }
+          });
+      });
+      return imageCount;
+  }
+
+
+  function initializeGrid() {
+      const container = document.getElementById('gridContainer');
+      // 檢查格子數量（不超過8個）
+      if (container.children.length < 8) {
+          const box = createUploadBox();
+          container.appendChild(box);
+      }
+  }
+
+// ========================================================================================================
+
+  let map;            // 地圖
+  let marker;         // 圖釘
+  let myMarker;       // 圖釘
+  let goMarker;       // 圖釘
+  let geocoder;       // 地圖 
+  let originalMarker; // 圖釘GPS最初的定位
+
+  var firstLatitude = -1;
+  var firstLongitude = -1;        
+
+  const taiwanBounds = {
+      north: 25.5651,
+      south: 20.4531,
+      east: 122.0271,
+      west: 119.3058
+  };
+
+  startLoading(); 
+
+  function initMap() {
+
+      mapShow = new google.maps.Map(document.getElementById('mapShow'), {
+          center: { lat: 22.65, lng: 120.4 },
+          zoom: 10,
+          gestureHandling: 'auto',   // 禁用所有手勢，包括雙指縮放
+          zoomControl: false,        // 隱藏放大縮小控件
+          streetViewControl: false,  // 隱藏街景控件（可選）
+          mapTypeControl: false,     // 隱藏地圖類型控件（可選）
+          fullscreenControl: false,  // 隱藏全螢幕控件（可選）
+      });
+
+
+      map = new google.maps.Map(document.getElementById('map'), {
+          center: { lat: 22.700901, lng: 120.420723 },
+          zoom: 10,
+          gestureHandling: 'greedy', // 禁用所有手勢，包括雙指縮放
+          zoomControl: false,        // 隱藏放大縮小控件
+          streetViewControl: false,  // 隱藏街景控件（可選）
+          mapTypeControl: false,     // 隱藏地圖類型控件（可選）
+          fullscreenControl: false,  // 隱藏全螢幕控件（可選）
+      });
+
+      geocoder = new google.maps.Geocoder();
+
+      // 創建 InfoWindow
+      infoWindow = new google.maps.InfoWindow({
+          content: '',
+          disableAutoPan: true // 禁用自動平移以顯示 InfoWindow
+      });
+      
+  }
+
+
+// ========================================================================================================
+
+
+  var showMapBounds = new google.maps.LatLngBounds();
+
+  // 變更showMap的座標
+  function updateMapShow(targetInput, x, y) {
+
+      if (targetInput.id == "myGps") {
+
+          if (myMarker) {
+              myMarker.setMap(null);
+          }
+
+          myMarker = new google.maps.Marker({
+              position: { lat: x, lng: y },
+              map: mapShow,
+              draggable: false,
+              icon: {
+                  url: 'https://lh3.googleusercontent.com/pw/AP1GczMJ3-R91LpMseVbTlDr3z0UP2YCpEVyDueZf7RROSZqrW9DXe_b2QoQPDtwzZoNAQVkFtCdB4WXeivJOkYzFeKgbnh_EoHCtkBNN20LpweGo6a2BHITVmexRex9ADqyQdwt6OmNd9hYzG2NFxOkT_oc=w512-h512-s-no-gm?authuser=0',
+                  scaledSize: new google.maps.Size(50, 50) // 調整圖標大小
+              },
+          });
+          showMapBounds.extend(new google.maps.LatLng(x, y));  // 修正位置
+      } else if (targetInput.id == "goGps") {
+        
+          // 如果已有圖釘，先移除
+          if (goMarker) {
+              goMarker.setMap(null);
+          }
+
+          goMarker = new google.maps.Marker({
+              position: { lat: x, lng: y },
+              map: mapShow,
+              draggable: false,
+              icon: {
+                  url: 'https://lh3.googleusercontent.com/pw/AP1GczMqhcGedtTjCXJXT_GhtoxateyV_BRpDnOvpSbB0TU55ktyfyTh2_CDvRObTg4uEdZYgPBpI4PZmaRyzKkPwhhoVZG1R2MVzxK39ypkCfZXtbOOoQmnX4RXPc8Bsu0SEpjMW1ld7oPJDYcAxNRr6A4d=w512-h512-s-no-gm?authuser=0',
+                  scaledSize: new google.maps.Size(50, 50) // 調整圖標大小
+              },
+          });
+          showMapBounds.extend(new google.maps.LatLng(x, y));  // 修正位置
+      }
+      
+      mapShow.fitBounds(showMapBounds);  // 調整地圖的視野以適應所有標記
+
+      // 設置最小縮放級別
+      const MIN_ZOOM_LEVEL = 16;
+      google.maps.event.addListenerOnce(mapShow, 'bounds_changed', () => {
+          const bounds = mapShow.getBounds();
+          if (bounds) {
+              const zoom = mapShow.getZoom();
+              if (zoom > MIN_ZOOM_LEVEL) {
+                  mapShow.setZoom(MIN_ZOOM_LEVEL);
+              }
+          }
+      });
+
+      // 解析經緯度座標
+      const [myGpsLat, myGpsLng] = myGpsHidden.value.split(',').map(Number);
+      const [goGpsLat, goGpsLng] = goGpsHidden.value.split(',').map(Number);
+
+      // 在這裡添加距離和路線計算
+      if (myGpsHidden.value !== "-1" && goGpsHidden.value !== "-1") {
+          calculateDistance(myGpsLat, myGpsLng, goGpsLat, goGpsLng);
+          calculateRoute(myGpsLat, myGpsLng, goGpsLat, goGpsLng);
+      }
+  }
+
+
+// ========================================================================================================
+
+  // 設置 Google Maps API 計算距離 (每日2000次免費請求)
+  function calculateDistance(startLat, startLng, endLat, endLng) {
+      const service = new google.maps.DistanceMatrixService();
+      service.getDistanceMatrix({
+          origins: [{ lat: startLat, lng: startLng }],
+          destinations: [{ lat: endLat, lng: endLng }],
+          travelMode: google.maps.TravelMode.DRIVING,
+          drivingOptions: {
+              departureTime: new Date(),  // 現在的時間
+              trafficModel: 'bestguess'   // 最佳猜測的交通模型
+          }
+      }, (response, status) => {
+          if (status === google.maps.DistanceMatrixStatus.OK) {
+              const result = response.rows[0].elements[0];
+              if (result.status === 'OK') {
+                  const distance = result.distance.text;  // 距離文字
+                  const duration = result.duration.text;  // 預計時間
+                  gpstime.value = duration;
+                  gpsDistance.value = distance;
+              } else {
+                  gpstime.value = "錯誤: " + result.status;
+                  gpsDistance.value = "錯誤: " + result.status;
+              }
+          } else {
+                  gpstime.value = "錯誤: " + status;
+                  gpsDistance.value = "錯誤: " + status;
+          }
       });
   }
 
- //========================================================================
+  var directionsRenderer = new google.maps.DirectionsRenderer({
+      suppressMarkers: true  // 隱藏默認標記
+  });
+
+  // 使用 Directions API 來計算兩點之間的路線，並設置為卡車模式 (每日2000次免費請求)
+  function calculateRoute(startLat, startLng, endLat, endLng) {
+      const directionsService = new google.maps.DirectionsService();   
+
+      directionsRenderer.setDirections({});  // 清除路線
+      directionsRenderer.setMap(null); // 移除路線渲染器
+
+      directionsService.route({
+          origin: new google.maps.LatLng(startLat, startLng),
+          destination: new google.maps.LatLng(endLat, endLng),
+          travelMode: google.maps.TravelMode.DRIVING,
+          unitSystem: google.maps.UnitSystem.METRIC,
+          drivingOptions: {
+              departureTime: new Date(),  // 現在的時間
+              trafficModel: 'bestguess'   // 最佳猜測的交通模型
+          },
+          // 卡車模式設定
+          region: 'TW'  // 設置為台灣
+      }, (response, status) => {
+          if (status === google.maps.DirectionsStatus.OK) {
+              directionsRenderer.setMap(mapShow);  // 在地圖上顯示新的路線
+              directionsRenderer.setDirections(response);
+          } else {
+              // console.error('方向錯誤: ', status);
+              alertMsg('方向錯誤: ', status);
+          }
+      });
+  }
+
+
+// ========================================================================================================
+   
+
+    const gpstime = document.getElementById("gpstime");
+    const submitBtn = document.getElementById("submitBtn");
+    const searchInput = document.getElementById("searchInput");
+    const myGpsHidden = document.getElementById("myGpsHidden");
+    const goGpsHidden = document.getElementById("goGpsHidden");
+    const gpsDistance = document.getElementById("gpsDistance");
+    const checkGpsOkBtn = document.getElementById("checkGpsOkBtn");
+
+    function disabledTrue() {
+        checkGpsOkBtn.disabled = true; // 禁用提交按鈕
+        document.documentElement.style.overflow = 'hidden'; // 隱藏 html 的滾動條
+        document.querySelector('.map-content').classList.add('fullscreen');
+    }
+
+    function disabledFalse() {
+        document.documentElement.style.overflow = ''; // 啟用 html 的滾動條
+        document.querySelector('.map-content').classList.remove('fullscreen');
+    }
+
+    let targethidden ="";
+    let targetInput ="";
+    let updataMsg="";
+
+    // GPS定位
+    function myGpsFun(inputTxt, hiddenTxt, msg) {
+        
+        searchInput.value = '';  // 清空文字
+
+        // 確定更新的文本框
+        if (inputTxt !== "") {
+            targetInput = document.getElementById(inputTxt);
+            targethidden = document.getElementById(hiddenTxt);
+
+            updataMsg = msg;
+            targetInput.value="";
+        }
+
+        disabledTrue();
+
+        // 重新調整地圖大小以適應新的容器大小
+        setTimeout(() => {
+            google.maps.event.trigger(map, 'resize');
+        }, 500);
+        
+        if (navigator.geolocation) { // 檢查瀏覽器是否支持地理定位
+            navigator.geolocation.getCurrentPosition(
+                function(position) { // 成功回調函數
+                    firstLatitude = position.coords.latitude; // 獲取緯度
+                    firstLongitude = position.coords.longitude; // 獲取經度
+                    const userLocation = { lat: firstLatitude, lng: firstLongitude }; // 用戶的位置
+                    map.setCenter(userLocation);
+                    map.setZoom(17); // 更新地圖中心並放大
+
+                      // 如果已有圖釘，先移除
+                    if (originalMarker) {
+                        originalMarker.setMap(null);
+                    }
+
+                    // 添加不可拖曳的原始定位圖釘
+                    originalMarker = new google.maps.Marker({
+                        position: userLocation,
+                        map: map,
+                        draggable: false,
+                        icon: {
+                            url: 'https://lh3.googleusercontent.com/pw/AP1GczNxy9w7uusplFlXTOVqO7CtXvRhJ3LGaioZMza596eX3tq0PHxFT2VX4vNcTUl4KVeDin5X50ouPDoPAVgu0oEL1Ve313_8ifYlR9Yj-LG3W82BwfzCbfrWZJIgwGX8bjfItchBGA-iYNwxMteCX8MJ=w512-h512-s-no-gm?authuser=0',
+                            scaledSize: new google.maps.Size(32, 32) // 調整圖標大小
+                        },
+                        title: '原始位置(不可拖曳)',
+                        zIndex: 1 // 將原始圖釘設置為較低層級
+                    });
+
+                    // 如果已有圖釘，先移除
+                    if (marker) {
+                        marker.setMap(null);
+                    }
+
+                    // 添加新的圖釘，使用預設圖標並設置為可拖曳
+                    marker = new google.maps.Marker({
+                        position: userLocation,
+                        map: map,
+                        draggable: true,
+                        title: '您的位置(按住可拖曳)',
+                        zIndex: 2 // 將新圖釘設置為較高層級
+                    });
+
+                    var newLatLng = -1;
+
+                    // 強制將 marker 定位在畫面正中央
+                    function centerMarker() {
+                        const projection = map.getProjection();
+                        if (projection) {
+                            const centerPoint = projection.fromLatLngToPoint(userLocation); 
+                            const mapCenterPoint = projection.fromLatLngToPoint(map.getCenter());
+
+                            const offsetX = centerPoint.x - mapCenterPoint.x;
+                            const offsetY = centerPoint.y - mapCenterPoint.y;
+
+                            newLatLng = projection.fromPointToLatLng(new google.maps.Point(
+                                centerPoint.x - offsetX,
+                                centerPoint.y - offsetY
+                            ));
+
+                            marker.setPosition(newLatLng);
+                            document.getElementById('showMapXY').value = updataMsg + ": x=" + newLatLng.lat() + ", y=" + newLatLng.lng();
+                        }
+                    }
+
+                    // 清除舊的 tilesloaded 事件處理程序
+                    google.maps.event.clearListeners(map, 'tilesloaded');
+                    map.addListener('tilesloaded', centerMarker);
+
+                    // 監聽圖釘拖曳事件
+                    marker.addListener('dragend', function(event) {
+                        newLatLng = event.latLng;
+                        document.getElementById('showMapXY').value = updataMsg + ": x=" + newLatLng.lat() + ", y=" + newLatLng.lng();
+                    });
+        
+                    checkGpsOkBtn.removeEventListener('click', handleCheckMapOkClick);
+                    checkGpsOkBtn.addEventListener('click', handleCheckMapOkClick);
+
+                    // 確認地圖座標OK
+                    function handleCheckMapOkClick() {
+                        startLoading();
+                        setTimeout(() => {
+
+                            // 確保圖釘存在並獲取其座標
+                            if (marker) {
+                                const markerPosition = marker.getPosition();
+                                newLatLng = new google.maps.LatLng(markerPosition.lat(), markerPosition.lng());
+                            }
+
+                            const x = newLatLng !== -1 ? newLatLng.lat() : firstLatitude;
+                            const y = newLatLng !== -1 ? newLatLng.lng() : firstLongitude;
+                            targethidden.value = x + "," + y;
+
+                            geocoder.geocode({ location: { lat: x, lng: y } }, function(results, status) {
+                                if (status === google.maps.GeocoderStatus.OK) {
+                                    if (results[0]) {
+                                        targetInput.value = results[0].formatted_address;  // 更新 InfoWindow 的內容
+                                    } else {
+                                        targetInput.value = ('未找到地址!');  // 更新 InfoWindow 的內容
+                                    }
+                                    targetInput.setSelectionRange(targetInput.value.length, targetInput.value.length); // 將光標設置在文本末尾
+                                }
+                            });
+                            setTimeout(() => {
+                                stopLoading();
+                                updateMapShow(targetInput, x, y);
+                            }, 100);  // 1000 毫秒 = 1 秒
+                        }, 400);  // 1000 毫秒 = 1 秒
+                        disabledFalse();
+                    }
+
+                    // 初始逆地理編碼
+                    updateInfoWindow(marker, updataMsg + "! (按住可拖曳)");
+                    document.getElementById('showMapXY').value = updataMsg + ": x=" + firstLatitude + ", y=" + firstLongitude;
+                    checkGpsOkBtn.disabled = false; // 啟用提交按鈕
+                },
+                function(error) { // 錯誤回調函數
+                    stopLoading();
+                    alertMsg("請再試一次『重新定位』\n若無法定位(瀏覽器不支援)\n\n 1. 請點『 ︙ 』圖示 \n2. 使用其它瀏覽器開啟!"); // 顯示錯誤信息
+                },
+                {
+                    enableHighAccuracy: true, // 啟用高精度定位
+                    timeout: 5000, // 超時時間設置為 5 秒
+                    maximumAge: 0 // 不使用緩存的定位數據
+                }
+            );
+        } else {
+            stopLoading();
+            alertMsg("請再試一次『重新定位』\n若無法定位(瀏覽器不支援)\n\n 1. 請點『 ︙ 』圖示 \n2. 使用其它瀏覽器開啟!"); // 瀏覽器不支持地理定位時顯示的消息
+        }
+    }
+
+
+// ========================================================================================================
+
+  // 更新並顯示 InfoWindow 的函數
+  function updateInfoWindow(marker, msg) {
+      infoWindow.close(); // 關閉 InfoWindow
+      infoWindow.setContent(msg); // 更新 InfoWindow 的內容
+      infoWindow.open(map, marker);  // 重新打開 InfoWindow 以顯示更新的內容
+  }
 
   window.onload = function() {
 
-    AOS.init({
-      duration: 800,
-    });
+      initMap();
+      stopLoading();
 
-    stopRotation(); // 隱藏載入畫面
-
-
-    // 選擇所有帶有 'lazy-load' 類的 img 標籤
-    const lazyImages = document.querySelectorAll('img.lazy-load');
-
-    // 遍歷每個懶加載的圖片
-    lazyImages.forEach(img => {
-        // 將 data-src 屬性的值賦給 src 屬性，開始加載圖片
-        img.src = img.getAttribute('data-src');
-        
-        // 移除 'lazy-load' 類，表示該圖片已被加載
-        img.classList.remove('lazy-load');
-    });
-
-
-    displayAllReviews(); // 初次顯示所有評價
-
-  };
-
-
-  //========================================================================
-
-  document.addEventListener("DOMContentLoaded", function() {
-
-    // 初始化變量
-    let lastScrollY = window.scrollY; // 追蹤上一次滾動的位置
-    let hidden = false; // 追蹤導航欄是否隱藏
-    const revealOffset = 5; // 設定向上滾動超過 5px 的距離後顯示導航欄
-    const navbar = document.querySelector('.navbar'); // 獲取導航欄元素
-    const navbarCollapse = document.querySelector('.navbar-collapse'); // 獲取折疊菜單元素
-    const navLinks = document.querySelectorAll('.nav-link, .noto-serif-hk-logo'); // 獲取所有導航鏈接和 logo
-    const bootstrapCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false }); // 創建 Bootstrap 折疊實例，不自動切換
-
-    // 滾動事件監聽器
-    window.addEventListener('scroll', () => {
-      const currentScrollY = window.scrollY; // 當前滾動位置
-      const scrollDifference = lastScrollY - currentScrollY; // 計算與上次滾動位置的差異
-
-      if (currentScrollY > lastScrollY && currentScrollY > 70) {
-        // 如果向下滾動且超過 70px（或 20vh），隱藏導航欄
-        navbar.classList.add('hidden'); // 添加隱藏類別
-        hidden = true; // 更新隱藏狀態
-      } else if ((hidden && scrollDifference > revealOffset) || currentScrollY < 60) {
-        // 如果導航欄已隱藏且向上滾動距離超過 revealOffset，或滾動位置小於 60px，顯示導航欄
-        navbar.classList.remove('hidden'); // 移除隱藏類別
-        hidden = false; // 更新隱藏狀態
-        if (window.innerWidth < 992) { // 檢查是否為中小螢幕
-          bootstrapCollapse.hide(); // 使用 Bootstrap 折疊 API 隱藏菜單
-        }
-      }
-      lastScrollY = currentScrollY; // 更新上一次滾動位置
-    });
-
-    // 當點擊事件發生時隱藏下拉式選單
-    document.addEventListener('click', (event) => {
-      if (window.innerWidth < 992) { // 檢查是否為中小螢幕
-        bootstrapCollapse.hide(); // 使用 Bootstrap 折疊 API 隱藏菜單
-      }
-    });
-
-  });
-
-  //========================================================================
-
-  // 添加滾動事件監聽器
-  document.addEventListener('scroll', function() {
-      // 選取所有帶有 image 類的圖片元素
-      const images = document.querySelectorAll('.image');
-      // 設定最大放大倍數
-      const maxScale = 1.1;
-      
-      // 遍歷每一個圖片元素
-      images.forEach(image => {
-          // 獲取圖片元素相對於視窗的位置
-          const rect = image.getBoundingClientRect();
-          // 獲取圖片頂部距離視窗頂部的距離
-          const imageTop = rect.top;
-          // 獲取視窗的高度
-          const viewportHeight = window.innerHeight;
-          
-          // 計算縮放比例
-          // 當圖片在視窗頂部時，scale 為 maxScale
-          // 當圖片在視窗底部時，scale 為 1
-          const scale = maxScale - (imageTop / viewportHeight) * (maxScale - 1);
-          // 設置圖片的 transform 屬性，確保比例不小於 1
-          image.style.transform = `scale(${Math.max(1, scale)})`;
+      document.getElementById('myGpsBtn').addEventListener('click', function() {
+          myGpsFun("myGps", "myGpsHidden", "您的車輛救援位置");
+          document.getElementById('mapNext').disabled = false; // 啟用按鈕
       });
+
+      document.getElementById('goGpsBtn').addEventListener('click', function() {
+          myGpsFun("goGps", "goGpsHidden", "您想去的維修廠位置");
+          document.getElementById('delGoGpsInputBtn').style.display = ''; // 隱藏按鈕
+      });
+
+      document.getElementById("shareLocation").addEventListener('click', function() {
+          myGpsFun("");
+      });
+
+      initializeGrid(); // 產生第一個上傳圖片格子
+      initializeGrid(); // 產生第二個上傳圖片格子
+      initializeGrid(); // 產生第三個上傳圖片格子
+      initializeGrid(); // 產生第四個上傳圖片格子
+
+      fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+          window.ip = data.ip;
+      })
+        .catch(error => {
+          fetch('https://api64.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+              window.ip = data.ip;
+          })
+            .catch(error => {
+              window.ip = -1;
+          });
+      });
+      alertMsg("上傳兩張汽車和背景照片，能幫助我們更快速的找到您汽車！");
+  }
+
+
+// ========================================================================================================
+
+
+  const goGps = document.getElementById('goGps');
+  const searchBtn = document.getElementById('searchBtn');
+
+  // 清空goGpsInput欄位的文字
+  document.getElementById('delGoGpsInputBtn').addEventListener('click', function() {
+
+      document.getElementById('delGoGpsInputBtn').style.display = 'none'; // 隱藏按鈕
+
+      if (goGps.value !== "") {
+          goGps.value="";
+          goGpsHidden.value="-1";
+
+          if (goMarker) {
+              goMarker.setMap(null); // 移除 goMarker
+              goMarker = null; // 設置 goMarker 為 null，以便以後可以重新添加
+          }
+
+          directionsRenderer.setMap(null); // 移除路線渲染器
+          directionsRenderer.setDirections({});  // 清除路線
+
+          let myGpsLat = 22.65;
+          let myGpsLng = 120.4;
+          let MIN_ZOOM_LEVEL = 10; // 設置最小縮放級別
+
+          if (myGpsHidden.value !== "-1") {
+              showMapBounds = new google.maps.LatLngBounds();  // 更新 showMapBounds 之前先初始化
+              [myGpsLat, myGpsLng] = myGpsHidden.value.split(',').map(Number);  // 解析經緯度座標
+              MIN_ZOOM_LEVEL = 15;
+          }
+
+          showMapBounds.extend(new google.maps.LatLng(myGpsLat, myGpsLng));  // 更新邊界
+
+          // 重新調整地圖的視野以適應所有標記
+          mapShow.fitBounds(showMapBounds);
+
+          google.maps.event.addListenerOnce(mapShow, 'bounds_changed', () => {
+              const bounds = mapShow.getBounds();
+              if (bounds) {
+                  const zoom = mapShow.getZoom();
+                  if (zoom > MIN_ZOOM_LEVEL) {
+                      mapShow.setZoom(MIN_ZOOM_LEVEL);
+                  }
+              }
+          });
+          // 重新初始化 showMapBounds 以清除之前的邊界設置
+          showMapBounds = new google.maps.LatLngBounds();
+
+          gpstime.value = "0分鐘";
+          gpsDistance.value = "0公里";
+      }
   });
 
-  //========================================================================
+  // 清空搜索欄位的文字
+  document.getElementById('delSearchTxtBtn').addEventListener('click', function() {
+      searchInput.value = '';  // 清空文字
+      searchInput.focus();     // 將焦點設置到輸入框
+  });
 
-    // 當 DOM 內容完全加載完畢後執行此函數
-    document.addEventListener('DOMContentLoaded', (event) => {
+  // 當輸入框獲得焦點時隱藏按鈕
+  searchInput.addEventListener('focus', () => {
+      searchBtn.style.color = '#1A73E8'; // 當 input 獲得焦點時變藍色
+      checkGpsOkBtn.classList.add('hidden');
+  });
 
-      // 使用一個 for 迴圈來初始化顯示圖片
-      for (let i = 1; i <= 10; i++) {
-          // 使用一個 for 迴圈來初始化顯示圖片
-          copyFirstPhoto(`.photo_${i}`, `display-photo_${i}`);
-          // 為每個 .photo 元素添加鼠標懸停事件監聽器
-          addHoverEffect(`.photo_${i}`, `display-photo_${i}`);
+  // 當輸入框失去焦點時顯示按鈕
+  searchInput.addEventListener('blur', () => {
+      searchBtn.style.color = '#767A7F'; // 當 input 失去焦點時恢復顏色
+      checkGpsOkBtn.classList.remove('hidden');
+  });
+
+  // 判斷是否在搜索欄位輸入Enter  
+  searchInput.addEventListener('keydown', function(event) {
+      // 使用者按下 Enter 鍵時執行的程式碼
+      if (event.key === 'Enter' || event.keyCode === 13) {
+          geocodeAddress();
+      }
+  });
+
+  searchBtn.addEventListener('click', geocodeAddress);
+
+  // 搜尋地址
+  function geocodeAddress() {
+
+      // 檢查輸入是否不為空
+      if (searchInput.value.trim() < 1) {
+          searchInput.focus();     // 將焦點設置到輸入框
+          return;
       }
 
-      let photos = document.querySelectorAll('.photo img');
-      var currentIndex = -1;
-      var first_photos = 1;
-      var last_photos = 5;
-      var timer;
+      const address = searchInput.value;
 
-      // 函數用來添加和移除焦點
-      function updateFocus() {
-          if (first_photos !== -1) {
-              if (currentIndex > last_photos) {
-                  currentIndex = first_photos;
+      if (address) {
+          geocoder.geocode({ 
+              address: address,
+              bounds: taiwanBounds // 限制搜尋範圍在台灣
+          }, function(results, status) {
+              if (status === google.maps.GeocoderStatus.OK) {
+                  if (results[0]) {
+                      const location = results[0].geometry.location;
+
+                      // 清除之前的標記
+                      if (marker) {
+                          marker.setMap(null);
+                      }
+
+                      // 在地圖上顯示目標位置
+                      map.setCenter(location);
+                      map.setZoom(19);
+
+                      marker = new google.maps.Marker({
+                          map: map,
+                          position: location,
+                          title: results[0].formatted_address,
+                          draggable: true // 確保圖釘是可拖曳的
+                      });
+                      searchInput.blur(); // 取消焦點
+                  } else {
+                      searchPlacesAddress(address);  // Geocoder 搜尋失敗，使用 Places API 進行備用搜尋
+                  }
+              } else {
+                    searchPlacesAddress(address);  // Geocoder 搜尋失敗，使用 Places API 進行備用搜尋
               }
+          });
+      } 
+  }
 
-              document.activeElement.blur(); // 讓當前有焦點的元素失去焦點
-              photos.forEach(photo => photo.classList.remove('focused'));  // 移除當前焦點樣式
-              
-              // 添加焦點樣式到當前元素
-              photos[currentIndex].classList.add('focused');
+  // 備用搜尋
+  function searchPlacesAddress(address) {
 
-              // 獲取當前圖片的父容器元素
-              const currentPhoto = photos[currentIndex].closest('.photo');
-              const rescueBlock = currentPhoto.closest('.rescueBlock'); // 獲取到父容器 .rescueBlock
-              const displayPhotoDiv = rescueBlock.querySelector('.display-photo'); // 獲取對應的 .display-photo
+      // 使用 Places API 進行地點搜尋
+      const service = new google.maps.places.PlacesService(map);
+      const currentCenter = map.getCenter(); // 獲取地圖的中心點
 
-              // 獲取父容器裡面的圖片元素
-              const imgElement = displayPhotoDiv.querySelector('img');
+      // 根據當前地圖中心點設定搜尋範圍
+      const searchBounds = new google.maps.LatLngBounds(
+          new google.maps.LatLng(currentCenter.lat() - 0.3, currentCenter.lng() - 0.3),
+          new google.maps.LatLng(currentCenter.lat() + 0.3, currentCenter.lng() + 0.3)
+      );
+      
+      // 使用 textSearch 方法進行搜尋
+      service.textSearch({ 
+            query: address, // 搜尋的地址或關鍵字
+            bounds: searchBounds // 設置搜尋範圍
+       }, function(results, status) {
+          if (status === google.maps.places.PlacesServiceStatus.OK) {
+              if (results[0]) {
+                  const location = results[0].geometry.location;
 
-              // 複製當前圖片節點
-              const img = photos[currentIndex].cloneNode(true);
+                  // 清除之前的標記
+                  if (marker) {
+                      marker.setMap(null);
+                  }
 
-              if (imgElement.src !== img.src) {
-                  // 清空顯示圖片元素中的內容
-                  displayPhotoDiv.innerHTML = '';
+                  // 在地圖上顯示目標位置
+                  map.setCenter(location);
+                  map.setZoom(19);
 
-                  // 將複製的圖片節點添加到顯示圖片的元素中
-                  displayPhotoDiv.appendChild(img);
+                  marker = new google.maps.Marker({
+                      map: map,
+                      position: location,
+                      title: results[0].formatted_address,
+                      draggable: true // 確保圖釘是可拖曳的
+                  });
+                  searchInput.blur(); // 取消焦點
+              } else {
+                  alertMsg('未找到該地址!');
               }
+          } else {
+              alertMsg('未找到該地址!' + status);
+          }
+      });
+  }
 
-              // 更新索引，並循環
-              currentIndex = currentIndex + 1;
+// ========================================================================================================
+
+  function validatePhoneInput(input) {
+      // 只允許數字
+      input.value = input.value.replace(/\D/g, '');
+      // 限制最多輸入 10 個數字
+      if (input.value.length > 10) {
+          input.value = input.value.slice(0, 10);
+      }
+  }
+
+// ========================================================================================================
+
+
+
+  // 送出資料
+  submitBtn.addEventListener('click', function() {
+
+      // 獲取表單中的輸入值
+      const myGps = document.getElementById('myGps').value.trim();                // 救援的定位
+      const phone = document.getElementById('phone').value.trim();                // 電話
+      const remark = document.getElementById('remark').value.trim();              // 備註
+      const reason = document.getElementById('reason').value.trim();              // 原因
+      const carModel = document.getElementById('carModel').value.trim();          // 車型
+      const customerName = document.getElementById('customerName').value.trim();  // 稱呼
+      const licensePlate = document.getElementById('licensePlate').value.trim();  // 車牌
+
+      const phoneError = document.getElementById('phoneError');
+      const reasonError = document.getElementById('reasonError');
+      const carModelError = document.getElementById('carModelError');
+      const customerNameError = document.getElementById('customerNameError');
+      const licensePlateError = document.getElementById('licensePlateError');
+
+      // 將每個錯誤顯示元素的對應輸入欄位
+      const phoneInput = document.getElementById('phone');
+      const reasonInput = document.getElementById('reason');
+      const carModelInput = document.getElementById('carModel');
+      const customerNameInput = document.getElementById('customerName');
+      const licensePlateInput = document.getElementById('licensePlate');
+
+      phoneError.textContent = "";
+      reasonError.textContent = "";
+      carModelError.textContent = "";
+      customerNameError.textContent = "";
+      licensePlateError.textContent = "";
+
+      let isValid = true;
+      let firstErrorElement = null;
+
+      // 驗證稱呼
+      if (!customerName) {
+          isValid = false;
+          customerNameError.textContent = '稱呼不得為空*';
+          if (!firstErrorElement) {
+              firstErrorElement = customerNameInput;
           }
       }
 
-
-
-      // 處理圖片點擊事件
-      function handleClick(event) {
-
-          // 移除所有圖片的焦點樣式
-          photos.forEach(photo => photo.classList.remove('focused')); 
-          const clickedIndex = Array.from(photos).indexOf(event.target);
-          currentIndex = clickedIndex+1; // 設置為點擊圖片的索引
-          clearInterval(timer); // 清除之前設定的定時器
-          timer = setInterval(updateFocus, 4000);
-
+      // 驗證電話
+      if (!phone.match(/^\d{10}$/)) {
+          isValid = false;
+          phoneError.textContent = '手機號碼必須是 10 位數字*';
+          if (!firstErrorElement) {
+              firstErrorElement = phoneInput;
+          }
       }
 
-      // 為每個圖片添加點擊事件監聽器
-      photos.forEach(photo => photo.addEventListener('click', handleClick));
+      // 驗證拖吊原因
+      if (!reason) {
+          isValid = false;
+          reasonError.textContent = '拖吊原因不得為空*';
+          if (!firstErrorElement) {
+            firstErrorElement = reasonInput;
+          }
+      }
 
-//===================================================================
+      // 驗證車型
+      if (!carModel) {
+          isValid = false;
+          carModelError.textContent = '車型不得為空*';
+          if (!firstErrorElement) {
+              firstErrorElement = carModelInput;
+          }
+      }
 
-      // 更新顯示焦點的圖片
-      function updateVisibleFocus() {
+      // 驗證車牌
+      if (!licensePlate) {
+          isValid = false;
+          licensePlateError.textContent = '車牌不得為空*';
+          if (!firstErrorElement) {
+              firstErrorElement = licensePlateInput;
+          }
+      }
 
-        // 遍歷所有圖片元素，篩選出在視口中可見的圖片
-        const visiblePhotos = Array.from(photos).filter(photo => {
-          // 獲取圖片元素的邊界矩形
-          const rect = photo.getBoundingClientRect();
-          // 檢查圖片是否完全在視口中
-          return (
-            rect.top >= 160 &&                          // 圖片頂部在視口上方
-            rect.left >= 0 &&                          // 圖片左邊在視口左邊
-            rect.bottom <= window.innerHeight + 150 &&   // 圖片底部在視口下方
-            rect.right <= window.innerWidth            // 圖片右邊在視口右邊
-          );
-        });
+      // 設置焦點到第一個錯誤的欄位
+      if (!isValid && firstErrorElement) {
+          firstErrorElement.focus(); // 設置焦點
+          firstErrorElement.scrollIntoView({ behavior: 'smooth', block: 'center' }); // 滾動到視口中
+      }
 
-        // 取得可見圖片中最小和最大索引
-        first_photos = Array.from(photos).indexOf(visiblePhotos[0]);
-        last_photos = Array.from(photos).indexOf(visiblePhotos[visiblePhotos.length - 1]);
-        
-        // alert(first_photos + " / " + last_photos);
-
-        // 如果視口內已有圖片，不進行任何操作
-        if (first_photos <= currentIndex && currentIndex <= last_photos ) {
+      if(!window.isUploadImg) {
+          alertMsg("圖片上傳失敗, 請重新再試一次圖片功能!");
           return;
-        }
-        
-        // 焦點
-        if (visiblePhotos.length > 0) {
-          clearInterval(timer); // 清除定時器
-          // 獲取第一張可見圖片的索引
-          currentIndex = first_photos;
-          // 更新焦點，根據 currentIndex 顯示對應的圖片
-          updateFocus();  // 立刻執行
-          timer = setInterval(updateFocus, 3500);
-        }
       }
 
-      let isScrolling; // 用於存儲 setTimeout ID
+      if (window.isUploadImg && isValid) {
+          startLoading();
+          submitBtn.disabled = true; // 禁用提交按鈕
 
-      window.addEventListener('scroll', function() {
-        // 清除之前的滾動計時器
-        clearTimeout(isScrolling);
+          var formData = new FormData();
 
-        // 設定新的計時器，在滾動結束後N毫秒執行 updateVisibleFocus()
-        isScrolling = setTimeout(function() {
-          window.requestAnimationFrame(function() {
-            updateVisibleFocus();
+          // 添加其他資料到 formData
+          formData.append('ip', window.ip);
+          formData.append('phone', phone);                                     // 電話號碼
+          formData.append('remark', remark);                                   // 備註
+          formData.append('reason', reason);                                   // 拖吊原因
+          formData.append('carModel', carModel);                               // 車型
+          formData.append('customerName', customerName);                       // 稱呼
+          formData.append('gpstime', gpstime.value);                           // 預估時間
+          formData.append('myChineseGPS', myGps);                              // 救援的定位(拖曳)[中文]
+          formData.append('goChineseGPS', goGps.value);                        // 維修廠的定位[中文]
+          formData.append('myGPS', myGpsHidden.value);                         // 拖車的定位(拖曳)
+          formData.append('goGPS', goGpsHidden.value);                         // 維修廠的定位
+          formData.append('licensePlate', licensePlate);                       // 車牌
+          formData.append('gpsDistance', gpsDistance.value);                   // 計算距離
+          formData.append('firstGPS', (firstLatitude + "," + firstLongitude)); // 最初的定位(GPS)
+
+          // 將 window.myArray 的數據添加到 FormData 中
+          window.array.forEach((item, index) => {
+            // 轉換為 JSON 字串
+             formData.append(item.key + index , item.value);
+             // alert(item.key + index + " / " + item.value);
           });
-        }, 100); // 毫秒的延遲
-      });
-             
+
+         fetch('https://script.google.com/macros/s/AKfycbz2IRj6Wf2o9m9bBsz2UbkovOKd7CikTHL9b6Ed0RyTKdM89FgxxX_fWkZEa69EqT-H/exec', {
+              method: 'POST', // 設置請求方法為 POST
+              body: formData // 直接使用 FormData 對象
+          })
+          .then(response => response.text())
+          .then(result => {
+              alertMsg(result); // 提交成功後顯示成功提示
+          })
+          .catch(error => {
+              alertMsg(" 您的瀏覽器不支援! \n\n 1. 請點『 ︙ 』圖示 \n2. 使用其它瀏覽器開啟!" + error);
+          })
+          .finally(() => {
+              stopLoading();
+              submitBtn.disabled = false;      // 啟用提交按鈕
+          });
+      }
+  });
+
+// ========================================================================================================
+
+    // 顯示警告內容
+    function alertMsg(msg) {
+        const alertBox = document.getElementById('alertBox');
+        const alertMessage = document.getElementById('alertMessage');
+        alertMessage.textContent = msg;
+        alertBox.classList.add('show');
+    }
+
+    // 隱藏警告視窗
+    document.getElementById('confirmButton').addEventListener('click', function () {
+        alertBox.classList.remove('show');
     });
 
 
-
-    // 通用的函數，用於選取第一張圖片並複製其節點
-    const copyFirstPhoto = (sourceSelector, targetId) => {
-        // 使用 sourceSelector 選取第一個匹配的圖片元素（假設該 selector 選取的是一個或多個包含圖片的容器）
-        const firstPhoto = document.querySelector(sourceSelector + ' img').cloneNode(true);
-        // 將複製的圖片節點添加到目標元素中
-        document.getElementById(targetId).appendChild(firstPhoto);
-    };
+// ========================================================================================================
 
 
-    // 通用的函數，用於處理鼠標懸停事件
-    const addHoverEffect = (sourceSelector, targetId) => {
-      document.querySelectorAll(sourceSelector).forEach(photo => {
-        photo.addEventListener('focus', (e) => {
-          // 選取.photo 元素中的圖片，並複製其節點
-          const img = e.currentTarget.querySelector('img').cloneNode(true);
-          
-          // 獲取用於顯示圖片的元素
-          const displayPhotoDiv = document.getElementById(targetId);
-          
-          // 清空顯示圖片元素中的內容
-          displayPhotoDiv.innerHTML = '';
-          
-          // 將複製的圖片節點添加到顯示圖片的元素中
-          displayPhotoDiv.appendChild(img);
-        });
+  function startLoading() {
+      const containerloader = document.querySelector('.containerLoader');
+      const loader = document.querySelector('.loader');
+      loader.style.animationPlayState = 'running';       // 啟動動畫旋轉
+      loader.style.display = 'block';                    // 顯示 loader
+      containerloader.style.display = 'block';           // 顯示容器
+  }
 
-        // 確保元素可以獲得焦點
-        photo.tabIndex = 0;
-      });
-    };
+  function stopLoading() {
+    const containerloader = document.querySelector('.containerLoader');
+    const loader = document.querySelector('.loader');
+    loader.style.animationPlayState = 'paused';       // 暫停動畫旋轉
+    loader.style.display = 'none';                    // 隱藏loader
+    containerloader.style.display = 'none';           // 隱藏容器
+  }
 
 
-  //========================================================================
+// ========================================================================================================
 
 
-  // 評價圖片URL列表
-  const reviews = [
-      // 1
-      "https://lh3.googleusercontent.com/pw/AP1GczOz3bCVdrl4fRtnyGHdleyjP_mVJWt-fxthXR6uVPJ7hMzprMdnwb9D_KQCKBVEl-V_n32wdgK1llpfVBxaTOzdA6txNR3BFXqQuaJXsg_QxBPxES3AI7E0Szsa_-UGP0YrZtWmTOh1GDwVp3h4ynWc=w410-h207-s-no-gm?authuser=0",
+  var formData = new FormData();
+  const mapPage = document.getElementById('mapPage'); 
+  const photoPage = document.getElementById('photoPage');
 
-      // 2
-      "https://lh3.googleusercontent.com/pw/AP1GczPCfTcn2HmD4a17pTKzmO9A-0yf2reCn0AJxoOAwd4LeBpCirQv7px-Q1BI57BcByIkmrfqRZTBGpXX-SDLGg-MVRE9xrvEDaOyzigwh_-itKQU3rzI--Zaem8ET1aPO4YXzmTj0dY0MVo5w8GsuOau=w410-h213-s-no-gm?authuser=0",
-                  
-      // 3
-      "https://lh3.googleusercontent.com/pw/AP1GczPS7-qHy4muI-B_TPrGwGVsmzSGYPsI42M-rC59VLPTE9wBLx0Al149ARBquFQsUIedOSOaFSOL3oii7CL7HOavV4Pp4YuoEgO2cNdPkw40PfytTKJAxnnSVc5wJ8C32imaj9O612eqAlmy9Z-qWfnT=w410-h211-s-no-gm?authuser=0",
+  document.getElementById('mapPrevious').addEventListener('click', function () {
+      mapPage.style.display = 'none';     // 隱藏      
+      photoPage.style.display = 'block';  // 顯示
+      window.scrollTo(0, 0);  // 滾動到網頁的頂部
+  });
 
-      // 4
-      "https://lh3.googleusercontent.com/pw/AP1GczNspgFHJdwnVmsW_3DZvyRex17WZ_ZypuqAwFBUny93_N4aTbisXlchGhkav7XbaRAkO-qcyGjqQPISoVTFHFDcquJ0MfPuPd1IPnF8TeKISPt3vs8t9UbxQjK_Ardlq2uEJUxWDvuBSI4LzV16NaiV=w410-h176-s-no-gm?authuser=0",
-      
-      // 5
-      "https://lh3.googleusercontent.com/pw/AP1GczMnez1OjUZ-XSyc5IoLZRJKGpFX5iwxzNVPOBvEIm9oOUOb4fAB5Fp-7IFjNqcI1dIL-2I6aMn_C0_vRpH9EyzsbvW_kfAdzqnfm9kOFNUh2TZ2aO162SnOpNtkSQMt9k1Z1sL9VMOwUZADPTClKfAZ=w410-h180-s-no-gm?authuser=0",
+  document.getElementById('mapNext').addEventListener('click', function () {
+      mapPage.style.display = 'none';     // 隱藏     
+      submitPage.style.display = 'block'; // 顯示
+      window.scrollTo(0, 0);  // 滾動到網頁的頂部
+  });
 
-      // 6
-      "https://lh3.googleusercontent.com/pw/AP1GczMZ7d40dMzsC_wDCZTZj0YgTr5a6GUYx42CH85MvP1vS60IcgiFDyswhruB7Mv3hxnswnKnDFKZEN2YnXD2d_A5j-V_10Gq1m9U-4ESbuynjpWFkzHR-B0Juq3pAJfoOeOHdgOy4yJpkm2ri22aiHA1=w410-h174-s-no-gm?authuser=0",
-                
-      // 7
-      "https://lh3.googleusercontent.com/pw/AP1GczNeGEtzTIkFXI-mfdMA5cZtw8qXmwZmeE4Q8RxLW3PWOd-Q9eus69900_OeqicNEh4dh3zzW7rRkkMYPIouqQhEEe1z6OqhwhHk2ruIRRyw-IjLX-QMTeQj5802jc-3gF-Y2gSTyfp4qQiqDb9C_V-a=w410-h170-s-no-gm?authuser=0",
-                  
-      // 8
-      "https://lh3.googleusercontent.com/pw/AP1GczNN4uIdx4NXLMTxfOnXuIh_5YY7KhcKa3Jh4goEocJWaLqBSIVRMIjbhmmvZRVYBOux4EAH-tHqF7Zk0f62ysekOU1zTJ_IlcUhDjP9gCHv-ovWp9AgqBjLqdWveGEGCbMgs6BuZok-scLBw1UHZ3ld=w410-h173-s-no-gm?authuser=0",
-                  
-      // 9
-      "https://lh3.googleusercontent.com/pw/AP1GczO-vnai0YrH5qmJXbBuxotEL07NYUQnBPzc6eiuwpAnM5JTS-E7SLJUbvYMFpqU7kECIp261ophRKt4Tb5iZTaLAq6hb7DLsO2PkdZExAWfrr-7uxhZ1wKmQrODsAhEsVAwIHTUE3Tae1SPQi5Kcf0S=w410-h172-s-no-gm?authuser=0",
+  document.getElementById('submitPrevious').addEventListener('click', function () {
+      submitPage.style.display = 'none';   // 隱藏     
+      mapPage.style.display = 'block';     // 顯示
+      window.scrollTo(0, 0);  // 滾動到網頁的頂部
+  });
 
-      // 10
-      "https://lh3.googleusercontent.com/pw/AP1GczMcSKetphGGsmB1bV_Vs4wHnkcZWsqWVGrTY89-hDKYw_nHrGzrZMS5BXIOTiJltEQ-aZvv8_5GAT-TaSJK5xnD_lQCPAGpZTzifbik5WZ07PCrZRK9UQNYqMAawCNljijeUQoZOIigl6WiO9Auj3zp=w410-h176-s-no-gm?authuser=0",
 
-      // 11
-      "https://lh3.googleusercontent.com/pw/AP1GczM7oRtrP4EY0-cIdbHff6Tmg5TLTmZN0108HaVMpoeKVabtIAWh49BqXVKfAG0QJ2A0mTe66RJLdzQ0qRwdxCTMRD2k5fBO1FwzyvEiq99xNbir69g4zjYacv5QWVFhaxUgptlaMiXOb68dDetfvE1j=w410-h150-s-no-gm?authuser=0",
-                  
-      // 12
-      "https://lh3.googleusercontent.com/pw/AP1GczPU7FfIX0tMOpV6IHDrSeO6UuVTmBJrNt8r1O3JLZeIGNiElzs_vjZT9emDF2ODxJ1RzvrnCUHUFXKXfo_m5-T5w2kk_ONoTVdgfrTO84Up9FYVv_LJKqU3dzbtMXGNVHqH7wqN0joHW6kHPl7rOpAX=w410-h145-s-no-gm?authuser=0",
+// ========================================================================================================
 
-      // 13
-      "https://lh3.googleusercontent.com/pw/AP1GczOelG0MyTH9PWQaCd1AIdYM0RYEgnO5yaYflbmXCOpejq-a30hfEWq6d9Ffw5mZptFWOXgCXWdCMv1L4arb311_6DgJJ52pY7cvL-PNbx93wgnvnTYJKsHnuEqm7F7RlVjHQHISBqjAhs4SSEZS07eo=w1080-h384-s-no-gm?authuser=0",
-                
-      // 14
-      "https://lh3.googleusercontent.com/pw/AP1GczOHJWR_2X06ajV_JHYc8Nfy7baYEgnHSB_Qq3ARY7aIKeaTi5Ru3ySsvCY0N83aGBiNTZ2bfMMSSx5RhXDbRDKh0C3ZWHEhUi4raZgqOpytYfoNqJmFhP_kEVoz9FNLv5lD-_riA8PzAyMciHihr1mk=w1080-h365-s-no-gm?authuser=0", 
+</script>
 
-      // 15
-      "https://lh3.googleusercontent.com/pw/AP1GczOUSpPO9fUCQV5NmkFSCzbNm72TYp6luAO9fOTSlLAFeEn9y4bzblm-Ni6zyw1vnQ84lodnBTe_THl6_7a-jpnYf6J_E2rVsAmFldPfInHBdOCDaEeMuh6LUMGEb_W1FZBTaKGHoa2N49NbA5gFrfsM=w1080-h394-s-no-gm?authuser=0",
 
-      // 16
-      "https://lh3.googleusercontent.com/pw/AP1GczPFBpEefT0-czVKneeYo30KFVE5XhvRE-0qnbwBhp1aIL9tyQrXp4LosBqSRD6cEVZ7NazRkBgF5OTX89MCBQmBFDvc7z2-_WSWFc6uApLLw_PBQyJ7FWqGQcFCGpVUBqVaf5McNlj7qHBMN5ENNI4l=w500-h182-s-no-gm?authuser=0", 
-                  
-      // 17
-      "https://lh3.googleusercontent.com/pw/AP1GczOEO7ivO3FM2gsI4e09Ae_JE1JxmJtJRl2aqbELAyOwLzyoWSeU6V6ZGPpjc6Od1MAyw96DJT-pslGvX56DnPRPxF38eWV4J1ZXu1uCaOF9Ex_2jb-oeHwdACBCWR7uRmPNpDNg2pz4V6DXWmPU5JHi=w1080-h375-s-no-gm?authuser=0", 
-                  
-      // 18
-      "https://lh3.googleusercontent.com/pw/AP1GczMyqFUjj0EoTxPXfUDZj9NUlpgp1k2v2WXwn4iR4YVUvVyq_t8Yr3Q3atBK575Z5QOYSGnukbZ75AjRmkKoLnYvpq2asbufjJdmCvrepHg_ooD28QFZnKJnMeweY7kHqmhQzpHSDSDz0bcR3IAlow31=w1080-h379-s-no-gm?authuser=0", 
+<!-- 加載 Firebase SDK -->
+<script type="module">
 
-      // 19
-      "https://lh3.googleusercontent.com/pw/AP1GczOq2BpFQl87su8P0WFinydcKB3594nsItzjz6XEw1DTDRkZFU-ijiweJy1azx2wPAKHmPuI0F245K3c77ckp8-Mm6Fud7JfaVVlFYH982_DLswOfmQN6PE6CcmdCvgodh3GDn0JNEEMHGY6cOu69Cio=w1080-h455-s-no-gm?authuser=0",   
+  // 從 Firebase SDK 中導入所需的模組
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+  import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-storage.js";
 
-      // 20
-      "https://lh3.googleusercontent.com/pw/AP1GczNyFu6vVSQkohIswpYgSGMOkfuvE2L5aZW-aRH9hUV0G-QkP_ZXurxev5L07eOtdeu1gyJx5jOqyOpeAdOWQWDv6ct0DwtdddNOaSbQHjfspcqeNACZ38PsWRp7lNwRuHwpGbQaxSGzUfHQzischxP-=w1080-h434-s-no-gm?authuser=0", 
-                  
-      // 21
-      "https://lh3.googleusercontent.com/pw/AP1GczOmQgsiJcEzE_WFMq_qHWCEvn6spSuoKgV0vPhhF-Hs-x2cmGy8SGYy1xm2JvVI-j7T5wZ1YV38H5RT2Ztg2oHp3PJDG3BjJSNK_tvby6X8D_TdDI_9pA7oPpjTQeRWLBDGSKYrOC2IYumxUPuMTHlh=w1080-h437-s-no-gm?authuser=0", 
+  // Firebase 配置對象，包含應用的 API 金鑰和其他識別信息
+  const firebaseConfig = {
+    apiKey: "AIzaSyD7VW3vOlGQUCzf4wJy24BtRR-tLxTnT7I",
+    authDomain: "towing-d99da.firebaseapp.com",
+    projectId: "towing-d99da",
+    storageBucket: "towing-d99da.appspot.com",
+    messagingSenderId: "977746503781",
+    appId: "1:977746503781:web:3d7acb3d08c8e71c13fe8c"
+  };
 
-      // 22
-      "https://lh3.googleusercontent.com/pw/AP1GczNZzLNnClS9g5_VU6dDR4D4fiC3SILJVk_P6hf3X98SmEULOBH2_SRLBSGE7kZgwxhy_BG5YLkiPssT8hfZZ5D68q4If7j4gYg6a8xoj3R0palA4MkcB6ev4X_3iCeWDFFMYl4rZcHRxO1TeC85CEo5=w1080-h399-s-no-gm?authuser=0", 
+  // 初始化 Firebase 應用
+  const app = initializeApp(firebaseConfig);
 
-      // 23
-      "https://lh3.googleusercontent.com/pw/AP1GczMIIDeGo1oT3Uxmmi2iBxv3sTQMJya8xeDbedX47kNCdV5t8_oo1jgrve4qiI5pddld4alnLaDGrzw019pGODmqhiTIW9oDT_cOWzv6tREtgRNkMA0PQ5fbvcWgEJLQ1JxdHGbi82NdN6er3ghL9fY8=w1080-h468-s-no-gm?authuser=0", 
+  // 獲取 Firebase Storage 服務的引用
+  const storage = getStorage(app);
 
-      // 24
-      "https://lh3.googleusercontent.com/pw/AP1GczO-9erzzGP7uP_WjeB01vDZPOARFOzKqkxI0dud0brJ8vEdYqh735wlfvEssXck0dw8CcDwf625IM6axVNVOparNQYCxVYra5aeJw6ldcn1Aso5YPGQhr6MvpkrAdzC_plsrIvKkkcBNzbtVoy5F3U4=w1080-h430-s-no-gm?authuser=0", 
 
-      // 25
-      "https://lh3.googleusercontent.com/pw/AP1GczNLW_cR5P4gKZUiyJbhPztiVO_W6TQvcjz-EdQvn-1ubBOfZRp7DRYNJ4wZyyHzjPYP8wSFDkzqgrAVgf9xQ6PsqnIf22WDcnZObAJoZTntE2vYarQzSFqfB5MYeJPNTxPk81WtwVxAP0u4FW3c4eg3=w1080-h527-s-no-gm?authuser=0", 
-                  
-      // 26
-      "https://lh3.googleusercontent.com/pw/AP1GczOKX8Awb2tgsbWiGIKbjhnd9uoQ-2cCihgAipATStgBuNHbL96lTBCqisZ9M2yHqwHDYsupkdRvQ3VnzhUQfU6kRu-OI8FtSTg1hnaLW35cc3VDOs46MYsrw-h-f_EzbWmaem0vEWw61f7Mxdt4nrw5=w1080-h479-s-no-gm?authuser=0", 
-                  
-      // 27
-      "https://lh3.googleusercontent.com/pw/AP1GczOlcQKNkgYKsD8PTcBarO27IGIBuRAQzjJ5wiNJTzTwSmtBMUuhQWThZCkkgEc9jdce9l3iBJ6l0OoEzRuLXWlQQYr2953VFm4eiWfQuWUIjzG7cp8gfT2gr38Z_IFv_QICvCdNOYCObmyLyVze7jVk=w1080-h477-s-no-gm?authuser=0",
 
-      // 28
-      "https://lh3.googleusercontent.com/pw/AP1GczN6xCF3rBIcZmAlLKvfJRQnX3h7c1o861TO1Wzn8aPPWV7MF9S3x_B0ynLisiDOgj3P5bz5aC30W0yKr_8kuf5hEDiarTYlh-nuQAAxs4AwKj_6XV1nc1whj71fjpscn7fPbeMbHDiGHLxD6hrmNYqL=w1080-h465-s-no-gm?authuser=0", 
+  async function compressAndConvertToBase64() {
 
-      // 29
-      "https://lh3.googleusercontent.com/pw/AP1GczNIbMWI0Ff4g-15lBncQ_A3A-A3yNCs08qzMO9NROcAkIaLZnoTwC3pe56hQHO0VfO3OVpLP-x2mmwX2UxCiDlkdOp4Zo424FTrr_bZZFbFNr9n-iDm5N1-4IObkoOjbRcuJzcbrSpXSStyYRor_QTL=w1080-h474-s-no-gm?authuser=0", 
+      var i = 0;
+      window.isUploadImg = false;
+      window.array = [];
+      const fileInputs = document.querySelectorAll('.uploadBox input[type="file"]');
 
-      // 30
-      "https://lh3.googleusercontent.com/pw/AP1GczP3fW1kDEoK_SheXnDBXLBcyRyDPhIYwOpmg9pv4wen0xlADR93EQ-iuL3R35ZVbzYRcB9WLaHG4AAw57M9rfHckHYTVDo8HJ45D5f6QUp50uASCJ3hAU360V1el2EfpDds-tHUk9Hxl_6s3ODMgyi1=w1080-h488-s-no-gm?authuser=0", 
+      const filePromises = Array.from(fileInputs).map(async (input) => {
+          if (input.files[0]) {
+              const file = input.files[0];
+              const blob = await new Promise((resolve, reject) => {
+                  const reader = new FileReader();
+                  reader.onloadend = () => {
+                    const img = new Image();
+                    img.onload = () => {
+                      const canvas = document.createElement('canvas');
+                      const ctx = canvas.getContext('2d');
+                      const maxWidth = 800;
+                      const maxHeight = 600;
+                      let width = img.width;
+                      let height = img.height;
+
+                      if (width > height) {
+                        if (width > maxWidth) {
+                          height *= maxWidth / width;
+                          width = maxWidth;
+                        }
+                      } else {
+                        if (height > maxHeight) {
+                          width *= maxHeight / height;
+                          height = maxHeight;
+                        }
+                      }
+
+                      canvas.width = width;
+                      canvas.height = height;
+                      ctx.drawImage(img, 0, 0, width, height);
+                      canvas.toBlob(resolve, 'image/jpeg', 0.9); // 壓縮質量
+                    };
+                    img.src = reader.result;
+                  };
+                  reader.onerror = reject;
+                  reader.readAsDataURL(file);
+              });
+
+              i = i + 1 ;
+
+              // 生成當前日期時間字串
+              const now = new Date();
+              const year = now.getFullYear();
+              const month = String(now.getMonth() + 1).padStart(2, '0'); // 月份從 0 開始，所以加 1
+              const day = String(now.getDate()).padStart(2, '0');
+              const hours = String(now.getHours()).padStart(2, '0');
+              const minutes = String(now.getMinutes()).padStart(2, '0');
+              const dateTimeString = year + month +"/" + day + " 日, 時間: " + hours + ":" + minutes;
               
-      // 31
-      "https://lh3.googleusercontent.com/pw/AP1GczOnYBK3UfsBWGxRsTXyBzSn-gpIwIrwmjdNoP94pN4s2hgAI9hgr0JIPizu-I2CZATFC9zW0uijeciU9476rXxybhxsVRhIYUUto8Z-UYpDqhb60ftHenLV9JC6TJuCF4RIAbD6MuzTqS9Hv6wN69li=w1080-h310-s-no-gm?authuser=0", 
-                  
-      // 32
-      "https://lh3.googleusercontent.com/pw/AP1GczMHRBaf2dambXPHz_0_enbvPgXPv0LPFSdabUqnU_lnrObNjNgzx82nsccrsk3cpd4UTyGqQa9FqJ8xWpwGRRc2Ta8mIR-VcVHgmU9RXhAt0OcBTI44FsF14584ETj189g9oSgCNGqRgfTNesJxJ-tR=w1080-h310-s-no-gm?authuser=0", 
+              try {
+                  const storageRef = ref(storage, dateTimeString + " - 第" + i + "張");
+                  await uploadBytes(storageRef, blob, { contentType: 'image/jpeg' });
+                  const url = await getDownloadURL(storageRef);
+                  window.array.push({ key: ("imgUrl"), value: url });
+              } catch (error) {
+                  console.error("上傳圖片時出錯：", error);
+              }
+          }
+      });
 
-      // 33
-      "https://lh3.googleusercontent.com/pw/AP1GczPdXgsSrZYALTgUmPdeRRdJmhnLAI_fji58jcglolP08c1h9luaqm3UazBxXur0xspnPMosDmb2kjwLmUKOaXhDytjWskVhvF6mFR_pAIaYd_N4tdbmNPL29wbS8TS9RCQndDn6rBNMaUqxaW-XIKRW=w1080-h316-s-no-gm?authuser=0",   
+      try {
+        await Promise.all(filePromises);
+          window.isUploadImg = true;
+      } catch (error) {
+          console.error("上傳圖片時出錯：", error);
+      }
+  }
 
-      // 34
-      "https://lh3.googleusercontent.com/pw/AP1GczOMrz7fFGDrEPNje-IXJA6zMhHpFJEbwV0HCkjUxKMuWd_7OvYrx4nrZPjCxBaRkrHFMpXGzajZoOEBfZoApoGUu1vueXTy0Wpz2_3lxAWlBiD_FWAAuj4vq2THaOejQAnIjsjK1Wz06skac0QG2dgX=w1080-h324-s-no-gm?authuser=0", 
-
-      // 35
-      "https://lh3.googleusercontent.com/pw/AP1GczPmGa7kmveQE2v0EQ6oryWSz2ckuk0vb56aOq6kAAWeoNY3g46qsEeSnNS_NqkPws3mXbToU4tEjYlg6MlnGtEIhUMB-tzLNURfRsB5BIDb9df_bumqRIcg7ycpu0IK5tiwqVvo1W_vfcCBj23cOcow=w1080-h320-s-no-gm?authuser=0",       
-
-      // 36
-      "https://lh3.googleusercontent.com/pw/AP1GczMBPCw0SADbNt8LUvEkmc19Va_x1OYeZxbkbNJTqm2u4NidBivpmrStR8IzdOgwx3quZgsEMSRffpH9ZR1bAnOH7vfoW0tnWBY0uBC7pbr2S88r_YjU6sGrIM6be2sixeJR4qQfJrRfSdLGteHnNP7j=w1080-h294-s-no-gm?authuser=0",
-
-      // 37
-      "https://lh3.googleusercontent.com/pw/AP1GczMTAUcUR-bkGgj8lb9Y39yvniBnD4rDVzpoFVx8YqtKr8qOZjaGmwk2U4jAJVKPOzRI5MnnGytH1bVH-ts0rWCD_JxN3wqVH0qS6Tm9fh_crFDVuucQ3UIDKHnNi-vCzN3Tn9yDkhFC5kAkhVIbD2ny=w1080-h415-s-no-gm?authuser=0", 
-                  
-      // 38
-      "https://lh3.googleusercontent.com/pw/AP1GczPGP_MxDIn1Jo0K5q-Lga4-L1N3VCLSncXLnzc1Tu6jmH8948dRf3veggF027mmLYE0TvurJSeGGUfZrYjQqvUb8F5LL98R0VuGz5TWF_28C5XOYyU39qyQLgwXeM_Od-nPzmRZGgGNmJ-WIIxv9ioR=w1080-h402-s-no-gm?authuser=0", 
-      
-      // 39
-      "https://lh3.googleusercontent.com/pw/AP1GczMySRmy6vwMI-__fUvBsYRLfmUXE6UWtYp_RBgFjalTz57Z27NStKMtX2s32TB0FpWEIfzNjjxmX1707xBJ4vfk06ME3Ne0FtKZ1UZYq3Q1pN5xtJbSqeZgi4TbFAWzFeFRGsu_cNpb_uNlviYGUcgg=w1080-h380-s-no-gm?authuser=0", 
-    
-      // 40
-      "https://lh3.googleusercontent.com/pw/AP1GczP82zy62tuAT9dBm5oyG6hWUdXMrZGvNHAE6NiRBAYCPhx9gKwzlI2q105HmkTNrcPOB-0kU0ne6O3KUJRUq0hIB4WxjpXSHdpenye7ahX9R89YrOWJg4PXdJC_EeDEK0dzl4PTtMO1sN8XFeQ34nkS=w1080-h355-s-no-gm?authuser=0",
-                  
-      // 41
-      "https://lh3.googleusercontent.com/pw/AP1GczMBCpv00xEp2v2eQ5v8b7KfI_NnLWO5P1SynImotGIhbf7kKHMeSjqeq8Iklh-Ar0dqKv1zs3TWyk-GNwMQhR-5LHaFWHo8fNv0_PkoR3LzDduP_cHYcDZgjS4NhX4qJXeHebRx-WNzVIyAJRguKgGh=w1080-h413-s-no-gm?authuser=0", 
-      
-      // 42
-      "https://lh3.googleusercontent.com/pw/AP1GczOgd-EidPIh0xrH2nE6xk-zVqMOXJ77y_jZZGAuYAvGg3lxcAyMwzWvQvj3YvIW0qhAZnm7NLIzPDblwcj_ltabBqSpDHJAm5Nq6SrnHt-mPpUeKrbCI58bxy90-8oUQfWuktWn0qXV_8g56PMu09tH=w1080-h386-s-no-gm?authuser=0", 
-
-      // 43
-      "https://lh3.googleusercontent.com/pw/AP1GczO8yOa4iXBFRoP_is6Lhfs-B-MsWwY-GRxne1LIkhMC0lny03QQdUN5NitRgCITSga-q8LoAlR98S-C_Q1pZnu77_x4KgVQSKP-FSE9etE-Ky821ZkZeD8GpPAHtOeuqMrIiWVS_WjKlUgyffcJEJk2=w1080-h308-s-no-gm?authuser=0",
-
-      // 44
-      "https://lh3.googleusercontent.com/pw/AP1GczNB0hXwDLgO2tCGtcAV9I6gzFW0zz4qLy40qEjAdE3kziojIYJKeXaNMT4-UQbcvxlWmIf_jzOCpzgfjYsMDVIiKbaIVFwmCmLYR0IBWGfCzYJ0NgekaUv2c705JQ7WbMbiY26ECXFAXxxt9sCFB6IG=w1080-h333-s-no-gm?authuser=0", 
-                    
-      // 45
-      "https://lh3.googleusercontent.com/pw/AP1GczNqWUmsnoBtwFbHLziZID33NeHJN_uCMm5ZmeCvgZCZD-UxYkMeLhP4ws243ZW4W7bixa7a72pwe_iHm7KqqTCFf1VI0Mw-V7xNqi9nbVWM4R3uRA6lPtYSKVaEXp_cN9CsHCNBJoaOtbdB4Qb0A_9P=w1080-h322-s-no-gm?authuser=0", 
-                  
-      // 46
-      "https://lh3.googleusercontent.com/pw/AP1GczNFFECodvVHVYNu-suXSPOIUhyy9450azGxTgEtioGhwg8yFyg4mRGVbz-niLE6qay5LTrc3L8FRXYX-Ce_Jdc7dG7l-eBAx7ASOaAjZTRDmF2En0pVQzJEs15pHkbZ7Eexlfdi9Gb3gBxQw03mRP1E=w1080-h311-s-no-gm?authuser=0", 
-                  
-      // 47
-      "https://lh3.googleusercontent.com/pw/AP1GczMMQqDlkS-hu81dUuPctvutWgcfkRS-QFRX9CXEl7j-dTfS5B1N1_ENaOSnsuOG9rWk-252aekh54rFNql-PzLsEn3sXjbnF1OnNb1XO-f-l93z1UwbZ3X9K4PaLX5RBxzuOzg33TbYViNacl0svvGl=w1080-h305-s-no-gm?authuser=0", 
-
-      // 48
-      "https://lh3.googleusercontent.com/pw/AP1GczNFKSw1fcBTv0yEGmqkrzs54kMZe1G-ASZ4b9FyoEAlppycxeNGB-BFmZTBOxUVOq8_PgMKUgLvTkZMuAfP7bUlkPw7cgrNat3PpsEvGjtjTQVYdIG0rc6vZe6AZDa4D7UHNvmsdZYSdfKKUMZo6QpB=w1080-h277-s-no-gm?authuser=0",
-                        
-      // 49
-      "https://lh3.googleusercontent.com/pw/AP1GczN0NIfItO9aMoNgEJsRDnR95iX_f9zTpxt-SNIXIlUqV7AwKKBHpMsRGN3JFkzEqrNibwnZRHTiNbsIwTrRuoI7jrr3kzgZZjI6nKPVwqvf3FGHmeCoJjmubz-QRymvWTm-vqc_T-RgRJ5NPZowMbgw=w1080-h315-s-no-gm?authuser=0",
-
-      // 50
-      "https://lh3.googleusercontent.com/pw/AP1GczNREc7-1OqVr_KpktkA1_y_9wuAdB0O8qn-z_2XDuIM0idQdNLVSRae5MHH3kD30yKEkHBOeS3noonDhdolw0AafEzBDNh17gWfKVBdWB9ZnY-J_94NPYvunsDAK4mYcUkniAgaPSuDQHE05WTs0Ddm=w1075-h313-s-no-gm?authuser=0", 
-
-      // 51
-      "https://lh3.googleusercontent.com/pw/AP1GczON4cwyrCXabH-VJDr0ZbQ9VlbX_3vLfYaAPfOnJkC--3jT02acjxy8rNXlNg4Ik5b3wGdvC6hBLkTr_kmzGyBzLr0wfH0zRDGeNTr4vzguJ3JQHU87lkOUrFqQ7AY9N_MjYUVpWppXrmoTEQ-mkM9c=w1080-h281-s-no-gm?authuser=0",    
-      
-      // 52
-      "https://lh3.googleusercontent.com/pw/AP1GczOFbQVPwdEDCU1VzoF1Bl2iv5msPAy6ubesl9uTPjP44uuZtr-PIHA6vKAfUF5PnEGTqBv1783hEMDRO2ewUPdxgSdO9zuwsk-4xTewd5sBCVnN-28pms9q_K8M2TE-VN5vFYyl3ixGHEFQ-U7N6UBB=w1080-h287-s-no-gm?authuser=0", 
-                  
-      // 53
-      "https://lh3.googleusercontent.com/pw/AP1GczNcfFaZIhZ7wDOvcssx9u7EkU7ItrHkcp6Mr6gGt9eyXtnPput_pcve4YbEpcHXNQzYrWVsxXkAHtAgIX2IKfBMu43fM44RzhcQM7ynu4OWZkjTj5gVm6FEHkNcpK1pvVL-rDtj3zrPgecYWFAGvRAT=w1080-h316-s-no-gm?authuser=0", 
-
-      // 54
-      "https://lh3.googleusercontent.com/pw/AP1GczP5qRkWgcsbSWMwLolX0ekSIGOvl0Ffg14z2IBJT2U-fg3cbK-O1OG2qcmLu6MurYHwsFq7jXpEKu8EbqdJ3xjfas9CddgmapZ34LcyDMP6fcJN8Xw0nemOWplJvVnX3EgSAqUG2PiLmMZRYKt_edt4=w1080-h319-s-no-gm?authuser=0",
-
-      // 55
-      "https://lh3.googleusercontent.com/pw/AP1GczOHJWR_2X06ajV_JHYc8Nfy7baYEgnHSB_Qq3ARY7aIKeaTi5Ru3ySsvCY0N83aGBiNTZ2bfMMSSx5RhXDbRDKh0C3ZWHEhUi4raZgqOpytYfoNqJmFhP_kEVoz9FNLv5lD-_riA8PzAyMciHihr1mk=w952-h322-s-no-gm?authuser=0",
-      
-      // 56
-      "https://lh3.googleusercontent.com/pw/AP1GczNM2fCcg1BIAxYwqPB4jJR7yYtV9Uh7MnTD-AqnhJWFxh2aMaY-2m7nU7Jz3hmFY-kpFMO2bUzAfI5P16YRms-BEDJWBzFI0EOthZLKbq3OD6XvtsZskH5wcxzDGk8Bc0YDvlfY6rPVJQa4jbLOCm-K=w1080-h411-s-no-gm?authuser=0", 
-                  
-      // 57
-      "https://lh3.googleusercontent.com/pw/AP1GczN2y7Dfl_anJ3UvX3KKzZGvYD7B9AxTZF9YjcYacgUt9j7ZouRqLmJp06BblMG9oTnA1jfAW8nKFT-x89-85J4eJwpedned3isAp6Rq5BQj9T9lo1F4z7xqCWdZYtSozruoDqZIH7c20GYqJE1budFa=w1080-h382-s-no-gm?authuser=0", 
-
-      // 58
-      "https://lh3.googleusercontent.com/pw/AP1GczOlfqkmSSvR__86FMy3yLMzblZVaS_LOtHf7aMeHtfyGdlkbAMxzBadbLDdB00C7vTx6bGOtyvCJowVEbNe3pzVDH8u2izM2yLAK9YCwjW7M-rlSTWsJFQhayI_mR8UP_l7zexTdg1GiHVBiCfrjig_=w1080-h391-s-no-gm?authuser=0", 
-
-      // 59
-      "https://lh3.googleusercontent.com/pw/AP1GczNFWgbzHbjwV6ot2ZhAPuumjykT8_ZdbCCkA9wKV2Ta7vGue40p5rRtQirKu_qBLelwNSJxkBZppnIkACQLDNdG8737GBm8B24nDxcSDheu_EHydvROuwtM-mGYJ1-p5HKjUad6vArJ3Ut4rRGdnto0=w1080-h375-s-no-gm?authuser=0", 
-                  
-      // 60
-      "https://lh3.googleusercontent.com/pw/AP1GczOBcGjeKUGOWkx0oqgRSFAKlfoL5MfYV7Uf-noN-x24x0BJB7MQYkpt8AHDwioW4cWWyxVAYgZcs39HbQ7ofJaf-TFVeK3-YFqdj5-YczOjyFt2ofh_XEprYo9qkArQt8XLDv6gbdRKyknt6ajP-67Q=w1080-h364-s-no-gm?authuser=0", 
-                                    
-      // 61
-      "https://lh3.googleusercontent.com/pw/AP1GczN_KMOiE6EScbQzFwgKg9_xCkrLnsE55FLFnGqH_GbNKpcGK9TARryuCYW2JalKDFzq9x3rPuk9IAgur2gbrwcB-epzimLufbExvx-_55IiCZ0LFmQHaWz9_CXH7ZPT5qs2NUZJAU8Tgg5UdFlR_h8X=w1080-h301-s-no-gm?authuser=0", 
-                  
-      // 62
-      "https://lh3.googleusercontent.com/pw/AP1GczOnhURk7Ce3GYvQsQS-mz-5jyuxBLZZ-i4KP2kprJ8NCGUieAk6c7DLK3TMwTpojxT14jEn7yW5cbv46lO_K5SDN--OxZvt6WrHM1slxlu0xhaSwoSwPOZMYnZD-MZxZkmpsru9rtiUsMnttsVaUSqi=w1080-h302-s-no-gm?authuser=0", 
-                
-      // 63
-      "https://lh3.googleusercontent.com/pw/AP1GczMeokbCxOg5ToJ_e3hW-llpyF6d4PRETZJtQOQ6H4Qg1mcXj11VYZ7Ctwswr1vEwh7XefACW18Hd44TsrCIfZHPgyESmvts6bOcX-pV0UmWSq_DdnOgNmUdSeVzZY9UpYpct-HUNdp1H8Fd2-ewk1XF=w1080-h296-s-no-gm?authuser=0", 
-                  
-      // 64
-      "https://lh3.googleusercontent.com/pw/AP1GczMiIx3YPuudNvrAIbkcV8lY8fJH-MLCf-4KMsKPUfGoHL6k_YHJ-P9RRQEmjqL14gNSekDl0rcXLVy6C_JnF3xacfXw0H5r7KfAHNIJqqHYGfbh1sRasyJJA7n-RhhmzFgmVI-Imh74BfmgJa-PQ0lK=w1080-h284-s-no-gm?authuser=0", 
-
-      // 65
-      "https://lh3.googleusercontent.com/pw/AP1GczN7bz7cUQ8lB6LSOluIiQ4bQY0XnoVwqo_AM22Sel9iMlTQdIBg-lVfI9tel1chS53q1_yYO-uzplOfFJ7dAsRNIGZFjQDmMMTg428sRtR_oG0x7oA0_neWBC8x6Rf_QcYz9eomWUI5G5R-NtlbdoXh=w1080-h304-s-no-gm?authuser=0", 
-                  
-      // 66
-      "https://lh3.googleusercontent.com/pw/AP1GczO1oAYXTeJcn9TOF9HL97JZaojKVCZU7M4PntxvSQnn6xo3j2VXZG6pflZoPGVDaDox_bdvObrJAwdZRBXQiKpxmbWyq0YlME5piZY7IZXWV2v_4cyecAVwKUtf8yC5LSYfXNSvlO_f1olBPAf7hyQU=w1080-h303-s-no-gm?authuser=0", 
-                  
-      // 67
-      "https://lh3.googleusercontent.com/pw/AP1GczOB-sBJ3bel_DSlk7lK1hbeOd7neXnV03vzKZ2xhO_fki8GD7IUQ_a_eEaRJoQBPouK0BqHY9sh_XxJBaOHPY26Aai3Man3Q69yJ8BI99ycZ2MqqOC8byauGxvgJT2p5PJ72k9zWauAUsPBK4WjKx7e=w1080-h740-s-no-gm?authuser=0", 
-                  
-      // 68
-      "https://lh3.googleusercontent.com/pw/AP1GczMbQq87PrdMUd_NTQjZ4bF0OzYhGjfYSx65YAZq5pKfr1c0z4Z5b4ysd1lQIyuLrsFTAG7TeydGahPj_5m4jDucux7iFXOjvkdd6jYZi1odRGVhlTdXZNgaVZ9gCCUYF9gG4GA-2jVhmKnh5rO7dKn5=w1080-h718-s-no-gm?authuser=0", 
-
-      // 69
-      "https://lh3.googleusercontent.com/pw/AP1GczMqdB8qXCXAgiq8bF-ITSV6qtns7XscuVoKe8yE55iEf9mOtigs_OPR9IS83-_JdKjinALjiIX1TNPy9-8tA19-C9D9o-fjLrUjJiIvy0nUbhgfnf7G8JFEjlaShW-x3m8_pvZ2msQRKKGiV70QQbDO=w1080-h646-s-no-gm?authuser=0", 
-      
-      // 70
-      "https://lh3.googleusercontent.com/pw/AP1GczNamLFFXr-KHtwOvMoXY6JNvCtd1HTT5wXo3Z94-37N5PmR3Be4GjPkvplrulMe2qxV9kAqriiIpVqa_ULr6uQyH7bDyHruBkXzOB8_K1EvVh48MHr_ZDsBzF5Cbh-SuSMpsaa3PgrhChUrVRWN8qxM=w1080-h625-s-no-gm?authuser=0", 
-
-      // 71
-      "https://lh3.googleusercontent.com/pw/AP1GczPAKPe7qzRjpnIq22vZza3h-E7VOelYC3-GQRsCf7OyKqYnAHnJ2UBMak-R5q_xPKTzkhaY8OYw4-Io-lqIviqvIExWDmUop2ugAWL44xDEmLKpRledmdazlRwhmGRzdfOC4p8glTYJ46HEAJZp5iYu=w1080-h581-s-no-gm?authuser=0", 
-
-      // 73
-      "https://lh3.googleusercontent.com/pw/AP1GczNJACdGi7NwwA64WkajKEHXrV_g0J5SIEC3BYPHCFXRYRm191ekOwWiceJkRTu_lXmpF1MEOJWPXqcUofuLbAXdmor7tncON05gJ5kih_-v3UnnBVp0Doj0ZWAJq7b3b_0vvj0LB7CcoBnJuHJu2QTR=w1080-h497-s-no-gm?authuser=0", 
-
-      // 72
-      "https://lh3.googleusercontent.com/pw/AP1GczPHintrOH9_h4KFujQS7_we6hQ9bt5HjDptkk0F1J43uPmH_2bn7xnnpxwSpy-CPM5LQZYqNkGa-mwhrg1HmR5H4Fz9jhU3ni5vE8nR4Rik7aoNwTKT1mm2n6d1zpCmTapCMn2pQ0ElaRWmIWbTycqh=w1080-h486-s-no-gm?authuser=0", 
-
-      // 74
-      "https://lh3.googleusercontent.com/pw/AP1GczOxSyEhhh9iwZTr56rPJ5EVj2dYaVLWbTHmdEJ_K2qPiNxjCl1Q1PUNh_cm9efUOC4BIyhAJK_O5-M8p7WgdGrTY4CGDHIz8ksIuJkeQZpToWLNX8hbkJe2qtFJ_lTbpdNjEX5IU-dYcXh-XoGY4lDQ=w1080-h459-s-no-gm?authuser=0",     
-
-      // 75
-      "https://lh3.googleusercontent.com/pw/AP1GczNxzd7VoxnMAYoL8iYnGC91wzPJia3GdZCsZMU11xS1pcRQ67MdI6PntFOKuEx46rPC0A1K13ND1-c9G8ap22qOvPQ-v6q9klp6T9OAfqzH94pUjTtu-yPVoQ7h0RWdiWyphI4XlSg1Ex_2STTbFbev=w1080-h342-s-no-gm?authuser=0",
-
-      // 這裡繼續添加超過100條評價圖片URL
-  ];
-
+  document.getElementById('PhotoNext').addEventListener('click', function () {
+      if (window.ip === -1) {
+        alertMsg("您的瀏覽器不支援\n\n 1. 請點『 ︙ 』圖示 \n 2. 使用其它瀏覽器開啟!");
+        return;
+      }
+      photoPage.style.display = 'none'; // 隱藏
+      mapPage.style.display = 'block';  // 顯示
+      compressAndConvertToBase64();
+  });
+  
   //========================================================================
 
   function makeCall() {
