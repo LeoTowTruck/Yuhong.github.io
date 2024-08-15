@@ -1031,7 +1031,7 @@
       const scrollTop = window.scrollY || window.pageYOffset;
 
       // 判斷是否滾動到頁面底部
-      if (scrollTop + windowHeight >= documentHeight - 10) { // 加入小的容錯範圍
+      if (scrollTop + windowHeight >= documentHeight - 30) { // 加入小的容錯範圍
           footer.classList.add('show');
       } else {
           footer.classList.remove('show');
@@ -2107,10 +2107,10 @@
         alertMsg("您的瀏覽器不支援\n\n 1. 請點『 ︙ 』圖示 \n 2. 使用其它瀏覽器開啟!");
         return;
       }
-      checkScrollPosition();
       photoPage.style.display = 'none'; // 隱藏
       mapPage.style.display = 'block';  // 顯示
       compressAndConvertToBase64();
+      checkScrollPosition();
   });
   
   //========================================================================
