@@ -692,8 +692,14 @@
       align-items: center;    /* 垂直居中對齊       */
       white-space: nowrap;    /* 不換行            */
       position: fixed;
-      bottom: -10px; 
+      bottom: -50px; 
       z-index: 1; 
+      transition: bottom 0.5s ease; /* 只過渡 bottom 屬性 */
+  }
+
+  /* 當頁腳顯示時 */
+  footer.show {
+      bottom: -10px; 
   }
 
 /*********************************************************************/
@@ -991,7 +997,7 @@
   </div>  
 
   <!-- 頁腳 -->
-  <footer class="bg-gradient bg-dark">
+  <footer id="footer" class="bg-gradient bg-dark">
       <p>&copy; 2024  拾捌拖吊車 服務公司版權所有.</p>
   </footer>
 
@@ -1014,6 +1020,30 @@
       bootstrapCollapse.hide(); // 使用 Bootstrap 折疊 API 隱藏菜單
   });
 
+  const footer = document.getElementById('footer');
+
+  function checkScrollPosition() {
+      // 獲取頁面高度
+      const documentHeight = document.documentElement.scrollHeight;
+      // 獲取視口高度
+      const windowHeight = window.innerHeight;
+      // 獲取滾動位置
+      const scrollTop = window.scrollY || window.pageYOffset;
+
+      // 判斷是否滾動到頁面底部
+      if (scrollTop + windowHeight >= documentHeight - 10) { // 加入小的容錯範圍
+          footer.classList.add('show');
+      } else {
+          footer.classList.remove('show');
+      }
+  }
+
+  // 初始檢查
+  checkScrollPosition();
+
+  // 當滾動時檢查
+  window.addEventListener('scroll', checkScrollPosition);
+  
 // ========================================================================================================
 
   function createUploadBox() {
@@ -1939,18 +1969,22 @@
       mapPage.style.display = 'none';     // 隱藏      
       photoPage.style.display = 'block';  // 顯示
       window.scrollTo(0, 0);  // 滾動到網頁的頂部
+      checkScrollPosition();
+      
   });
 
   document.getElementById('mapNext').addEventListener('click', function () {
       mapPage.style.display = 'none';     // 隱藏     
       submitPage.style.display = 'block'; // 顯示
       window.scrollTo(0, 0);  // 滾動到網頁的頂部
+      checkScrollPosition();
   });
 
   document.getElementById('submitPrevious').addEventListener('click', function () {
       submitPage.style.display = 'none';   // 隱藏     
       mapPage.style.display = 'block';     // 顯示
       window.scrollTo(0, 0);  // 滾動到網頁的頂部
+      checkScrollPosition();
   });
 
 // ========================================================================================================
@@ -2073,6 +2107,7 @@
         alertMsg("您的瀏覽器不支援\n\n 1. 請點『 ︙ 』圖示 \n 2. 使用其它瀏覽器開啟!");
         return;
       }
+      checkScrollPosition();
       photoPage.style.display = 'none'; // 隱藏
       mapPage.style.display = 'block';  // 顯示
       compressAndConvertToBase64();
