@@ -1031,7 +1031,7 @@
       const scrollTop = window.scrollY || window.pageYOffset;
 
       // 判斷是否滾動到頁面底部
-      if (scrollTop + windowHeight >= documentHeight - 80) { // 加入小的容錯範圍
+      if (scrollTop + windowHeight >= documentHeight - 50) { // 加入小的容錯範圍
           footer.classList.add('show');
       } else {
           footer.classList.remove('show');
@@ -1970,21 +1970,19 @@
       photoPage.style.display = 'block';  // 顯示
       window.scrollTo(0, 0);  // 滾動到網頁的頂部
       checkScrollPosition();
-      
   });
 
   document.getElementById('mapNext').addEventListener('click', function () {
       mapPage.style.display = 'none';     // 隱藏     
       submitPage.style.display = 'block'; // 顯示
       window.scrollTo(0, 0);  // 滾動到網頁的頂部
-      checkScrollPosition();
+
   });
 
   document.getElementById('submitPrevious').addEventListener('click', function () {
       submitPage.style.display = 'none';   // 隱藏     
       mapPage.style.display = 'block';     // 顯示
       window.scrollTo(0, 0);  // 滾動到網頁的頂部
-      checkScrollPosition();
   });
 
 // ========================================================================================================
