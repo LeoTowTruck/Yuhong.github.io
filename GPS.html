@@ -86,7 +86,6 @@
   body {
       background-color: #1e1e1e; /* 設置背景顏色*/
       font-family: 'Montserrat', sans-serif;
-      height: 100vh;
   }
 
   .container-fluid {
@@ -94,9 +93,8 @@
       max-width: 1200px;
       padding: 0 5%;
       transition: padding 0.5s ease; /* 過渡效果 */
-      margin-top: 70px;
-      margin-bottom: 50px;
-      min-height:calc(100% - 194px);
+      margin-top: 80px;
+      margin-bottom: 80px;
   }
 
   .Sr {
@@ -690,10 +688,14 @@
   footer {
       color: #fff;
       display: flex;
+      width: 100%;
       padding-top: 10px;
       justify-content: center; /* 確保子元素均勻分佈 */
-      align-items: center; /* 垂直居中對齊 */
-      white-space: nowrap; /* 不換行 */
+      align-items: center;    /* 垂直居中對齊       */
+      white-space: nowrap;    /* 不換行            */
+      position: fixed;
+      bottom: -10px; 
+      z-index: 1; 
   }
 
 /*********************************************************************/
