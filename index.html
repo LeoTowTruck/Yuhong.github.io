@@ -598,7 +598,10 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://leotowtruck.github.io/Yuhong.github.io/GPS">GPS定位派車</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#about-us">關於我們</a>
           </li>
@@ -1491,92 +1494,92 @@
 
 //===================================================================
 
-      // 更新顯示焦點的圖片
-      function updateVisibleFocus() {
+    // 更新顯示焦點的圖片
+    function updateVisibleFocus() {
 
-        // 遍歷所有圖片元素，篩選出在視口中可見的圖片
-        const visiblePhotos = Array.from(photos).filter(photo => {
-          // 獲取圖片元素的邊界矩形
-          const rect = photo.getBoundingClientRect();
-          // 檢查圖片是否完全在視口中
-          return (
-            rect.top >= 160 &&                          // 圖片頂部在視口上方
-            rect.left >= 0 &&                          // 圖片左邊在視口左邊
-            rect.bottom <= window.innerHeight + 150 &&   // 圖片底部在視口下方
-            rect.right <= window.innerWidth            // 圖片右邊在視口右邊
-          );
-        });
+      // 遍歷所有圖片元素，篩選出在視口中可見的圖片
+      const visiblePhotos = Array.from(photos).filter(photo => {
+        // 獲取圖片元素的邊界矩形
+        const rect = photo.getBoundingClientRect();
+        // 檢查圖片是否完全在視口中
+        return (
+          rect.top >= 160 &&                          // 圖片頂部在視口上方
+          rect.left >= 0 &&                           // 圖片左邊在視口左邊
+          rect.bottom <= window.innerHeight + 150 &&  // 圖片底部在視口下方
+          rect.right <= window.innerWidth             // 圖片右邊在視口右邊
+        );
+      });
 
-        // 取得可見圖片中最小和最大索引
-        first_photos = Array.from(photos).indexOf(visiblePhotos[0]);
-        last_photos = Array.from(photos).indexOf(visiblePhotos[visiblePhotos.length - 1]);
-        
-        // alert(first_photos + " / " + last_photos);
+      // 取得可見圖片中最小和最大索引
+      first_photos = Array.from(photos).indexOf(visiblePhotos[0]);
+      last_photos = Array.from(photos).indexOf(visiblePhotos[visiblePhotos.length - 1]);
+      
+      // alert(first_photos + " / " + last_photos);
 
-        // 如果視口內已有圖片，不進行任何操作
-        if (first_photos <= currentIndex && currentIndex <= last_photos ) {
-          return;
-        }
-        
-        // 焦點
-        if (visiblePhotos.length > 0) {
-          clearInterval(timer); // 清除定時器
-          // 獲取第一張可見圖片的索引
-          currentIndex = first_photos;
-          // 更新焦點，根據 currentIndex 顯示對應的圖片
-          updateFocus();  // 立刻執行
-          timer = setInterval(updateFocus, 3500);
-        }
+      // 如果視口內已有圖片，不進行任何操作
+      if (first_photos <= currentIndex && currentIndex <= last_photos ) {
+        return;
       }
+      
+      // 焦點
+      if (visiblePhotos.length > 0) {
+        clearInterval(timer); // 清除定時器
+        // 獲取第一張可見圖片的索引
+        currentIndex = first_photos;
+        // 更新焦點，根據 currentIndex 顯示對應的圖片
+        updateFocus();  // 立刻執行
+        timer = setInterval(updateFocus, 3500);
+      }
+    }
 
-      let isScrolling; // 用於存儲 setTimeout ID
+    let isScrolling; // 用於存儲 setTimeout ID
 
-      window.addEventListener('scroll', function() {
-        // 清除之前的滾動計時器
-        clearTimeout(isScrolling);
+    window.addEventListener('scroll', function() {
+      // 清除之前的滾動計時器
+      clearTimeout(isScrolling);
 
-        // 設定新的計時器，在滾動結束後N毫秒執行 updateVisibleFocus()
-        isScrolling = setTimeout(function() {
-          window.requestAnimationFrame(function() {
-            updateVisibleFocus();
-          });
-        }, 100); // 毫秒的延遲
-      });
-             
-    });
-
-
-
-    // 通用的函數，用於選取第一張圖片並複製其節點
-    const copyFirstPhoto = (sourceSelector, targetId) => {
-        // 使用 sourceSelector 選取第一個匹配的圖片元素（假設該 selector 選取的是一個或多個包含圖片的容器）
-        const firstPhoto = document.querySelector(sourceSelector + ' img').cloneNode(true);
-        // 將複製的圖片節點添加到目標元素中
-        document.getElementById(targetId).appendChild(firstPhoto);
-    };
-
-
-    // 通用的函數，用於處理鼠標懸停事件
-    const addHoverEffect = (sourceSelector, targetId) => {
-      document.querySelectorAll(sourceSelector).forEach(photo => {
-        photo.addEventListener('focus', (e) => {
-          // 選取.photo 元素中的圖片，並複製其節點
-          const img = e.currentTarget.querySelector('img').cloneNode(true);
-          
-          // 獲取用於顯示圖片的元素
-          const displayPhotoDiv = document.getElementById(targetId);
-          
-          // 清空顯示圖片元素中的內容
-          displayPhotoDiv.innerHTML = '';
-          
-          // 將複製的圖片節點添加到顯示圖片的元素中
-          displayPhotoDiv.appendChild(img);
+      // 設定新的計時器，在滾動結束後N毫秒執行 updateVisibleFocus()
+      isScrolling = setTimeout(function() {
+        window.requestAnimationFrame(function() {
+          updateVisibleFocus();
         });
+      }, 100); // 毫秒的延遲
+    });
+            
+  });
 
-        // 確保元素可以獲得焦點
-        photo.tabIndex = 0;
+
+
+  // 通用的函數，用於選取第一張圖片並複製其節點
+  const copyFirstPhoto = (sourceSelector, targetId) => {
+      // 使用 sourceSelector 選取第一個匹配的圖片元素（假設該 selector 選取的是一個或多個包含圖片的容器）
+      const firstPhoto = document.querySelector(sourceSelector + ' img').cloneNode(true);
+      // 將複製的圖片節點添加到目標元素中
+      document.getElementById(targetId).appendChild(firstPhoto);
+  };
+
+
+  // 通用的函數，用於處理鼠標懸停事件
+  const addHoverEffect = (sourceSelector, targetId) => {
+    document.querySelectorAll(sourceSelector).forEach(photo => {
+      photo.addEventListener('focus', (e) => {
+        // 選取.photo 元素中的圖片，並複製其節點
+        const img = e.currentTarget.querySelector('img').cloneNode(true);
+        
+        // 獲取用於顯示圖片的元素
+        const displayPhotoDiv = document.getElementById(targetId);
+        
+        // 清空顯示圖片元素中的內容
+        displayPhotoDiv.innerHTML = '';
+        
+        // 將複製的圖片節點添加到顯示圖片的元素中
+        displayPhotoDiv.appendChild(img);
       });
-    };
+
+      // 確保元素可以獲得焦點
+      photo.tabIndex = 0;
+    });
+  };
 
 
   //========================================================================
