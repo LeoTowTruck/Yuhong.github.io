@@ -498,7 +498,7 @@
         width: 40%;
         max-width: 250px;
         height: 100%;
-        background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+        background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
         transform: skewX(-45deg); /* 傾斜閃光效果 */
         filter: blur(16px);       /* 使閃光邊緣模糊 */
         animation: flash 12s infinite; /* 閃光效果動畫，無限循環 */
@@ -802,15 +802,25 @@
         width: 60px;
         height: 60px;
       }
+      .shape3 {
+        top: 10%;
+        left: 180px;
+      }
+      .shape5 {
+        left: 180px;
+        bottom: -2%;
+        width: 17px;
+        height: 17px;
+        animation: move6 12s infinite linear;
+      }
+      .shape8 {
+        top: 45%;
+        right: 150px;
+      }
     }
 
     // 桌面、992px 以上
     @media (min-width: 992px) { 
-      .carousel-caption {
-          position: absolute;
-          top: 45%;
-          transform: translateY(-50%);
-      }
       .call-button, .Line-button {
         width: 65px;
         height: 65px;
