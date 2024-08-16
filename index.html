@@ -240,9 +240,8 @@
         border-radius: 10px;
         background-color: rgba(0, 0, 0, 0.1);           /* 半透明背景色 */
         text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);      /* 設置文字陰影        */
-        padding: 10px 20px;
+        padding: 10px 10px;
         text-align: center;
-        margin: 0 auto; /* 水平置中 */
     }
 
   /*********************************************************************/     
@@ -319,6 +318,8 @@
         white-space: nowrap;                         /* 不換行 */
         min-width: 0;                                /* 避免溢出 */
         z-index: 1;                                  /* 設置z-index，以確保元素在正確的層級 */
+        display: inline-flex;
+        align-items: center; /* 水平對齊 */
     }
 
     .section h3 { 
@@ -573,6 +574,224 @@
 
     /*********************************************************************/
 
+    .move-image-container {
+        position: relative;
+        padding: 70px 0px;  
+    }
+
+    .move-image-container .row .col-12 {
+        display: flex;
+        justify-content: center; /* 水平置中 */
+        flex-direction: column;  /* 元素由上往下排序 */
+        align-items: center;     /* 垂直居中 */
+    }
+
+    .move-image-container .row h1 {
+        font-size: clamp(1.3rem, 2.5vw, 2rem);  /* 使用 clamp 設置字體大小，最小 1rem，最大 2rem */
+    }
+    .move-image-container .row h3 {
+        font-family: "Noto Serif HK", serif;         /* 設置字體為 "Noto Serif HK" 和預設字體為 serif */
+        font-weight: 900;                            /* 使用最粗字重 */
+        font-style: normal;                          /* 設置字體風格為正常 */
+        letter-spacing: 0.1em;                       /* 增加字母間距 */
+        font-size: clamp(1.1rem, 2.5vw, 1.8rem);  /* 使用 clamp 設置字體大小，最小 1rem，最大 2rem */
+        color: #fff;                                 /* 設置文字顏色為白色 */
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);   /* 設置文字陰影 */
+        text-decoration: none;                       /* 移除文字裝飾 */
+        padding: 5px auto;                            /* 設置內邊距為 5px */
+        white-space: nowrap;                         /* 不換行 */
+        min-width: 0;                                /* 避免溢出 */
+        z-index: 1;                                  /* 設置z-index，以確保元素在正確的層級 */
+        display: inline-flex;
+        align-items: center; /* 水平對齊 */  
+    }
+
+    .gpsbtn {
+        min-width: 250px;
+        height: 80px;
+        font-family: "Noto Serif HK", serif;         /* 設置字體為 "Noto Serif HK" 和預設字體為 serif */
+        font-weight: 900;                            /* 使用最粗字重 */
+        font-style: normal;                          /* 設置字體風格為正常 */
+        letter-spacing: 0.1em;                       /* 增加字母間距 */
+        font-size: clamp(1.3rem, 2.5vw, 1.8rem);  /* 使用 clamp 設置字體大小，最小 1rem，最大 2rem */
+        text-decoration: none;                       /* 移除文字裝飾 */
+        color: #1e1e1e;                                 /* 設置文字顏色為白色 */
+        background-color: #FFDC35;
+        border: none;
+        border-radius: 5px;
+        transition: all 0.3s;
+        padding: 20px 30px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        z-index: 2;    
+    }
+
+    .gpsbtn:hover {
+        background-color: #f5c300;
+    }
+
+    @keyframes move1 {
+        0% {
+            transform: rotate(0deg) translateX(20px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(20px) rotate(-360deg);
+        }
+    }
+
+    @keyframes move2 {
+        0% {
+            transform: rotate(0deg) translateX(15px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(15px) rotate(-360deg);
+        }
+    }
+
+    @keyframes move3 {
+        0% {
+            transform: rotate(0deg) translateX(25px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg) translateX(25px) rotate(360deg);
+        }
+    }
+    @keyframes move4 {
+        0% {
+            transform: rotate(0deg) translateX(8px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg) translateX(8px) rotate(360deg);
+        }
+    }
+    @keyframes move5 {
+        0% {
+            transform: rotate(0deg) translateX(14px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg) translateX(14px) rotate(360deg);
+        }
+    }
+    @keyframes move6 {
+        0% {
+            transform: rotate(0deg) translateX(17px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(17px) rotate(-360deg);
+        }
+    }
+    .moving-image1 {
+        position: absolute;
+        top: 4%; /* 圖片初始位置 */
+        left: 20px; /* 圖片初始位置 */
+        width: 16%;
+        max-width: 120px;
+        height: auto;
+        will-change: transform; /* 提示瀏覽器進行優化 */
+        animation: move4 10s infinite linear;
+    }
+    .moving-image2 {
+        position: absolute;
+        left: 40px; 
+        bottom: 1%;
+        width: 14%;
+        max-width: 120px;
+        height: auto;
+        will-change: transform; /* 提示瀏覽器進行優化 */
+        animation: move5 12s infinite linear;
+    }
+    .moving-image3 {
+        position: absolute;
+        top: 35%; 
+        right: 5px; 
+        width: 17%;
+        max-width: 120px;
+        height: auto;
+        will-change: transform; /* 提示瀏覽器進行優化 */
+        animation: move6 9s infinite linear;
+    }
+    /* 動畫 */
+    .shapeAll {
+        position: absolute;
+        border-radius: 5px;
+        border: 3px solid rgba(240, 240, 240, 1); /* 邊框 */
+        padding: 0;
+    }
+    .shapeAll p {
+        color: rgba(255, 0, 0, 0);
+    }
+    .shape1 {
+        top: -2%;
+        left: 10px;
+        width: 15px;
+        height: 15px;
+        animation: move6 10s infinite linear;
+    }
+    .shape2 {
+        top: 30%;
+        left: 25px;
+        width: 17px;
+        height: 17px;
+        animation: move5 12s infinite linear;
+    }
+    .shape3 {
+        top: 6%;
+        left: 120px;
+        width: 19px;
+        height: 19px;
+        animation: move6 9s infinite linear;
+    }
+    .shape4 {
+        left: 20px;
+        bottom: 7%;
+        width: 15px;
+        height: 15px;
+        animation: move4 11s infinite linear;
+    }
+    .shape5 {
+        left: 125px;
+        bottom: -2%;
+        width: 17px;
+        height: 17px;
+        animation: move6 12s infinite linear;
+    }
+    .shape6 {
+        left: 70px;
+        bottom: 28%;
+        width: 13px;
+        height: 13px;
+        animation: move5 9s infinite linear;
+    }
+    .shape7 {
+        top: 25%;
+        right: 5px;
+        width: 15px;
+        height: 15px;
+        animation: move6 10s infinite linear;
+    }
+    .shape8 {
+        top: 35%;
+        right: 80px;
+        width: 17px;
+        height: 17px;
+        animation: move5 12s infinite linear;
+    }
+    .shape9 {
+        right: 25px;
+        bottom: 30%;
+        width: 18px;
+        height: 18px;
+        animation: move4 10s infinite linear;
+    }    
+    .shape10 {
+        right: 50px;
+        bottom: 10%;
+        width: 18px;
+        height: 18px;
+        animation: move6 12s infinite linear;
+    }
+    
+
     </style>
 </head>
 <body>
@@ -678,22 +897,63 @@
     </button>
   </div>
 
+
   <!----------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="container-fluid">
-    <div class="row mt-4">
-      <div>
-        <div class="section">
-            <div class="col-12 mb-2">
-              <img src="https://lh3.googleusercontent.com/pw/AP1GczP6fZbHMxTEfVUA5HN7E9zIE8ETqR_OZrCnP9o8H7AykF5ZLUlO4a33Jzw6XJSQzeLHpppIq7vLjYAe2DF2fHCUb-aSS7Um3INrOKlcNTtEEFyDoP_jSq3E_TGuy0mXsdxq5C_Qu_r6AEt3xzX-Rvfm=w512-h512-s-no-gm?authuser=0" class="white-image w-settingHead" alt="高雄屏東道路救援">
-            </div>
-              <h1>高雄屏東道路救援</h1>
-              <p>24小時快速、高效的拖吊服務！</p>
-        </div> 
+
+  <div class="container-fluid mt-3 mb-3">
+    <div class="move-image-container">
+      <div class="row">
+
+        <div class="col-12 col-lg-12">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczP6fZbHMxTEfVUA5HN7E9zIE8ETqR_OZrCnP9o8H7AykF5ZLUlO4a33Jzw6XJSQzeLHpppIq7vLjYAe2DF2fHCUb-aSS7Um3INrOKlcNTtEEFyDoP_jSq3E_TGuy0mXsdxq5C_Qu_r6AEt3xzX-Rvfm=w512-h512-s-no-gm?authuser=0" class="white-image w-settingHead mb-2" alt="高雄屏東道路救援">
+          <h1>高雄屏東道路救援</h1>
+          <h3>24小時快速、高效的拖吊專家！</h3>
+        </div>
+
+        <div class="col-12">
+          <button class="gpsbtn">使用GPS定位派車</button>
+        </div>
+        <div class="col-12 col-lg-12">
+          <div class="d-flex flex-column">
+            <h3><span class="material-symbols-outlined">counter_1</span>上傳兩張汽車與背景照片</h3>
+            <h3><span class="material-symbols-outlined">counter_2</span>使用衛星地圖GPS定位</h3>
+            <h3><span class="material-symbols-outlined">counter_3</span>填寫您的稱呼與電話</h3>
+          </div>
+        </div>
+
+ 
+      </div>
+
+
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNVfwCL19rfKvYwuKHJbfvwjbiCMA9Ldf7sQ5Ytw5EFU__2ARFONW26OQjr-_yUYjPWwKZbCJesNO7u8iEOh0UOyTdcZL3q2yv2prB95vTRTje5n_7ktfug8fNkAWzAsfffzDisJdqZYWU-_iAd5xWS=w512-h512-s-no-gm?authuser=0" alt="txtImage" class="moving-image1 white-image">
+
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOp94NPnRZ2lgFpIDyZTLxBiY2T6CWuGO-8IsxkcOakRm87JdTEtmz9rfo08aJVa5UPiRjrOgM-JB4zoOlPRCCbStJ6H1h0C35rCJEYRUDC0Q0AdBOq37QTEPs3ilSzQk5wAqQLh9tbEsllQ5mbrePR=w512-h512-s-no-gm?authuser=0" alt="photoImage" class="moving-image2 white-image">
+
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMMkCPZCQcDyGYjCNkABFJcHJY-jhsXsvN0jHCLPF5qtwDZ1iiRT-kCQ17ehKJqu_3n6LeH6QefhUQi6Z52_IBMqRZeIoyHIMqE4dZexmrC9h7XcKyLOKunm1WqaQGH75WOPHg3OWXc3mnw9IVLwgxs=w512-h512-s-no-gm?authuser=0"alt="gpsImage" class="moving-image3 white-image">
+
+
+        <!-- 添加形狀 -->
+        <div class="shapeAll shape1"><p>1</p></div>
+        <div class="shapeAll shape2"><p>2</p></div>
+        <div class="shapeAll shape3"><p>3</p></div>
+        <div class="shapeAll shape4"><p>4</p></div>
+        <div class="shapeAll shape5"><p>5</p></div>
+        <div class="shapeAll shape6"><p>6</p></div>
+        <div class="shapeAll shape7"><p>7</p></div>
+        <div class="shapeAll shape8"><p>8</p></div>
+        <div class="shapeAll shape9"><p>9</p></div>
+        <div class="shapeAll shape10"><p>10</p></div>
       </div>
     </div>
+  </div>
 
-    <!-- 1 -->
+
+  <!----------------------------------------------------------------------------------------------------------------------------->
+
+
+  <!-- 1 -->
+  <div class="container-fluid">
     <div class="row mt-md-2 mb-md-5">
       <div class="col-12 col-md-6 mt-3 mb-3">
         <div class="card">
@@ -758,10 +1018,9 @@
   </div>
 
   
-
   <div id="services" class="container-fluid">
     <div class="section mb-5 mt-5" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
-      <h2><span class="material-symbols-outlined">check_circle</span>服務項目</h2>
+      <h2 class="justify-content-center"><span class="material-symbols-outlined">check_circle</span>服務項目</h2>
       <div class="row">
         <div class="col-4 col-md-2 mb-3 mt-3">
           <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMR6EPug6DHXjmPDMtkT_oW9dmJyuJiUa9LgdZFGfaL7poCnCEIJwoTlNV6VLslzGESR9Z8gDoDp9K_67-UmMByvmG35JtLAmpVdBqZbe69U7pWz_WB_zYaTXQy-1aKkkL1IHNw2bLSiY4rLiix-9MV=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="南州拖吊車">
@@ -797,20 +1056,20 @@
     <div class="row mb-5 mt-5">
       <div class="col-12 col-lg-4 mb-3 mt-3" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
         <div class="section">
-          <h2><span class="material-symbols-outlined">groups</span>關於我們</h2>
+          <h2 class="justify-content-center"><span class="material-symbols-outlined">groups</span>關於我們</h2>
           <p>我們的拖吊車公司成立於2009年，從一輛小拖吊車起步，憑著專業技術和真誠服務，迅速成為本地領先的道路救援與拖吊服務提供商。我們的服務範圍涵蓋高雄和屏東地區，憑藉專業的技術、優質的服務和可靠的信譽，贏得了廣大客戶的信任和支持。</p>
         </div>
       </div>
       <div class="col-12 col-lg-4 mb-3 mt-3" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
         <div class="section">
-          <h2><span class="material-symbols-outlined">workspace_premium</span>使命</h2>
-          <p>我們的使命是提供快速、高效且安全的拖吊和道路救援服務，確保每一位客戶在遇到車輛故障或事故時，都能獲得即時的幫助和安心。我們致力於以客戶為中心，提供全天候24小時服務，確保您在任何時間、地點都能得到我們的支援。</p>
+          <h2 class="justify-content-center"><span class="material-symbols-outlined">diversity_4</span>團隊</h2>
+          <p>我們的團隊由一群經驗豐富、技術精湛且熱愛工作的專業人士組成。我們擁有豐富的道路救援和拖吊經驗，並定期接受培訓以保持最新的行業知識和技能。我們的司機和技術人員不僅擅長操作各類拖吊設備，還具備良好的應變能力和服務態度，確保每次任務都能安全、高效地完成。</p>
         </div>
       </div>
       <div class="col-12 col-lg-4 mb-3 mt-3" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
         <div class="section">
-          <h2><span class="material-symbols-outlined">diversity_4</span>團隊</h2>
-          <p>我們的團隊由一群經驗豐富、技術精湛且熱愛工作的專業人士組成。我們擁有豐富的道路救援和拖吊經驗，並定期接受培訓以保持最新的行業知識和技能。我們的司機和技術人員不僅擅長操作各類拖吊設備，還具備良好的應變能力和服務態度，確保每次任務都能安全、高效地完成。</p>
+          <h2 class="justify-content-center"><span class="material-symbols-outlined">workspace_premium</span>使命</h2>
+          <p>我們的使命是提供快速、高效且安全的拖吊和道路救援服務，確保每一位客戶在遇到車輛故障或事故時，都能獲得即時的幫助和安心。我們致力於以客戶為中心，提供全天候24小時服務，確保您在任何時間、地點都能得到我們的支援。</p>
         </div>
       </div>
     </div>
@@ -1262,7 +1521,9 @@
 
   <div id="reviews" class="container-fluid">
     <div class="row align-items-center reviews-container" id="reviews-container">
-      <h2 class="mt-4 mb-2">客戶評價 <span class="material-symbols-outlined">thumb_up</span></h2>
+      <div col-12>
+        <h2 class="mt-4 mb-2">客戶評價 <span class="material-symbols-outlined">thumb_up</span></h2>
+      </div>
     </div>
   </div>
 
