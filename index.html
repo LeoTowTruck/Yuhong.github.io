@@ -270,8 +270,259 @@
         transition: transform 1s;
         z-index: 1;
     }
-
     /*********************************************************************/
+
+    .move-image-container {
+        position: relative;
+        overflow: visible;       /* 允許內容超出邊界 */
+    }
+
+    .move-image-container .row .col-12 {
+        display: flex;
+        justify-content: center; /* 水平置中 */
+        flex-direction: column;  /* 元素由上往下排序 */
+        align-items: center;     /* 垂直居中 */
+    }
+
+    .move-image-container .row h1 {
+        font-size: clamp(1.3rem, 2.5vw, 2rem);  /* 使用 clamp 設置字體大小，最小 1rem，最大 2rem */
+    }
+    .move-image-container .row h3 {
+        font-family: "Noto Serif HK", serif;         /* 設置字體為 "Noto Serif HK" 和預設字體為 serif */
+        font-weight: 900;                            /* 使用最粗字重 */
+        font-style: normal;                          /* 設置字體風格為正常 */
+        letter-spacing: 0.1em;                       /* 增加字母間距 */
+        font-size: clamp(1.1rem, 2.5vw, 1.8rem);  /* 使用 clamp 設置字體大小，最小 1rem，最大 2rem */
+        color: #fff;                                 /* 設置文字顏色為白色 */
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);   /* 設置文字陰影 */
+        text-decoration: none;                       /* 移除文字裝飾 */
+        padding: 5px auto;                            /* 設置內邊距為 5px */
+        white-space: nowrap;                         /* 不換行 */
+        min-width: 0;                                /* 避免溢出 */
+        z-index: 1;                                  /* 設置z-index，以確保元素在正確的層級 */
+        display: inline-flex;
+        align-items: center; /* 水平對齊 */  
+    }
+
+    .gpsbtn {
+        display: inline-block;                          /* 讓 a 標籤像按鈕一樣是 inline-block */
+        min-width: 250px;
+        height: 80px;
+        font-family: "Noto Serif HK", serif;
+        font-weight: 900;
+        font-style: normal;
+        letter-spacing: 0.1em;
+        font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+        text-decoration: none;                          /* 移除文字裝飾 */
+        color: #1e1e1e;                                 /* 設置文字顏色 */
+        background-color: #FFDC35;
+        border: none;
+        border-radius: 5px;
+        transition: all 0.3s;
+        padding: 20px 30px;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        text-align: center;                             /* 讓文字在按鈕內居中 */
+        line-height: 40px;                              /* 調整文字垂直居中 */
+        z-index: 2;
+    }
+
+    .gpsbtn:hover {
+        background-color: #f5c300;
+    }
+
+    @keyframes move1 {
+        0% {
+            transform: rotate(0deg) translateX(20px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(20px) rotate(-360deg);
+        }
+    }
+
+    @keyframes move2 {
+        0% {
+            transform: rotate(0deg) translateX(15px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(15px) rotate(-360deg);
+        }
+    }
+
+    @keyframes move3 {
+        0% {
+            transform: rotate(0deg) translateX(25px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg) translateX(25px) rotate(360deg);
+        }
+    }
+    @keyframes move4 {
+        0% {
+            transform: rotate(0deg) translateX(8px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg) translateX(8px) rotate(360deg);
+        }
+    }
+    @keyframes move5 {
+        0% {
+            transform: rotate(0deg) translateX(14px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg) translateX(14px) rotate(360deg);
+        }
+    }
+    @keyframes move6 {
+        0% {
+            transform: rotate(0deg) translateX(17px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(17px) rotate(-360deg);
+        }
+    }
+    .moving-image1 {
+        position: absolute;
+        top: 4%; /* 圖片初始位置 */
+        left: 20px; /* 圖片初始位置 */
+        width: 16%;
+        max-width: 120px;
+        height: auto;
+        will-change: transform; /* 提示瀏覽器進行優化 */
+        animation: move4 10s infinite linear;
+    }
+    .moving-image2 {
+        position: absolute;
+        left: 40px; 
+        bottom: 1%;
+        width: 14%;
+        max-width: 120px;
+        height: auto;
+        will-change: transform; /* 提示瀏覽器進行優化 */
+        animation: move5 12s infinite linear;
+    }
+    .moving-image3 {
+        position: absolute;
+        top: 35%; 
+        right: 5px; 
+        width: 17%;
+        max-width: 120px;
+        height: auto;
+        will-change: transform; /* 提示瀏覽器進行優化 */
+        animation: move6 9s infinite linear;
+    }
+    /* 動畫 */
+    .shapeAll {
+        position: absolute;
+        border-radius: 5px;
+        border: 3px solid rgba(240, 240, 240, 1); /* 邊框 */
+        padding: 0;
+    }
+    .shape1 {
+        top: -2%;
+        left: 10px;
+        width: 15px;
+        height: 15px;
+        animation: move6 10s infinite linear;
+    }
+    .shape2 {
+        top: 30%;
+        left: 25px;
+        width: 17px;
+        height: 17px;
+        animation: move5 12s infinite linear;
+    }
+    .shape3 {
+        top: 6%;
+        left: 120px;
+        width: 19px;
+        height: 19px;
+        animation: move6 9s infinite linear;
+    }
+    .shape4 {
+        left: 20px;
+        bottom: 7%;
+        width: 15px;
+        height: 15px;
+        animation: move4 11s infinite linear;
+    }
+    .shape5 {
+        left: 125px;
+        bottom: -2%;
+        width: 17px;
+        height: 17px;
+        animation: move6 12s infinite linear;
+    }
+    .shape6 {
+        left: 70px;
+        bottom: 28%;
+        width: 13px;
+        height: 13px;
+        animation: move5 9s infinite linear;
+    }
+    .shape7 {
+        top: 25%;
+        right: 5px;
+        width: 15px;
+        height: 15px;
+        animation: move6 10s infinite linear;
+    }
+    .shape8 {
+        top: 35%;
+        right: 80px;
+        width: 17px;
+        height: 17px;
+        animation: move5 12s infinite linear;
+    }
+    .shape9 {
+        right: 25px;
+        bottom: 30%;
+        width: 18px;
+        height: 18px;
+        animation: move4 10s infinite linear;
+    }    
+    .shape10 {
+        right: 50px;
+        bottom: 10%;
+        width: 18px;
+        height: 18px;
+        animation: move6 12s infinite linear;
+    }
+    
+    .flash-box {
+        position: relative;
+        overflow: hidden;
+        width: 100%;            /* 設置格子的寬度 */
+        height: 100%;           /* 設置格子的高度 */
+        padding: 70px 0px;  
+    }
+
+    .flash-box::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;             /* 從格子外部開始 */
+        width: 40%;
+        height: 100%;
+        background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+        transform: skewX(-45deg); /* 傾斜閃光效果 */
+        filter: blur(16px);       /* 使閃光邊緣模糊 */
+        animation: flash 12s infinite; /* 閃光效果動畫，無限循環 */
+    }
+
+    @keyframes flash {
+        0% {
+            left: -100%;
+        }
+        50% {
+            left: 200%;
+        }
+        100% {
+            left: 200%;
+        }
+    }
+
+  /*********************************************************************/
 
     .section {
       display: flex;
@@ -572,226 +823,6 @@
       }
     }
 
-    /*********************************************************************/
-
-    .move-image-container {
-        position: relative;
-        padding: 70px 0px;  
-    }
-
-    .move-image-container .row .col-12 {
-        display: flex;
-        justify-content: center; /* 水平置中 */
-        flex-direction: column;  /* 元素由上往下排序 */
-        align-items: center;     /* 垂直居中 */
-    }
-
-    .move-image-container .row h1 {
-        font-size: clamp(1.3rem, 2.5vw, 2rem);  /* 使用 clamp 設置字體大小，最小 1rem，最大 2rem */
-    }
-    .move-image-container .row h3 {
-        font-family: "Noto Serif HK", serif;         /* 設置字體為 "Noto Serif HK" 和預設字體為 serif */
-        font-weight: 900;                            /* 使用最粗字重 */
-        font-style: normal;                          /* 設置字體風格為正常 */
-        letter-spacing: 0.1em;                       /* 增加字母間距 */
-        font-size: clamp(1.1rem, 2.5vw, 1.8rem);  /* 使用 clamp 設置字體大小，最小 1rem，最大 2rem */
-        color: #fff;                                 /* 設置文字顏色為白色 */
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);   /* 設置文字陰影 */
-        text-decoration: none;                       /* 移除文字裝飾 */
-        padding: 5px auto;                            /* 設置內邊距為 5px */
-        white-space: nowrap;                         /* 不換行 */
-        min-width: 0;                                /* 避免溢出 */
-        z-index: 1;                                  /* 設置z-index，以確保元素在正確的層級 */
-        display: inline-flex;
-        align-items: center; /* 水平對齊 */  
-    }
-
-    .gpsbtn {
-        display: inline-block;                          /* 讓 a 標籤像按鈕一樣是 inline-block */
-        min-width: 250px;
-        height: 80px;
-        font-family: "Noto Serif HK", serif;
-        font-weight: 900;
-        font-style: normal;
-        letter-spacing: 0.1em;
-        font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-        text-decoration: none;                          /* 移除文字裝飾 */
-        color: #1e1e1e;                                 /* 設置文字顏色 */
-        background-color: #FFDC35;
-        border: none;
-        border-radius: 5px;
-        transition: all 0.3s;
-        padding: 20px 30px;
-        margin-top: 40px;
-        margin-bottom: 30px;
-        text-align: center;                             /* 讓文字在按鈕內居中 */
-        line-height: 40px;                              /* 調整文字垂直居中 */
-        z-index: 2;
-    }
-
-    .gpsbtn:hover {
-        background-color: #f5c300;
-    }
-
-    @keyframes move1 {
-        0% {
-            transform: rotate(0deg) translateX(20px) rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg) translateX(20px) rotate(-360deg);
-        }
-    }
-
-    @keyframes move2 {
-        0% {
-            transform: rotate(0deg) translateX(15px) rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg) translateX(15px) rotate(-360deg);
-        }
-    }
-
-    @keyframes move3 {
-        0% {
-            transform: rotate(0deg) translateX(25px) rotate(0deg);
-        }
-        100% {
-            transform: rotate(-360deg) translateX(25px) rotate(360deg);
-        }
-    }
-    @keyframes move4 {
-        0% {
-            transform: rotate(0deg) translateX(8px) rotate(0deg);
-        }
-        100% {
-            transform: rotate(-360deg) translateX(8px) rotate(360deg);
-        }
-    }
-    @keyframes move5 {
-        0% {
-            transform: rotate(0deg) translateX(14px) rotate(0deg);
-        }
-        100% {
-            transform: rotate(-360deg) translateX(14px) rotate(360deg);
-        }
-    }
-    @keyframes move6 {
-        0% {
-            transform: rotate(0deg) translateX(17px) rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg) translateX(17px) rotate(-360deg);
-        }
-    }
-    .moving-image1 {
-        position: absolute;
-        top: 4%; /* 圖片初始位置 */
-        left: 20px; /* 圖片初始位置 */
-        width: 16%;
-        max-width: 120px;
-        height: auto;
-        will-change: transform; /* 提示瀏覽器進行優化 */
-        animation: move4 10s infinite linear;
-    }
-    .moving-image2 {
-        position: absolute;
-        left: 40px; 
-        bottom: 1%;
-        width: 14%;
-        max-width: 120px;
-        height: auto;
-        will-change: transform; /* 提示瀏覽器進行優化 */
-        animation: move5 12s infinite linear;
-    }
-    .moving-image3 {
-        position: absolute;
-        top: 35%; 
-        right: 5px; 
-        width: 17%;
-        max-width: 120px;
-        height: auto;
-        will-change: transform; /* 提示瀏覽器進行優化 */
-        animation: move6 9s infinite linear;
-    }
-    /* 動畫 */
-    .shapeAll {
-        position: absolute;
-        border-radius: 5px;
-        border: 3px solid rgba(240, 240, 240, 1); /* 邊框 */
-        padding: 0;
-    }
-    .shape1 {
-        top: -2%;
-        left: 10px;
-        width: 15px;
-        height: 15px;
-        animation: move6 10s infinite linear;
-    }
-    .shape2 {
-        top: 30%;
-        left: 25px;
-        width: 17px;
-        height: 17px;
-        animation: move5 12s infinite linear;
-    }
-    .shape3 {
-        top: 6%;
-        left: 120px;
-        width: 19px;
-        height: 19px;
-        animation: move6 9s infinite linear;
-    }
-    .shape4 {
-        left: 20px;
-        bottom: 7%;
-        width: 15px;
-        height: 15px;
-        animation: move4 11s infinite linear;
-    }
-    .shape5 {
-        left: 125px;
-        bottom: -2%;
-        width: 17px;
-        height: 17px;
-        animation: move6 12s infinite linear;
-    }
-    .shape6 {
-        left: 70px;
-        bottom: 28%;
-        width: 13px;
-        height: 13px;
-        animation: move5 9s infinite linear;
-    }
-    .shape7 {
-        top: 25%;
-        right: 5px;
-        width: 15px;
-        height: 15px;
-        animation: move6 10s infinite linear;
-    }
-    .shape8 {
-        top: 35%;
-        right: 80px;
-        width: 17px;
-        height: 17px;
-        animation: move5 12s infinite linear;
-    }
-    .shape9 {
-        right: 25px;
-        bottom: 30%;
-        width: 18px;
-        height: 18px;
-        animation: move4 10s infinite linear;
-    }    
-    .shape10 {
-        right: 50px;
-        bottom: 10%;
-        width: 18px;
-        height: 18px;
-        animation: move6 12s infinite linear;
-    }
-    
-
     </style>
 </head>
 <body>
@@ -901,10 +932,10 @@
   <!----------------------------------------------------------------------------------------------------------------------------->
 
 
-  <div class="container-fluid mt-3 mb-3">
+  <div class="container-fluid">
     <div class="move-image-container">
+      <div class="flash-box mt-3 mb-3">
       <div class="row">
-
         <div class="col-12 col-lg-12">
           <img src="https://lh3.googleusercontent.com/pw/AP1GczP6fZbHMxTEfVUA5HN7E9zIE8ETqR_OZrCnP9o8H7AykF5ZLUlO4a33Jzw6XJSQzeLHpppIq7vLjYAe2DF2fHCUb-aSS7Um3INrOKlcNTtEEFyDoP_jSq3E_TGuy0mXsdxq5C_Qu_r6AEt3xzX-Rvfm=w512-h512-s-no-gm?authuser=0" class="white-image w-settingHead mb-2" alt="高雄屏東道路救援">
           <h1>高雄屏東道路救援</h1>
@@ -922,10 +953,8 @@
             <h3><span class="material-symbols-outlined">counter_3</span>填寫您的稱呼與電話</h3>
           </div>
         </div>
-
- 
       </div>
-
+      </div>
 
         <img src="https://lh3.googleusercontent.com/pw/AP1GczNVfwCL19rfKvYwuKHJbfvwjbiCMA9Ldf7sQ5Ytw5EFU__2ARFONW26OQjr-_yUYjPWwKZbCJesNO7u8iEOh0UOyTdcZL3q2yv2prB95vTRTje5n_7ktfug8fNkAWzAsfffzDisJdqZYWU-_iAd5xWS=w512-h512-s-no-gm?authuser=0" alt="txtImage" class="moving-image1 white-image">
 
