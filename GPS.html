@@ -64,86 +64,86 @@
 <style>
   /* Reset CSS */
   * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
   html {
-      scroll-padding-top: 65px; /* 設置距離頁面頂部的距離 */
-      scroll-behavior: smooth; /* 启用平滑滚动 */
+    scroll-padding-top: 65px; /* 設置距離頁面頂部的距離 */
+    scroll-behavior: smooth; /* 启用平滑滚动 */
   }
 
   html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      overflow-x: hidden; /* 隱藏水平滾動條 */
-      touch-action: manipulation; /* 禁止雙擊縮放 */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* 隱藏水平滾動條 */
+    touch-action: manipulation; /* 禁止雙擊縮放 */
   }
 
   body {
-      background-color: #1e1e1e; /* 設置背景顏色*/
-      font-family: 'Montserrat', sans-serif;
-      padding-top: 80px;
-      padding-bottom: 100px;
+    background-color: #1e1e1e; /* 設置背景顏色*/
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 80px;
+    padding-bottom: 100px;
   }
 
   .container-fluid {
-      width: 100%;
-      max-width: 1200px;
-      padding: 0 5%;
-      transition: padding 0.5s ease; /* 過渡效果 */
-      margin: auto auto;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 5%;
+    transition: padding 0.5s ease; /* 過渡效果 */
+    margin: auto auto;
   }
 
   .Sr {
-      position: absolute;
-      clip: rect(0, 0, 0, 0);         /* 兼容舊版瀏覽器      */
-      clip: rect(1px, 1px, 1px, 1px); /* 這行是為了確保兼容性 */
-      overflow: hidden;
-      width: 1px;                     /* 必須要有寬度和高度   */
-      height: 1px;                    /* 必須要有寬度和高度   */
+    position: absolute;
+    clip: rect(0, 0, 0, 0);         /* 兼容舊版瀏覽器      */
+    clip: rect(1px, 1px, 1px, 1px); /* 這行是為了確保兼容性 */
+    overflow: hidden;
+    width: 1px;                     /* 必須要有寬度和高度   */
+    height: 1px;                    /* 必須要有寬度和高度   */
   }
 
 /********************************************************************************************/
 
   /* -- 頭部 -- */
   .navbar {
-      font-size: 18px;
-      font-weight: 700; /* 粗體字重 */
-      width: 100%;
-      padding: 5px 10px;
-      transition: transform 0.5s ease; /* 添加平滑過渡效果 */
-      position: fixed; /* 固定在頂部 */
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1; /* 確保導航欄在頂層 */
+    font-size: 18px;
+    font-weight: 700; /* 粗體字重 */
+    width: 100%;
+    padding: 5px 10px;
+    transition: transform 0.5s ease; /* 添加平滑過渡效果 */
+    position: fixed; /* 固定在頂部 */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1; /* 確保導航欄在頂層 */
   }
 
   .navbar.hidden {
-      transform: translateY(-100%); /* 隱藏導航欄 */
+    transform: translateY(-100%); /* 隱藏導航欄 */
   }
 
   .noto-serif-hk-logo {
-      font-family: "Noto Serif HK", serif;
-      font-weight: 900; /* 使用最粗字重 */
-      font-style: normal;
-      letter-spacing: 0.1em; /* 增加字母間距 */
-      font-size: 1.3em; /* 調整字體大小 */
-      color: #EAC100; /* 設置顏色，可根據需要調整 */
-      text-shadow: 2px 2px 4px rgba(150, 150, 150, 0.5); /* 灰色陰影 */
-      text-decoration: none;
+    font-family: "Noto Serif HK", serif;
+    font-weight: 900; /* 使用最粗字重 */
+    font-style: normal;
+    letter-spacing: 0.1em; /* 增加字母間距 */
+    font-size: 1.3em; /* 調整字體大小 */
+    color: #EAC100; /* 設置顏色，可根據需要調整 */
+    text-shadow: 2px 2px 4px rgba(150, 150, 150, 0.5); /* 灰色陰影 */
+    text-decoration: none;
   }
 
   .navbar .d-flex .logo img {
-      width: 50px;
-      border-radius: 50%; /* 使圖片成為圓形 */
+    width: 50px;
+    border-radius: 50%; /* 使圖片成為圓形 */
   }
 
   .nav-item {
-      padding: 5px 0 5px 20px;
+    padding: 5px 0 5px 20px;
   }
 
 
@@ -208,43 +208,43 @@
 /********************************************************************************************/
 
   .formBlock {
-      height: auto;
-      border-radius: 15px;
-      padding: 20px;
-      background-color: #2e2e2e;
-      border: 1px solid #444;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 添加陰影 */
-      margin: 10px 0 10px 0;
+    height: auto;
+    border-radius: 15px;
+    padding: 20px;
+    background-color: #2e2e2e;
+    border: 1px solid #444;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 添加陰影 */
+    margin: 10px 0 10px 0;
   }
 
   .formBlock h2 {
-      text-align: center; /* 文字置中 */
-      color: #FFDC35; /* 標題顏色 */
-      font-size: 1.75em;
-      margin: 10px 0 10px 0;
+    text-align: center; /* 文字置中 */
+    color: #FFDC35; /* 標題顏色 */
+    font-size: 1.75em;
+    margin: 10px 0 10px 0;
   }  
   
   .formInput {
-      width: 100%;
-      height: 50px;
-      color: #fff;
-      font-size: 1em;
-      background-color: #3e3e3e; /* 輕微的背景色 */
-      border: 1px solid #444; /* 邊框顏色 */
-      border-radius: 5px; /* 圓角邊框 */
-      padding: 10px;
-      margin-top: 30px;
-      outline: none; /* 取消聚焦框線 */
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    font-size: 1em;
+    background-color: #3e3e3e; /* 輕微的背景色 */
+    border: 1px solid #444; /* 邊框顏色 */
+    border-radius: 5px; /* 圓角邊框 */
+    padding: 10px;
+    margin-top: 30px;
+    outline: none; /* 取消聚焦框線 */
   }
 
   .formInput:focus {
-      border-color: #FFDC35; /* 聚焦時邊框顏色 */
-      background-color: #333; /* 聚焦時背景色 */
+    border-color: #FFDC35; /* 聚焦時邊框顏色 */
+    background-color: #333; /* 聚焦時背景色 */
   }
 
   .formInput::placeholder {
-      color: #ccc; /* 占位符顏色 */
-      opacity: 1; /* 確保占位符不透明 */
+    color: #ccc; /* 占位符顏色 */
+    opacity: 1; /* 確保占位符不透明 */
   }
 
   #goGps {
@@ -252,333 +252,331 @@
   }
 
   .error {
-      color: red;
-      font-size: 0.9em;
-      margin-left: 5px;
-  }
+    color: red;
+    font-size: 0.9em;
+    margin-left: 5px;
+}
 
   .input-container {
-      position: relative;
+    position: relative;
   }
 
   #mapPrevious, #submitPrevious {
-      position: absolute;
-      top: -6px;
-      left: -10px; 
-      width: 45px;
-      height: 45px;
-      border: none; 
-      background: transparent; 
-      font-size: 2em; 
-      color: #767A7F;
-      border-radius: 50%;
-      display: flex; /* 使用 Flexbox 來居中內容 */
-      align-items: center;
-      justify-content: center;
-      z-index: 0;
+    position: absolute;
+    top: -6px;
+    left: -10px; 
+    width: 45px;
+    height: 45px;
+    border: none; 
+    background: transparent; 
+    font-size: 2em; 
+    color: #767A7F;
+    border-radius: 50%;
+    display: flex; /* 使用 Flexbox 來居中內容 */
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
   }
 
   #mapPrevious:hover, #submitPrevious:hover {
-      background: rgb(60, 60, 60);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 鼠標懸停陰影 */
+    background: rgb(60, 60, 60);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 鼠標懸停陰影 */
   }
 
   .moveLabel {
-      width: 90%;
-      position: absolute;
-      top: 45px;
-      left: 12px;
-      color: #ccc;
-      pointer-events: none;
-      transition: all 0.3s ease;
-      white-space: nowrap;     /* 防止文字換行     */
-      overflow: hidden;        /* 隱藏超出範圍的內容 */
-      text-overflow: ellipsis; /* 超出部分顯示省略號 */
+    width: 90%;
+    position: absolute;
+    top: 45px;
+    left: 12px;
+    color: #ccc;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;     /* 防止文字換行     */
+    overflow: hidden;        /* 隱藏超出範圍的內容 */
+    text-overflow: ellipsis; /* 超出部分顯示省略號 */
   }
 
   .formInput:focus + .moveLabel,
   .formInput:not(:placeholder-shown) + .moveLabel {
-      width: 100%;
-      top: 12px;
-      left: 4px;
-      font-size: 0.75em;
-      color: #FFDC35;
+    width: 100%;
+    top: 12px;
+    left: 4px;
+    font-size: 0.75em;
+    color: #FFDC35;
   }
 
-    /* 為 textarea 元素設置單獨的高度規則 */
-    textarea.formInput {
-        height: auto; /* 取消固定高度，允許 rows 屬性生效 */
-    }
+  /* 為 textarea 元素設置單獨的高度規則 */
+  textarea.formInput {
+    height: auto; /* 取消固定高度，允許 rows 屬性生效 */
+  }
 
 /********************************************************************************/
 
   .formButton, #confirmButton {
-      color: #1e1e1e; /* 文字顏色 */
-      font-size: 1.2em; /* 字體大小 */
-      font-weight: 900; /* 粗體字重 */
-      width: 100%;
-      height: 50px;
-      background-color: #FFDC35;
-      color: #1e1e1e;
-      border: none;
-      border-radius: 5px;
-      font-size: 1em;
-      margin-top: 24px;
-      transition: all 0.3s;
+    color: #1e1e1e; /* 文字顏色 */
+    font-size: 1.2em; /* 字體大小 */
+    font-weight: 900; /* 粗體字重 */
+    width: 100%;
+    height: 50px;
+    background-color: #FFDC35;
+    color: #1e1e1e;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-top: 24px;
+    transition: all 0.3s;
   }
 
   .formButton:hover, #confirmButton:hover {
-      background-color: #f5c300;
+    background-color: #f5c300;
   }
 
   #myGpsBtn, #goGpsBtn {
-      width: 50px;   
-      height: 50px;
-      border-radius: 5px; 
-      padding: 5px;
-      /*margin: 30px 12px 0 0;*/
-      margin: 30px 0 0 -12px;
-      background-color: #3e3e3e; /* 輕微的背景色 */
-      border: 1px solid #444; /* 邊框顏色 */
-      transition: all 0.3s ease; /* 添加過渡效果 */
+    width: 50px;   
+    height: 50px;
+    border-radius: 5px; 
+    padding: 5px;
+    margin: 30px 0 0 -12px;
+    background-color: #3e3e3e; /* 輕微的背景色 */
+    border: 1px solid #444; /* 邊框顏色 */
+    transition: all 0.3s ease; /* 添加過渡效果 */
   }
 
   #myGpsBtn img, #goGpsBtn img {
-      width: 100%; /* 確保圖片不超出按鈕 */
-      height: 100%; /* 確保圖片不超出按鈕 */
-      object-fit: cover; /* 保持圖片比例，填滿按鈕 */
-      animation: shake 5s infinite; /* 應用動畫 */
+    width: 100%; /* 確保圖片不超出按鈕 */
+    height: 100%; /* 確保圖片不超出按鈕 */
+    object-fit: cover; /* 保持圖片比例，填滿按鈕 */
+    animation: shake 5s infinite; /* 應用動畫 */
   }
 
   #myGpsBtn:hover, #goGpsBtn:hover {
-      background-color: #4e4e4e; /* 輕微的背景色 */
+    background-color: #4e4e4e; /* 輕微的背景色 */
   }
 
   /* 定義輕微晃動的動畫 */
   @keyframes shake {
-      0% { transform: translateX(0) rotate(0deg); }
-      15% { transform: translateX(-2px) rotate(-7deg); }
-      30% { transform: translateX(2px) rotate(7deg); }
-      45% { transform: translateX(-2px) rotate(-7deg); }
-      100% { transform: translateX(0) rotate(0deg); }
+    0% { transform: translateX(0) rotate(0deg); }
+    15% { transform: translateX(-2px) rotate(-7deg); }
+    30% { transform: translateX(2px) rotate(7deg); }
+    45% { transform: translateX(-2px) rotate(-7deg); }
+    100% { transform: translateX(0) rotate(0deg); }
   }
 
 /********************************************************************************/
 
   .map-content {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      opacity: 0;         /*  隱藏  */
-      visibility: hidden; /*  隱藏  */
-      display: none;      /*  隱藏  */
-      z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;         /*  隱藏  */
+    visibility: hidden; /*  隱藏  */
+    display: none;      /*  隱藏  */
+    z-index: 2;
   }
 
   .map-content.fullscreen {
-      opacity: 1;          /*  顯示  */
-      visibility: visible; /*  顯示  */
-      display: block;      /*  顯示  */
+    opacity: 1;          /*  顯示  */
+    visibility: visible; /*  顯示  */
+    display: block;      /*  顯示  */
   }
 
   #map {
-      width: 100%;
-      height: 100vh;
-      transition: opacity 0.5s, visibility 0.5s; /* 使顯示和隱藏過渡平滑 */
-      z-index: 2;
+    width: 100%;
+    height: 100vh;
+    transition: opacity 0.5s, visibility 0.5s; /* 使顯示和隱藏過渡平滑 */
+    z-index: 2;
   }
 
   #mapShow {
-      margin: 18px 0 6px 0;
-      width: 100%;
-      height: 40vh;
-      transition: all 0.3s;
+    margin: 18px 0 6px 0;
+    width: 100%;
+    height: 40vh;
+    transition: all 0.3s;
   }
   
   /* 左上角的XY座標 */
   #showMapXY {
-      position: fixed;
-      top: -1px;   /* 距離底部 */
-      left: 0px;  /* 距離右邊 */
-      width: 100%;
-      font-size: 0.75em;
-      color: #fff;
-      background-color: rgba(17, 17, 17, 0.5); /* 30% 不透明度的背景顏色 */
-      border: none;
-      padding-left: 10px;
-      z-index: 3; /* 確保控制項在地圖上方 */
+    position: fixed;
+    top: -1px;   /* 距離底部 */
+    left: 0px;  /* 距離右邊 */
+    width: 100%;
+    font-size: 0.75em;
+    color: #fff;
+    background-color: rgba(17, 17, 17, 0.5); /* 30% 不透明度的背景顏色 */
+    border: none;
+    padding-left: 10px;
+    z-index: 3; /* 確保控制項在地圖上方 */
   }
 
   /* 搜尋容器 */
   .search-container {
-      width: 80%; /* 確保搜尋框留出足夠的空間 */
-      position: fixed; /* 固定位置 */
-      left: 50%;
-      top: 30px;             
-      transform: translateX(-50%); /* 水平置中 */
-      z-index: 4;
+    width: 80%; /* 確保搜尋框留出足夠的空間 */
+    position: fixed; /* 固定位置 */
+    left: 50%;
+    top: 30px;             
+    transform: translateX(-50%); /* 水平置中 */
+    z-index: 4;
   }
 
   /* 搜索框 */
   #searchInput {
-      width: 100%; /* 確保搜尋框留出足夠的空間 */
-      border-radius: 50px; /* 設置足夠大的圓角半徑以實現圓形效果 */
-      padding: 10px 105px 10px 20px;
-      border: none; 
-      box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-      position: relative; /* 相對定位 */
-      outline: none; /* 移除焦點框 */
+    width: 100%; /* 確保搜尋框留出足夠的空間 */
+    border-radius: 50px; /* 設置足夠大的圓角半徑以實現圓形效果 */
+    padding: 10px 105px 10px 20px;
+    border: none; 
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    position: relative; /* 相對定位 */
+    outline: none; /* 移除焦點框 */
   }
 
   /* 刪除搜索文字 */
   #searchBtn, #delSearchTxtBtn, #delGoGpsInputBtn  {
-      position: absolute;
-      top: 50%;
-      right: 10px; 
-      width: 45px;
-      height: 45px;
-      transform: translateY(-50%); 
-      border: none; 
-      background: transparent; 
-      font-size: 2em; 
-      color: #767A7F;
-      border-radius: 50%;
-      display: flex; /* 使用 Flexbox 來居中內容 */
-      align-items: center;
-      justify-content: center;
-      z-index: 5;
+    position: absolute;
+    top: 50%;
+    right: 10px; 
+    width: 45px;
+    height: 45px;
+    transform: translateY(-50%); 
+    border: none; 
+    background: transparent; 
+    font-size: 2em; 
+    color: #767A7F;
+    border-radius: 50%;
+    display: flex; /* 使用 Flexbox 來居中內容 */
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
   }
 
   #delGoGpsInputBtn {
-      top: 69%;
-      right: 1px; 
-      z-index: 0;
+    top: 69%;
+    right: 1px; 
+    z-index: 0;
   }
 
   #searchBtn {
-      right: 60px; 
+    right: 60px; 
   }
 
   #searchBtn:hover, #delSearchTxtBtn:hover {
-      background: #F0F0F0;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 鼠標懸停陰影 */
+    background: #F0F0F0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 鼠標懸停陰影 */
   }
   #delGoGpsInputBtn:hover {
-      background: rgb(70, 70, 70);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 鼠標懸停陰影 */
+    background: rgb(70, 70, 70);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 鼠標懸停陰影 */
   }
 
 
   /* 重新定位按鈕 */
   #shareLocation {
-      position: fixed;
-      right: 10px;  /* 距離右邊 */
-      bottom: 80px; /* 距離底部 */
-      width: 70px;  /* 按鈕寬度 */
-      height: 70px; /* 按鈕高度 */
-      color: #767A7F;
-      font-size: 2em; 
-      border: 2px solid #ffffff; /* 白色邊框 */
-      border-radius: 50%; /* 使按鈕圓形 */
-      background-color: #F0F0F0; /* 背景顏色 */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 添加陰影 */
-      z-index: 3; /* 確保控制項在地圖上方 */
-      transition: background-color 0.3s, box-shadow 0.3s; /* 添加過渡效果 */
+    position: fixed;
+    right: 10px;  /* 距離右邊 */
+    bottom: 80px; /* 距離底部 */
+    width: 70px;  /* 按鈕寬度 */
+    height: 70px; /* 按鈕高度 */
+    color: #767A7F;
+    font-size: 2em; 
+    border: 2px solid #ffffff; /* 白色邊框 */
+    border-radius: 50%; /* 使按鈕圓形 */
+    background-color: #F0F0F0; /* 背景顏色 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 添加陰影 */
+    z-index: 3; /* 確保控制項在地圖上方 */
+    transition: background-color 0.3s, box-shadow 0.3s; /* 添加過渡效果 */
   }
   
   /* 鼠標懸停時的效果 */
   #shareLocation:hover {
-      background-color: #E0E0E0; /* 鼠標懸停背景顏色 */
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* 鼠標懸停陰影 */
+    background-color: #E0E0E0; /* 鼠標懸停背景顏色 */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* 鼠標懸停陰影 */
   }
 
   /* 確認定位按鈕 */
   #checkGpsOkBtn {
-      width: 200px;
-      height: 60px;
-      background-color: #FFDC35; 
-      border: none; 
-      border-radius: 10px; 
-      color: #1e1e1e; 
-      font-size: 1.2em; 
-      font-weight: 900;
-      transition: background-color 0.3s;        /* 背景顏色過渡效果 */
-      position: fixed;                          /* 固定位置 */
-      left: 50%;
-      bottom: 25px;             
-      transform: translateX(-50%);              /* 水平置中 */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 添加陰影 */
-      z-index: 4; 
-      opacity: 1; /* 默認可見 */
-      visibility: visible; /* 默認可見 */
+    width: 200px;
+    height: 60px;
+    background-color: #FFDC35; 
+    border: none; 
+    border-radius: 10px; 
+    color: #1e1e1e; 
+    font-size: 1.2em; 
+    font-weight: 900;
+    transition: background-color 0.3s;        /* 背景顏色過渡效果 */
+    position: fixed;                          /* 固定位置 */
+    left: 50%;
+    bottom: 25px;             
+    transform: translateX(-50%);              /* 水平置中 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 添加陰影 */
+    z-index: 4; 
+    opacity: 1; /* 默認可見 */
+    visibility: visible; /* 默認可見 */
   }
 
   /* 鼠標懸停時的效果 */
   #checkGpsOkBtn:hover {
-      background-color: #f5c300; /* 鼠標懸停背景顏色 */
+    background-color: #f5c300; /* 鼠標懸停背景顏色 */
   }
 
   /* 隱藏狀態的樣式 */
   #checkGpsOkBtn.hidden {
-      opacity: 0;
-      visibility: hidden;
+    opacity: 0;
+    visibility: hidden;
   }
 
 
   #checkGpsOkBtn:disabled {
-      opacity: 0.3; /* 設置透明度 */
-      cursor: not-allowed; /* 更改游標樣式 */
+    opacity: 0.3; /* 設置透明度 */
+    cursor: not-allowed; /* 更改游標樣式 */
   }
 
   button:disabled {
-      opacity: 0.3; /* 設置透明度 */
-      cursor: not-allowed; /* 更改游標樣式 */
+    opacity: 0.3; /* 設置透明度 */
+    cursor: not-allowed; /* 更改游標樣式 */
   }
 
 /********************************************************************************/
 
   /* 警告視窗的樣式 */
   .alert-box {
-      display: flex; /* 使用 Flexbox 來居中內容 */
-      align-items: center;
-      justify-content: center;
-      position: fixed;
-      top: 0; /* 修改為 0，讓它佔據整個視窗 */
-      left: 0; /* 修改為 0，讓它佔據整個視窗 */
-      width: 100%;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.7);
-      opacity: 0; /* 初始隱藏，透明度設為 0 */
-      visibility: hidden; /* 初始隱藏，隱藏狀態 */
-      transition: opacity 0.3s ease, visibility 0.3s ease; /* 添加過渡效果 */
-      z-index: 9998;
+    display: flex; /* 使用 Flexbox 來居中內容 */
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0; /* 修改為 0，讓它佔據整個視窗 */
+    left: 0; /* 修改為 0，讓它佔據整個視窗 */
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0; /* 初始隱藏，透明度設為 0 */
+    visibility: hidden; /* 初始隱藏，隱藏狀態 */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* 添加過渡效果 */
+    z-index: 9998;
   }
 
   .alert-box.show {
-      opacity: 1; /* 顯示時透明度設為 1 */
-      visibility: visible; /* 顯示時可見 */
+    opacity: 1; /* 顯示時透明度設為 1 */
+    visibility: visible; /* 顯示時可見 */
   }
 
   .alert-content {
-      width: 70%;
-      max-width: 500px; /* 可選：限制最大寬度 */
-      height: auto;
-      text-align: center;
-      background-color: #2e2e2e;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 20px;
-      z-index: 9999;
+    width: 70%;
+    max-width: 500px; /* 可選：限制最大寬度 */
+    height: auto;
+    text-align: center;
+    background-color: #2e2e2e;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 9999;
   }
 
   .alert-box p {
-      font-size: 1.1em;
-      color: #fff;
-      white-space: pre-line; /* 處理換行符號 */
-      margin: 0 0 10px;
-      
+    font-size: 1.1em;
+    color: #fff;
+    white-space: pre-line; /* 處理換行符號 */
+    margin: 0 0 10px;   
   }
 
 
@@ -587,43 +585,43 @@
 
   /* 將container設置為一個flex容器，內容居中 */
   .containerLoader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: rgba(0, 0, 0, 0.7); /* 設置背景色為50%透明度的黑色 */
-      z-index: 9997; /* 確保容器在最上層 */ 
-      width: 100%;
-      height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* 設置背景色為50%透明度的黑色 */
+    z-index: 9997; /* 確保容器在最上層 */ 
+    width: 100%;
+    height: 100vh;
   }
 
   .central {
-      height: 100%;
-      display: flex; /* 使用 Flexbox 來居中內容 */
-      align-items: center;
-      justify-content: center;
+    height: 100%;
+    display: flex; /* 使用 Flexbox 來居中內容 */
+    align-items: center;
+    justify-content: center;
   }
 
   /* 設置loading效果的基本樣式 */
   .loader {
-      width: 80px; /* 設置loader的寬度 */
-      height: 80px; /* 設置loader的高度 */
-      border: 10px solid rgba(255, 255, 255, 0.2); /* 設置透明的邊框，顏色為白色的20%透明度 */
-      border-top: 10px solid #3498db; /* 設置頂部邊框為藍色，創造旋轉效果 */
-      border-right: 10px solid #3498db; /* 設置右側邊框為藍色 */
-      border-bottom: 10px solid #3498db; /* 設置底部邊框為藍色 */
-      border-radius: 50%; /* 將邊框設置為圓形 */
-      animation: spin 1s linear infinite; /* 添加旋轉動畫，持續時間為1秒，線性重複無限次 */
-      box-shadow: 0 0 20px #3498db; /* 添加陰影效果，顏色為藍色 */
+    width: 80px; /* 設置loader的寬度 */
+    height: 80px; /* 設置loader的高度 */
+    border: 10px solid rgba(255, 255, 255, 0.2); /* 設置透明的邊框，顏色為白色的20%透明度 */
+    border-top: 10px solid #3498db; /* 設置頂部邊框為藍色，創造旋轉效果 */
+    border-right: 10px solid #3498db; /* 設置右側邊框為藍色 */
+    border-bottom: 10px solid #3498db; /* 設置底部邊框為藍色 */
+    border-radius: 50%; /* 將邊框設置為圓形 */
+    animation: spin 1s linear infinite; /* 添加旋轉動畫，持續時間為1秒，線性重複無限次 */
+    box-shadow: 0 0 20px #3498db; /* 添加陰影效果，顏色為藍色 */
   }
 
   /* 定義旋轉動畫 */
   @keyframes spin {
-      0% {
-          transform: rotate(0deg); /* 初始狀態，不旋轉 */
-      }
-      100% {
-          transform: rotate(360deg); /* 完成一圈旋轉 */
-      }
+    0% {
+      transform: rotate(0deg); /* 初始狀態，不旋轉 */
+    }
+    100% {
+      transform: rotate(360deg); /* 完成一圈旋轉 */
+    }
   }
 
 
@@ -632,54 +630,54 @@
 
   /*  右下電話 & Line  */
   .fixed-buttons-container {
-      position: fixed;
-      bottom: 30px;           /* 距離底部的距離 */
-      right: 20px;            /* 距離右邊的距離 */
-      display: flex;
-      flex-direction: column; /* 垂直排列按鈕   */
-      gap: 10px;              /* 按鈕間距      */
-      z-index: 999;
+    position: fixed;
+    bottom: 30px;           /* 距離底部的距離 */
+    right: 20px;            /* 距離右邊的距離 */
+    display: flex;
+    flex-direction: column; /* 垂直排列按鈕   */
+    gap: 10px;              /* 按鈕間距      */
+    z-index: 999;
   }
   
   .call-button, .Line-button {
-      width: 55px;
-      height: 55px;
-      box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3); /* 僅在底部添加陰影效果 */
-      border-radius: 10px;
-      border: none; /* 移除邊框 */
-      padding: 10px 10px;
-      animation: shake_call 5s infinite; /* 添加動畫 */
+    width: 55px;
+    height: 55px;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3); /* 僅在底部添加陰影效果 */
+    border-radius: 10px;
+    border: none; /* 移除邊框 */
+    padding: 10px 10px;
+    animation: shake_call 5s infinite; /* 添加動畫 */
   }
 
   .call-button .icon, .Line-button .icon {
-      width: 100%;
-      height: 100%;
-      fill: #fff; 
+    width: 100%;
+    height: 100%;
+    fill: #fff; 
   }  
 
   .call-button {
-      background-color: #FF2D2D;
+    background-color: #FF2D2D;
   }
 
   .Line-button {
-      background-color: #00C300;
+    background-color: #00C300;
   }
 
   .call-button:hover {
-      background-color: #D32F2F; /* 深紅色 */
+    background-color: #D32F2F; /* 深紅色 */
   }
 
   .Line-button:hover {
-      background-color: #009B00; /* 深綠色 */
+    background-color: #009B00; /* 深綠色 */
   }
 
   /* 定義動畫 */
   @keyframes shake_call {
-      0% { transform: translateX(0) rotate(0deg); }
-      12% { transform: translateX(-7px) rotate(-7deg); }
-      24% { transform: translateX(7px) rotate(7deg); }
-      36% { transform: translateX(-7px) rotate(-7deg); }
-      100% { transform: translateX(0) rotate(0deg); }
+    0% { transform: translateX(0) rotate(0deg); }
+    12% { transform: translateX(-7px) rotate(-7deg); }
+    24% { transform: translateX(7px) rotate(7deg); }
+    36% { transform: translateX(-7px) rotate(-7deg); }
+    100% { transform: translateX(0) rotate(0deg); }
   }
 
 
@@ -687,72 +685,75 @@
 
   /*  頁腳  */
   footer {
-      color: #fff;
-      display: flex;
-      width: 100%;
-      padding-top: 5px;
-      justify-content: center; /* 確保子元素均勻分佈 */
-      align-items: center;    /* 垂直居中對齊       */
-      white-space: nowrap;    /* 不換行            */
-      position: fixed;
-      bottom: -50px; 
-      z-index: 1; 
-      transition: bottom 0.5s ease; /* 只過渡 bottom 屬性 */
+    color: #fff;
+    display: flex;
+    width: 100%;
+    padding-top: 5px;
+    justify-content: center; /* 確保子元素均勻分佈 */
+    align-items: center;    /* 垂直居中對齊       */
+    white-space: nowrap;    /* 不換行            */
+    position: fixed;
+    bottom: -50px; 
+    z-index: 1; 
+    transition: bottom 0.5s ease; /* 只過渡 bottom 屬性 */
   }
 
   /* 當頁腳顯示時 */
   footer.show {
-      bottom: -10px; 
+    bottom: -10px; 
   }
 
 /*********************************************************************/
 
   /*  螢幕大於768像素  */
   @media (min-width: 768px) {
-      .uploadBox {
-          min-width: 35vw;
-          height: 27vh;
-      }
-      #mapShow {
-          height: 295px;
-      }
+    .uploadBox {
+      min-width: 35vw;
+      height: 27vh;
+    }
+    #mapShow {
+      height: 295px;
+    }
+    textarea.formInput {
+      height: 130px;
+    }
   }
 
   /*  螢幕大於992像素  */
   @media (min-width: 992px) {
-      #checkGpsOkBtn {
-          transition: all 0.3s;
-      }
-      .uploadBox {
-          min-width: 20vw;
-          height: 30vh;
-      }
+    #checkGpsOkBtn {
+      transition: all 0.3s;
+    }
+    .uploadBox {
+      min-width: 20vw;
+      height: 30vh;
+    }
   }
 
   /*  螢幕大於1200像素  */
   @media (min-width: 1200px) {
-      .uploadBox {
-          min-width: 300px;
-          height: 33vh;
-      }
-      #mapShow {
-          margin-top: 30px;
-      }
-      .formInput {
-          margin-top: 45px;
-      }
-      .moveLabel {
-          top: 60px;
+    .uploadBox {
+      min-width: 300px;
+      height: 33vh;
+    }
+    #mapShow {
+      margin-top: 30px;
+    }
+    .formInput {
+      margin-top: 45px;
+    }
+    .moveLabel {
+      top: 60px;
     }
 
     .formInput:focus + .moveLabel,
     .formInput:not(:placeholder-shown) + .moveLabel {
-        top: 22px;
-        font-size: 0.9em;
+      top: 22px;
+      font-size: 0.9em;
     }
 
     #myGpsBtn, #goGpsBtn {
-       margin: 45px 0 0 -12px;
+      margin: 45px 0 0 -12px;
     }
 
     #delGoGpsInputBtn {
@@ -761,10 +762,12 @@
       z-index: 0;
     }
     #mapShow {
-        height: 330px;
+      height: 330px;
+    }
+    textarea.formInput {
+      height: 145px;
     }
   }
-
 
 </style>
 </head>
@@ -777,34 +780,34 @@
 
   <!--   頭部   -->
   <nav class="navbar navbar-dark bg-gradient bg-dark"> 
-      <div class="d-flex align-items-center">
-        <a href="#" class="logo">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczMoHMqFF6inZpKPBCWCJB1yV3HS8PTjICLBYJZ950fo9i36syVEkS7wI6oIuzX_L2d1kOkmyNUc52gdYmBDNVBsieTLmrU23atOStR1JKDelVdK6P390CSqjv2JNRJndiol_8HqOZEpuVkO49iWBM4n=w720-h720-s-no-gm?authuser=0" alt="高雄屏東拖吊車提供的24小時道路救援服務">
-        </a>
-        <a class="noto-serif-hk-logo" href="https://leotowtruck.github.io/Yuhong.github.io/">拾捌拖吊車</a>
-      </div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="https://leotowtruck.github.io/Yuhong.github.io/#about-us">關於我們</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://leotowtruck.github.io/Yuhong.github.io/#services">服務項目</a>
-          </li>          
-          <li class="nav-item">
-            <a class="nav-link" href="https://leotowtruck.github.io/Yuhong.github.io/#cases">救援案例</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://leotowtruck.github.io/Yuhong.github.io/#operations">吊掛作業</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://leotowtruck.github.io/Yuhong.github.io/#reviews">客戶評價</a>
-          </li>
-        </ul>
-      </div>
+    <div class="d-flex align-items-center">
+      <a href="#" class="logo">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMoHMqFF6inZpKPBCWCJB1yV3HS8PTjICLBYJZ950fo9i36syVEkS7wI6oIuzX_L2d1kOkmyNUc52gdYmBDNVBsieTLmrU23atOStR1JKDelVdK6P390CSqjv2JNRJndiol_8HqOZEpuVkO49iWBM4n=w720-h720-s-no-gm?authuser=0" alt="高雄屏東拖吊車提供的24小時道路救援服務">
+      </a>
+      <a class="noto-serif-hk-logo" href="https://leotowtruck.github.io/Yuhong.github.io/">拾捌拖吊車</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="https://leotowtruck.github.io/Yuhong.github.io/#about-us">關於我們</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://leotowtruck.github.io/Yuhong.github.io/#services">服務項目</a>
+        </li>          
+        <li class="nav-item">
+          <a class="nav-link" href="https://leotowtruck.github.io/Yuhong.github.io/#cases">救援案例</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://leotowtruck.github.io/Yuhong.github.io/#operations">吊掛作業</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://leotowtruck.github.io/Yuhong.github.io/#reviews">客戶評價</a>
+        </li>
+      </ul>
+    </div>
   </nav>
 
 <!----------------------------------------------------------------------------------------------------------------------------->
@@ -820,25 +823,21 @@
     </symbol>
   </svg>
 
-
 <!------------------------------------------------------------------------------------------------------------------>
-
 
   <div id="photoPage" class="container-fluid">
-      <div class="formBlock">
-          <h2>GPS定位派車</h2>
-          <div class="row" id="gridContainer"></div>
-          <div class="row">
-              <div class="col-12">
-                  <button id="PhotoNext" class="formButton" disabled>下一步</button>
-              </div>
-          </div>
+    <div class="formBlock">
+      <h2>GPS定位派車</h2>
+      <div class="row" id="gridContainer"></div>
+      <div class="row">
+        <div class="col-12">
+          <button id="PhotoNext" class="formButton" disabled>下一步</button>
+        </div>
       </div>
+    </div>
   </div>
 
-
 <!------------------------------------------------------------------------------------------------------------------>
-
 
   <div id="mapPage" class="container-fluid" style="display: none;">
     <div class="formBlock">
@@ -914,95 +913,97 @@
     </div>
   </div>
 
-
 <!------------------------------------------------------------------------------------------------------------------>
 
-
   <div id="submitPage" class="container-fluid" style="display: none;">
-      <div class="formBlock">
-          <div class="input-container">
-              <h2>GPS定位派車</h2>
-              <button id="submitPrevious" class="material-symbols-outlined" title="上一頁">arrow_back</button>
-          </div>
-          <div class="row">
-              <div class="col-12">
-                  <div class="input-container">
-                      <input class="formInput" type="text" id="customerName" placeholder="" autocomplete="new-password">
-                      <label for="customerName" class="moveLabel">您的稱呼*</label>
-                      <div id="customerNameError" class="error"></div>
-                  </div>
-              </div>
-              <div class="col-6">
-                  <div class="input-container">
-                      <input class="formInput" id="phone" placeholder="" inputmode="numeric" pattern="\d{10}" title="請輸入 10 位數字" autocomplete="new-password" oninput="validatePhoneInput(this)">
-                      <label for="phone" class="moveLabel">連絡電話*</label>
-                      <div id="phoneError" class="error"></div>
-                  </div>
-              </div>
-
-              <div class="col-6">
-                  <div class="input-container">
-                      <input class="formInput" type="text" id="licensePlate" placeholder="" autocomplete="new-password" oninput="this.value = this.value.toUpperCase();">
-                      <label for="licensePlate" class="moveLabel">車牌*</label>
-                      <div id="licensePlateError" class="error"></div>
-                  </div>
-              </div>
-
-              <div class="col-12">
-                  <div class="input-container">
-                      <input class="formInput" type="text" id="carModel" placeholder="" autocomplete="new-password">
-                      <label for="carModel" class="moveLabel">車型* (一般轎車、休旅車、紅牌重機、35頓砂石車)</label>
-                      <div id="carModelError" class="error"></div>
-                  </div>
-              </div>
-              <div class="col-12">
-                  <div class="input-container">
-                      <input class="formInput" type="text" id="reason" placeholder="" autocomplete="new-password">
-                      <label for="reason" class="moveLabel">拖吊原因* (例如: 後輪爆胎、汽車故障、車輛陷入困境)</label>
-                      <div id="reasonError" class="error"></div>
-                  </div>
-              </div>
-
-              <div class="col-12">
-                  <div class="input-container">
-                      <textarea class="formInput" id="remark" placeholder="" rows="4"></textarea>
-                      <label for="remark" class="moveLabel">其他備註 (例如: 國一北上362K路肩 26頓大貨車 滿載)</label>
-                  </div>
-              </div>
-
-              <div class="col-12">
-                  <button id="submitBtn" class="formButton">送出資料</button>
-              </div>
-          </div>
+    <div class="formBlock">
+      <div class="input-container">
+        <h2>GPS定位派車</h2>
+        <button id="submitPrevious" class="material-symbols-outlined" title="上一頁">arrow_back</button>
       </div>
-        <div class="fixed-buttons-container">
+      <div class="row">
+        <div class="col-12">
+          <div class="input-container">
+            <input class="formInput" type="text" id="customerName" placeholder="" autocomplete="new-password">
+            <label for="customerName" class="moveLabel">您的稱呼*</label>
+            <div id="customerNameError" class="error"></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-6">
+          <div class="input-container">
+            <input class="formInput" id="phone" placeholder="" inputmode="numeric" pattern="\d{10}" title="請輸入 10 位數字" autocomplete="new-password" oninput="validatePhoneInput(this)">
+            <label for="phone" class="moveLabel">連絡電話*</label>
+            <div id="phoneError" class="error"></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-6">
+          <div class="input-container">
+            <input class="formInput" type="text" id="licensePlate" placeholder="" autocomplete="new-password" oninput="this.value = this.value.toUpperCase();">
+            <label for="licensePlate" class="moveLabel">車牌*</label>
+            <div id="licensePlateError" class="error"></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-12">
+              <div class="input-container">
+                <input class="formInput" type="text" id="carModel" placeholder="" autocomplete="new-password">
+                <label for="carModel" class="moveLabel">車型* (一般轎車、休旅車、紅牌重機、35頓砂石車)</label>
+                <div id="carModelError" class="error"></div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="input-container">
+                <input class="formInput" type="text" id="reason" placeholder="" autocomplete="new-password">
+                <label for="reason" class="moveLabel">拖吊原因* (例如: 後輪爆胎、汽車故障、車輛陷入困境)</label>
+                <div id="reasonError" class="error"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-12">
+              <div class="input-container">
+                <textarea class="formInput" id="remark" placeholder="" rows="4"></textarea>
+                <label for="remark" class="moveLabel">其他備註 (例如: 國一北上362K路肩 26頓大貨車 滿載)</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button id="submitBtn" class="formButton">送出資料</button>
+        </div>
+      </div>
+      <div class="fixed-buttons-container">
         <button class="call-button" onclick="makeCall()" aria-label="撥打電話">
           <svg class="icon"><use xlink:href="#icon-phone"></use></svg>
         </button>
-
         <button class="Line-button" onclick="openLine()" aria-label="加Line好友">
           <svg class="icon"><use xlink:href="#icon-line"></use></svg>
         </button>
       </div>
+    </div>
   </div>
 
+<!----------------------------------------------------------------------------------------------------------------------------->
 
   <!--  地圖浮動  -->
   <div class="map-content">
-      <div id="map"></div>
-          <!-- 包裹搜尋框和按鈕的容器 -->
-          <div class="search-container">
-              <input id="searchInput" type="text" placeholder="在這裡搜尋">
-              <button id="delSearchTxtBtn" class="material-symbols-outlined" title="清除">close</button>
-              <button id="searchBtn" class="material-symbols-outlined" title="搜尋">search</button>
-          </div>
-          <input id="showMapXY" readonly></input>
-          <button id="shareLocation" class="material-symbols-outlined" title="重新定位">my_location</button>
-          <button id="checkGpsOkBtn">確定位置</button>
+    <div id="map"></div>
+      <!-- 包裹搜尋框和按鈕的容器 -->
+      <div class="search-container">
+        <input id="searchInput" type="text" placeholder="在這裡搜尋">
+        <button id="delSearchTxtBtn" class="material-symbols-outlined" title="清除">close</button>
+        <button id="searchBtn" class="material-symbols-outlined" title="搜尋">search</button>
       </div>
+      <input id="showMapXY" readonly></input>
+      <button id="shareLocation" class="material-symbols-outlined" title="重新定位">my_location</button>
+      <button id="checkGpsOkBtn">確定位置</button>
+    </div>
   </div>
 
-  <!----------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------------------->
 
   <!-- 警告視窗 -->
   <div id="alertBox" class="alert-box">
@@ -1023,6 +1024,7 @@
   <footer id="footer" class="bg-gradient bg-dark">
       <p>&copy; 2024  拾捌拖吊車 服務公司版權所有.</p>
   </footer>
+
 
 <!----------------------------------------------------------------------------------------------------------------------------->
 
