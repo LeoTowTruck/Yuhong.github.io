@@ -359,10 +359,10 @@
     }
     @keyframes move4 {
         0% {
-            transform: rotate(0deg) translateX(8px) rotate(0deg);
+            transform: rotate(0deg) translateX(11px) rotate(0deg);
         }
         100% {
-            transform: rotate(-360deg) translateX(8px) rotate(360deg);
+            transform: rotate(-360deg) translateX(11px) rotate(360deg);
         }
     }
     @keyframes move5 {
@@ -426,7 +426,7 @@
         animation: move6 10s infinite linear;
     }
     .shape2 {
-        top: 22%;
+        top: calc(min(180px, 10% + 10vw)); /* 16% 基礎值，加上螢幕寬度的 4%，但最大為 30px */
         left: 20px;
         width: 17px;
         height: 17px;
@@ -434,28 +434,28 @@
     }
     .shape3 {
         top: 6%;
-        left: 120px;
+        left: calc(min(30%, 200px)); /* 左偏移量最大為 N px */
         width: 19px;
         height: 19px;
         animation: move6 9s infinite linear;
     }
     .shape4 {
-        left: 5px;
-        bottom: 7%;
+        left: -3px;
+        bottom: -4%;
         width: 15px;
         height: 15px;
         animation: move4 11s infinite linear;
     }
     .shape5 {
-        left: 125px;
-        bottom: -2%;
+        left: calc(min(32%, 220px)); /* 左偏移量最大為 N px */
+        bottom: 2%;
         width: 17px;
         height: 17px;
         animation: move6 12s infinite linear;
     }
     .shape6 {
-        left: 30px;
-        bottom: 20%;
+        left: calc(min(7%, 60px)); /* 左偏移量最大為 N px */
+        bottom: calc(min(180px, 10% + 8vw)); /* 16% 基礎值，加上螢幕寬度的 4%，但最大為 30px */
         width: 13px;
         height: 13px;
         animation: move5 9s infinite linear;
@@ -469,7 +469,7 @@
     }
     .shape8 {
         top: 42%;
-        right: 85px;
+        right: calc(min(26%, 170px)); /* 左偏移量最大為 N px */  
         width: 17px;
         height: 17px;
         animation: move5 12s infinite linear;
@@ -479,7 +479,7 @@
         bottom: 42%;
         width: 18px;
         height: 18px;
-        animation: move4 10s infinite linear;
+        animation: move4 11s infinite linear;
     }    
     
     .flash-box {
@@ -802,21 +802,6 @@
         width: 60px;
         height: 60px;
       }
-      .shape3 {
-        top: 10%;
-        left: 180px;
-      }
-      .shape5 {
-        left: 180px;
-        bottom: -2%;
-        width: 17px;
-        height: 17px;
-        animation: move6 12s infinite linear;
-      }
-      .shape8 {
-        top: 45%;
-        right: 150px;
-      }
     }
 
     // 桌面、992px 以上
@@ -944,48 +929,50 @@
   <!----------------------------------------------------------------------------------------------------------------------------->
 
 
+
   <div class="container-fluid">
     <div class="move-image-container">
       <div class="flash-box mt-3 mb-3">
-      <div class="row">
-        <div class="col-12 col-lg-12">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczP6fZbHMxTEfVUA5HN7E9zIE8ETqR_OZrCnP9o8H7AykF5ZLUlO4a33Jzw6XJSQzeLHpppIq7vLjYAe2DF2fHCUb-aSS7Um3INrOKlcNTtEEFyDoP_jSq3E_TGuy0mXsdxq5C_Qu_r6AEt3xzX-Rvfm=w512-h512-s-no-gm?authuser=0" class="white-image w-settingHead mb-2" alt="高雄屏東道路救援">
-          <h1>高雄屏東道路救援</h1>
-          <h3>24小時快速、高效的拖吊專家！</h3>
-        </div>
+        <div class="row">
+          
+          <div class="col-12 col-lg-12">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczP6fZbHMxTEfVUA5HN7E9zIE8ETqR_OZrCnP9o8H7AykF5ZLUlO4a33Jzw6XJSQzeLHpppIq7vLjYAe2DF2fHCUb-aSS7Um3INrOKlcNTtEEFyDoP_jSq3E_TGuy0mXsdxq5C_Qu_r6AEt3xzX-Rvfm=w512-h512-s-no-gm?authuser=0" class="white-image w-settingHead mb-2" alt="高雄屏東道路救援">
+            <h1>高雄屏東道路救援</h1>
+            <h3>24小時快速、高效的拖吊專家！</h3>
+          </div>
 
-        <div class="col-12">
-          <a href="https://leotowtruck.github.io/Yuhong.github.io/GPS" class="gpsbtn">使用GPS定位派車</a>
-        </div>
+          <div class="col-12">
+            <a href="https://leotowtruck.github.io/Yuhong.github.io/GPS" class="gpsbtn">使用GPS定位派車</a>
+          </div>
 
-        <div class="col-12 col-lg-12">
-          <div class="d-flex flex-column">
-            <h3><span class="material-symbols-outlined">counter_1</span>上傳兩張汽車與背景照片</h3>
-            <h3><span class="material-symbols-outlined">counter_2</span>使用衛星地圖GPS定位</h3>
-            <h3><span class="material-symbols-outlined">counter_3</span>填寫您的稱呼與電話</h3>
+          <div class="col-12 col-lg-12">
+            <div class="d-flex flex-column">
+              <h3><span class="material-symbols-outlined">counter_1</span>上傳兩張汽車與背景照片</h3>
+              <h3><span class="material-symbols-outlined">counter_2</span>使用衛星地圖GPS定位</h3>
+              <h3><span class="material-symbols-outlined">counter_3</span>填寫您的稱呼與電話</h3>
+            </div>
           </div>
         </div>
       </div>
-      </div>
 
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczNVfwCL19rfKvYwuKHJbfvwjbiCMA9Ldf7sQ5Ytw5EFU__2ARFONW26OQjr-_yUYjPWwKZbCJesNO7u8iEOh0UOyTdcZL3q2yv2prB95vTRTje5n_7ktfug8fNkAWzAsfffzDisJdqZYWU-_iAd5xWS=w512-h512-s-no-gm?authuser=0" alt="txtImage" class="moving-image1 white-image">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczNVfwCL19rfKvYwuKHJbfvwjbiCMA9Ldf7sQ5Ytw5EFU__2ARFONW26OQjr-_yUYjPWwKZbCJesNO7u8iEOh0UOyTdcZL3q2yv2prB95vTRTje5n_7ktfug8fNkAWzAsfffzDisJdqZYWU-_iAd5xWS=w512-h512-s-no-gm?authuser=0" alt="txtImage" class="moving-image1 white-image">
 
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczOp94NPnRZ2lgFpIDyZTLxBiY2T6CWuGO-8IsxkcOakRm87JdTEtmz9rfo08aJVa5UPiRjrOgM-JB4zoOlPRCCbStJ6H1h0C35rCJEYRUDC0Q0AdBOq37QTEPs3ilSzQk5wAqQLh9tbEsllQ5mbrePR=w512-h512-s-no-gm?authuser=0" alt="photoImage" class="moving-image2 white-image">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczOp94NPnRZ2lgFpIDyZTLxBiY2T6CWuGO-8IsxkcOakRm87JdTEtmz9rfo08aJVa5UPiRjrOgM-JB4zoOlPRCCbStJ6H1h0C35rCJEYRUDC0Q0AdBOq37QTEPs3ilSzQk5wAqQLh9tbEsllQ5mbrePR=w512-h512-s-no-gm?authuser=0" alt="photoImage" class="moving-image2 white-image">
 
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczMMkCPZCQcDyGYjCNkABFJcHJY-jhsXsvN0jHCLPF5qtwDZ1iiRT-kCQ17ehKJqu_3n6LeH6QefhUQi6Z52_IBMqRZeIoyHIMqE4dZexmrC9h7XcKyLOKunm1WqaQGH75WOPHg3OWXc3mnw9IVLwgxs=w512-h512-s-no-gm?authuser=0"alt="gpsImage" class="moving-image3 white-image">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczMMkCPZCQcDyGYjCNkABFJcHJY-jhsXsvN0jHCLPF5qtwDZ1iiRT-kCQ17ehKJqu_3n6LeH6QefhUQi6Z52_IBMqRZeIoyHIMqE4dZexmrC9h7XcKyLOKunm1WqaQGH75WOPHg3OWXc3mnw9IVLwgxs=w512-h512-s-no-gm?authuser=0"alt="gpsImage" class="moving-image3 white-image">
 
 
-        <!-- 添加形狀 -->
-        <div class="shapeAll shape1"></div>
-        <div class="shapeAll shape2"></div>
-        <div class="shapeAll shape3"></div>
-        <div class="shapeAll shape4"></div>
-        <div class="shapeAll shape5"></div>
-        <div class="shapeAll shape6"></div>
-        <div class="shapeAll shape7"></div>
-        <div class="shapeAll shape8"></div>
-        <div class="shapeAll shape9"></div>
-      </div>
+      <!-- 添加形狀 -->
+      <div class="shapeAll shape1"></div>
+      <div class="shapeAll shape2"></div>
+      <div class="shapeAll shape3"></div>
+      <div class="shapeAll shape4"></div>
+      <div class="shapeAll shape5"></div>
+      <div class="shapeAll shape6"></div>
+      <div class="shapeAll shape7"></div>
+      <div class="shapeAll shape8"></div>
+      <div class="shapeAll shape9"></div>
+
     </div>
   </div>
 
