@@ -104,7 +104,6 @@
     .container-fluid {
         width: 100%;
         max-width: 1400px;
-        padding: 0 8px;
         transition: padding 0.5s ease;
     }
 
@@ -774,6 +773,9 @@
 
     /* 垂直螢幕手機，小於 576px */
     @media (max-width: 575.98px) {  
+      .container-fluid {
+          padding: 0 8px;
+      }
       .carousel-caption h5 {
           margin-bottom: -30px; /* 調整 h5 的位置 */
       }
