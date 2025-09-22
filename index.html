@@ -274,26 +274,6 @@
         align-items: center;     /* 垂直居中 */
     }
 
-    .move-image-container .row h1 {
-        font-size: clamp(1.3rem, 2.5vw, 2rem);  /* 使用 clamp 設置字體大小，最小 1rem，最大 2rem */
-    }
-    .move-image-container .row h3 {
-        font-family: "Noto Serif HK", serif;         /* 設置字體為 "Noto Serif HK" 和預設字體為 serif */
-        font-weight: 900;                            /* 使用最粗字重 */
-        font-style: normal;                          /* 設置字體風格為正常 */
-        letter-spacing: 0.1em;                       /* 增加字母間距 */
-        font-size: clamp(1.1rem, 2.5vw, 1.8rem);  /* 使用 clamp 設置字體大小，最小 1rem，最大 2rem */
-        color: #fff;                                 /* 設置文字顏色為白色 */
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);   /* 設置文字陰影 */
-        text-decoration: none;                       /* 移除文字裝飾 */
-        padding: 5px auto;                            /* 設置內邊距為 5px */
-        white-space: nowrap;                         /* 不換行 */
-        min-width: 0;                                /* 避免溢出 */
-        z-index: 1;                                  /* 設置z-index，以確保元素在正確的層級 */
-        display: inline-flex;
-        align-items: center; /* 水平對齊 */  
-    }
-
     .gpsbtn {
         display: inline-block;                          /* 讓 a 標籤像按鈕一樣是 inline-block */
         min-width: 250px;
@@ -315,10 +295,32 @@
         text-align: center;                             /* 讓文字在按鈕內居中 */
         line-height: 40px;                              /* 調整文字垂直居中 */
         z-index: 2;
+
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);    /* 添加陰影 */
+        animation: pulse 2s infinite ease-in-out;      /* 添加脈衝動畫 */
+        transition: all 0.3s ease;                     /* 平滑過渡 */
+        position: relative;                            /* 為偽元素定位 */
+        overflow: hidden;                              /* 防止偽元素溢出 */
     }
 
     .gpsbtn:hover {
         background-color: #f5c300;
+    }
+
+    /* 脈衝動畫 */
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        50% {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(255, 183, 0, 0.4);
+        }
+        100% {
+            transform: scale(1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
     }
 
     @keyframes move1 {
@@ -540,12 +542,10 @@
       margin-left: 5px; /* 可根據需要調整 */
     }
 
-    h1, h2 {
+    h1, h2, h3 {
         font-family: "Noto Serif HK", serif;         /* 設置字體為 "Noto Serif HK" 和預設字體為 serif */
-        font-weight: 900;                            /* 使用最粗字重 */
         font-style: normal;                          /* 設置字體風格為正常 */
         letter-spacing: 0.1em;                       /* 增加字母間距 */
-        font-size: 1.5em;                            /* 調整字體大小 */
         color: #fff;                                 /* 設置文字顏色為白色 */
         text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);   /* 設置文字陰影 */
         text-decoration: none;                       /* 移除文字裝飾 */
@@ -558,16 +558,25 @@
         align-items: center; /* 水平對齊 */
     }
 
+    h1 {
+      margin-top: 12px;
+      font-weight: 900; /* 粗體字重 */
+      font-size: clamp(1.8rem, 2.5vw, 2.4rem);  /* 使用 clamp 設置字體大小，最小 2rem，最大 3rem */
+    }
+
+    h2 {
+      font-weight: 900; /* 粗體字重 */
+      font-size: clamp(1.4rem, 2.5vw, 2rem); 
+    }
+
     .section h3 { 
       font-weight: 700; /* 粗體字重 */
-      font-size: 1em;
-      margin-top: 10px;
-      z-index: 1;
+      font-size: clamp(1.4rem, 2.5vw, 2rem); 
     }
 
     .section p {
       font-weight: 700; /* 粗體字重 */
-      font-size: 1.1em;
+      font-size: 1em;
       line-height: 1.5em;
       padding: 5px 5px;
       z-index: 1;
@@ -926,17 +935,20 @@
       <div class="flash-box mt-3 mb-3">
         <div class="row">
           
-          <div class="col-12 col-lg-12">
+          <div class="col-12">
             <img src="https://lh3.googleusercontent.com/pw/AP1GczP6fZbHMxTEfVUA5HN7E9zIE8ETqR_OZrCnP9o8H7AykF5ZLUlO4a33Jzw6XJSQzeLHpppIq7vLjYAe2DF2fHCUb-aSS7Um3INrOKlcNTtEEFyDoP_jSq3E_TGuy0mXsdxq5C_Qu_r6AEt3xzX-Rvfm=w512-h512-s-no-gm?authuser=0" class="white-image w-settingHead mb-2" alt="高雄屏東拖吊費用">
             <h1>高雄屏東道路救援</h1>
-            <h3>24小時快速、高效的拖吊專家！</h3>
+          </div>
+
+          <div class="col-12">
+            <h2>24小時快速、高效的拖吊專家!</h2>
           </div>
 
           <div class="col-12">
             <a href="https://leotowtruck.github.io/Yuhong.github.io/GPS" class="gpsbtn">使用GPS定位派車</a>
           </div>
 
-          <div class="col-12 col-lg-12">
+          <div class="col-12">
             <div class="d-flex flex-column">
               <h3><span class="material-symbols-outlined">counter_1</span>上傳兩張汽車與背景照片</h3>
               <h3><span class="material-symbols-outlined">counter_2</span>使用衛星地圖GPS定位</h3>
@@ -1039,7 +1051,7 @@
   
   <div id="services" class="container-fluid">
     <div class="section mb-5 mt-5" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
-      <h2 class="justify-content-center"><span class="material-symbols-outlined">check_circle</span>服務項目</h2>
+      <h3 class="justify-content-center"><span class="material-symbols-outlined">check_circle</span>服務項目</h3>
       <div class="row">
         <div class="col-4 col-md-2 mb-3 mt-3">
           <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMR6EPug6DHXjmPDMtkT_oW9dmJyuJiUa9LgdZFGfaL7poCnCEIJwoTlNV6VLslzGESR9Z8gDoDp9K_67-UmMByvmG35JtLAmpVdBqZbe69U7pWz_WB_zYaTXQy-1aKkkL1IHNw2bLSiY4rLiix-9MV=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="南州拖吊車">
@@ -1075,19 +1087,19 @@
     <div class="row mb-5 mt-5">
       <div class="col-12 col-lg-4 mb-3 mt-3" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
         <div class="section">
-          <h2 class="justify-content-center"><span class="material-symbols-outlined">groups</span>關於我們</h2>
+          <h3 class="justify-content-center"><span class="material-symbols-outlined">groups</span>關於我們</h3>
           <p>我們的拖吊車公司成立於2009年，從一輛小拖吊車起步，憑著專業技術和真誠服務，迅速成為本地領先的道路救援與拖吊服務提供商。我們的服務範圍涵蓋高雄和屏東地區，憑藉專業的技術、優質的服務和可靠的信譽，贏得了廣大客戶的信任和支持。</p>
         </div>
       </div>
       <div class="col-12 col-lg-4 mb-3 mt-3" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
         <div class="section">
-          <h2 class="justify-content-center"><span class="material-symbols-outlined">diversity_4</span>團隊</h2>
+          <h3 class="justify-content-center"><span class="material-symbols-outlined">diversity_4</span>團隊</h3>
           <p>我們的團隊由一群經驗豐富、技術精湛且熱愛工作的專業人士組成。我們擁有豐富的道路救援和拖吊經驗，並定期接受培訓以保持最新的行業知識和技能。我們的司機和技術人員不僅擅長操作各類拖吊設備，還具備良好的應變能力和服務態度，確保每次任務都能安全、高效地完成。</p>
         </div>
       </div>
       <div class="col-12 col-lg-4 mb-3 mt-3" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
         <div class="section">
-          <h2 class="justify-content-center"><span class="material-symbols-outlined">workspace_premium</span>使命</h2>
+          <h3 class="justify-content-center"><span class="material-symbols-outlined">workspace_premium</span>使命</h3>
           <p>我們的使命是提供快速、高效且安全的拖吊和道路救援服務，確保每一位客戶在遇到車輛故障或事故時，都能獲得即時的幫助和安心。我們致力於以客戶為中心，提供全天候24小時服務，確保您在任何時間、地點都能得到我們的支援。</p>
         </div>
       </div>
@@ -1102,7 +1114,7 @@
       <!-- 救援案例1 -->
       <div class="col-12 col-md mb-5">
         <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>救援案例 一</h2>
+          <h3><span class="material-symbols-outlined">check_circle</span>救援案例 一</h3>
           <div class="row">
             <div class="col-12">
               <div class="display-photo" id="display-photo_1">
@@ -1143,7 +1155,7 @@
       <!-- 救援案例2 -->
       <div class="col-12 col-md mb-5">
         <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>救援案例 二</h2>
+          <h3><span class="material-symbols-outlined">check_circle</span>救援案例 二</h3>
           <div class="row">
             <div class="col-12">
               <div class="display-photo" id="display-photo_2">
@@ -1189,7 +1201,7 @@
       <!-- 救援案例3 -->
       <div class="col-12 col-md mb-5">
         <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>救援案例 三</h2>
+          <h3><span class="material-symbols-outlined">check_circle</span>救援案例 三</h3>
           <div class="row">
             <div class="col-12">
               <div class="display-photo" id="display-photo_3">
@@ -1231,7 +1243,7 @@
       <!-- 救援案例4 -->
       <div class="col-12 col-md mb-5">
         <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>救援案例 四</h2>
+          <h3><span class="material-symbols-outlined">check_circle</span>救援案例 四</h3>
           <div class="row">
             <div class="col-12">
               <div class="display-photo" id="display-photo_4">
@@ -1277,7 +1289,7 @@
       <!-- 救援案例5 -->
       <div class="col-12 col-md mb-5">
         <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>救援案例 五</h2>
+          <h3><span class="material-symbols-outlined">check_circle</span>救援案例 五</h3>
           <div class="row">
             <div class="col-12">
               <div class="display-photo" id="display-photo_5">
@@ -1319,7 +1331,7 @@
       <!-- 救援案例6 -->
       <div class="col-12 col-md mb-5">
         <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>救援案例 六</h2>
+          <h3><span class="material-symbols-outlined">check_circle</span>救援案例 六</h3>
           <div class="row">
             <div class="col-12">
               <div class="display-photo" id="display-photo_6">
@@ -1365,7 +1377,7 @@
       <!-- 救援案例7 -->
       <div class="col-12 col-md mb-5">
         <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>救援案例 七</h2>
+          <h3><span class="material-symbols-outlined">check_circle</span>救援案例 七</h3>
           <div class="row">
             <div class="col-12">
               <div class="display-photo" id="display-photo_7">
@@ -1407,7 +1419,7 @@
       <!-- 吊掛作業1 -->
       <div id="operations" class="col-12 col-md mb-5">
         <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>吊掛作業 一</h2>
+          <h3><span class="material-symbols-outlined">check_circle</span>吊掛作業 一</h3>
           <div class="row">
             <div class="col-12">
               <div class="display-photo" id="display-photo_8">
@@ -1453,7 +1465,7 @@
       <!-- 吊掛作業2 -->
       <div class="col-12 col-md mb-5">
         <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>吊掛作業 二</h2>
+          <h3><span class="material-symbols-outlined">check_circle</span>吊掛作業 二</h3>
           <div class="row">
             <div class="col-12">
               <div class="display-photo" id="display-photo_9">
@@ -1495,7 +1507,7 @@
       <!-- 吊掛作業3 -->
       <div class="col-12 col-md mb-5">
         <div class="rescueBlock">
-          <h2><span class="material-symbols-outlined">check_circle</span>吊掛作業 三</h2>
+          <h3><span class="material-symbols-outlined">check_circle</span>吊掛作業 三</h3>
           <div class="row">
             <div class="col-12">
               <div class="display-photo" id="display-photo_10">
@@ -1544,7 +1556,7 @@
     <div class="reviews-container">
       <div class="row align-items-start" id="reviews-container">
         <div col-12>
-          <h2 class="mt-4 mb-2">客戶評價 <span class="material-symbols-outlined">thumb_up</span></h2>
+          <h3 class="mt-4 mb-2">客戶評價 <span class="material-symbols-outlined">thumb_up</span></h3>
         </div>
       </div>
     </div>
@@ -1873,53 +1885,53 @@
   // 評價圖片URL列表
   const reviews = [
 
-      // 20250923-1
-      "https://lh3.googleusercontent.com/pw/AP1GczM723pNuAmAqguWQKqGABSNZMXJpaDALsSfDN91IaNnjQkzcGJSdZhL_8fMXeHVuzO2LFhUBdP8RasWQ5wXNihq5x3zym11Sj8rPF7hx_84wPcPaiv5xG2D4-dKKZ21EkdOeRmYR-Uynn4uN9DOSEpS=w1080-h353-s-no-gm?authuser=0",
+      // 20250923-1 v
+      "https://lh3.googleusercontent.com/pw/AP1GczNP3mkKvGExaqILbbrPRqmYoIn9-0Y07HaDYVuu0FXbltVDpoWmM2SaMHwXwzwn2qUzYHeZxpaAxka4NUwfXWQKy_HiSsvMEDESegsaJvzkIbrrGuM0mRXRTqQlHakSe13wO-vNWRVT_UhqR6d_L-cg=w1080-h388-s-no-gm?authuser=0",
       
-      // 20250923-2
-      "https://lh3.googleusercontent.com/pw/AP1GczPcfKFjyoDMyICuG4PMu8sFikq9wpg6u8xIEu6AUkmtG202rraqg2saPY2EisztoAbp79iu5SXeLupIkZCN7J3qRdtPsh2E0voul9f135ob_JIN5Bl1zBjiuhMUZYQ35ESv4bj70nun-GJSBvpIaM20=w1080-h361-s-no-gm?authuser=0",
+      // 20250923-2 v
+      "https://lh3.googleusercontent.com/pw/AP1GczPHUiA-NknBXpkXiW33sYMcpZ9W8HEAQxOj8JumbdY9M6QOgVcoA36h-vmRTlJLzJ9f68-8GHG09pGJLXvTOHf8e_SbXQuLhLGxoKTgVsQjQ7g6wKh9pJa034bJ0mp0W_PiQAPfexmQEuzEw9UupMHY=w1080-h387-s-no-gm?authuser=0",
             
       // 20250923-3
-      "https://lh3.googleusercontent.com/pw/AP1GczNC2CJjXBMRpEGNjx-aJojCxvl7GEVcL8sAmizylrYrpxmRw41I8amh-ViGWJ0aLFKWxxZhKSmhRl7Pigs4WoM4U-sS1PtkSN2cR46ucTdXYldNVucsTht5JgP4y_vSXAfPldm84dlSXbFK_ojzMu2O=w1080-h361-s-no-gm?authuser=0",
+      "https://lh3.googleusercontent.com/pw/AP1GczPdckxo-phd6cZaLSt2HpHl7JZn2nIq1qOyv81BeqGljfi4DVRgHAE-ANEGFrgOX_8cDZah84VOf2wiz0gGDuXzSQyA18ApbdrgBKaizEkigdzfizFq6K4FTDxs6VqgxMPnvqY26tePwQsP9S1zAT96=w1080-h456-s-no-gm?authuser=0",
             
       // 20250923-4
-      "https://lh3.googleusercontent.com/pw/AP1GczNL-Zwxy0QXz8CiMUdIEoFY_dheQ-itOAsaVDoWE5QQIbTH1n0_BPjQ8A6dkThJGO-4SAQ5VY2ItCFHtoCbOXWoz02Fc7gDDyBAG7wmVnvoNAl72w-zVl0viQuvCQt80XVIFUsBxg0_jEzDFB0y0-JC=w1080-h426-s-no-gm?authuser=0",
+      "https://lh3.googleusercontent.com/pw/AP1GczPDQFBxvYcm3mtBPngkbBBbYX2KKr3oXBK7-E2vPYAFThP9r-WCIIzFJjIOP14xXP-11gTrpe9IIoq9tXUxEDJQ2VaZdBqTrJKJlOhDL31UoRm4WZwtyadka0jBpJ-VpOrf9kuz3qXAEG5qmK2SmlLo=w1080-h464-s-no-gm?authuser=0",
 
       // 20250923-5
-      "https://lh3.googleusercontent.com/pw/AP1GczNG2Ku3syRXbSZwn1kdg-TJXQpzsvcAHOC7Wft2C4CnKqIV5GVhfS_1NtwkotRRq2clE4DYhJ2nfSiYPBf-05Qdb2E51oucUVVGB5t4R-Y0qunoTuU8KjRT-4yPvxuU_uVQH1rsOLowxMYegVkEo4wD=w1080-h414-s-no-gm?authuser=0",
+      "https://lh3.googleusercontent.com/pw/AP1GczN2vxNaH6SYjDSEm77x6Z44L_py9lp1XH-AqyOUMo3JsFlwNOE2rscQsDubG_1UmBggkNojXvL8lgYJ70F5udqoGFJZrJXDaFadWwYt7UgXejXTOFvLwwKfu9WPBr2offKkcaMxuh7GO4DUi92py_4N=w1080-h457-s-no-gm?authuser=0",
           
       // 20250923-6
-      "https://lh3.googleusercontent.com/pw/AP1GczMlBTIrwF5DdoeesuKBczsZNiVL1Vv7TrLtLXd1Efyd2rjRTG6R26AyPhAYKvvSWDjaA5MxRGKuuv1Oo2pW3szdfIHUXl9lUZrjVpcbrbwosAR8fQvv7G7m4Hsa0vXzsnk1W1jVEVR1BYr5ljIvBWxc=w1080-h427-s-no-gm?authuser=0",
+      "https://lh3.googleusercontent.com/pw/AP1GczPsVLCIaXnStNzBIzz_IFQFYtkWATD0pziJwsHbgPlGPhZCkJ8pBLl53f_M9LMFdyUXUaoXRL_2OipcPaJyTYEjRcWi14JQztVzXfx_HAJaP8pgWIwG7wgdLPkQ9V_9fy0hnCyt1lDgYjMO9H5Zyiqh=w1080-h463-s-no-gm?authuser=0",
 
       // 20250923-7
-      "https://lh3.googleusercontent.com/pw/AP1GczNNQIa65J6xiXcesUQFXfZZViTOG-JLT4bEHOxkKgFtMz8T3mELLqIHTa4kTp_kUJxynJPvIBr6S_kuhwpZmhrETsV1UheKEQN5bN44pchRzLZXEF-qVOwBQbgH_Qxo6DBGik3dxABGRb804BSBbV00=w703-h934-s-no-gm?authuser=0",
+      "https://lh3.googleusercontent.com/pw/AP1GczPeEZzeUrHu6keii4UUV4POVojxGO_TUDDq0x4ivIfHKUxsn4LhF79GcBu2H-OzBpgTfAp_EZOrn9sqS0MDiv5UN3s1yKpTna77sJ2cMhIV0Y9huCcPPcZhe9GNyNIjGOf7223HukDvCnxd8Doub-f6=w677-h934-s-no-gm?authuser=0",
       
       // 20250923-8
-      "https://lh3.googleusercontent.com/pw/AP1GczPZQ5SjViKQW01GHCY5h5Df80Osz-9AtcxwLKXNHz1VNPqivyHO1pju_U2mP4PSf1mUDh9AR1cOIIxSdQv7t28W7VGVoDK1Rkw_ww0FitvbVg0fZLdA-g8XEyVzatsxVdGOM0BTu2s1skhc97dMLma_=w744-h934-s-no-gm?authuser=0",
+      "https://lh3.googleusercontent.com/pw/AP1GczOeBVnRcq4OF6-0zEf_aozNfCvgq-HxhobpOHvHLWXoYcmGbXZZeVuRKifGKWo8nnB1cqiKiy-zX-gtEegK1y7AhgoxV47xHNkc2m6X5XkvGDx9_i1ToxjL67oDaGYnLbviqdqlg5zjPyTFN5aUVA7S=w714-h934-s-no-gm?authuser=0",
             
 
       // 20250923-9
-      "https://lh3.googleusercontent.com/pw/AP1GczOzU91ZtdkYc943faBYEtdFjxE0pnN1RLIayfuUNp9LaH0bhG1C9ix7vu_pVH2mebjz1izg_etQEhnHYPil53sMATMlch7ScuYuGojkNslPipSjycEnAOnDsLI6Cp_HgVLYSdsYQxixDL9CFEDUafXM=w742-h934-s-no-gm?authuser=0",
+      "https://lh3.googleusercontent.com/pw/AP1GczOa5INocJrwghKwAMMs2ie5VXjDynlTEhG30QzWcrAetO-2Jp1kru0KKNuGPkzrunz0hzqYJ4sRZLfZqDUcCuQMmSszEvdrfbjAeYXYV4i_hkGmwDWdTyi2MOu7kMg5e482l3s_mv1xwQkMS4Dz8wQJ=w711-h934-s-no-gm?authuser=0",
       
       // 20250923-10
-      "https://lh3.googleusercontent.com/pw/AP1GczNvB7HpCI9IxthJlGnfDpGpya6QBc43gjPuYgK5isCUSNdJdRQf4-gvs6tZiOGfQTebQNiTUY_AfXR4aSLqwJr5arK5OG1QBhcWtmItOeXIbwT89P5kiDfpd-wJe8SQVMxHQtTp-UCpEmJ2LaB1avHx=w742-h934-s-no-gm?authuser=0",
+      "https://lh3.googleusercontent.com/pw/AP1GczO-VmJZfwxL_UX3xivlJ8LYxd2lUhVKAQSJclcx_CHhLvOMyk5vRnJ_hgHg1Yi1LRAkvfS20oe0coJyrqhLKozNoIOSSeioVfRoTVTUAszFRkZuER50w6OLAS-UJYEN94H9gzTpSDe_UtQBkTbm5guz=w710-h934-s-no-gm?authuser=0",
                  
       // 20250923-11
-      "https://lh3.googleusercontent.com/pw/AP1GczNJoZXB3P_m45SwCOhDvwAzrN23ReBe-__7x6RRMlGpvDXJTZtT-eb5vTg4icTzyZpIMlEfqc-qCZ-F2mnEGZba8GtSkffR2yMLWCLi9AyMBYQdShUOXFTx-nVO5r8CtydXVqmMRkOr2uLIHud0l8JZ=w934-h934-s-no-gm?authuser=0",
+      "https://lh3.googleusercontent.com/pw/AP1GczN3uvvHGaw5JiNAyOJscEcEsxc29fZYT0XhAK-iyL-LHBUrsFyhtGAgw_PDzbDL0Vwi5eK6FnbmmviiTUS6Oc0XVGdd5ZdPnPCM4o4jIhjbLzJtZMOY-QZ7p2VIEzWniFu4LDspBk9mjoFSUvx3kKRS=w701-h934-s-no-gm?authuser=0",
      
       // 20250923-12
-      "https://lh3.googleusercontent.com/pw/AP1GczNnTFgDQwRKtWxzGVVspUD4leza4TifrgGpZLbqWTXz-iFP263KnEGEGMN9C4bcJ41DBF3h9JTS0paPbnsYIaavuZpOZ_O4c9sqKyGFThspxJxlwg3qr-pEWlCz8t0Og9TkMqiOcuop3cXdJwjM88Z0=w1080-h920-s-no-gm?authuser=0",
+      "https://lh3.googleusercontent.com/pw/AP1GczPA2Jpi2mo5B2BW9glzxsgFpLdceJlQPF7hjmw7H0lMMh33ye7xJSTT1-s-YL_2P2o-yAe0iB6H2CEwoL7wBFnYmtCY7u0uHh8Mk_7fUHB-wwcOfCeVt2y5ZXWbazecc88BN43NxWNB2HG7G-QjV4TD=w1022-h934-s-no-gm?authuser=0",
   
         
       // 20250923-13
-      "https://lh3.googleusercontent.com/pw/AP1GczPOdN3wRuCN7uzcH2j2rUecdGVHTxhgxj-Ur2EKbg181-zKvrL-qn5Lz1ymtFznfMhIb4tgy1JR9Lf7UvEcySrJjMOOuZR0sjX2rIKhhXZh9Y2w3cWnW9tX2qm__4wr0IvjUyPN4eKSHrXQLXlptP64=w1080-h800-s-no-gm?authuser=0",
+      "https://lh3.googleusercontent.com/pw/AP1GczOk0CEJqfetVQu5tWa2HD9mbf3lJPGA09SY5js6vQpxd5lAqB5ok5CCqaTqWfMjtQ-5drLEYimGeSwgSmBmRdfogE5M-lVHPQn5IOmhqGXXc_HkSqHf-6ZkKpQeh32lo5GI1v-Dg0i1dJehvxCrVWWd=w1080-h882-s-no-gm?authuser=0",
             
 
       // 20250923-14
-      "https://lh3.googleusercontent.com/pw/AP1GczNVOaSxzy1mL5dDGYfIezVA-eytYqibnODfGoYAztxQPfXcZ6B9B8CjgFhWKe3dk0MTRCV0sDZxQte0qaoKY8cFzB0Y-0bvDkYXR4CMAnwIh_vaYDlx9X8tjvZnwfavAbBPPayPKl-abWosR8ajT0Rt=w1080-h498-s-no-gm?authuser=0",
+      "https://lh3.googleusercontent.com/pw/AP1GczMJ2aClNrgkr3qN2fZh1SYfBTk6Ek-i1RXyo1hq_7EePS1hssffLz5eWaG061vm6WPnXluW7_XV0nyCr5lDdvEwD-oieQ_9iGx7JpzayvYeh7xslYtxXKoglp29MGG3nVn3gfZJfnpKzLxh_JSqJnFo=w1080-h566-s-no-gm?authuser=0",
       
       // 20250923-15
-      "https://lh3.googleusercontent.com/pw/AP1GczO84vJsGCWPAAEQ4WIgI-1TjVSf-nLbmpTU9H57sqALT5zvmrJMGkxOHqAkxbwlUyq4Jtr_d0IEaV090zT_lEeabBhK0MmvgR9t6BtuG6xlaNhDFTiUozDjQMpsTxdLlTgWuIg6bHUl7KboQWecmy2l=w1080-h454-s-no-gm?authuser=0",
+      "https://lh3.googleusercontent.com/pw/AP1GczO2_I2x4CWnyfgsuaIm1yPQPQJfzZ4pyU0blHdVYc3IKYoZI0cvcwjxjpQm8WrpxIN8gCsVAb5zGzpXWS3Fap1pNHMu2ok8PGw0QVx1gUjujSEwYiwwSTuO4HEkrYUT4FFhRaHe8ECwa4q7Uub4sue-=w1080-h494-s-no-gm?authuser=0",
             
 
       // 1
