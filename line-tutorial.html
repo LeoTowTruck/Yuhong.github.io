@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>加入LINE好友教學</title>
+<style>
+  body {
+    font-family: "Noto Sans TC", sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+  .container {
+    max-width: 600px;
+    margin: auto;
+    background: #1e1e1e;
+    padding: 25px 25px 50px 25px; /* 上 25px、右 25px、下 50px、左 25px */
+    margin-top: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
+  h1, h2 {
+    color: #06c755;
+    margin-bottom: 20px;
+  }
+  #copyLineBtn {
+    background-color: #06c755;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  #copyLineBtn:hover {
+    background-color: #04a64a;
+  }
+  #copyMsg {
+    margin-top: 12px;
+    color: #b0b0b0;
+    font-size: 14px;
+  }
+  .tutorial {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column; /* 從上往下排列 */
+    gap: 48px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .tutorial-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .tutorial-item p {
+    margin: 8px 0;
+    font-size: 20px;
+    color: #e0e0e0;
+    font-weight: bold; /* 加粗體 */
+  }
+  .tutorial-item img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>搜尋LINE ID</h1>
+  <button id="copyLineBtn">複製LINE ID：52988</button>
+  <p id="copyMsg">點擊按鈕即可複製 LINE ID</p>
+</div>
+
+<div class="tutorial">
+  <div class="tutorial-item">
+    <h2>如何搜尋Line ID ?</h2>
+    <p>步驟１、２</p>
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczNcHZ6ybPSM0zCXDGywTFp-43CQkTfJ3B_Frj_PE2SrHHTeNEkduTjSmENt9C7x9dBSOpOCyeRsZe73IEBZAGoPC6XQB8vb5l0jMaWdScuptZaIBBtrCtth9EM8c0C43gwzO51QP4YL70LqMN9RZO4Q=w448-h934-s-no-gm?authuser=0" alt="教學步驟1">
+  </div>
+  <div class="tutorial-item">
+    <p>步驟３</p>
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczOCZ_9NI9VmWhI0mW8WU4JfO-p96CQvVrjwaelZCuVD0OzEzGh06m5SAAsjX8Bsyg-kMjL6ThiWVyCf7e6bBQF_ArdwbAoVZIx7vbhdb5Igux-qAR_k5CgzyM6LWM0quMRWrxPH9Kjc5EqYbzrYb_jE=w934-h934-s-no-gm?authuser=0" alt="教學步驟2">
+  </div>
+  <div class="tutorial-item">
+    <p>步驟４</p>
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczMG51jpeLaaYxYLeD4t0nRkX4ocYtJOXcXoFrI1ZccoYL_sKhHAtmLwKkXJZTW3izXH7muIfEnt2uvus_pWcKjYZhmd_sRgOKBXCfEOwwvrWkZfcvrSHhivo8E-eVI8vJeDaqf8lvcloHEPHY8oamsF=w448-h934-s-no-gm?authuser=0" alt="教學步驟3">
+  </div>
+</div>
+
+<script>
+  const lineId = "52988";
+  document.getElementById("copyLineBtn").addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(lineId);
+      document.getElementById("copyMsg").textContent = `✅ 已複製 LINE ID：${lineId}，請到 LINE 搜尋加入`;
+    } catch (err) {
+      document.getElementById("copyMsg").textContent = `請手動複製 LINE ID：${lineId}`;
+    }
+  });
+</script>
+
+</body>
+</html>
