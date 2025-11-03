@@ -1568,11 +1568,9 @@
     <button class="call-button" onclick="makeCall()" aria-label="撥打電話">
       <svg class="icon"><use xlink:href="#icon-phone"></use></svg>
     </button>
-<!--
     <button class="Line-button" onclick="openLine()" aria-label="加Line好友">
       <svg class="icon"><use xlink:href="#icon-line"></use></svg>
     </button>
--->
   </div>
 
   <footer class="bg-gradient bg-dark">
@@ -2168,11 +2166,14 @@
   function makeCall() {
     window.location.href = "tel:0981263978";
   }
-  /*
+
   function openLine() {
-    window.open("https://line.me/ti/p/idtb0LETDp", "_blank");
+    // 原本的 LINE 網頁跳轉註解掉
+    // window.open("https://line.me/ti/p/idtb0LETDp", "_blank");
+    
+    // 改成跳轉到本地頁面
+    window.location.href = "https://leotowtruck.github.io/Yuhong.github.io/line-tutorial.html";
   }
-  */
 </script>
 
 </body>
