@@ -60,6 +60,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20px;
   }
   .tutorial-item p {
     margin: 8px 0;
@@ -67,12 +68,23 @@
     color: #e0e0e0;
     font-weight: bold; /* 加粗體 */
   }
-  .tutorial-item img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+
+  .img-frame {
+      border: 1px solid rgba(255, 255, 255, 0.3); /* 半透明邊框 */
+      border-radius: 12px;
+      padding: 3px 3px 0px 3px; /* 上 右 下 左 */
+      display: inline-block;
+      backdrop-filter: blur(8px); /* 背景模糊 */
+      background: rgba(255, 255, 255, 0.1); /* 半透明背景，增加玻璃感 */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
   }
+
+  .img-frame img {
+      width: 100%;
+      border-radius: 12px; /* 讓圖片角落略小於外框 */
+  }
+
 </style>
 </head>
 <body>
@@ -87,16 +99,23 @@
   <div class="tutorial-item">
     <h2>如何搜尋Line ID ?</h2>
     <p>步驟１、２</p>
-    <img src="https://lh3.googleusercontent.com/pw/AP1GczNA4KM0KCPjVG2fOwSQrsTJudaY9cDdA4InbdCEhnkvt-LCOpWqmQUA46r-AAmpPOPsSLD0xe_b9OfFfUGqnIkH8u1M8WP_6muHU9ZaYa_RMECa14d0lhPRMJ33pEDn9MGvlEe6qVscZDinfHPTz9gR=w447-h933-s-no-gm?authuser=0" alt="教學步驟1">
+    <div class="img-frame">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczNA4KM0KCPjVG2fOwSQrsTJudaY9cDdA4InbdCEhnkvt-LCOpWqmQUA46r-AAmpPOPsSLD0xe_b9OfFfUGqnIkH8u1M8WP_6muHU9ZaYa_RMECa14d0lhPRMJ33pEDn9MGvlEe6qVscZDinfHPTz9gR=w447-h933-s-no-gm?authuser=0" alt="教學步驟1">
+    </div>
   </div>
   <div class="tutorial-item">
     <p>步驟３</p>
-    <img src="https://lh3.googleusercontent.com/pw/AP1GczOCZ_9NI9VmWhI0mW8WU4JfO-p96CQvVrjwaelZCuVD0OzEzGh06m5SAAsjX8Bsyg-kMjL6ThiWVyCf7e6bBQF_ArdwbAoVZIx7vbhdb5Igux-qAR_k5CgzyM6LWM0quMRWrxPH9Kjc5EqYbzrYb_jE=w934-h934-s-no-gm?authuser=0" alt="教學步驟2">
-  </div>
+    <div class="img-frame">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczOCZ_9NI9VmWhI0mW8WU4JfO-p96CQvVrjwaelZCuVD0OzEzGh06m5SAAsjX8Bsyg-kMjL6ThiWVyCf7e6bBQF_ArdwbAoVZIx7vbhdb5Igux-qAR_k5CgzyM6LWM0quMRWrxPH9Kjc5EqYbzrYb_jE=w934-h934-s-no-gm?authuser=0" alt="教學步驟2">
+    </div>
+    </div>
   <div class="tutorial-item">
     <p>步驟４</p>
-    <img src="https://lh3.googleusercontent.com/pw/AP1GczMG51jpeLaaYxYLeD4t0nRkX4ocYtJOXcXoFrI1ZccoYL_sKhHAtmLwKkXJZTW3izXH7muIfEnt2uvus_pWcKjYZhmd_sRgOKBXCfEOwwvrWkZfcvrSHhivo8E-eVI8vJeDaqf8lvcloHEPHY8oamsF=w448-h934-s-no-gm?authuser=0" alt="教學步驟3">
-  </div>
+    <div class="img-frame">
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczMG51jpeLaaYxYLeD4t0nRkX4ocYtJOXcXoFrI1ZccoYL_sKhHAtmLwKkXJZTW3izXH7muIfEnt2uvus_pWcKjYZhmd_sRgOKBXCfEOwwvrWkZfcvrSHhivo8E-eVI8vJeDaqf8lvcloHEPHY8oamsF=w448-h934-s-no-gm?authuser=0" alt="教學步驟3">
+    </div>
+    </div>
+
 </div>
 
 <script>
