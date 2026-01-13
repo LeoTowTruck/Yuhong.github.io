@@ -25,15 +25,14 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "AutoTowService",
+    "@type": ["LocalBusiness", "AutoTowService"],
     "name": "拾捌拖吊車",
     "url": "https://leotowtruck.github.io/Yuhong.github.io",
     "logo": "https://lh3.googleusercontent.com/pw/AP1GczPn3oeeQ4JF77281EgY582jVE8kJaXi8QKjux9lLcKsKcHptuQT8H6Gyo3_nzU96GY6vTEuGapYI8YvUtA6cWevmMV0vSG45vUq5KWrASdEcAFKM7LKCPUNi5DCd7EI4q21nkY52-xm-F7lztJCSEoT=w192-h192-s-no-gm?authuser=0",
     "image": "https://lh3.googleusercontent.com/pw/AP1GczMm2FiYFOMNkgOhg1BQXQ6sCINqbQBMkFa4Jd8LzQWtAI-rAFoYY-lXlvdOirwwhCh2sWmFgWodeU8homqs07lnOMxDCTdk0TIpWiaVLW12wL_8-kXGCv1UuqfGmVwfIpQPegxqzkgnsPIiv_5tN-LZ=w1200-h630-s-no-gm?authuser=0",
-    "priceRange": "$$",
     "telephone": "+886-981-263-978",
-    "description": "高雄屏東24小時專業道路救援與拖吊服務，GPS定位快速派車。",
-    "openingHours": "Mo-Su 00:00-23:59",
+    "priceRange": "TWD 1500起",
+    "description": "高雄、屏東 24 小時專業道路救援。提供超跑低底盤拖吊、事故車救援、全載拖吊服務。GPS 快速派車，誠信報價。",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "平和路289號",
@@ -47,17 +46,34 @@
       "latitude": 22.531972,
       "longitude": 120.457556
     },
-    "areaServed": [
+    "openingHoursSpecification": [
       {
-        "@type": "AdministrativeArea",
-        "name": "屏東縣"
-      },
-      {
-        "@type": "AdministrativeArea",
-        "name": "高雄市"
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
       }
     ],
-    "hasMap": "https://www.google.com/maps?q=22.531972,120.457556"
+    "areaServed": [
+      { "@type": "AdministrativeArea", "name": "高雄市" },
+      { "@type": "AdministrativeArea", "name": "屏東縣" },
+      { "@type": "AdministrativeArea", "name": "屏東市" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "道路救援服務",
+      "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "24H 全載拖吊服務" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "超跑與低底盤精密拖吊" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "道路救援接電服務" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "高速公路國道拖吊救援" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "大型重機專業拖吊" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "地下室受困救援" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "事故車現場清理與拖吊" } }
+      ]
+    }
   }
   </script>
 
@@ -837,6 +853,7 @@
         width: 72px;
         height: 72px;
       }
+
       @keyframes flash {
           0% {
               left: -100%;
