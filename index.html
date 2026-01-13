@@ -278,6 +278,7 @@
         transition: transform 1s;
         z-index: 1;
     }
+
     /*********************************************************************/
 
     .move-image-container {
@@ -504,25 +505,26 @@
         content: '';
         position: absolute;
         top: 0;
-        left: -100%;             /* 從格子外部開始 */
+        left: 0; 
         width: 40%;
         max-width: 250px;
         height: 100%;
         background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
-        transform: skewX(-45deg); /* 傾斜閃光效果 */
-        filter: blur(16px);       /* 使閃光邊緣模糊 */
-        animation: flash 10s infinite; /* 閃光效果動畫，無限循環 */
+        transform: skewX(-45deg) translateX(-300%); 
+        filter: blur(16px);
+        will-change: transform; 
+        animation: flash 10s infinite;
     }
 
     @keyframes flash {
         0% {
-            left: -100%;
+            transform: skewX(-45deg) translateX(-300%);
         }
-        50% {
-            left: 200%;
+        70% {
+            transform: skewX(-45deg) translateX(500%);
         }
         100% {
-            left: 200%;
+            transform: skewX(-45deg) translateX(500%);
         }
     }
 
@@ -616,12 +618,13 @@
         position: absolute;      /* 設置圖片的定位為絕對定位 */
         opacity: 0.2;            /* 設置圖片的透明度        */
         -webkit-user-drag: none; /* 禁用圖片拖拽功能        */
-        user-drag: none;         /* 禁用圖片拖拽功能        */
+        height: auto !important; 
+        object-fit: contain;     /* 保持比例縮放，不裁切且不變形 */
     }
 
     .ink-background .img-1 {
         width: 130%;
-        aspect-ratio: 1080 / 581;
+        aspect-ratio: 1114 / 776;
         left: -30%; /* 設置圖片的左邊位置為容器的左邊 */
         top: 10%; /* 設置圖片的頂部位置為容器的頂部 */
         transform: translateY(-22%); /* 確保圖片居中顯示 */
@@ -629,7 +632,7 @@
 
     .ink-background .img-2 {
         width: 90%;
-        aspect-ratio: 1080 / 581;
+        aspect-ratio: 697 / 477;
         left: -9%; /* 設置圖片的左邊位置為容器的左邊 */
         top: 85%; /* 設置圖片的頂部位置為容器的頂部 */
         transform: translateY(-21%); /* 確保圖片居中顯示 */
@@ -637,7 +640,7 @@
 
     .ink-background .img-3 {  
         width: 100%;
-        aspect-ratio: 1080 / 581;
+        aspect-ratio: 1206 / 813;
         left: -15%; /* 設置圖片的左邊位置為容器的左邊 */
         top: 50%; /* 設置圖片的頂部位置為容器的頂部 */
         transform: translateY(-15%); /* 確保圖片居中顯示 */
@@ -805,14 +808,14 @@
       }
     }
 
-    // 橫向手機、576px 以上
+    /* 橫向手機、576px 以上 */
     @media (min-width: 576px) { 
       .container-fluid {
           padding: 0 20px;
       }
      }
 
-    // 平板電腦、768px 以上
+    /* 平板電腦、768px 以上 */
     @media (min-width: 768px) { 
       .container-fluid {
           padding: 0 28px;
@@ -828,7 +831,7 @@
       }
     }
 
-    // 桌面、992px 以上
+    /* 桌面、992px 以上 */
     @media (min-width: 992px) { 
       .call-button, .Line-button {
         width: 72px;
@@ -846,7 +849,8 @@
 
     /*********************************************************************/
 
-    /* 這是兩隻的電話號碼
+    /* 這是兩隻的電話號碼 */
+    /*
     .modal {
       position: fixed;
       top: 0;
@@ -1107,7 +1111,7 @@
         </div>
         <div class="col-12 col-md-6 mt-3 mb-3">
           <div class="ink-background">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczOO9lm4smEUJz5N6ZDtZMoBrOhRewKzS2LS-rFlLoAeSZGGyK8u-vZwQ1UuJ26lthH4Oe-PbM6VtMoX1cHm4RxEtg-3NPF3kXGc4I7EKzRKe_okEbFLuO2CWhDzrI8HFpq_8hd_w7fzARpoMvDAXlk6=w1114-h776-s-no-gm?authuser=0" class="img-1" alt="公道價">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczOO9lm4smEUJz5N6ZDtZMoBrOhRewKzS2LS-rFlLoAeSZGGyK8u-vZwQ1UuJ26lthH4Oe-PbM6VtMoX1cHm4RxEtg-3NPF3kXGc4I7EKzRKe_okEbFLuO2CWhDzrI8HFpq_8hd_w7fzARpoMvDAXlk6=w1114-h776-s-no-gm?authuser=0" class="img-1" width="1114" height="776" alt="公道價">
           </div>
           <div class="section" data-aos="zoom-out-left" data-aos-anchor-placement="center-bottom"> 
             <div class="d-flex">
@@ -1128,7 +1132,7 @@
         </div>
         <div class="col-12 col-md-6 mt-3 mb-3">
           <div class="ink-background">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczPaKl4mpR8KiiLGhxyZN5yYEfWrN69e7jU9GHYU4Gtn0GbWJLAb-elZlVnDrIoOtaZFBd5eHo7NeGN4cSsAnqGu0WTEcUg7uCd_Qz18iIqedPuWZuy6o7lsLlg-xxw5TGYbpaS4pczg3445DwdOEVqN=w697-h477-s-no-gm?authuser=0" class="img-2" alt="崁頂園吊車">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczPaKl4mpR8KiiLGhxyZN5yYEfWrN69e7jU9GHYU4Gtn0GbWJLAb-elZlVnDrIoOtaZFBd5eHo7NeGN4cSsAnqGu0WTEcUg7uCd_Qz18iIqedPuWZuy6o7lsLlg-xxw5TGYbpaS4pczg3445DwdOEVqN=w697-h477-s-no-gm?authuser=0" class="img-2" width="697" height="477" alt="崁頂園吊車">
           </div>
           <div class="section" data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom">
             <div class="d-flex">
@@ -1149,7 +1153,7 @@
         </div>
         <div class="col-12 col-md-6 mt-3 mb-3">
           <div class="ink-background">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczO5vcNDB-wYJwsPce-AB8CdT9DX2Qi1aoODUhb9WBfmUJmjgfgJLfufV4zwk7LvcBaosNjEykttkhIjvpHrh_L5upDJ1JCSjcIkWPP3fPOXIL2jt5dYpFodUzkc0QHYiwdiPszcKk4Wv_DhSMdVl-sT=w1206-h813-s-no-gm?authuser=0" class="img-3" alt="內埔拖吊車">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczO5vcNDB-wYJwsPce-AB8CdT9DX2Qi1aoODUhb9WBfmUJmjgfgJLfufV4zwk7LvcBaosNjEykttkhIjvpHrh_L5upDJ1JCSjcIkWPP3fPOXIL2jt5dYpFodUzkc0QHYiwdiPszcKk4Wv_DhSMdVl-sT=w1206-h813-s-no-gm?authuser=0" class="img-3" width="1206" height="813" alt="內埔拖吊車">
           </div>
           <div class="section" data-aos="fade-left" data-aos-anchor-placement="center-bottom">
             <div class="d-flex">
