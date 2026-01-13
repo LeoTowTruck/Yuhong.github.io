@@ -24,31 +24,42 @@
   <!-- 結構化數據 -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",  
-    "@type": "Organization",           
-    "name": "拾捌拖吊車",              
-    "url": "https://leotowtruck.github.io/Yuhong.github.io",  
-    "logo": "https://lh3.googleusercontent.com/pw/AP1GczPn3oeeQ4JF77281EgY582jVE8kJaXi8QKjux9lLcKsKcHptuQT8H6Gyo3_nzU96GY6vTEuGapYI8YvUtA6cWevmMV0vSG45vUq5KWrASdEcAFKM7LKCPUNi5DCd7EI4q21nkY52-xm-F7lztJCSEoT=w192-h192-s-no-gm?authuser=0",              
-    "contactPoint": {                    
-      "@type": "ContactPoint",           
-      "telephone": "+886-981-263-978",   
-      "contactType": "Customer Service",
-      "description": "24H道路救援拖吊車"  
-    },
-    "address": {                         
-      "@type": "PostalAddress",          
-      "addressLocality": "屏東市",       
-      "addressRegion": "屏東縣",          
-      "addressCountry": "TW"            
+    "@context": "https://schema.org",
+    "@type": "AutoTowService",
+    "name": "拾捌拖吊車",
+    "url": "https://leotowtruck.github.io/Yuhong.github.io",
+    "logo": "https://lh3.googleusercontent.com/pw/AP1GczPn3oeeQ4JF77281EgY582jVE8kJaXi8QKjux9lLcKsKcHptuQT8H6Gyo3_nzU96GY6vTEuGapYI8YvUtA6cWevmMV0vSG45vUq5KWrASdEcAFKM7LKCPUNi5DCd7EI4q21nkY52-xm-F7lztJCSEoT=w192-h192-s-no-gm?authuser=0",
+    "image": "https://lh3.googleusercontent.com/pw/AP1GczMm2FiYFOMNkgOhg1BQXQ6sCINqbQBMkFa4Jd8LzQWtAI-rAFoYY-lXlvdOirwwhCh2sWmFgWodeU8homqs07lnOMxDCTdk0TIpWiaVLW12wL_8-kXGCv1UuqfGmVwfIpQPegxqzkgnsPIiv_5tN-LZ=w1200-h630-s-no-gm?authuser=0",
+    "priceRange": "$$",
+    "telephone": "+886-981-263-978",
+    "description": "高雄屏東24小時專業道路救援與拖吊服務，GPS定位快速派車。",
+    "openingHours": "Mo-Su 00:00-23:59",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "平和路289號",
+      "addressLocality": "新園鄉",
+      "addressRegion": "屏東縣",
+      "postalCode": "932",
+      "addressCountry": "TW"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 22.531971,
-      "longitude": 120.457561
-    }
+      "latitude": 22.531972,
+      "longitude": 120.457556
+    },
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "屏東縣"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "高雄市"
+      }
+    ],
+    "hasMap": "https://www.google.com/maps?q=22.531972,120.457556"
   }
-
-</script>
+  </script>
 
 
   <!-- 引入 Google Fonts CSS、SVG -->
@@ -232,6 +243,13 @@
         text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);      /* 設置文字陰影        */
         padding: 10px 10px;
         text-align: center;
+    }
+
+    #carouselExampleCaptions .carousel-item img {
+        width: 100%;
+        aspect-ratio: 16 / 9; 
+        object-fit: cover;
+        background-color: #2e2e2e; /* 圖片加載前顯示深色底色，避免閃爍白光 */
     }
 
   /*********************************************************************/     
@@ -603,6 +621,7 @@
 
     .ink-background .img-1 {
         width: 130%;
+        aspect-ratio: 1080 / 581;
         left: -30%; /* 設置圖片的左邊位置為容器的左邊 */
         top: 10%; /* 設置圖片的頂部位置為容器的頂部 */
         transform: translateY(-22%); /* 確保圖片居中顯示 */
@@ -610,6 +629,7 @@
 
     .ink-background .img-2 {
         width: 90%;
+        aspect-ratio: 1080 / 581;
         left: -9%; /* 設置圖片的左邊位置為容器的左邊 */
         top: 85%; /* 設置圖片的頂部位置為容器的頂部 */
         transform: translateY(-21%); /* 確保圖片居中顯示 */
@@ -617,6 +637,7 @@
 
     .ink-background .img-3 {  
         width: 100%;
+        aspect-ratio: 1080 / 581;
         left: -15%; /* 設置圖片的左邊位置為容器的左邊 */
         top: 50%; /* 設置圖片的頂部位置為容器的頂部 */
         transform: translateY(-15%); /* 確保圖片居中顯示 */
@@ -823,14 +844,106 @@
       }
     }
 
+    /*********************************************************************/
+
+    /* 這是兩隻的電話號碼
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      display: none;
+    }
+
+    .modal-content {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 300px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .modal.show .modal-content {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .phone-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .phone-btn span {
+      font-size: 0.8em; 
+      color: #a0a0a0; 
+      margin-left: 4px;
+    }
+
+    .phone-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      fill: white; 
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px; 
+      width: 44px; 
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .close-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+    }
+
+    .close-icon {
+      width: 24px;
+      height: 24px;
+    }
+    */
+
     </style>
 </head>
 <body>
-
-  <!-- 加載效果的容器 -->
-  <div class="containerLoader">
-      <div class="loader"></div>
-  </div>  
 
 <!----------------------------------------------------------------------------------------------------------------------------->
 
@@ -885,694 +998,720 @@
 
   <!----------------------------------------------------------------------------------------------------------------------------->
 
-  <!-- 輪播圖 -->
-  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" aria-label="Slide 1" class="carouselExampleCaptions_bottom active" aria-current="true"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2" class="carouselExampleCaptions_bottom"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3" class="carouselExampleCaptions_bottom"></button>
+  <main>
+    <!-- 輪播圖 -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" aria-label="Slide 1" class="carouselExampleCaptions_bottom active" aria-current="true"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2" class="carouselExampleCaptions_bottom"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3" class="carouselExampleCaptions_bottom"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczPJhIDmRFa-AbBYruceFbmtbbZMoHozSMvrgItHN5YPVXD6roUjT8sgUGmAyoKnr3rB5iLuUOgUoIoUVkyna1SQu_5eFGC6gk0G7PV_AaUmzmB1spvDCikV4IDxTarko_52NLs-9g_m-iwFEJ1Zicof=w1402-h789-s-no-gm?authuser=0" class="d-block w-100" alt="國道救援">
+          <div class="carousel-caption animate__animated animate__rotateInDownLeft">
+            <h5><span class="material-symbols-outlined">person_celebrate</span>每次救援 都是承諾</h5>
+            <p class="d-none d-sm-block">我們不僅是您的救援夥伴，更是您的信任之選，每次救援都是我們的承諾。每一位客戶都是我們服務的中心，我們以真誠的態度面對每一次救援任務。</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczP6K0fCIU2ZS1pYp734tk-WX0ZoE_ow1Szq83l0a_MKEuNaqBxSpaVlOAOrCpdx6GTMaRdGEu2Duj-11v_4IDh2PhLaVziD4EBHRM2DUisVCLbOqZiJBJUDMr42yy_aLm3v9IWtf4VZiEWZD2QS03Zy=w1402-h789-s-no-gm?authuser=0" class="d-block w-100" alt="高速公路救援">
+          <div class="carousel-caption animate__animated animate__rotateInDownLeft">
+            <h5><span class="material-symbols-outlined">person_play</span>您的安全 是我們的使命</h5>
+            <p class="d-none d-sm-block">您的安全是我們的使命，您的滿意是我們的動力。我們提供高效、專業的拖吊服務，讓您的旅程更安心順暢。感謝您的選擇，我們期待為您服務。</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczNnURXsutzUlm73Nd3zhSdnAabAC21t8QvtXID-UaN9MD2GbsXrnGzJAbhaicHQa4Qa3WW7vqIvYKiis-V9Qt1GHexJMIDhI1UkPRCFQhr1q3_T1VTZ2adHt5GWskcMJwIDGEOYo_2LCycOa_X1tdJO=w1402-h789-s-no-gm?authuser=0" class="d-block w-100" alt="車輛救援">
+          <div class="carousel-caption animate__animated animate__rotateInDownLeft">
+            <h5><span class="material-symbols-outlined">partner_exchange</span>我們在 您安心</h5>
+            <p class="d-none d-sm-block">當您遇到困難時，我們隨時在您身邊。無論何時何地，我們都會迅速出動，確保您的安全與安心。</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczPJhIDmRFa-AbBYruceFbmtbbZMoHozSMvrgItHN5YPVXD6roUjT8sgUGmAyoKnr3rB5iLuUOgUoIoUVkyna1SQu_5eFGC6gk0G7PV_AaUmzmB1spvDCikV4IDxTarko_52NLs-9g_m-iwFEJ1Zicof=w1402-h789-s-no-gm?authuser=0" class="d-block w-100" alt="國道救援">
-        <div class="carousel-caption animate__animated animate__rotateInDownLeft">
-          <h5><span class="material-symbols-outlined">person_celebrate</span>每次救援 都是承諾</h5>
-          <p class="d-none d-sm-block">我們不僅是您的救援夥伴，更是您的信任之選，每次救援都是我們的承諾。每一位客戶都是我們服務的中心，我們以真誠的態度面對每一次救援任務。</p>
+
+
+    <!----------------------------------------------------------------------------------------------------------------------------->
+
+
+
+    <div class="container-fluid">
+      <div class="move-image-container">
+        <div class="flash-box mt-3 mb-3">
+          <div class="row">
+            
+            <div class="col-12">
+              <img src="https://lh3.googleusercontent.com/pw/AP1GczP6fZbHMxTEfVUA5HN7E9zIE8ETqR_OZrCnP9o8H7AykF5ZLUlO4a33Jzw6XJSQzeLHpppIq7vLjYAe2DF2fHCUb-aSS7Um3INrOKlcNTtEEFyDoP_jSq3E_TGuy0mXsdxq5C_Qu_r6AEt3xzX-Rvfm=w512-h512-s-no-gm?authuser=0" class="white-image w-settingHead mb-2" alt="高雄屏東拖吊費用">
+              <h1>高雄屏東道路救援</h1>
+            </div>
+
+            <div class="col-12">
+              <h2>24小時快速、高效的拖吊專家!</h2>
+            </div>
+
+            <div class="col-12">
+              <a href="https://leotowtruck.github.io/Yuhong.github.io/GPS" class="gpsbtn">使用GPS定位派車</a>
+            </div>
+
+            <div class="col-12">
+              <div class="d-flex flex-column">
+                <h3><span class="material-symbols-outlined">counter_1</span>上傳兩張汽車與背景照片</h3>
+                <h3><span class="material-symbols-outlined">counter_2</span>使用衛星地圖GPS定位</h3>
+                <h3><span class="material-symbols-outlined">counter_3</span>填寫您的稱呼與電話</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNVfwCL19rfKvYwuKHJbfvwjbiCMA9Ldf7sQ5Ytw5EFU__2ARFONW26OQjr-_yUYjPWwKZbCJesNO7u8iEOh0UOyTdcZL3q2yv2prB95vTRTje5n_7ktfug8fNkAWzAsfffzDisJdqZYWU-_iAd5xWS=w512-h512-s-no-gm?authuser=0" alt="txtImage" class="moving-image1 white-image">
+
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOp94NPnRZ2lgFpIDyZTLxBiY2T6CWuGO-8IsxkcOakRm87JdTEtmz9rfo08aJVa5UPiRjrOgM-JB4zoOlPRCCbStJ6H1h0C35rCJEYRUDC0Q0AdBOq37QTEPs3ilSzQk5wAqQLh9tbEsllQ5mbrePR=w512-h512-s-no-gm?authuser=0" alt="photoImage" class="moving-image2 white-image">
+
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMMkCPZCQcDyGYjCNkABFJcHJY-jhsXsvN0jHCLPF5qtwDZ1iiRT-kCQ17ehKJqu_3n6LeH6QefhUQi6Z52_IBMqRZeIoyHIMqE4dZexmrC9h7XcKyLOKunm1WqaQGH75WOPHg3OWXc3mnw9IVLwgxs=w512-h512-s-no-gm?authuser=0"alt="gpsImage" class="moving-image3 white-image">
+
+
+        <!-- 添加形狀 -->
+        <div class="shapeAll shape1"></div>
+        <div class="shapeAll shape2"></div>
+        <div class="shapeAll shape3"></div>
+        <div class="shapeAll shape4"></div>
+        <div class="shapeAll shape5"></div>
+        <div class="shapeAll shape6"></div>
+        <div class="shapeAll shape7"></div>
+        <div class="shapeAll shape8"></div>
+        <div class="shapeAll shape9"></div>
+
+      </div>
+    </div>
+
+
+    <!----------------------------------------------------------------------------------------------------------------------------->
+
+
+    <!-- 1 -->
+    <div class="container-fluid">
+      <div class="row mt-md-2 mb-md-5">
+        <div class="col-12 col-md-6 mt-3 mb-3">
+          <div class="card">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczOdFTS1HB_DOBRMy5aCoxE6LvBWsqznaut-DY8NiDQ9qtk3dOsM2MglZqvjGY53a8jGcwQzLPo4K9vIO3tEELd9iKNlL5HMWsTIGIwY4T1mGN4QqjeBXyDhLSvMXuVbInNhtrzFbqRuMk1vh2tJ0N_p=w1433-h804-s-no-gm?authuser=0" class="image" alt="高速公路故障拖吊">
+          </div>
+        </div>
+        <div class="col-12 col-md-6 mt-3 mb-3">
+          <div class="ink-background">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczOO9lm4smEUJz5N6ZDtZMoBrOhRewKzS2LS-rFlLoAeSZGGyK8u-vZwQ1UuJ26lthH4Oe-PbM6VtMoX1cHm4RxEtg-3NPF3kXGc4I7EKzRKe_okEbFLuO2CWhDzrI8HFpq_8hd_w7fzARpoMvDAXlk6=w1114-h776-s-no-gm?authuser=0" class="img-1" alt="公道價">
+          </div>
+          <div class="section" data-aos="zoom-out-left" data-aos-anchor-placement="center-bottom"> 
+            <div class="d-flex">
+              <img src="https://lh3.googleusercontent.com/pw/AP1GczOJVG8spo7QQyaVBRIje_-l1fOR_Qn1A1WRTTf6ySc7mn2ePoTUrpxTTzobWgMRDyF5El4nnwv5QNCrGBqS0xBS2Saspa1ryOYjBjKDjCiIhhhIJC1-NQnHRnyLyYLVlW7W4zf4xPnRC7xB8Lo4Hftq=w512-h512-s-no-gm?authuser=0" class="white-image w-setting" alt="價格公道 顧客至上">
+              <h2 class="mt-1 mb-1 ml-setting">價格公道 顧客至上</h2>
+            </div>
+            <p class="mt-1 mb-1">我們根據客戶描述的具體情況，提供合理的收費方案，確保雙方都能接受後立即派車！不管您身處何地，我們都能迅速回應，提供您所需的拖車服務。</p>
+          </div>
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczP6K0fCIU2ZS1pYp734tk-WX0ZoE_ow1Szq83l0a_MKEuNaqBxSpaVlOAOrCpdx6GTMaRdGEu2Duj-11v_4IDh2PhLaVziD4EBHRM2DUisVCLbOqZiJBJUDMr42yy_aLm3v9IWtf4VZiEWZD2QS03Zy=w1402-h789-s-no-gm?authuser=0" class="d-block w-100" alt="高速公路救援">
-        <div class="carousel-caption animate__animated animate__rotateInDownLeft">
-          <h5><span class="material-symbols-outlined">person_play</span>您的安全 是我們的使命</h5>
-          <p class="d-none d-sm-block">您的安全是我們的使命，您的滿意是我們的動力。我們提供高效、專業的拖吊服務，讓您的旅程更安心順暢。感謝您的選擇，我們期待為您服務。</p>
+
+      <!-- 2 -->
+      <div class="row mt-md-2 mb-md-5">
+        <div class="col-12 col-md-6 order-md-2 mt-3 mb-3">
+          <div class="card">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczOaSSfDR77TS-oUkuK9Yogy9CoJbQknc0j7E9BGW1r2UkEdseoMqgeEVwmdkbtv42aPdteHhOkt1f0RqwRWUx1pK4q4EAepQKUl8Nb-AbhQbp0hYrb1MDjgemRrm1RLxWc_IeThFZkSeYB5y2Un4Mk1=w1560-h878-s-no-gm?authuser=0" class="image" alt="崁頂拖吊車">
+          </div>
+        </div>
+        <div class="col-12 col-md-6 mt-3 mb-3">
+          <div class="ink-background">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczPaKl4mpR8KiiLGhxyZN5yYEfWrN69e7jU9GHYU4Gtn0GbWJLAb-elZlVnDrIoOtaZFBd5eHo7NeGN4cSsAnqGu0WTEcUg7uCd_Qz18iIqedPuWZuy6o7lsLlg-xxw5TGYbpaS4pczg3445DwdOEVqN=w697-h477-s-no-gm?authuser=0" class="img-2" alt="崁頂園吊車">
+          </div>
+          <div class="section" data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom">
+            <div class="d-flex">
+              <img src="https://lh3.googleusercontent.com/pw/AP1GczPxdue6UW-rZMxYIzJ8aXvWD36VqGmL28h16gx3NOaJ7vtkumlrXhvURfc4n3quwxUxb7XFTDaE6KCmzbjnMKSDSnD0I0i22uZ8y2hHJ3W60MsYkCKI8Zqaq079iYTPIWpEs_3Bx6dXRgiiaVML6msy=w512-h512-s-no-gm?authuser=0" class="white-image w-setting" alt="崁頂道路救援">
+              <h2 class="mt-1 mb-1 ml-setting">專業技術 信心保證</h2>
+            </div>
+            <p class="mt-1 mb-1">我們擁有超過十年以上的拖車經驗和專業技能，您可以放心，我們將以最專業的態度處理每一次服務需求。</p>
+          </div>
         </div>
       </div>
-      <div class="carousel-item">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczNnURXsutzUlm73Nd3zhSdnAabAC21t8QvtXID-UaN9MD2GbsXrnGzJAbhaicHQa4Qa3WW7vqIvYKiis-V9Qt1GHexJMIDhI1UkPRCFQhr1q3_T1VTZ2adHt5GWskcMJwIDGEOYo_2LCycOa_X1tdJO=w1402-h789-s-no-gm?authuser=0" class="d-block w-100" alt="車輛救援">
-        <div class="carousel-caption animate__animated animate__rotateInDownLeft">
-          <h5><span class="material-symbols-outlined">partner_exchange</span>我們在 您安心</h5>
-          <p class="d-none d-sm-block">當您遇到困難時，我們隨時在您身邊。無論何時何地，我們都會迅速出動，確保您的安全與安心。</p>
+
+      <!-- 3 -->
+      <div class="row mt-md-5 mb-md-5">
+        <div class="col-12 col-md-6 mt-3 mb-3">
+          <div class="card">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczN1cA8k6M3xT26ywteInXyIhT1ZeZweQ0DgNgTI2-Ya3L5PVABRp1Tu9Pbv8pHvxL4sKcpvagN5hTK1oFvNf9hQ6EYEIEQP2pmsV3hGukJ5B_4OL7V8uty6du4Roda2OW_x8aaVclcqI-wuMXQjClvz=w1560-h878-s-no-gm?authuser=0" class="image" alt="內埔吊車">
+          </div>
+        </div>
+        <div class="col-12 col-md-6 mt-3 mb-3">
+          <div class="ink-background">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczO5vcNDB-wYJwsPce-AB8CdT9DX2Qi1aoODUhb9WBfmUJmjgfgJLfufV4zwk7LvcBaosNjEykttkhIjvpHrh_L5upDJ1JCSjcIkWPP3fPOXIL2jt5dYpFodUzkc0QHYiwdiPszcKk4Wv_DhSMdVl-sT=w1206-h813-s-no-gm?authuser=0" class="img-3" alt="內埔拖吊車">
+          </div>
+          <div class="section" data-aos="fade-left" data-aos-anchor-placement="center-bottom">
+            <div class="d-flex">
+              <img src="https://lh3.googleusercontent.com/pw/AP1GczPFJ72ZMHzH_otRD2yyldhGAnmRPiiL4Z-vGwIhjtCUaXCtEtPgqo4yhaE2Y4hVptUVCiB9cHrOI_2ir3CGtD2HPm4KVzFkzlH0H7_vxkMgW-OSZ-D9iQ89iPh4TVqUcCCCrSxImzGqFLB5HOSaiv2Q=w512-h512-s-no-gm?authuser=0" class="white-image w-setting" alt="內埔道路救援">
+              <h2 class="mt-1 mb-1 ml-setting">全年無休 為您服務</h2>
+            </div>
+            <p class="mt-1 mb-1">無論颳風下雨，我們隨時待命，為您提供全天候服務。您可以放心，當您需要我們的時候，我們永遠在這裡，確保您的安全與便利。</p>
+          </div>
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
 
-
-  <!----------------------------------------------------------------------------------------------------------------------------->
-
-
-
-  <div class="container-fluid">
-    <div class="move-image-container">
-      <div class="flash-box mt-3 mb-3">
+    
+    <div id="services" class="container-fluid">
+      <div class="section mb-5 mt-5" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
+        <h3 class="justify-content-center"><span class="material-symbols-outlined">check_circle</span>服務項目</h3>
         <div class="row">
-          
-          <div class="col-12">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczP6fZbHMxTEfVUA5HN7E9zIE8ETqR_OZrCnP9o8H7AykF5ZLUlO4a33Jzw6XJSQzeLHpppIq7vLjYAe2DF2fHCUb-aSS7Um3INrOKlcNTtEEFyDoP_jSq3E_TGuy0mXsdxq5C_Qu_r6AEt3xzX-Rvfm=w512-h512-s-no-gm?authuser=0" class="white-image w-settingHead mb-2" alt="高雄屏東拖吊費用">
-            <h1>高雄屏東道路救援</h1>
+          <div class="col-4 col-md-2 mb-3 mt-3">
+            <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMR6EPug6DHXjmPDMtkT_oW9dmJyuJiUa9LgdZFGfaL7poCnCEIJwoTlNV6VLslzGESR9Z8gDoDp9K_67-UmMByvmG35JtLAmpVdBqZbe69U7pWz_WB_zYaTXQy-1aKkkL1IHNw2bLSiY4rLiix-9MV=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="南州拖吊車">
+            <h3>緊急拖吊</h3>
           </div>
-
-          <div class="col-12">
-            <h2>24小時快速、高效的拖吊專家!</h2>
+          <div class="col-4 col-md-2 mb-3 mt-3">
+            <img data-src="https://lh3.googleusercontent.com/pw/AP1GczN21UOzu5WREtxLJxpNGsKczRSNXxUYEJo25B6BhajoNUiDcllDhnDzGdPF6UjRk2yDJt0TRdYQ7WVtJunBjIXlRIWfxhafjw_QhxIcrfaLzHxww2_vGarxvxKkNiDCg65NwRj6ugdCXadng0UuSRHN=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="南州吊車">
+            <h3>車輛救援</h3>
           </div>
-
-          <div class="col-12">
-            <a href="https://leotowtruck.github.io/Yuhong.github.io/GPS" class="gpsbtn">使用GPS定位派車</a>
+          <div class="col-4 col-md-2 mb-3 mt-3">
+            <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNM0NEKn0N0dfUD1CNIpBETHJ8KwBoUXic6O7WAfwE-0fB0LyilgbeF7ZxdB9Ud_1kKklFTotukxowPwVM30qL9A61wDIgeFMpHBnOj13KTqyktGNTbyyaxBoMg8PLXaWWVIk00OLxkOJvZFB09hdSR=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="南州道路救援">
+            <h3>特殊救援</h3>
           </div>
-
-          <div class="col-12">
-            <div class="d-flex flex-column">
-              <h3><span class="material-symbols-outlined">counter_1</span>上傳兩張汽車與背景照片</h3>
-              <h3><span class="material-symbols-outlined">counter_2</span>使用衛星地圖GPS定位</h3>
-              <h3><span class="material-symbols-outlined">counter_3</span>填寫您的稱呼與電話</h3>
-            </div>
+          <div class="col-4 col-md-2 mb-3 mt-3">
+            <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNEi4y2jt3EOEfK_MlNyKjB1Lyb-3t46awr0Mznexos_vxDbtxQ19z3guNZXjRle_WCDMtEYxsX1sVijGoLWCkf4jwBPLsXNBg-Lw_chRDKrbzVTwCrITEBaQcRMcj6wwbatpXiGZKTbCx9WzCXk_zJ=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="竹田拖吊車">
+            <h3>長途拖吊</h3>
           </div>
-        </div>
-      </div>
-
-      <img src="https://lh3.googleusercontent.com/pw/AP1GczNVfwCL19rfKvYwuKHJbfvwjbiCMA9Ldf7sQ5Ytw5EFU__2ARFONW26OQjr-_yUYjPWwKZbCJesNO7u8iEOh0UOyTdcZL3q2yv2prB95vTRTje5n_7ktfug8fNkAWzAsfffzDisJdqZYWU-_iAd5xWS=w512-h512-s-no-gm?authuser=0" alt="txtImage" class="moving-image1 white-image">
-
-      <img src="https://lh3.googleusercontent.com/pw/AP1GczOp94NPnRZ2lgFpIDyZTLxBiY2T6CWuGO-8IsxkcOakRm87JdTEtmz9rfo08aJVa5UPiRjrOgM-JB4zoOlPRCCbStJ6H1h0C35rCJEYRUDC0Q0AdBOq37QTEPs3ilSzQk5wAqQLh9tbEsllQ5mbrePR=w512-h512-s-no-gm?authuser=0" alt="photoImage" class="moving-image2 white-image">
-
-      <img src="https://lh3.googleusercontent.com/pw/AP1GczMMkCPZCQcDyGYjCNkABFJcHJY-jhsXsvN0jHCLPF5qtwDZ1iiRT-kCQ17ehKJqu_3n6LeH6QefhUQi6Z52_IBMqRZeIoyHIMqE4dZexmrC9h7XcKyLOKunm1WqaQGH75WOPHg3OWXc3mnw9IVLwgxs=w512-h512-s-no-gm?authuser=0"alt="gpsImage" class="moving-image3 white-image">
-
-
-      <!-- 添加形狀 -->
-      <div class="shapeAll shape1"></div>
-      <div class="shapeAll shape2"></div>
-      <div class="shapeAll shape3"></div>
-      <div class="shapeAll shape4"></div>
-      <div class="shapeAll shape5"></div>
-      <div class="shapeAll shape6"></div>
-      <div class="shapeAll shape7"></div>
-      <div class="shapeAll shape8"></div>
-      <div class="shapeAll shape9"></div>
-
-    </div>
-  </div>
-
-
-  <!----------------------------------------------------------------------------------------------------------------------------->
-
-
-  <!-- 1 -->
-  <div class="container-fluid">
-    <div class="row mt-md-2 mb-md-5">
-      <div class="col-12 col-md-6 mt-3 mb-3">
-        <div class="card">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczOdFTS1HB_DOBRMy5aCoxE6LvBWsqznaut-DY8NiDQ9qtk3dOsM2MglZqvjGY53a8jGcwQzLPo4K9vIO3tEELd9iKNlL5HMWsTIGIwY4T1mGN4QqjeBXyDhLSvMXuVbInNhtrzFbqRuMk1vh2tJ0N_p=w1433-h804-s-no-gm?authuser=0" class="image" alt="高速公路故障拖吊">
-        </div>
-      </div>
-      <div class="col-12 col-md-6 mt-3 mb-3">
-        <div class="ink-background">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczOO9lm4smEUJz5N6ZDtZMoBrOhRewKzS2LS-rFlLoAeSZGGyK8u-vZwQ1UuJ26lthH4Oe-PbM6VtMoX1cHm4RxEtg-3NPF3kXGc4I7EKzRKe_okEbFLuO2CWhDzrI8HFpq_8hd_w7fzARpoMvDAXlk6=w1114-h776-s-no-gm?authuser=0" class="img-1" alt="公道價">
-        </div>
-        <div class="section" data-aos="zoom-out-left" data-aos-anchor-placement="center-bottom"> 
-          <div class="d-flex">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczOJVG8spo7QQyaVBRIje_-l1fOR_Qn1A1WRTTf6ySc7mn2ePoTUrpxTTzobWgMRDyF5El4nnwv5QNCrGBqS0xBS2Saspa1ryOYjBjKDjCiIhhhIJC1-NQnHRnyLyYLVlW7W4zf4xPnRC7xB8Lo4Hftq=w512-h512-s-no-gm?authuser=0" class="white-image w-setting" alt="價格公道 顧客至上">
-            <h2 class="mt-1 mb-1 ml-setting">價格公道 顧客至上</h2>
+          <div class="col-4 col-md-2 mb-3 mt-3">
+            <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNRR3JtTSgJuwtLyXb5dQW6UP56ZzQR2aIDXhf3IsYwDWkUUL0jYY5PuJhzLK7gYMxLM1xVzLcdr_n9PwnLvHHmuqsaM3zu-nVnkRqlSyNajF6DUbvVd9MyGSKCUR7BbyMa4Wd_2kKHr2xpiP4wTrer=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="竹田吊車">
+            <h3>物品吊掛</h3>
           </div>
-          <p class="mt-1 mb-1">我們根據客戶描述的具體情況，提供合理的收費方案，確保雙方都能接受後立即派車！不管您身處何地，我們都能迅速回應，提供您所需的拖車服務。</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2 -->
-    <div class="row mt-md-2 mb-md-5">
-      <div class="col-12 col-md-6 order-md-2 mt-3 mb-3">
-        <div class="card">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczOaSSfDR77TS-oUkuK9Yogy9CoJbQknc0j7E9BGW1r2UkEdseoMqgeEVwmdkbtv42aPdteHhOkt1f0RqwRWUx1pK4q4EAepQKUl8Nb-AbhQbp0hYrb1MDjgemRrm1RLxWc_IeThFZkSeYB5y2Un4Mk1=w1560-h878-s-no-gm?authuser=0" class="image" alt="崁頂拖吊車">
-        </div>
-      </div>
-      <div class="col-12 col-md-6 mt-3 mb-3">
-        <div class="ink-background">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczPaKl4mpR8KiiLGhxyZN5yYEfWrN69e7jU9GHYU4Gtn0GbWJLAb-elZlVnDrIoOtaZFBd5eHo7NeGN4cSsAnqGu0WTEcUg7uCd_Qz18iIqedPuWZuy6o7lsLlg-xxw5TGYbpaS4pczg3445DwdOEVqN=w697-h477-s-no-gm?authuser=0" class="img-2" alt="崁頂園吊車">
-        </div>
-        <div class="section" data-aos="zoom-in-up" data-aos-anchor-placement="center-bottom">
-          <div class="d-flex">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczPxdue6UW-rZMxYIzJ8aXvWD36VqGmL28h16gx3NOaJ7vtkumlrXhvURfc4n3quwxUxb7XFTDaE6KCmzbjnMKSDSnD0I0i22uZ8y2hHJ3W60MsYkCKI8Zqaq079iYTPIWpEs_3Bx6dXRgiiaVML6msy=w512-h512-s-no-gm?authuser=0" class="white-image w-setting" alt="崁頂道路救援">
-            <h2 class="mt-1 mb-1 ml-setting">專業技術 信心保證</h2>
-          </div>
-          <p class="mt-1 mb-1">我們擁有超過十年以上的拖車經驗和專業技能，您可以放心，我們將以最專業的態度處理每一次服務需求。</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- 3 -->
-    <div class="row mt-md-5 mb-md-5">
-      <div class="col-12 col-md-6 mt-3 mb-3">
-        <div class="card">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczN1cA8k6M3xT26ywteInXyIhT1ZeZweQ0DgNgTI2-Ya3L5PVABRp1Tu9Pbv8pHvxL4sKcpvagN5hTK1oFvNf9hQ6EYEIEQP2pmsV3hGukJ5B_4OL7V8uty6du4Roda2OW_x8aaVclcqI-wuMXQjClvz=w1560-h878-s-no-gm?authuser=0" class="image" alt="內埔吊車">
-        </div>
-      </div>
-      <div class="col-12 col-md-6 mt-3 mb-3">
-        <div class="ink-background">
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczO5vcNDB-wYJwsPce-AB8CdT9DX2Qi1aoODUhb9WBfmUJmjgfgJLfufV4zwk7LvcBaosNjEykttkhIjvpHrh_L5upDJ1JCSjcIkWPP3fPOXIL2jt5dYpFodUzkc0QHYiwdiPszcKk4Wv_DhSMdVl-sT=w1206-h813-s-no-gm?authuser=0" class="img-3" alt="內埔拖吊車">
-        </div>
-        <div class="section" data-aos="fade-left" data-aos-anchor-placement="center-bottom">
-          <div class="d-flex">
-            <img src="https://lh3.googleusercontent.com/pw/AP1GczPFJ72ZMHzH_otRD2yyldhGAnmRPiiL4Z-vGwIhjtCUaXCtEtPgqo4yhaE2Y4hVptUVCiB9cHrOI_2ir3CGtD2HPm4KVzFkzlH0H7_vxkMgW-OSZ-D9iQ89iPh4TVqUcCCCrSxImzGqFLB5HOSaiv2Q=w512-h512-s-no-gm?authuser=0" class="white-image w-setting" alt="內埔道路救援">
-            <h2 class="mt-1 mb-1 ml-setting">全年無休 為您服務</h2>
-          </div>
-          <p class="mt-1 mb-1">無論颳風下雨，我們隨時待命，為您提供全天候服務。您可以放心，當您需要我們的時候，我們永遠在這裡，確保您的安全與便利。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  
-  <div id="services" class="container-fluid">
-    <div class="section mb-5 mt-5" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
-      <h3 class="justify-content-center"><span class="material-symbols-outlined">check_circle</span>服務項目</h3>
-      <div class="row">
-        <div class="col-4 col-md-2 mb-3 mt-3">
-          <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMR6EPug6DHXjmPDMtkT_oW9dmJyuJiUa9LgdZFGfaL7poCnCEIJwoTlNV6VLslzGESR9Z8gDoDp9K_67-UmMByvmG35JtLAmpVdBqZbe69U7pWz_WB_zYaTXQy-1aKkkL1IHNw2bLSiY4rLiix-9MV=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="南州拖吊車">
-          <h3>緊急拖吊</h3>
-        </div>
-        <div class="col-4 col-md-2 mb-3 mt-3">
-          <img data-src="https://lh3.googleusercontent.com/pw/AP1GczN21UOzu5WREtxLJxpNGsKczRSNXxUYEJo25B6BhajoNUiDcllDhnDzGdPF6UjRk2yDJt0TRdYQ7WVtJunBjIXlRIWfxhafjw_QhxIcrfaLzHxww2_vGarxvxKkNiDCg65NwRj6ugdCXadng0UuSRHN=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="南州吊車">
-          <h3>車輛救援</h3>
-        </div>
-        <div class="col-4 col-md-2 mb-3 mt-3">
-          <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNM0NEKn0N0dfUD1CNIpBETHJ8KwBoUXic6O7WAfwE-0fB0LyilgbeF7ZxdB9Ud_1kKklFTotukxowPwVM30qL9A61wDIgeFMpHBnOj13KTqyktGNTbyyaxBoMg8PLXaWWVIk00OLxkOJvZFB09hdSR=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="南州道路救援">
-          <h3>特殊救援</h3>
-        </div>
-        <div class="col-4 col-md-2 mb-3 mt-3">
-          <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNEi4y2jt3EOEfK_MlNyKjB1Lyb-3t46awr0Mznexos_vxDbtxQ19z3guNZXjRle_WCDMtEYxsX1sVijGoLWCkf4jwBPLsXNBg-Lw_chRDKrbzVTwCrITEBaQcRMcj6wwbatpXiGZKTbCx9WzCXk_zJ=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="竹田拖吊車">
-          <h3>長途拖吊</h3>
-        </div>
-        <div class="col-4 col-md-2 mb-3 mt-3">
-          <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNRR3JtTSgJuwtLyXb5dQW6UP56ZzQR2aIDXhf3IsYwDWkUUL0jYY5PuJhzLK7gYMxLM1xVzLcdr_n9PwnLvHHmuqsaM3zu-nVnkRqlSyNajF6DUbvVd9MyGSKCUR7BbyMa4Wd_2kKHr2xpiP4wTrer=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="竹田吊車">
-          <h3>物品吊掛</h3>
-        </div>
-        <div class="col-4 col-md-2 mb-3 mt-3">
-          <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPKPIXPAkTuenEtGLCcZfGAIEhtz2dpURHgRhzuu5ZLk5p_l_LxQC4hu2M1C3js80Ac15PC2kQ_qDH1hGcqkXCw-suv2fZ_4Idi5XhjcfsSNf1MacS7hsugMVfahsI221uXY2uZflbcsp6jZeODj0cU=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="竹田道路救援">
-          <h3>吊運服務</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!----------------------------------------------------------------------------------------------------------------------------->
-
-  <div id="about-us" class="container-fluid">
-    <div class="row mb-5 mt-5">
-      <div class="col-12 col-lg-4 mb-3 mt-3" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
-        <div class="section">
-          <h3 class="justify-content-center"><span class="material-symbols-outlined">groups</span>關於我們</h3>
-          <p>我們的拖吊車公司成立於2009年，從一輛小拖吊車起步，憑著專業技術和真誠服務，迅速成為本地領先的道路救援與拖吊服務提供商。我們的服務範圍涵蓋高雄和屏東地區，憑藉專業的技術、優質的服務和可靠的信譽，贏得了廣大客戶的信任和支持。</p>
-        </div>
-      </div>
-      <div class="col-12 col-lg-4 mb-3 mt-3" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
-        <div class="section">
-          <h3 class="justify-content-center"><span class="material-symbols-outlined">diversity_4</span>團隊</h3>
-          <p>我們的團隊由一群經驗豐富、技術精湛且熱愛工作的專業人士組成。我們擁有豐富的道路救援和拖吊經驗，並定期接受培訓以保持最新的行業知識和技能。我們的司機和技術人員不僅擅長操作各類拖吊設備，還具備良好的應變能力和服務態度，確保每次任務都能安全、高效地完成。</p>
-        </div>
-      </div>
-      <div class="col-12 col-lg-4 mb-3 mt-3" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
-        <div class="section">
-          <h3 class="justify-content-center"><span class="material-symbols-outlined">workspace_premium</span>使命</h3>
-          <p>我們的使命是提供快速、高效且安全的拖吊和道路救援服務，確保每一位客戶在遇到車輛故障或事故時，都能獲得即時的幫助和安心。我們致力於以客戶為中心，提供全天候24小時服務，確保您在任何時間、地點都能得到我們的支援。</p>
-        </div>
-      </div>
-    </div>
-  </div> 
-
-  <!----------------------------------------------------------------------------------------------------------------------------->
-  
-  <div id="cases" class="container-fluid">
-    <!-- 第一區塊 -->
-    <div class="row mt-5 justify-content-around">
-      <!-- 救援案例1 -->
-      <div class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h3><span class="material-symbols-outlined">check_circle</span>救援案例 一</h3>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_1">
-                  <!-- 顯示照片 -->
-              </div>
-            </div>
-          </div>
-          <div class="row mt-3 mb-3 px-2">
-            <div class="col">
-              <div class="photo photo_1">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMbVUDU76NJ8I3fcS_w17iso-tBpoGN9dmB8qCyFm0e3VFYIIHxSgvRpKhVIIZzqy419p2I4Zrjw4sqebxos2MUGj6VrrURyNjzwv0nAdv-YBemyCMsQ7tADr5lBmuH5CtNxBwWiUHTXbChb9H0N1Os=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="東港拖吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_1">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMyPh5Y-0mTmvfaAFYivpqo_jd7mNBjIj2UqnDmUh11-KF-9QHGfChYNn6nKktrGSJHj02OuQqyJpe57Iw1HlYicWGABP7WHJmKaAot1nm9LALh7SgdTY8Gh22A5PQeWXUuWhNSV68n6Vng4MsKFhh8=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="東港吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_1">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczOtdNXWwfBZZhX2HVyatfEUwIrli6x5PSiPguiXZ8AxPVsB2VWXVvRzvhllKmUcQIqyCa1BJGN1mkr8jGZ9v2luCkj_Wv2GQJwKblEOE3bnj6QcdeZo1CB8HuS8AnWmNDLG7pbL6bDatNOlKwpzkp3G=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="東港道路救援">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_1">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPfFD1fv1DEftdzdZcehU3oTe3kd0nmKbIV2IWVbQhuDoqZ96weJH3MQImf92OT2j500mUk4qX_mnODDN67bQI_rhu5iTXzqPvEd7J9gQS3EglYTwfMxZn9zKe1yPvLJ_rEWk3IIaHq4goHyxOMkAX2=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="東港保養廠">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_1">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNv8bN3_cuF78OGihKfkaf7_pL-8xvD9WnpzQ6D03hgohrdB8GVGBtq_BzwhRZxfR2D7kibuGUm-iH2bIyCRf_0MC-XUFkQPNgfiIHYOR6oZX9DiIMkB89A2amLoZJVBsusyd0440PqQk4Mxj1vea1r=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="東港汽車故障">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- 救援案例2 -->
-      <div class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h3><span class="material-symbols-outlined">check_circle</span>救援案例 二</h3>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_2">
-                <!-- 顯示照片 -->
-              </div>
-            </div>
-          </div>
-
-          <div class="row mt-3 mb-3 px-2">
-            <div class="col">
-              <div class="photo photo_2">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMAYB7-d2i293CS--ujZt3c9AysmTeN7nsLtB7pZAeve7wlu0ICAmKmxRMLUdZezrUCCsaYRHc0hep8lLUpPz-BYhp0m_6HSkgRBZzXgG2XNMkhbTz52EvQnMXIMXolAPG-Zwv6TS1SwO4KXKoWTtPh=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="萬丹吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_2">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNTk2LjhaOD6q-XqtjLWK3xnQH4tCzKwCJ2jyZ_2QKVhXAqH_mabbeyyKRAX2t2uiRBJoHMIT51mMzGm_IFNV-wSA_2gcETxDDZSQVq0PyKi5ZWwiiTlBzV1Ud2XvHuhMwrI9bxLU196kSSBtg2xLBh=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="萬丹拖吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_2">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMEuwfK4XqQgqW4J-1KzbtRovKZ-CoCutQALZWM7E-bUwoEo8f7lRaiRaM23hOs7qWdwyo_IctI5lERSWbfQnrQPt2bAGt9R2Ps4-50Y0o_q6Lckt_JD0ZlLuyj6R9o71s1IY8uq-lwn-VO-faGKpqZ=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="萬丹道路救援">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_2">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczO6zgkJMwJ1pcvxqAGszjq7iSjQq0f1m9f26UD_vNs0NKTuwRbNLSszsNIEItHPJz_pZgcLe5Z3eQqPVU27zSeK0u8ao5JR_umHCDfsiMbFrj_Fp84mLB5wlXHsPyYJ5u6PEqJuKxAosP2a61-462Jx=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="萬丹汽車保養廠">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_2">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMRZyDjbayBUQcSOeG2ksKw96gOAmtYIWXM7rDcX2ckKfp0YyXEKPhsZPY1OTgLXvyxbQX7syLsjzDlnW_lbCE1wpW01x7wnBmY9qjNSYr2t9XV9Bl1txwbaNzfXJ_G4WYzcpl0IQBWQLt_S1nsKTSJ=w960-h540-s-no-gm?authuser=0" class="lazy-load" alt="萬丹汽車故障">
-              </div>
-            </div>
+          <div class="col-4 col-md-2 mb-3 mt-3">
+            <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPKPIXPAkTuenEtGLCcZfGAIEhtz2dpURHgRhzuu5ZLk5p_l_LxQC4hu2M1C3js80Ac15PC2kQ_qDH1hGcqkXCw-suv2fZ_4Idi5XhjcfsSNf1MacS7hsugMVfahsI221uXY2uZflbcsp6jZeODj0cU=w512-h512-s-no-gm?authuser=0" class="white-image w-75 lazy-load" alt="竹田道路救援">
+            <h3>吊運服務</h3>
           </div>
         </div>
       </div>
     </div>
 
+    <!----------------------------------------------------------------------------------------------------------------------------->
 
-    <!-- 第二區塊 -->
-    <div class="row justify-content-around">
-      <!-- 救援案例3 -->
-      <div class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h3><span class="material-symbols-outlined">check_circle</span>救援案例 三</h3>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_3">
-                  <!-- 顯示照片 -->
-              </div>
-            </div>
+    <div id="about-us" class="container-fluid">
+      <div class="row mb-5 mt-5">
+        <div class="col-12 col-lg-4 mb-3 mt-3" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
+          <div class="section">
+            <h3 class="justify-content-center"><span class="material-symbols-outlined">groups</span>關於我們</h3>
+            <p>我們的拖吊車公司成立於2009年，從一輛小拖吊車起步，憑著專業技術和真誠服務，迅速成為本地領先的道路救援與拖吊服務提供商。我們的服務範圍涵蓋高雄和屏東地區，憑藉專業的技術、優質的服務和可靠的信譽，贏得了廣大客戶的信任和支持。</p>
           </div>
-          <div class="row mt-3 mb-3 px-2">
-            <div class="col">
-              <div class="photo photo_3">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNst-F4NZdVuudoIMOmvr2dpYlykaN8NnQ_rUM8PX_wCgZk3VLI1reCcvoqU_KVBYVexKB4B4lMmUvCIeRyer5oAPTVFXDjJcQW5GdtcRUN7DcZWu6xDWA4DoGuwt96VUojlwwMupRqJf_W61ykeQPb=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="新園吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_3">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPv_XsNouxyhSIbkQkF8tY0HMnOCfuWo7nF2Tk_0i_SUz0m3jlRsGSQEP4_JjhVS3r1X9OYrP_ZQdnV7tdgu7C1gYDZKU1XekTXgd_JtDEaqvWb6STjrmnYLtpZAQorM4zvIXyiRw0oCAAvgbaZODyI=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="新園拖吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_3">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczP2zCm1Xuz0c55OwVekbcGPdsVp189Y08iuJkGvMl17v_6kbh69QIPUWcpb9cgfxmLnWqqBvCb5LmqW0ZC9L4aVvGiRB4_q7jQDm5iIYymAut2jQC7F0bSMlbwEEVmWThONtPwkjbRD4tm-GSos-tLS=w960-h540-s-no-gm?authuser=0" class="lazy-load" alt="新園道路救援">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_3">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczO2K6Qpd6tsxM7mvcF9PyDbHSFdO2VBYTM_PRhHSVJIlkxr-RfaNMi6P4rQ8JWAZdsu4kptlvVOMFpo7VvLt15Dldl0lZ7k04p9RnNQeZCBEmRrarfAaetTDHpx23NSEdMQ8Fhs2iSot9FXffUbSvpL=w960-h540-s-no-gm?authuser=0" class="lazy-load" alt="新園保養廠">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_3">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPAqhV1_bTu_XTo0-xpwwBXDSglPmecZ3MqY6lOLlm9SP83Fwia55W8rE9kQC33xgheKKdw-VfbhQTqhqKomr77_Pg7flfxo0XSP0jlxg4KSsfovW5-H8Lfu5KpsdDzFosd0OGnSRvIMkvm-3hgjq3k=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="新園汽車故障">
-              </div>
-            </div>
+        </div>
+        <div class="col-12 col-lg-4 mb-3 mt-3" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
+          <div class="section">
+            <h3 class="justify-content-center"><span class="material-symbols-outlined">diversity_4</span>團隊</h3>
+            <p>我們的團隊由一群經驗豐富、技術精湛且熱愛工作的專業人士組成。我們擁有豐富的道路救援和拖吊經驗，並定期接受培訓以保持最新的行業知識和技能。我們的司機和技術人員不僅擅長操作各類拖吊設備，還具備良好的應變能力和服務態度，確保每次任務都能安全、高效地完成。</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4 mb-3 mt-3" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
+          <div class="section">
+            <h3 class="justify-content-center"><span class="material-symbols-outlined">workspace_premium</span>使命</h3>
+            <p>我們的使命是提供快速、高效且安全的拖吊和道路救援服務，確保每一位客戶在遇到車輛故障或事故時，都能獲得即時的幫助和安心。我們致力於以客戶為中心，提供全天候24小時服務，確保您在任何時間、地點都能得到我們的支援。</p>
           </div>
         </div>
       </div>
+    </div> 
 
-
-      <!-- 救援案例4 -->
-      <div class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h3><span class="material-symbols-outlined">check_circle</span>救援案例 四</h3>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_4">
-                <!-- 顯示照片 -->
-              </div>
-            </div>
-          </div>
-
-          <div class="row mt-3 mb-3 px-2">
-            <div class="col">
-              <div class="photo photo_4">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMoy_J_eLRA-Pi6foxmVUxKPW3k4ZohcTerGuuO1Fr8VM0B-Nch815MrW6p9D0Wa0LbgzBhC4WUFAIdzm4AkdePi_WIssbK2LGtsTRrx3qbgExTOy0mQjD64NOb_asvc1H3OYFNg8hbJ8WEaWccnxyG=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="大寮吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_4">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczN_BDyzlaxghsbVFB2k7ImvZJvRRELXBCFdiHvy7Vs5fz2LwsdYkmGBA-Pm8aE76TVqZItcsj5a7trnaEy3KwkMcQwAuW4V0jhjUTQTJWsDoYz6YrjMAo_Afn_cOc8wRA1yKmr6C7TDJfhqFg7KOOL5=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="大寮拖吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_4">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMVq2dHgvcIPxf45IMuEOBS7mp7c6JijjIMCS9OWP7gRkwVDuy_bnopL_ZkY_zAAtwS6uA-SYsCrGfzVVLsc9FPcUOSECd0jbeSI7HKqlF7vrDsxS0swOK0H42TBf61K8q-J-v26epjOgdlzVTNrt7o=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="大寮道路救援">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_4">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNyBkeVKwMjHSsqxolP2CQj6l13EUdiOl9qr7thT3Z-7-O8HPQEneriYjfl0_NYBTSnoeNZGl7GRelGfsmNRhS7z4ztzdBvTYU_1ZTtohclfn6bI8rAhKdNBayM1TVIaYPTL6N52oYQaSdC7lX59feS=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="大寮保養廠">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_4">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczOdjDb6eeDdythhLA4BEYSd9N9xEBkVRe5wTIN5dWYjGjyoXAcKZXJdrDqJRgqQDxMndYOQ7O8W1IGcWGbtSYUchmC1AyOJsJIgHXsr59zgCmwA2wgu6ZlldtL9_KBKUpHP_JTGGNzbZvVbQ2KcHIpD=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="大寮汽車故障">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- 第三區塊 -->
-    <div class="row justify-content-around">
-      <!-- 救援案例5 -->
-      <div class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h3><span class="material-symbols-outlined">check_circle</span>救援案例 五</h3>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_5">
-                  <!-- 顯示照片 -->
-              </div>
-            </div>
-          </div>
-          <div class="row mt-3 mb-3 px-2">
-            <div class="col">
-              <div class="photo photo_5">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPYALksR6MHTyWLeq09BjVaXpKn9i4zBQcl9tmlh1cvZ9xexN7uC_E5KUCwUlIHGzfrOzfpKaRSUAScqReSFQ3Y8dfEj3W_QujvpgEY-Uj4R4JwZ9D6sTFQ-WgH23Qwk68pj44s5xUJCs5qih602AHd=w843-h474-s-no-gm?authuser=0" class="lazy-load" alt="潮州道路救援">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_5">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMnhm_FLWtG34evf4pE8oWJjcKb3aY1Yt9otshLWjN5mfelzcu1aBucJOS8jJE1pDceWVHDVet2D5b7quq8ti9VwE1eQGNOFUJeC3qfve0Fte5cHynLdm8SRokjWPyhl5fX1f0afGLFQadMRuu_Xngz=w1441-h807-s-no-gm?authuser=0" class="lazy-load" alt="潮州吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_5">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczOlWsOR6hhh18grEvS1Z-eehfq65Y49RDMV2koIRMfzVas2k8nNJ5MmsY38YsZLCtKV70pMbW2BHqv3XRAmD6Ast5TQRWVAdsJscPMPD9DcLOLaxORpdXTQtR9hi0BlaGAXE2HIR4nQpmuvjSo392Hn=w843-h474-s-no-gm?authuser=0" class="lazy-load" alt="潮州拖吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_5">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczP13CNxsRQ_b0hwpDUY388IkQtKbCDZbfKH0KB8rKV6IVy2_KLZbgv7Yz36kSoGAqGPMw1snj01Hf5Xqwq7AhdDtBB5zQy_ul1KRukTSs5fHJIydoVWTmcktpXzzrUunbHExUMb5kvxV0BHEtb95WUo=w843-h474-s-no-gm?authuser=0" class="lazy-load" alt="潮州汽車故障">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_5">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMw5bjlW2-r1djNJvaHtfZgNgUFBnLsqgL1yKq25Wg4tZgwwYmJK1V1w_IcyjGynIh3dJugyZywI_z8o9Rj5aa2Ki7lvHqFRxW-ql3Cu31ilMqsHwLN89smmGAPRkJS2K1gJXt6Omwk-HECUevwnWNp=w843-h474-s-no-gm?authuser=0" class="lazy-load" alt="潮州保養廠">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- 救援案例6 -->
-      <div class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h3><span class="material-symbols-outlined">check_circle</span>救援案例 六</h3>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_6">
-                <!-- 顯示照片 -->
-              </div>
-            </div>
-          </div>
-
-          <div class="row mt-3 mb-3 px-2">
-            <div class="col">
-              <div class="photo photo_6">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPUyot3DNCzZlIHd9_VM9CTN78qz82kSg-QyoEFWhqkSJg1WdUcGALwgmlDbWnTSQd5bS8-Xclk9NWvxlVa5NgLjOaEaWdzZEC14xRpp-Kjwr7TtQZo6WrhgWTN6zElFDtw7EB_VV_9a-XA5IW23kaN=w1607-h911-s-no-gm?authuser=0" class="lazy-load" alt="林園保養廠">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_6">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNuKtNk3AOQTNCe7o92DZdXN3-dUvqzFd5Sjne1lvbmQ69fTFVhLlmJ28jt1ax-3W1x48HtveUvcCEhU8xQqwYN04CC8CxR57HAoul4qbh0dqgvtujcG6tIMx4CS-XRb4haNhljMSEXetZtIYYXMBEu=w843-h474-s-no-gm?authuser=0" class="lazy-load" alt="林園吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_6">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPBRLqisyXh3BJ6nCii0nOspBGucTXojWu03Hkv3_jrUedfmXVG8w11N3wUqcfmQARf3yX259OnDEvYwId5eQBxHW4HyaojJCyzDt6Nh8R36k_erux2C0OeUUOSCCago44Yi_A4-7yq-om0U_t4-LsL=w843-h474-s-no-gm?authuser=0" class="lazy-load" alt="林園拖吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_6">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNwoxfybMIf1qzASaAfSKP3e7Ql9HW0p3pSXUUgDqzLhmmJtn7edbKqGQg1AamtAXT4Q5EMMpjfOHzJbfAbMwHD48Ln7Wp-trsNevuZLUg93d9JRHsPz_DyCii5fHES4yJimFgJmgLihzsR7S_T61a6=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="林園道路救援">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_6">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMof_QAH2sXNp8sNaO6cIpxC_lpINZwIVHp4NSa0I00YAVnZ7_XmmJWOoX3MZgEcYUApg7b76PM2NLBphDe_nSoN0Q8e-l4vypSZPTv0XlLUakxqfUb-7Kc-mB9hIarXN0yfp_0BkkM4F-idhbjtpMn=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="林園汽車故障">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <!----------------------------------------------------------------------------------------------------------------------------->
     
-    <!-- 第四區塊 -->
-    <div class="row justify-content-around">
-      <!-- 救援案例7 -->
-      <div class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h3><span class="material-symbols-outlined">check_circle</span>救援案例 七</h3>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_7">
-                  <!-- 顯示照片 -->
+    <div id="cases" class="container-fluid">
+      <!-- 第一區塊 -->
+      <div class="row mt-5 justify-content-around">
+        <!-- 救援案例1 -->
+        <div class="col-12 col-md mb-5">
+          <div class="rescueBlock">
+            <h3><span class="material-symbols-outlined">check_circle</span>救援案例 一</h3>
+            <div class="row">
+              <div class="col-12">
+                <div class="display-photo" id="display-photo_1">
+                    <!-- 顯示照片 -->
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3 mb-3 px-2">
+              <div class="col">
+                <div class="photo photo_1">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMbVUDU76NJ8I3fcS_w17iso-tBpoGN9dmB8qCyFm0e3VFYIIHxSgvRpKhVIIZzqy419p2I4Zrjw4sqebxos2MUGj6VrrURyNjzwv0nAdv-YBemyCMsQ7tADr5lBmuH5CtNxBwWiUHTXbChb9H0N1Os=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="東港拖吊車">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_1">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMyPh5Y-0mTmvfaAFYivpqo_jd7mNBjIj2UqnDmUh11-KF-9QHGfChYNn6nKktrGSJHj02OuQqyJpe57Iw1HlYicWGABP7WHJmKaAot1nm9LALh7SgdTY8Gh22A5PQeWXUuWhNSV68n6Vng4MsKFhh8=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="東港吊車">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_1">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczOtdNXWwfBZZhX2HVyatfEUwIrli6x5PSiPguiXZ8AxPVsB2VWXVvRzvhllKmUcQIqyCa1BJGN1mkr8jGZ9v2luCkj_Wv2GQJwKblEOE3bnj6QcdeZo1CB8HuS8AnWmNDLG7pbL6bDatNOlKwpzkp3G=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="東港道路救援">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_1">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPfFD1fv1DEftdzdZcehU3oTe3kd0nmKbIV2IWVbQhuDoqZ96weJH3MQImf92OT2j500mUk4qX_mnODDN67bQI_rhu5iTXzqPvEd7J9gQS3EglYTwfMxZn9zKe1yPvLJ_rEWk3IIaHq4goHyxOMkAX2=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="東港保養廠">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_1">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNv8bN3_cuF78OGihKfkaf7_pL-8xvD9WnpzQ6D03hgohrdB8GVGBtq_BzwhRZxfR2D7kibuGUm-iH2bIyCRf_0MC-XUFkQPNgfiIHYOR6oZX9DiIMkB89A2amLoZJVBsusyd0440PqQk4Mxj1vea1r=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="東港汽車故障">
+                </div>
               </div>
             </div>
           </div>
-          <div class="row mt-3 mb-3 px-2">
-            <div class="col">
-              <div class="photo photo_7">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNhmIkWPWD_B8X_cuxXxwN5g75BlOYbM_CL3_iNSm2BrZh55DB1n8DsTd6NHd9tbLo-TnR4E0pubNcb3zpddB3RUbsCL2N6ThrJLiqEb463dkJe-rIczlP7Csy2Sqm_S7VoI3Z8uPVSFO6LLxborAlS=w952-h536-s-no-gm?authuser=0" class="lazy-load" alt="仁武道路救援">
+        </div>
+
+        <!-- 救援案例2 -->
+        <div class="col-12 col-md mb-5">
+          <div class="rescueBlock">
+            <h3><span class="material-symbols-outlined">check_circle</span>救援案例 二</h3>
+            <div class="row">
+              <div class="col-12">
+                <div class="display-photo" id="display-photo_2">
+                  <!-- 顯示照片 -->
+                </div>
               </div>
             </div>
-            <div class="col">
-              <div class="photo photo_7">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPFJfHTNELELILIhZ6TRH7C1xEBAAMxaqcpKugLnaKRcUL4XGsWUWgT3DpSbQaa3YuIQgdWKU2LsB3q8AclcaUuZ0ZyOJ8v2dBGzpjS7m1POjCsku6YRvTfo-RslbH775RajIMVZxxyGa3VnP-_riyU=w952-h536-s-no-gm?authuser=0" class="lazy-load" alt="仁武吊車">
+
+            <div class="row mt-3 mb-3 px-2">
+              <div class="col">
+                <div class="photo photo_2">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMAYB7-d2i293CS--ujZt3c9AysmTeN7nsLtB7pZAeve7wlu0ICAmKmxRMLUdZezrUCCsaYRHc0hep8lLUpPz-BYhp0m_6HSkgRBZzXgG2XNMkhbTz52EvQnMXIMXolAPG-Zwv6TS1SwO4KXKoWTtPh=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="萬丹吊車">
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_7">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMu6DA-j0YcTDR627txsEcPWvk2U3xCAVJ70cN5JN7sfs-L3-WfgzwhPTqM_2DXXqp7YiRV82CyPi4LmFXEXu3XzCswKHVbIhP5_mIIsp3uPzamPUi2G8ooYVFiBK6j1oj9GtjYRAFfbCdGWy8qALXO=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="仁武拖吊車">
+              <div class="col">
+                <div class="photo photo_2">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNTk2LjhaOD6q-XqtjLWK3xnQH4tCzKwCJ2jyZ_2QKVhXAqH_mabbeyyKRAX2t2uiRBJoHMIT51mMzGm_IFNV-wSA_2gcETxDDZSQVq0PyKi5ZWwiiTlBzV1Ud2XvHuhMwrI9bxLU196kSSBtg2xLBh=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="萬丹拖吊車">
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_7">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPTyvkINzF30lLB7n5jyblJQ9tKSgX461Sirorr7whmRpPJ0zingXPck7abcjVi_uZjUsS-Lr8IA04sREvUFsBRKANrKn2qhZQ39OqD7mrego4PSeXIyCvX8WcwNSpv6qJkadXImsRZBWeE8rkjZG-5=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="仁武汽車故障">
+              <div class="col">
+                <div class="photo photo_2">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMEuwfK4XqQgqW4J-1KzbtRovKZ-CoCutQALZWM7E-bUwoEo8f7lRaiRaM23hOs7qWdwyo_IctI5lERSWbfQnrQPt2bAGt9R2Ps4-50Y0o_q6Lckt_JD0ZlLuyj6R9o71s1IY8uq-lwn-VO-faGKpqZ=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="萬丹道路救援">
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_7">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMqV80AeV762-1ybahRiA-2ZQREjZcGNLLXam8RoKcd9HcIwsathZIJlrhwHcyCklITa3YfigLXwLvAT3isMB5wC_tH-lc6Xo8xMVW8sVZlo84tGUcvJipsYznpyeY_dXoigQedwO8nBY8bWD2vnXBb=w952-h536-s-no-gm?authuser=0" class="lazy-load" alt="仁武保養廠">
+              <div class="col">
+                <div class="photo photo_2">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczO6zgkJMwJ1pcvxqAGszjq7iSjQq0f1m9f26UD_vNs0NKTuwRbNLSszsNIEItHPJz_pZgcLe5Z3eQqPVU27zSeK0u8ao5JR_umHCDfsiMbFrj_Fp84mLB5wlXHsPyYJ5u6PEqJuKxAosP2a61-462Jx=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="萬丹汽車保養廠">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_2">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMRZyDjbayBUQcSOeG2ksKw96gOAmtYIWXM7rDcX2ckKfp0YyXEKPhsZPY1OTgLXvyxbQX7syLsjzDlnW_lbCE1wpW01x7wnBmY9qjNSYr2t9XV9Bl1txwbaNzfXJ_G4WYzcpl0IQBWQLt_S1nsKTSJ=w960-h540-s-no-gm?authuser=0" class="lazy-load" alt="萬丹汽車故障">
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+
+      <!-- 第二區塊 -->
+      <div class="row justify-content-around">
+        <!-- 救援案例3 -->
+        <div class="col-12 col-md mb-5">
+          <div class="rescueBlock">
+            <h3><span class="material-symbols-outlined">check_circle</span>救援案例 三</h3>
+            <div class="row">
+              <div class="col-12">
+                <div class="display-photo" id="display-photo_3">
+                    <!-- 顯示照片 -->
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3 mb-3 px-2">
+              <div class="col">
+                <div class="photo photo_3">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNst-F4NZdVuudoIMOmvr2dpYlykaN8NnQ_rUM8PX_wCgZk3VLI1reCcvoqU_KVBYVexKB4B4lMmUvCIeRyer5oAPTVFXDjJcQW5GdtcRUN7DcZWu6xDWA4DoGuwt96VUojlwwMupRqJf_W61ykeQPb=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="新園吊車">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_3">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPv_XsNouxyhSIbkQkF8tY0HMnOCfuWo7nF2Tk_0i_SUz0m3jlRsGSQEP4_JjhVS3r1X9OYrP_ZQdnV7tdgu7C1gYDZKU1XekTXgd_JtDEaqvWb6STjrmnYLtpZAQorM4zvIXyiRw0oCAAvgbaZODyI=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="新園拖吊車">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_3">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczP2zCm1Xuz0c55OwVekbcGPdsVp189Y08iuJkGvMl17v_6kbh69QIPUWcpb9cgfxmLnWqqBvCb5LmqW0ZC9L4aVvGiRB4_q7jQDm5iIYymAut2jQC7F0bSMlbwEEVmWThONtPwkjbRD4tm-GSos-tLS=w960-h540-s-no-gm?authuser=0" class="lazy-load" alt="新園道路救援">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_3">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczO2K6Qpd6tsxM7mvcF9PyDbHSFdO2VBYTM_PRhHSVJIlkxr-RfaNMi6P4rQ8JWAZdsu4kptlvVOMFpo7VvLt15Dldl0lZ7k04p9RnNQeZCBEmRrarfAaetTDHpx23NSEdMQ8Fhs2iSot9FXffUbSvpL=w960-h540-s-no-gm?authuser=0" class="lazy-load" alt="新園保養廠">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_3">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPAqhV1_bTu_XTo0-xpwwBXDSglPmecZ3MqY6lOLlm9SP83Fwia55W8rE9kQC33xgheKKdw-VfbhQTqhqKomr77_Pg7flfxo0XSP0jlxg4KSsfovW5-H8Lfu5KpsdDzFosd0OGnSRvIMkvm-3hgjq3k=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="新園汽車故障">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- 救援案例4 -->
+        <div class="col-12 col-md mb-5">
+          <div class="rescueBlock">
+            <h3><span class="material-symbols-outlined">check_circle</span>救援案例 四</h3>
+            <div class="row">
+              <div class="col-12">
+                <div class="display-photo" id="display-photo_4">
+                  <!-- 顯示照片 -->
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3 mb-3 px-2">
+              <div class="col">
+                <div class="photo photo_4">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMoy_J_eLRA-Pi6foxmVUxKPW3k4ZohcTerGuuO1Fr8VM0B-Nch815MrW6p9D0Wa0LbgzBhC4WUFAIdzm4AkdePi_WIssbK2LGtsTRrx3qbgExTOy0mQjD64NOb_asvc1H3OYFNg8hbJ8WEaWccnxyG=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="大寮吊車">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_4">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczN_BDyzlaxghsbVFB2k7ImvZJvRRELXBCFdiHvy7Vs5fz2LwsdYkmGBA-Pm8aE76TVqZItcsj5a7trnaEy3KwkMcQwAuW4V0jhjUTQTJWsDoYz6YrjMAo_Afn_cOc8wRA1yKmr6C7TDJfhqFg7KOOL5=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="大寮拖吊車">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_4">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMVq2dHgvcIPxf45IMuEOBS7mp7c6JijjIMCS9OWP7gRkwVDuy_bnopL_ZkY_zAAtwS6uA-SYsCrGfzVVLsc9FPcUOSECd0jbeSI7HKqlF7vrDsxS0swOK0H42TBf61K8q-J-v26epjOgdlzVTNrt7o=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="大寮道路救援">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_4">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNyBkeVKwMjHSsqxolP2CQj6l13EUdiOl9qr7thT3Z-7-O8HPQEneriYjfl0_NYBTSnoeNZGl7GRelGfsmNRhS7z4ztzdBvTYU_1ZTtohclfn6bI8rAhKdNBayM1TVIaYPTL6N52oYQaSdC7lX59feS=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="大寮保養廠">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_4">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczOdjDb6eeDdythhLA4BEYSd9N9xEBkVRe5wTIN5dWYjGjyoXAcKZXJdrDqJRgqQDxMndYOQ7O8W1IGcWGbtSYUchmC1AyOJsJIgHXsr59zgCmwA2wgu6ZlldtL9_KBKUpHP_JTGGNzbZvVbQ2KcHIpD=w1362-h766-s-no-gm?authuser=0" class="lazy-load" alt="大寮汽車故障">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 第三區塊 -->
+      <div class="row justify-content-around">
+        <!-- 救援案例5 -->
+        <div class="col-12 col-md mb-5">
+          <div class="rescueBlock">
+            <h3><span class="material-symbols-outlined">check_circle</span>救援案例 五</h3>
+            <div class="row">
+              <div class="col-12">
+                <div class="display-photo" id="display-photo_5">
+                    <!-- 顯示照片 -->
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3 mb-3 px-2">
+              <div class="col">
+                <div class="photo photo_5">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPYALksR6MHTyWLeq09BjVaXpKn9i4zBQcl9tmlh1cvZ9xexN7uC_E5KUCwUlIHGzfrOzfpKaRSUAScqReSFQ3Y8dfEj3W_QujvpgEY-Uj4R4JwZ9D6sTFQ-WgH23Qwk68pj44s5xUJCs5qih602AHd=w843-h474-s-no-gm?authuser=0" class="lazy-load" alt="潮州道路救援">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_5">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMnhm_FLWtG34evf4pE8oWJjcKb3aY1Yt9otshLWjN5mfelzcu1aBucJOS8jJE1pDceWVHDVet2D5b7quq8ti9VwE1eQGNOFUJeC3qfve0Fte5cHynLdm8SRokjWPyhl5fX1f0afGLFQadMRuu_Xngz=w1441-h807-s-no-gm?authuser=0" class="lazy-load" alt="潮州吊車">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_5">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczOlWsOR6hhh18grEvS1Z-eehfq65Y49RDMV2koIRMfzVas2k8nNJ5MmsY38YsZLCtKV70pMbW2BHqv3XRAmD6Ast5TQRWVAdsJscPMPD9DcLOLaxORpdXTQtR9hi0BlaGAXE2HIR4nQpmuvjSo392Hn=w843-h474-s-no-gm?authuser=0" class="lazy-load" alt="潮州拖吊車">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_5">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczP13CNxsRQ_b0hwpDUY388IkQtKbCDZbfKH0KB8rKV6IVy2_KLZbgv7Yz36kSoGAqGPMw1snj01Hf5Xqwq7AhdDtBB5zQy_ul1KRukTSs5fHJIydoVWTmcktpXzzrUunbHExUMb5kvxV0BHEtb95WUo=w843-h474-s-no-gm?authuser=0" class="lazy-load" alt="潮州汽車故障">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_5">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMw5bjlW2-r1djNJvaHtfZgNgUFBnLsqgL1yKq25Wg4tZgwwYmJK1V1w_IcyjGynIh3dJugyZywI_z8o9Rj5aa2Ki7lvHqFRxW-ql3Cu31ilMqsHwLN89smmGAPRkJS2K1gJXt6Omwk-HECUevwnWNp=w843-h474-s-no-gm?authuser=0" class="lazy-load" alt="潮州保養廠">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- 救援案例6 -->
+        <div class="col-12 col-md mb-5">
+          <div class="rescueBlock">
+            <h3><span class="material-symbols-outlined">check_circle</span>救援案例 六</h3>
+            <div class="row">
+              <div class="col-12">
+                <div class="display-photo" id="display-photo_6">
+                  <!-- 顯示照片 -->
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3 mb-3 px-2">
+              <div class="col">
+                <div class="photo photo_6">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPUyot3DNCzZlIHd9_VM9CTN78qz82kSg-QyoEFWhqkSJg1WdUcGALwgmlDbWnTSQd5bS8-Xclk9NWvxlVa5NgLjOaEaWdzZEC14xRpp-Kjwr7TtQZo6WrhgWTN6zElFDtw7EB_VV_9a-XA5IW23kaN=w1607-h911-s-no-gm?authuser=0" class="lazy-load" alt="林園保養廠">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_6">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNuKtNk3AOQTNCe7o92DZdXN3-dUvqzFd5Sjne1lvbmQ69fTFVhLlmJ28jt1ax-3W1x48HtveUvcCEhU8xQqwYN04CC8CxR57HAoul4qbh0dqgvtujcG6tIMx4CS-XRb4haNhljMSEXetZtIYYXMBEu=w843-h474-s-no-gm?authuser=0" class="lazy-load" alt="林園吊車">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_6">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPBRLqisyXh3BJ6nCii0nOspBGucTXojWu03Hkv3_jrUedfmXVG8w11N3wUqcfmQARf3yX259OnDEvYwId5eQBxHW4HyaojJCyzDt6Nh8R36k_erux2C0OeUUOSCCago44Yi_A4-7yq-om0U_t4-LsL=w843-h474-s-no-gm?authuser=0" class="lazy-load" alt="林園拖吊車">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_6">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNwoxfybMIf1qzASaAfSKP3e7Ql9HW0p3pSXUUgDqzLhmmJtn7edbKqGQg1AamtAXT4Q5EMMpjfOHzJbfAbMwHD48Ln7Wp-trsNevuZLUg93d9JRHsPz_DyCii5fHES4yJimFgJmgLihzsR7S_T61a6=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="林園道路救援">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_6">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMof_QAH2sXNp8sNaO6cIpxC_lpINZwIVHp4NSa0I00YAVnZ7_XmmJWOoX3MZgEcYUApg7b76PM2NLBphDe_nSoN0Q8e-l4vypSZPTv0XlLUakxqfUb-7Kc-mB9hIarXN0yfp_0BkkM4F-idhbjtpMn=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="林園汽車故障">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       
-
-      <!-- 吊掛作業1 -->
-      <div id="operations" class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h3><span class="material-symbols-outlined">check_circle</span>吊掛作業 一</h3>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_8">
-                <!-- 顯示照片 -->
+      <!-- 第四區塊 -->
+      <div class="row justify-content-around">
+        <!-- 救援案例7 -->
+        <div class="col-12 col-md mb-5">
+          <div class="rescueBlock">
+            <h3><span class="material-symbols-outlined">check_circle</span>救援案例 七</h3>
+            <div class="row">
+              <div class="col-12">
+                <div class="display-photo" id="display-photo_7">
+                    <!-- 顯示照片 -->
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="row mt-3 mb-3 px-2">
-            <div class="col">
-              <div class="photo photo_8">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczP0sF2-x0DO4auNN6t72jHqW6mA2WVPY-Jsg0H1bA9079tquWVp0Vs-PZI7oejh0dLBOgGSDS1LjorIh02XHAwn-Mj0xa3luZ-kbrMTwg0IOTHT_QpGuU9eWvC-dsnVXj_xdSx0mxdGn51ZUFFLYicK=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="楠梓保養廠">
+            <div class="row mt-3 mb-3 px-2">
+              <div class="col">
+                <div class="photo photo_7">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNhmIkWPWD_B8X_cuxXxwN5g75BlOYbM_CL3_iNSm2BrZh55DB1n8DsTd6NHd9tbLo-TnR4E0pubNcb3zpddB3RUbsCL2N6ThrJLiqEb463dkJe-rIczlP7Csy2Sqm_S7VoI3Z8uPVSFO6LLxborAlS=w952-h536-s-no-gm?authuser=0" class="lazy-load" alt="仁武道路救援">
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_8">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMvxW3KFLSWFRMi4XhHvROFpqb5NE4SEsDjLKbmPEJu-e8TTtqKDcTjolznzExc6NGvRhmQaMVzkDpzNCfslJU2lPGBTucjcBWNdQr9Z2ofLLoiBRj6cPOomV6DhjIlRKCL8CCxFKRO391B1lTfgx4w=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="楠梓吊車">
+              <div class="col">
+                <div class="photo photo_7">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPFJfHTNELELILIhZ6TRH7C1xEBAAMxaqcpKugLnaKRcUL4XGsWUWgT3DpSbQaa3YuIQgdWKU2LsB3q8AclcaUuZ0ZyOJ8v2dBGzpjS7m1POjCsku6YRvTfo-RslbH775RajIMVZxxyGa3VnP-_riyU=w952-h536-s-no-gm?authuser=0" class="lazy-load" alt="仁武吊車">
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_8">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczN9eyO1uizCZUOZ0r0EIzhiio-RIJXmSQUa5JCrA5zV0Jd1VKqFoEIa8BdjDU8tokLUpCQOVFl6g3E-sDsb3j8VP2SmPeL9tDofQI_O4lmiRA5htIP7fy3dtowrxNnRW6wYnUfQzPUx_D64CI6IwMRO=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="楠梓拖吊車">
+              <div class="col">
+                <div class="photo photo_7">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMu6DA-j0YcTDR627txsEcPWvk2U3xCAVJ70cN5JN7sfs-L3-WfgzwhPTqM_2DXXqp7YiRV82CyPi4LmFXEXu3XzCswKHVbIhP5_mIIsp3uPzamPUi2G8ooYVFiBK6j1oj9GtjYRAFfbCdGWy8qALXO=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="仁武拖吊車">
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_8">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMnMFceRfTt0u3HQA8w7jv3avJ7g_-e6HwxUhjZ_Ri1czq1BwweDrnadLWYSBdv4NdTJR2Q2v9skSmgOlwsY4mVq8ceLdWn9W7BUMAYKwEO9BIHVsewiE_ddOxiNFdz8AxWaAuahdPUAZAwjaB71PLu=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="楠梓汽車故障">
+              <div class="col">
+                <div class="photo photo_7">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPTyvkINzF30lLB7n5jyblJQ9tKSgX461Sirorr7whmRpPJ0zingXPck7abcjVi_uZjUsS-Lr8IA04sREvUFsBRKANrKn2qhZQ39OqD7mrego4PSeXIyCvX8WcwNSpv6qJkadXImsRZBWeE8rkjZG-5=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="仁武汽車故障">
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_8">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNxJ59hyukhQ-2VBkuxUK2_5hE91zNiSUVgYXCihb1tFN26bWbwPIUVSjTipz18HiDRF3RlSpYIEJwJzfXC5sxPzkhDJRxjgmir9WhN1nbUe0Q9I5JQYw8mgwlicZrTjrt9_ZT38TrukvQ1LtCx1_Ta=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="楠梓道路救援">
+              <div class="col">
+                <div class="photo photo_7">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMqV80AeV762-1ybahRiA-2ZQREjZcGNLLXam8RoKcd9HcIwsathZIJlrhwHcyCklITa3YfigLXwLvAT3isMB5wC_tH-lc6Xo8xMVW8sVZlo84tGUcvJipsYznpyeY_dXoigQedwO8nBY8bWD2vnXBb=w952-h536-s-no-gm?authuser=0" class="lazy-load" alt="仁武保養廠">
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+        
 
-    
-    <!-- 第五區塊 -->
-    <div class="row justify-content-around">
-      <!-- 吊掛作業2 -->
-      <div class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h3><span class="material-symbols-outlined">check_circle</span>吊掛作業 二</h3>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_9">
+        <!-- 吊掛作業1 -->
+        <div id="operations" class="col-12 col-md mb-5">
+          <div class="rescueBlock">
+            <h3><span class="material-symbols-outlined">check_circle</span>吊掛作業 一</h3>
+            <div class="row">
+              <div class="col-12">
+                <div class="display-photo" id="display-photo_8">
                   <!-- 顯示照片 -->
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row mt-3 mb-3 px-2">
-            <div class="col">
-              <div class="photo photo_9">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczOAVl6-qUJ0KDOD7d4VJ-TVRGO4-4urqLEzatrh0yxycC2f6v51cd6hfFyvxW2yJ4B5lIdy6U7WVAlptSUbFfrbyVBDtlHUgQLpxhcuTSZaL1gEUElbf-asfdv5sY5MYtAhqFF2-VSQ1rzDbZtPlCwG=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳳山道路救援">
+
+            <div class="row mt-3 mb-3 px-2">
+              <div class="col">
+                <div class="photo photo_8">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczP0sF2-x0DO4auNN6t72jHqW6mA2WVPY-Jsg0H1bA9079tquWVp0Vs-PZI7oejh0dLBOgGSDS1LjorIh02XHAwn-Mj0xa3luZ-kbrMTwg0IOTHT_QpGuU9eWvC-dsnVXj_xdSx0mxdGn51ZUFFLYicK=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="楠梓保養廠">
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_9">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczOG9QNg1boPelKcgUT4v-PzcEx7Inj1cS5flT__CwzAxucu0cOsq00fZv4ZoV61N2TKgJBiNu8nu7HCPryu-Rhr74nkwsexxlS7z39JtyVr2VdJbvlzCiDWYPEwKrYxqUHQwh_5VQorW1M452j9feiD=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳳山吊車">
+              <div class="col">
+                <div class="photo photo_8">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMvxW3KFLSWFRMi4XhHvROFpqb5NE4SEsDjLKbmPEJu-e8TTtqKDcTjolznzExc6NGvRhmQaMVzkDpzNCfslJU2lPGBTucjcBWNdQr9Z2ofLLoiBRj6cPOomV6DhjIlRKCL8CCxFKRO391B1lTfgx4w=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="楠梓吊車">
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_9">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPzCjcwR_GQr-EsTLvNyIqEK31NRxasqbupLqGis2KpbAheZtqwOtGw-Vo-SgIjoCUqbkcgd5kAWo6b_Oh9ApfC2TjmcF42WGGdK1EwBXO0WcCADj1Sc5J2Ih5lSLRJcmYjJUQzceKAdW-DrISI1oMr=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳳山拖吊車">
+              <div class="col">
+                <div class="photo photo_8">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczN9eyO1uizCZUOZ0r0EIzhiio-RIJXmSQUa5JCrA5zV0Jd1VKqFoEIa8BdjDU8tokLUpCQOVFl6g3E-sDsb3j8VP2SmPeL9tDofQI_O4lmiRA5htIP7fy3dtowrxNnRW6wYnUfQzPUx_D64CI6IwMRO=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="楠梓拖吊車">
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_9">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMrHKhq_qSntrz4TzMCCJSBdkv-munNgRyCA0SYzoW3T3AGpguuPM-YNhZRIWT-nMqtPEo2Z06uQBmBgWmvSrOJ7jfMhfGY-uAl9jxTcTMZJvim_tYvxOhuWPK0sSI2R0-6Av_14gi5SthU6IZyNHqm=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳳山汽車故障">
+              <div class="col">
+                <div class="photo photo_8">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMnMFceRfTt0u3HQA8w7jv3avJ7g_-e6HwxUhjZ_Ri1czq1BwweDrnadLWYSBdv4NdTJR2Q2v9skSmgOlwsY4mVq8ceLdWn9W7BUMAYKwEO9BIHVsewiE_ddOxiNFdz8AxWaAuahdPUAZAwjaB71PLu=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="楠梓汽車故障">
+                </div>
               </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_9">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNWEHttxi_RVqzvwvQnRs1CA0QaClTbZpFf8MTitqU7_5v_CHqiblqWlbwuJN4rQ4S0MvMDCAYehPGo1191FhGKneprqxD8SDWWQv9hNAV7rUNhLNQdO0u9hwQfxwBufbDgidFl5WNsSAYu9qZwDzvJ=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳳山保養廠">
+              <div class="col">
+                <div class="photo photo_8">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNxJ59hyukhQ-2VBkuxUK2_5hE91zNiSUVgYXCihb1tFN26bWbwPIUVSjTipz18HiDRF3RlSpYIEJwJzfXC5sxPzkhDJRxjgmir9WhN1nbUe0Q9I5JQYw8mgwlicZrTjrt9_ZT38TrukvQ1LtCx1_Ta=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="楠梓道路救援">
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-
-      <!-- 吊掛作業3 -->
-      <div class="col-12 col-md mb-5">
-        <div class="rescueBlock">
-          <h3><span class="material-symbols-outlined">check_circle</span>吊掛作業 三</h3>
-          <div class="row">
-            <div class="col-12">
-              <div class="display-photo" id="display-photo_10">
-                <!-- 顯示照片 -->
+      
+      <!-- 第五區塊 -->
+      <div class="row justify-content-around">
+        <!-- 吊掛作業2 -->
+        <div class="col-12 col-md mb-5">
+          <div class="rescueBlock">
+            <h3><span class="material-symbols-outlined">check_circle</span>吊掛作業 二</h3>
+            <div class="row">
+              <div class="col-12">
+                <div class="display-photo" id="display-photo_9">
+                    <!-- 顯示照片 -->
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3 mb-3 px-2">
+              <div class="col">
+                <div class="photo photo_9">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczOAVl6-qUJ0KDOD7d4VJ-TVRGO4-4urqLEzatrh0yxycC2f6v51cd6hfFyvxW2yJ4B5lIdy6U7WVAlptSUbFfrbyVBDtlHUgQLpxhcuTSZaL1gEUElbf-asfdv5sY5MYtAhqFF2-VSQ1rzDbZtPlCwG=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳳山道路救援">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_9">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczOG9QNg1boPelKcgUT4v-PzcEx7Inj1cS5flT__CwzAxucu0cOsq00fZv4ZoV61N2TKgJBiNu8nu7HCPryu-Rhr74nkwsexxlS7z39JtyVr2VdJbvlzCiDWYPEwKrYxqUHQwh_5VQorW1M452j9feiD=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳳山吊車">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_9">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPzCjcwR_GQr-EsTLvNyIqEK31NRxasqbupLqGis2KpbAheZtqwOtGw-Vo-SgIjoCUqbkcgd5kAWo6b_Oh9ApfC2TjmcF42WGGdK1EwBXO0WcCADj1Sc5J2Ih5lSLRJcmYjJUQzceKAdW-DrISI1oMr=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳳山拖吊車">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_9">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMrHKhq_qSntrz4TzMCCJSBdkv-munNgRyCA0SYzoW3T3AGpguuPM-YNhZRIWT-nMqtPEo2Z06uQBmBgWmvSrOJ7jfMhfGY-uAl9jxTcTMZJvim_tYvxOhuWPK0sSI2R0-6Av_14gi5SthU6IZyNHqm=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳳山汽車故障">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_9">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczNWEHttxi_RVqzvwvQnRs1CA0QaClTbZpFf8MTitqU7_5v_CHqiblqWlbwuJN4rQ4S0MvMDCAYehPGo1191FhGKneprqxD8SDWWQv9hNAV7rUNhLNQdO0u9hwQfxwBufbDgidFl5WNsSAYu9qZwDzvJ=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳳山保養廠">
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="row mt-3 mb-3 px-2">
-            <div class="col">
-              <div class="photo photo_10">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPEnDGct21GWC_on6MILtOpwfPHm_gO7y005Z6gpEQJ68HV7r1U_o4xWsQECvsu7eyncDGS3yCyxS6yhj4yNAn-R5vQzHBZ1oV06N3JhIKw2lCgKfI_cZcQD-cuaPbptERIZZb7hTlGi2eFCoy4e7MB=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳥松保養廠">
+
+        <!-- 吊掛作業3 -->
+        <div class="col-12 col-md mb-5">
+          <div class="rescueBlock">
+            <h3><span class="material-symbols-outlined">check_circle</span>吊掛作業 三</h3>
+            <div class="row">
+              <div class="col-12">
+                <div class="display-photo" id="display-photo_10">
+                  <!-- 顯示照片 -->
+                </div>
               </div>
             </div>
-            <div class="col">
-              <div class="photo photo_10">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczP8ibRzqlOXaZ0wXrvJD9EVpIWEnEQ1xKsU6-i1wlC_ZQAFxjQ3559iN9PaTwaNreQxMyKMZmmlKG0A4YFYlckESBbuz4nEibeyk7flqwKwU22_plgfNs5SO1xPr5hBdnJ3eddeGsCnqQRj5cmi18yS=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳥松吊車">
+
+            <div class="row mt-3 mb-3 px-2">
+              <div class="col">
+                <div class="photo photo_10">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczPEnDGct21GWC_on6MILtOpwfPHm_gO7y005Z6gpEQJ68HV7r1U_o4xWsQECvsu7eyncDGS3yCyxS6yhj4yNAn-R5vQzHBZ1oV06N3JhIKw2lCgKfI_cZcQD-cuaPbptERIZZb7hTlGi2eFCoy4e7MB=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳥松保養廠">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_10">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczP8ibRzqlOXaZ0wXrvJD9EVpIWEnEQ1xKsU6-i1wlC_ZQAFxjQ3559iN9PaTwaNreQxMyKMZmmlKG0A4YFYlckESBbuz4nEibeyk7flqwKwU22_plgfNs5SO1xPr5hBdnJ3eddeGsCnqQRj5cmi18yS=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳥松吊車">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_10">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMm1iKQL3MU0NcGMLukUm-6XaavtgRvnI_kUhuD2VZRbBSePbN0MeWzV5JyZk7wK8rWcqEqp5n46Z1pNKkam9ftb0WPbMh4ARb7TPwd3iHYnzBUP1D5jCEar2exA_OLHlhGFusSOuZvN2-fjqm3gNeI=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳥松拖吊車">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_10">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczN3iVswwwGxkxMyJDCOz93Ln75OFClQWESI3UZIoPsQ_axb4hDHdWa3AyqL1WkwWFNmHHZNMu105jUWpXLlD7Y0YHHhDdq6OE6Dw0xrYnCfgnfBydzx9d9MGbiJhaJW6lY2SEeDDdS2fJCEDaBQDBu1=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳥松汽車故障">
+                </div>
+              </div>
+              <div class="col">
+                <div class="photo photo_10">
+                  <img data-src="https://lh3.googleusercontent.com/pw/AP1GczOMlnif_qv56QvTxfthH4szocE3YjJG1eLcO43vkqNc3bPmWXcq4ajIa1-TjU17-GKzI0D4w_svpcjhX-4uqYlDW2eIFb2GgsK1G7DwUoHQlDEr8ABjP2C0mMXsqo2YEIFnSt3og860uvceF59T64eG=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳥松道路救援">
+                </div>
               </div>
             </div>
-            <div class="col">
-              <div class="photo photo_10">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczMm1iKQL3MU0NcGMLukUm-6XaavtgRvnI_kUhuD2VZRbBSePbN0MeWzV5JyZk7wK8rWcqEqp5n46Z1pNKkam9ftb0WPbMh4ARb7TPwd3iHYnzBUP1D5jCEar2exA_OLHlhGFusSOuZvN2-fjqm3gNeI=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳥松拖吊車">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_10">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczN3iVswwwGxkxMyJDCOz93Ln75OFClQWESI3UZIoPsQ_axb4hDHdWa3AyqL1WkwWFNmHHZNMu105jUWpXLlD7Y0YHHhDdq6OE6Dw0xrYnCfgnfBydzx9d9MGbiJhaJW6lY2SEeDDdS2fJCEDaBQDBu1=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳥松汽車故障">
-              </div>
-            </div>
-            <div class="col">
-              <div class="photo photo_10">
-                <img data-src="https://lh3.googleusercontent.com/pw/AP1GczOMlnif_qv56QvTxfthH4szocE3YjJG1eLcO43vkqNc3bPmWXcq4ajIa1-TjU17-GKzI0D4w_svpcjhX-4uqYlDW2eIFb2GgsK1G7DwUoHQlDEr8ABjP2C0mMXsqo2YEIFnSt3og860uvceF59T64eG=w1620-h911-s-no-gm?authuser=0" class="lazy-load" alt="鳥松道路救援">
-              </div>
-            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!----------------------------------------------------------------------------------------------------------------------------->
+
+    <!-- 客戶評價 -->
+    <div id="reviews" class="container-fluid">
+      <div class="reviews-container">
+        <div class="row align-items-start" id="reviews-container">
+          <div col-12>
+            <h3 class="mt-4 mb-2">客戶評價 <span class="material-symbols-outlined">thumb_up</span></h3>
           </div>
         </div>
       </div>
     </div>
 
-  </div>
+    <!----------------------------------------------------------------------------------------------------------------------------->
 
-  <!----------------------------------------------------------------------------------------------------------------------------->
+    <!-- 撥打電話 -->
+    <div class="fixed-buttons-container">
+      <button class="call-button" onclick="makeCall()" aria-label="撥打電話">
+        <svg class="icon"><use xlink:href="#icon-phone"></use></svg>
+      </button>
+      <!-- Line -->
+      <button class="Line-button" onclick="openLine()" aria-label="加Line好友">
+        <svg class="icon"><use xlink:href="#icon-line"></use></svg>
+      </button>
 
-  <!-- 客戶評價 -->
-  <div id="reviews" class="container-fluid">
-    <div class="reviews-container">
-      <div class="row align-items-start" id="reviews-container">
-        <div col-12>
-          <h3 class="mt-4 mb-2">客戶評價 <span class="material-symbols-outlined">thumb_up</span></h3>
-        </div>
-      </div>
+    </div>
+
+  </main>
+
+  <!-- 這是兩隻的電話號碼
+  <div id="phoneModal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()" aria-label="關閉">
+        <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <path d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+      <h3>選擇電話號碼</h3>
+      <button class="phone-btn" onclick="callNumber('09xx-xxxxxx')">
+        <svg class="icon"><use xlink:href="#icon-phone"></use></svg>
+        09xx-xxxxxx <span>(主要)</span>
+      </button>
+      <button class="phone-btn" onclick="callNumber('09xx-xxxxxx')">
+        <svg class="icon"><use xlink:href="#icon-phone"></use></svg>
+        09xx-xxxxxx <span>(備用)</span>
+      </button>
     </div>
   </div>
-
-  <!----------------------------------------------------------------------------------------------------------------------------->
-
-  <div class="fixed-buttons-container">
-    <button class="call-button" onclick="makeCall()" aria-label="撥打電話">
-      <svg class="icon"><use xlink:href="#icon-phone"></use></svg>
-    </button>
-    <button class="Line-button" onclick="openLine()" aria-label="加Line好友">
-      <svg class="icon"><use xlink:href="#icon-line"></use></svg>
-    </button>
-  </div>
-
+  -->
   <footer class="bg-gradient bg-dark">
       <p>&copy; 2024 拾捌拖吊車 服務公司版權所有.</p>
   </footer>
@@ -1587,16 +1726,31 @@
 
 <script> 
 
-  document.documentElement.style.overflowY = 'hidden'; // 禁止html垂直滾動
-
-  function stopRotation() {
-    const containerLoader = document.querySelector('.containerLoader');
-    const loader = document.querySelector('.loader');
-    loader.style.animationPlayState = 'paused';       // 暫停動畫旋轉
-    loader.style.display = 'none';                    // 隱藏loader
-    containerLoader.style.display = 'none';           // 隱藏容器
-    document.documentElement.style.overflow = 'auto'; // 啟用html垂直滾動
+/* 這是兩隻的電話號碼
+  function showPhoneOptions() {
+    const modal = document.getElementById('phoneModal');
+    modal.style.display = 'block';
+    modal.classList.add('show');
   }
+
+  function callNumber(number) {
+    window.location.href = 'tel:' + number;
+    closeModal();
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('phoneModal');
+    modal.classList.remove('show');
+    modal.style.display = 'none';
+  }
+
+  // 點擊背景關閉
+  document.getElementById('phoneModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeModal();
+    }
+  });
+*/
 
  //========================================================================
 
@@ -1625,9 +1779,6 @@
       duration: 800,
     });
 
-    stopRotation(); // 隱藏載入畫面
-
-
     // 選擇所有帶有 'lazy-load' 類的 img 標籤
     const lazyImages = document.querySelectorAll('img.lazy-load');
 
@@ -1639,7 +1790,6 @@
         // 移除 'lazy-load' 類，表示該圖片已被加載
         img.classList.remove('lazy-load');
     });
-
 
     displayAllReviews(); // 初次顯示所有評價
 
@@ -1839,9 +1989,8 @@
         window.requestAnimationFrame(function() {
           updateVisibleFocus();
         });
-      }, 100); // 毫秒的延遲
+      }, 100); // 毫秒的延遲            
     });
-            
   });
 
 
@@ -2163,6 +2312,7 @@
 
   //========================================================================
 
+
   function makeCall() {
     window.location.href = "tel:0981263978";
   }
@@ -2172,8 +2322,9 @@
     // window.open("https://line.me/ti/p/idtb0LETDp", "_blank");
     
     // 改成跳轉到本地頁面
-    window.location.href = "https://leotowtruck.github.io/Yuhong.github.io/line-tutorial";
+    window.location.href = "https://leotowtruck.github.io/Yuhong.github.io/line-tutorial.html";
   }
+
 </script>
 
 </body>
