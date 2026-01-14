@@ -310,37 +310,50 @@
     }
 
     .gpsbtn {
-        display: inline-block;                          /* 讓 a 標籤像按鈕一樣是 inline-block */
-        min-width: 250px;
-        height: 80px;
-        font-family: "Noto Serif HK", serif;
-        font-weight: 900;
-        font-style: normal;
-        letter-spacing: 0.1em;
-        font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-        text-decoration: none;                          /* 移除文字裝飾 */
-        color: #1e1e1e;                                 /* 設置文字顏色 */
-        background-color: #FFDC35;
-        border: none;
-        border-radius: 5px;
-        transition: all 0.3s;
-        padding: 20px 30px;
-        margin-top: 40px;
-        margin-bottom: 30px;
-        text-align: center;                             /* 讓文字在按鈕內居中 */
-        line-height: 40px;                              /* 調整文字垂直居中 */
-        z-index: 2;
+      /* 1. 排版鎖定：將 inline-block 改為 flex，確保文字精準置中且寬高穩定 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      /* 2. 空間預留：鎖定寬度與高度，不讓字型載入落差推擠到下方內容 */
+      width: calc(100% - 48px); /* 總寬度減去左右各 16px 的空間 */
+      max-width: 320px;        /* 限制最大寬度，避免在大螢幕過寬 */
+      height: 80px;            /* 固定高度，這是消除 CLS 的關鍵 */
+      margin: 30px auto;       /* 使用 margin 置中，並給予上下固定間距 */
+      box-sizing: border-box;  /* 確保 padding 不會額外撐開高度 */
 
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);    /* 添加陰影 */
-        animation: pulse 2s infinite ease-in-out;      /* 添加脈衝動畫 */
-        transition: all 0.3s ease;                     /* 平滑過渡 */
-        position: relative;                            /* 為偽元素定位 */
-        overflow: hidden;                              /* 防止偽元素溢出 */
-    }
+      /* 3. 文字與字型優化 */
+      font-family: "Noto Serif HK", serif;
+      font-weight: 900;
+      font-style: normal;
+      letter-spacing: 0.1em;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      text-decoration: none;
+      color: #1e1e1e;
+      text-align: center;
+      line-height: 1;          /* 在 flex 模式下 line-height 改為 1 較好控制 */
+      white-space: nowrap;     /* 防止字型載入時因寬度微變而產生的換行位移 */
 
-    .gpsbtn:hover {
-        background-color: #f5c300;
-    }
+      /* 4. 外觀設定 */
+      background-color: #FFDC35;
+      border: none;
+      border-radius: 8px;      /* 稍微圓潤一點，增加質感 */
+      z-index: 10;             /* 確保在裝飾圖案上方 */
+      position: relative;
+      overflow: hidden;        /* 隱藏偽元素溢出 */
+
+      /* 5. 動畫與交互 */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      animation: pulse 2s infinite ease-in-out;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      will-change: transform;  /* 告知瀏覽器此元素有動畫，優化渲染效能 */
+  }
+
+  /* 懸停效果 */
+  .gpsbtn:hover {
+      background-color: #f5c300;
+      transform: translateY(-2px); /* 輕微上浮感 */
+  }
 
     /* 脈衝動畫 */
     @keyframes pulse {
@@ -414,9 +427,11 @@
         left: 20px; /* 圖片初始位置 */
         width: 16%;
         max-width: 120px;
+        aspect-ratio: 1 / 1;  /* 強制維持 512x512 的正方形比例 */
         height: auto;
         will-change: transform; /* 提示瀏覽器進行優化 */
         animation: move4 10s infinite linear;
+        object-fit: contain;  /* 確保圖片在容器內不變形 */
     }
     .moving-image2 {
         position: absolute;
@@ -424,19 +439,23 @@
         bottom: 1%;
         width: 14%;
         max-width: 120px;
+        aspect-ratio: 1 / 1;  /* 強制維持 512x512 的正方形比例 */
         height: auto;
         will-change: transform; /* 提示瀏覽器進行優化 */
         animation: move5 12s infinite linear;
+        object-fit: contain;  /* 確保圖片在容器內不變形 */
     }
     .moving-image3 {
         position: absolute;
-        top: 35%; 
-        right: 5px; 
+        top: 38%; 
+        right: 4px; 
         width: 17%;
         max-width: 120px;
+        aspect-ratio: 1 / 1;  /* 強制維持 512x512 的正方形比例 */
         height: auto;
         will-change: transform; /* 提示瀏覽器進行優化 */
         animation: move6 9s infinite linear;
+        object-fit: contain;  /* 確保圖片在容器內不變形 */
     }
     /* 動畫 */
     .shapeAll {
@@ -1093,11 +1112,11 @@
           </div>
         </div>
 
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczNVfwCL19rfKvYwuKHJbfvwjbiCMA9Ldf7sQ5Ytw5EFU__2ARFONW26OQjr-_yUYjPWwKZbCJesNO7u8iEOh0UOyTdcZL3q2yv2prB95vTRTje5n_7ktfug8fNkAWzAsfffzDisJdqZYWU-_iAd5xWS=w512-h512-s-no-gm?authuser=0" alt="txtImage" class="moving-image1 white-image">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNVfwCL19rfKvYwuKHJbfvwjbiCMA9Ldf7sQ5Ytw5EFU__2ARFONW26OQjr-_yUYjPWwKZbCJesNO7u8iEOh0UOyTdcZL3q2yv2prB95vTRTje5n_7ktfug8fNkAWzAsfffzDisJdqZYWU-_iAd5xWS=w512-h512-s-no-gm?authuser=0" alt="txtImage" width="512" height="512" class="moving-image1 white-image">
 
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczOp94NPnRZ2lgFpIDyZTLxBiY2T6CWuGO-8IsxkcOakRm87JdTEtmz9rfo08aJVa5UPiRjrOgM-JB4zoOlPRCCbStJ6H1h0C35rCJEYRUDC0Q0AdBOq37QTEPs3ilSzQk5wAqQLh9tbEsllQ5mbrePR=w512-h512-s-no-gm?authuser=0" alt="photoImage" class="moving-image2 white-image">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOp94NPnRZ2lgFpIDyZTLxBiY2T6CWuGO-8IsxkcOakRm87JdTEtmz9rfo08aJVa5UPiRjrOgM-JB4zoOlPRCCbStJ6H1h0C35rCJEYRUDC0Q0AdBOq37QTEPs3ilSzQk5wAqQLh9tbEsllQ5mbrePR=w512-h512-s-no-gm?authuser=0" alt="photoImage" width="512" height="512" class="moving-image2 white-image">
 
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczMMkCPZCQcDyGYjCNkABFJcHJY-jhsXsvN0jHCLPF5qtwDZ1iiRT-kCQ17ehKJqu_3n6LeH6QefhUQi6Z52_IBMqRZeIoyHIMqE4dZexmrC9h7XcKyLOKunm1WqaQGH75WOPHg3OWXc3mnw9IVLwgxs=w512-h512-s-no-gm?authuser=0"alt="gpsImage" class="moving-image3 white-image">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMMkCPZCQcDyGYjCNkABFJcHJY-jhsXsvN0jHCLPF5qtwDZ1iiRT-kCQ17ehKJqu_3n6LeH6QefhUQi6Z52_IBMqRZeIoyHIMqE4dZexmrC9h7XcKyLOKunm1WqaQGH75WOPHg3OWXc3mnw9IVLwgxs=w512-h512-s-no-gm?authuser=0"alt="gpsImage" width="512" height="512" class="moving-image3 white-image">
 
 
         <!-- 添加形狀 -->
