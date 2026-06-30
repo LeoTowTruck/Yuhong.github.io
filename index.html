@@ -1755,15 +1755,17 @@
   // 顯示所有評價
   function displayAllReviews() {
       const container = document.getElementById('reviews-container'); // 獲取評價容器
-      let k = 0; // 初始化數字計數器
+      
       reviews.forEach(review => {
           const reviewElement = document.createElement('div'); // 創建評價元素
           reviewElement.className = 'col-12 col-md-6 col-xl-4 mb-1'; // 設置元素的class，使用Bootstrap的網格系統
           
-          k += 1; // 增加數字計數器 下方key ${k}
           reviewElement.innerHTML = `
               <div class="review">
-                  <img src="${review}" alt="客戶評價" loading="lazy">
+                  <img src="images/reviews/${review.id}.webp" 
+                     alt="${review.alt}" 
+                     loading="lazy" 
+                     class="img-fluid rounded">
               </div>`; // 設置圖片元素
           container.appendChild(reviewElement); // 將評價元素添加到容器中
       });
@@ -2030,280 +2032,96 @@
 
   // 評價圖片URL列表
   const reviews = [
+    { id: "google-map-a/1", alt: "服務好，態度好，價格合理的店家" },
+    { id: "google-map-a/2", alt: "效率很快 司機大哥人很好" },
+    { id: "google-map-a/3", alt: "老闆拖車技術很好，也很細心。" },
+    { id: "google-map-a/4", alt: "快速技術一流" },
+    { id: "google-map-a/5", alt: "五星" },
+    { id: "google-map-a/6", alt: "五顆星" },
+    { id: "google-map-a/7", alt: "半夜車子拋錨 叫了好多間都嫌晚 只有這個老闆依然出來救援 價格還很合理 辛苦老闆了" },
+    { id: "google-map-a/8", alt: "老闆熱心，服務很好" },
+    { id: "google-map-a/9", alt: "老闆熱心 價錢公道" },
+    { id: "google-map-a/10", alt: "價錢公道 服務好" },
+    { id: "google-map-a/11", alt: "道路救援讚！親切、迅速" },
+    { id: "google-map-a/12", alt: "拉貨服務很好，老闆很熱情，很有趣，價格也很合理。非常感謝老闆及時救了我的車" },
+    { id: "google-map-a/13", alt: "超棒的拖吊服務 歡迎大家有需要可以跟老闆聯絡" },
+    { id: "google-map-a/14", alt: "很棒的服務.價錢公道.合理.使命必達.有需要可以跟老闆連絡" },
+    { id: "google-map-a/15", alt: "老闆人很好 價錢公道 服務一級棒" },
 
-      // 20250923-1
-      "https://lh3.googleusercontent.com/pw/AP1GczPdckxo-phd6cZaLSt2HpHl7JZn2nIq1qOyv81BeqGljfi4DVRgHAE-ANEGFrgOX_8cDZah84VOf2wiz0gGDuXzSQyA18ApbdrgBKaizEkigdzfizFq6K4FTDxs6VqgxMPnvqY26tePwQsP9S1zAT96=w1080-h456-s-no-gm?authuser=0",
-            
-      // 20250923-2
-      "https://lh3.googleusercontent.com/pw/AP1GczPDQFBxvYcm3mtBPngkbBBbYX2KKr3oXBK7-E2vPYAFThP9r-WCIIzFJjIOP14xXP-11gTrpe9IIoq9tXUxEDJQ2VaZdBqTrJKJlOhDL31UoRm4WZwtyadka0jBpJ-VpOrf9kuz3qXAEG5qmK2SmlLo=w1080-h464-s-no-gm?authuser=0",
+    { id: "google-map-b/1", alt: "正面評價：守時、品質、專業度和價格" },
+    { id: "google-map-b/2", alt: "老闆專業，值得信賴！" },
+    { id: "google-map-b/3", alt: "正面評價：守時、品質和專業度" },
+    { id: "google-map-b/4", alt: "服務態度好" },
+    { id: "google-map-b/5", alt: "優質服務" },
+    { id: "google-map-b/6", alt: "服務好，態度好，價格合理的店家。" },
+    { id: "google-map-b/7", alt: "服務好，價位公道" },
+    { id: "google-map-b/8", alt: "服務好，價錢公道，謝謝協助" },
+    { id: "google-map-b/9", alt: "服務很好 價錢公道 是在地最好的吊車公司" },
+    { id: "google-map-b/10", alt: "服務好，價錢公道，謝謝協助" },
+    { id: "google-map-b/11", alt: "五顆星" },
+    { id: "google-map-b/12", alt: "五顆星" },
 
-      // 20250923-3
-      "https://lh3.googleusercontent.com/pw/AP1GczN2vxNaH6SYjDSEm77x6Z44L_py9lp1XH-AqyOUMo3JsFlwNOE2rscQsDubG_1UmBggkNojXvL8lgYJ70F5udqoGFJZrJXDaFadWwYt7UgXejXTOFvLwwKfu9WPBr2offKkcaMxuh7GO4DUi92py_4N=w1080-h457-s-no-gm?authuser=0",
-          
-      // 20250923-4
-      "https://lh3.googleusercontent.com/pw/AP1GczPsVLCIaXnStNzBIzz_IFQFYtkWATD0pziJwsHbgPlGPhZCkJ8pBLl53f_M9LMFdyUXUaoXRL_2OipcPaJyTYEjRcWi14JQztVzXfx_HAJaP8pgWIwG7wgdLPkQ9V_9fy0hnCyt1lDgYjMO9H5Zyiqh=w1080-h463-s-no-gm?authuser=0",
-
-      // 20250923-5
-      "https://lh3.googleusercontent.com/pw/AP1GczNP3mkKvGExaqILbbrPRqmYoIn9-0Y07HaDYVuu0FXbltVDpoWmM2SaMHwXwzwn2qUzYHeZxpaAxka4NUwfXWQKy_HiSsvMEDESegsaJvzkIbrrGuM0mRXRTqQlHakSe13wO-vNWRVT_UhqR6d_L-cg=w1080-h388-s-no-gm?authuser=0",
-      
-      // 20250923-6
-      "https://lh3.googleusercontent.com/pw/AP1GczPHUiA-NknBXpkXiW33sYMcpZ9W8HEAQxOj8JumbdY9M6QOgVcoA36h-vmRTlJLzJ9f68-8GHG09pGJLXvTOHf8e_SbXQuLhLGxoKTgVsQjQ7g6wKh9pJa034bJ0mp0W_PiQAPfexmQEuzEw9UupMHY=w1080-h387-s-no-gm?authuser=0",
-            
-      // 20250923-7
-      "https://lh3.googleusercontent.com/pw/AP1GczPeEZzeUrHu6keii4UUV4POVojxGO_TUDDq0x4ivIfHKUxsn4LhF79GcBu2H-OzBpgTfAp_EZOrn9sqS0MDiv5UN3s1yKpTna77sJ2cMhIV0Y9huCcPPcZhe9GNyNIjGOf7223HukDvCnxd8Doub-f6=w677-h934-s-no-gm?authuser=0",
-      
-      // 20250923-8
-      "https://lh3.googleusercontent.com/pw/AP1GczOeBVnRcq4OF6-0zEf_aozNfCvgq-HxhobpOHvHLWXoYcmGbXZZeVuRKifGKWo8nnB1cqiKiy-zX-gtEegK1y7AhgoxV47xHNkc2m6X5XkvGDx9_i1ToxjL67oDaGYnLbviqdqlg5zjPyTFN5aUVA7S=w714-h934-s-no-gm?authuser=0",
-            
-
-      // 20250923-9
-      "https://lh3.googleusercontent.com/pw/AP1GczOa5INocJrwghKwAMMs2ie5VXjDynlTEhG30QzWcrAetO-2Jp1kru0KKNuGPkzrunz0hzqYJ4sRZLfZqDUcCuQMmSszEvdrfbjAeYXYV4i_hkGmwDWdTyi2MOu7kMg5e482l3s_mv1xwQkMS4Dz8wQJ=w711-h934-s-no-gm?authuser=0",
-      
-      // 20250923-10
-      "https://lh3.googleusercontent.com/pw/AP1GczO-VmJZfwxL_UX3xivlJ8LYxd2lUhVKAQSJclcx_CHhLvOMyk5vRnJ_hgHg1Yi1LRAkvfS20oe0coJyrqhLKozNoIOSSeioVfRoTVTUAszFRkZuER50w6OLAS-UJYEN94H9gzTpSDe_UtQBkTbm5guz=w710-h934-s-no-gm?authuser=0",
-                 
-      // 20250923-11
-      "https://lh3.googleusercontent.com/pw/AP1GczN3uvvHGaw5JiNAyOJscEcEsxc29fZYT0XhAK-iyL-LHBUrsFyhtGAgw_PDzbDL0Vwi5eK6FnbmmviiTUS6Oc0XVGdd5ZdPnPCM4o4jIhjbLzJtZMOY-QZ7p2VIEzWniFu4LDspBk9mjoFSUvx3kKRS=w701-h934-s-no-gm?authuser=0",
-     
-      // 20250923-12
-      "https://lh3.googleusercontent.com/pw/AP1GczPA2Jpi2mo5B2BW9glzxsgFpLdceJlQPF7hjmw7H0lMMh33ye7xJSTT1-s-YL_2P2o-yAe0iB6H2CEwoL7wBFnYmtCY7u0uHh8Mk_7fUHB-wwcOfCeVt2y5ZXWbazecc88BN43NxWNB2HG7G-QjV4TD=w1022-h934-s-no-gm?authuser=0",
-  
-        
-      // 20250923-13
-      "https://lh3.googleusercontent.com/pw/AP1GczOk0CEJqfetVQu5tWa2HD9mbf3lJPGA09SY5js6vQpxd5lAqB5ok5CCqaTqWfMjtQ-5drLEYimGeSwgSmBmRdfogE5M-lVHPQn5IOmhqGXXc_HkSqHf-6ZkKpQeh32lo5GI1v-Dg0i1dJehvxCrVWWd=w1080-h882-s-no-gm?authuser=0",
-            
-
-      // 20250923-14
-      "https://lh3.googleusercontent.com/pw/AP1GczMJ2aClNrgkr3qN2fZh1SYfBTk6Ek-i1RXyo1hq_7EePS1hssffLz5eWaG061vm6WPnXluW7_XV0nyCr5lDdvEwD-oieQ_9iGx7JpzayvYeh7xslYtxXKoglp29MGG3nVn3gfZJfnpKzLxh_JSqJnFo=w1080-h566-s-no-gm?authuser=0",
-      
-      // 20250923-15
-      "https://lh3.googleusercontent.com/pw/AP1GczO2_I2x4CWnyfgsuaIm1yPQPQJfzZ4pyU0blHdVYc3IKYoZI0cvcwjxjpQm8WrpxIN8gCsVAb5zGzpXWS3Fap1pNHMu2ok8PGw0QVx1gUjujSEwYiwwSTuO4HEkrYUT4FFhRaHe8ECwa4q7Uub4sue-=w1080-h494-s-no-gm?authuser=0",
-            
-
-      // 1
-      "https://lh3.googleusercontent.com/pw/AP1GczOz3bCVdrl4fRtnyGHdleyjP_mVJWt-fxthXR6uVPJ7hMzprMdnwb9D_KQCKBVEl-V_n32wdgK1llpfVBxaTOzdA6txNR3BFXqQuaJXsg_QxBPxES3AI7E0Szsa_-UGP0YrZtWmTOh1GDwVp3h4ynWc=w410-h207-s-no-gm?authuser=0",
-
-      // 2
-      "https://lh3.googleusercontent.com/pw/AP1GczPCfTcn2HmD4a17pTKzmO9A-0yf2reCn0AJxoOAwd4LeBpCirQv7px-Q1BI57BcByIkmrfqRZTBGpXX-SDLGg-MVRE9xrvEDaOyzigwh_-itKQU3rzI--Zaem8ET1aPO4YXzmTj0dY0MVo5w8GsuOau=w410-h213-s-no-gm?authuser=0",
-                  
-      // 3
-      "https://lh3.googleusercontent.com/pw/AP1GczPS7-qHy4muI-B_TPrGwGVsmzSGYPsI42M-rC59VLPTE9wBLx0Al149ARBquFQsUIedOSOaFSOL3oii7CL7HOavV4Pp4YuoEgO2cNdPkw40PfytTKJAxnnSVc5wJ8C32imaj9O612eqAlmy9Z-qWfnT=w410-h211-s-no-gm?authuser=0",
-
-      // 4
-      "https://lh3.googleusercontent.com/pw/AP1GczNspgFHJdwnVmsW_3DZvyRex17WZ_ZypuqAwFBUny93_N4aTbisXlchGhkav7XbaRAkO-qcyGjqQPISoVTFHFDcquJ0MfPuPd1IPnF8TeKISPt3vs8t9UbxQjK_Ardlq2uEJUxWDvuBSI4LzV16NaiV=w410-h176-s-no-gm?authuser=0",
-      
-      // 5
-      "https://lh3.googleusercontent.com/pw/AP1GczMnez1OjUZ-XSyc5IoLZRJKGpFX5iwxzNVPOBvEIm9oOUOb4fAB5Fp-7IFjNqcI1dIL-2I6aMn_C0_vRpH9EyzsbvW_kfAdzqnfm9kOFNUh2TZ2aO162SnOpNtkSQMt9k1Z1sL9VMOwUZADPTClKfAZ=w410-h180-s-no-gm?authuser=0",
-
-      // 6
-      "https://lh3.googleusercontent.com/pw/AP1GczMZ7d40dMzsC_wDCZTZj0YgTr5a6GUYx42CH85MvP1vS60IcgiFDyswhruB7Mv3hxnswnKnDFKZEN2YnXD2d_A5j-V_10Gq1m9U-4ESbuynjpWFkzHR-B0Juq3pAJfoOeOHdgOy4yJpkm2ri22aiHA1=w410-h174-s-no-gm?authuser=0",
-                
-      // 7
-      "https://lh3.googleusercontent.com/pw/AP1GczNeGEtzTIkFXI-mfdMA5cZtw8qXmwZmeE4Q8RxLW3PWOd-Q9eus69900_OeqicNEh4dh3zzW7rRkkMYPIouqQhEEe1z6OqhwhHk2ruIRRyw-IjLX-QMTeQj5802jc-3gF-Y2gSTyfp4qQiqDb9C_V-a=w410-h170-s-no-gm?authuser=0",
-                  
-      // 8
-      "https://lh3.googleusercontent.com/pw/AP1GczNN4uIdx4NXLMTxfOnXuIh_5YY7KhcKa3Jh4goEocJWaLqBSIVRMIjbhmmvZRVYBOux4EAH-tHqF7Zk0f62ysekOU1zTJ_IlcUhDjP9gCHv-ovWp9AgqBjLqdWveGEGCbMgs6BuZok-scLBw1UHZ3ld=w410-h173-s-no-gm?authuser=0",
-                  
-      // 9
-      "https://lh3.googleusercontent.com/pw/AP1GczO-vnai0YrH5qmJXbBuxotEL07NYUQnBPzc6eiuwpAnM5JTS-E7SLJUbvYMFpqU7kECIp261ophRKt4Tb5iZTaLAq6hb7DLsO2PkdZExAWfrr-7uxhZ1wKmQrODsAhEsVAwIHTUE3Tae1SPQi5Kcf0S=w410-h172-s-no-gm?authuser=0",
-
-      // 10
-      "https://lh3.googleusercontent.com/pw/AP1GczMcSKetphGGsmB1bV_Vs4wHnkcZWsqWVGrTY89-hDKYw_nHrGzrZMS5BXIOTiJltEQ-aZvv8_5GAT-TaSJK5xnD_lQCPAGpZTzifbik5WZ07PCrZRK9UQNYqMAawCNljijeUQoZOIigl6WiO9Auj3zp=w410-h176-s-no-gm?authuser=0",
-
-      // 11
-      "https://lh3.googleusercontent.com/pw/AP1GczM7oRtrP4EY0-cIdbHff6Tmg5TLTmZN0108HaVMpoeKVabtIAWh49BqXVKfAG0QJ2A0mTe66RJLdzQ0qRwdxCTMRD2k5fBO1FwzyvEiq99xNbir69g4zjYacv5QWVFhaxUgptlaMiXOb68dDetfvE1j=w410-h150-s-no-gm?authuser=0",
-                  
-      // 12
-      "https://lh3.googleusercontent.com/pw/AP1GczPU7FfIX0tMOpV6IHDrSeO6UuVTmBJrNt8r1O3JLZeIGNiElzs_vjZT9emDF2ODxJ1RzvrnCUHUFXKXfo_m5-T5w2kk_ONoTVdgfrTO84Up9FYVv_LJKqU3dzbtMXGNVHqH7wqN0joHW6kHPl7rOpAX=w410-h145-s-no-gm?authuser=0",
-
-      // 13
-      "https://lh3.googleusercontent.com/pw/AP1GczOelG0MyTH9PWQaCd1AIdYM0RYEgnO5yaYflbmXCOpejq-a30hfEWq6d9Ffw5mZptFWOXgCXWdCMv1L4arb311_6DgJJ52pY7cvL-PNbx93wgnvnTYJKsHnuEqm7F7RlVjHQHISBqjAhs4SSEZS07eo=w1080-h384-s-no-gm?authuser=0",
-                
-      // 14
-      "https://lh3.googleusercontent.com/pw/AP1GczOHJWR_2X06ajV_JHYc8Nfy7baYEgnHSB_Qq3ARY7aIKeaTi5Ru3ySsvCY0N83aGBiNTZ2bfMMSSx5RhXDbRDKh0C3ZWHEhUi4raZgqOpytYfoNqJmFhP_kEVoz9FNLv5lD-_riA8PzAyMciHihr1mk=w1080-h365-s-no-gm?authuser=0", 
-
-      // 15
-      "https://lh3.googleusercontent.com/pw/AP1GczOUSpPO9fUCQV5NmkFSCzbNm72TYp6luAO9fOTSlLAFeEn9y4bzblm-Ni6zyw1vnQ84lodnBTe_THl6_7a-jpnYf6J_E2rVsAmFldPfInHBdOCDaEeMuh6LUMGEb_W1FZBTaKGHoa2N49NbA5gFrfsM=w1080-h394-s-no-gm?authuser=0",
-
-      // 16
-      "https://lh3.googleusercontent.com/pw/AP1GczPFBpEefT0-czVKneeYo30KFVE5XhvRE-0qnbwBhp1aIL9tyQrXp4LosBqSRD6cEVZ7NazRkBgF5OTX89MCBQmBFDvc7z2-_WSWFc6uApLLw_PBQyJ7FWqGQcFCGpVUBqVaf5McNlj7qHBMN5ENNI4l=w500-h182-s-no-gm?authuser=0", 
-                  
-      // 17
-      "https://lh3.googleusercontent.com/pw/AP1GczOEO7ivO3FM2gsI4e09Ae_JE1JxmJtJRl2aqbELAyOwLzyoWSeU6V6ZGPpjc6Od1MAyw96DJT-pslGvX56DnPRPxF38eWV4J1ZXu1uCaOF9Ex_2jb-oeHwdACBCWR7uRmPNpDNg2pz4V6DXWmPU5JHi=w1080-h375-s-no-gm?authuser=0", 
-                  
-      // 18
-      "https://lh3.googleusercontent.com/pw/AP1GczMyqFUjj0EoTxPXfUDZj9NUlpgp1k2v2WXwn4iR4YVUvVyq_t8Yr3Q3atBK575Z5QOYSGnukbZ75AjRmkKoLnYvpq2asbufjJdmCvrepHg_ooD28QFZnKJnMeweY7kHqmhQzpHSDSDz0bcR3IAlow31=w1080-h379-s-no-gm?authuser=0", 
-
-      // 19
-      "https://lh3.googleusercontent.com/pw/AP1GczOq2BpFQl87su8P0WFinydcKB3594nsItzjz6XEw1DTDRkZFU-ijiweJy1azx2wPAKHmPuI0F245K3c77ckp8-Mm6Fud7JfaVVlFYH982_DLswOfmQN6PE6CcmdCvgodh3GDn0JNEEMHGY6cOu69Cio=w1080-h455-s-no-gm?authuser=0",   
-
-      // 20
-      "https://lh3.googleusercontent.com/pw/AP1GczNyFu6vVSQkohIswpYgSGMOkfuvE2L5aZW-aRH9hUV0G-QkP_ZXurxev5L07eOtdeu1gyJx5jOqyOpeAdOWQWDv6ct0DwtdddNOaSbQHjfspcqeNACZ38PsWRp7lNwRuHwpGbQaxSGzUfHQzischxP-=w1080-h434-s-no-gm?authuser=0", 
-                  
-      // 21
-      "https://lh3.googleusercontent.com/pw/AP1GczOmQgsiJcEzE_WFMq_qHWCEvn6spSuoKgV0vPhhF-Hs-x2cmGy8SGYy1xm2JvVI-j7T5wZ1YV38H5RT2Ztg2oHp3PJDG3BjJSNK_tvby6X8D_TdDI_9pA7oPpjTQeRWLBDGSKYrOC2IYumxUPuMTHlh=w1080-h437-s-no-gm?authuser=0", 
-
-      // 22
-      "https://lh3.googleusercontent.com/pw/AP1GczNZzLNnClS9g5_VU6dDR4D4fiC3SILJVk_P6hf3X98SmEULOBH2_SRLBSGE7kZgwxhy_BG5YLkiPssT8hfZZ5D68q4If7j4gYg6a8xoj3R0palA4MkcB6ev4X_3iCeWDFFMYl4rZcHRxO1TeC85CEo5=w1080-h399-s-no-gm?authuser=0", 
-
-      // 23
-      "https://lh3.googleusercontent.com/pw/AP1GczMIIDeGo1oT3Uxmmi2iBxv3sTQMJya8xeDbedX47kNCdV5t8_oo1jgrve4qiI5pddld4alnLaDGrzw019pGODmqhiTIW9oDT_cOWzv6tREtgRNkMA0PQ5fbvcWgEJLQ1JxdHGbi82NdN6er3ghL9fY8=w1080-h468-s-no-gm?authuser=0", 
-
-      // 24
-      "https://lh3.googleusercontent.com/pw/AP1GczO-9erzzGP7uP_WjeB01vDZPOARFOzKqkxI0dud0brJ8vEdYqh735wlfvEssXck0dw8CcDwf625IM6axVNVOparNQYCxVYra5aeJw6ldcn1Aso5YPGQhr6MvpkrAdzC_plsrIvKkkcBNzbtVoy5F3U4=w1080-h430-s-no-gm?authuser=0", 
-
-      // 25
-      "https://lh3.googleusercontent.com/pw/AP1GczNLW_cR5P4gKZUiyJbhPztiVO_W6TQvcjz-EdQvn-1ubBOfZRp7DRYNJ4wZyyHzjPYP8wSFDkzqgrAVgf9xQ6PsqnIf22WDcnZObAJoZTntE2vYarQzSFqfB5MYeJPNTxPk81WtwVxAP0u4FW3c4eg3=w1080-h527-s-no-gm?authuser=0", 
-                  
-      // 26
-      "https://lh3.googleusercontent.com/pw/AP1GczOKX8Awb2tgsbWiGIKbjhnd9uoQ-2cCihgAipATStgBuNHbL96lTBCqisZ9M2yHqwHDYsupkdRvQ3VnzhUQfU6kRu-OI8FtSTg1hnaLW35cc3VDOs46MYsrw-h-f_EzbWmaem0vEWw61f7Mxdt4nrw5=w1080-h479-s-no-gm?authuser=0", 
-                  
-      // 27
-      "https://lh3.googleusercontent.com/pw/AP1GczOlcQKNkgYKsD8PTcBarO27IGIBuRAQzjJ5wiNJTzTwSmtBMUuhQWThZCkkgEc9jdce9l3iBJ6l0OoEzRuLXWlQQYr2953VFm4eiWfQuWUIjzG7cp8gfT2gr38Z_IFv_QICvCdNOYCObmyLyVze7jVk=w1080-h477-s-no-gm?authuser=0",
-
-      // 28
-      "https://lh3.googleusercontent.com/pw/AP1GczN6xCF3rBIcZmAlLKvfJRQnX3h7c1o861TO1Wzn8aPPWV7MF9S3x_B0ynLisiDOgj3P5bz5aC30W0yKr_8kuf5hEDiarTYlh-nuQAAxs4AwKj_6XV1nc1whj71fjpscn7fPbeMbHDiGHLxD6hrmNYqL=w1080-h465-s-no-gm?authuser=0", 
-
-      // 29
-      "https://lh3.googleusercontent.com/pw/AP1GczNIbMWI0Ff4g-15lBncQ_A3A-A3yNCs08qzMO9NROcAkIaLZnoTwC3pe56hQHO0VfO3OVpLP-x2mmwX2UxCiDlkdOp4Zo424FTrr_bZZFbFNr9n-iDm5N1-4IObkoOjbRcuJzcbrSpXSStyYRor_QTL=w1080-h474-s-no-gm?authuser=0", 
-
-      // 30
-      "https://lh3.googleusercontent.com/pw/AP1GczP3fW1kDEoK_SheXnDBXLBcyRyDPhIYwOpmg9pv4wen0xlADR93EQ-iuL3R35ZVbzYRcB9WLaHG4AAw57M9rfHckHYTVDo8HJ45D5f6QUp50uASCJ3hAU360V1el2EfpDds-tHUk9Hxl_6s3ODMgyi1=w1080-h488-s-no-gm?authuser=0", 
-              
-      // 31
-      "https://lh3.googleusercontent.com/pw/AP1GczOnYBK3UfsBWGxRsTXyBzSn-gpIwIrwmjdNoP94pN4s2hgAI9hgr0JIPizu-I2CZATFC9zW0uijeciU9476rXxybhxsVRhIYUUto8Z-UYpDqhb60ftHenLV9JC6TJuCF4RIAbD6MuzTqS9Hv6wN69li=w1080-h310-s-no-gm?authuser=0", 
-                  
-      // 32
-      "https://lh3.googleusercontent.com/pw/AP1GczMHRBaf2dambXPHz_0_enbvPgXPv0LPFSdabUqnU_lnrObNjNgzx82nsccrsk3cpd4UTyGqQa9FqJ8xWpwGRRc2Ta8mIR-VcVHgmU9RXhAt0OcBTI44FsF14584ETj189g9oSgCNGqRgfTNesJxJ-tR=w1080-h310-s-no-gm?authuser=0", 
-
-      // 33
-      "https://lh3.googleusercontent.com/pw/AP1GczPdXgsSrZYALTgUmPdeRRdJmhnLAI_fji58jcglolP08c1h9luaqm3UazBxXur0xspnPMosDmb2kjwLmUKOaXhDytjWskVhvF6mFR_pAIaYd_N4tdbmNPL29wbS8TS9RCQndDn6rBNMaUqxaW-XIKRW=w1080-h316-s-no-gm?authuser=0",   
-
-      // 34
-      "https://lh3.googleusercontent.com/pw/AP1GczOMrz7fFGDrEPNje-IXJA6zMhHpFJEbwV0HCkjUxKMuWd_7OvYrx4nrZPjCxBaRkrHFMpXGzajZoOEBfZoApoGUu1vueXTy0Wpz2_3lxAWlBiD_FWAAuj4vq2THaOejQAnIjsjK1Wz06skac0QG2dgX=w1080-h324-s-no-gm?authuser=0", 
-
-      // 35
-      "https://lh3.googleusercontent.com/pw/AP1GczPmGa7kmveQE2v0EQ6oryWSz2ckuk0vb56aOq6kAAWeoNY3g46qsEeSnNS_NqkPws3mXbToU4tEjYlg6MlnGtEIhUMB-tzLNURfRsB5BIDb9df_bumqRIcg7ycpu0IK5tiwqVvo1W_vfcCBj23cOcow=w1080-h320-s-no-gm?authuser=0",       
-
-      // 36
-      "https://lh3.googleusercontent.com/pw/AP1GczMBPCw0SADbNt8LUvEkmc19Va_x1OYeZxbkbNJTqm2u4NidBivpmrStR8IzdOgwx3quZgsEMSRffpH9ZR1bAnOH7vfoW0tnWBY0uBC7pbr2S88r_YjU6sGrIM6be2sixeJR4qQfJrRfSdLGteHnNP7j=w1080-h294-s-no-gm?authuser=0",
-
-      // 37
-      "https://lh3.googleusercontent.com/pw/AP1GczMTAUcUR-bkGgj8lb9Y39yvniBnD4rDVzpoFVx8YqtKr8qOZjaGmwk2U4jAJVKPOzRI5MnnGytH1bVH-ts0rWCD_JxN3wqVH0qS6Tm9fh_crFDVuucQ3UIDKHnNi-vCzN3Tn9yDkhFC5kAkhVIbD2ny=w1080-h415-s-no-gm?authuser=0", 
-                  
-      // 38
-      "https://lh3.googleusercontent.com/pw/AP1GczPGP_MxDIn1Jo0K5q-Lga4-L1N3VCLSncXLnzc1Tu6jmH8948dRf3veggF027mmLYE0TvurJSeGGUfZrYjQqvUb8F5LL98R0VuGz5TWF_28C5XOYyU39qyQLgwXeM_Od-nPzmRZGgGNmJ-WIIxv9ioR=w1080-h402-s-no-gm?authuser=0", 
-      
-      // 39
-      "https://lh3.googleusercontent.com/pw/AP1GczMySRmy6vwMI-__fUvBsYRLfmUXE6UWtYp_RBgFjalTz57Z27NStKMtX2s32TB0FpWEIfzNjjxmX1707xBJ4vfk06ME3Ne0FtKZ1UZYq3Q1pN5xtJbSqeZgi4TbFAWzFeFRGsu_cNpb_uNlviYGUcgg=w1080-h380-s-no-gm?authuser=0", 
-    
-      // 40
-      "https://lh3.googleusercontent.com/pw/AP1GczP82zy62tuAT9dBm5oyG6hWUdXMrZGvNHAE6NiRBAYCPhx9gKwzlI2q105HmkTNrcPOB-0kU0ne6O3KUJRUq0hIB4WxjpXSHdpenye7ahX9R89YrOWJg4PXdJC_EeDEK0dzl4PTtMO1sN8XFeQ34nkS=w1080-h355-s-no-gm?authuser=0",
-                  
-      // 41
-      "https://lh3.googleusercontent.com/pw/AP1GczMBCpv00xEp2v2eQ5v8b7KfI_NnLWO5P1SynImotGIhbf7kKHMeSjqeq8Iklh-Ar0dqKv1zs3TWyk-GNwMQhR-5LHaFWHo8fNv0_PkoR3LzDduP_cHYcDZgjS4NhX4qJXeHebRx-WNzVIyAJRguKgGh=w1080-h413-s-no-gm?authuser=0", 
-      
-      // 42
-      "https://lh3.googleusercontent.com/pw/AP1GczOgd-EidPIh0xrH2nE6xk-zVqMOXJ77y_jZZGAuYAvGg3lxcAyMwzWvQvj3YvIW0qhAZnm7NLIzPDblwcj_ltabBqSpDHJAm5Nq6SrnHt-mPpUeKrbCI58bxy90-8oUQfWuktWn0qXV_8g56PMu09tH=w1080-h386-s-no-gm?authuser=0", 
-
-      // 43
-      "https://lh3.googleusercontent.com/pw/AP1GczO8yOa4iXBFRoP_is6Lhfs-B-MsWwY-GRxne1LIkhMC0lny03QQdUN5NitRgCITSga-q8LoAlR98S-C_Q1pZnu77_x4KgVQSKP-FSE9etE-Ky821ZkZeD8GpPAHtOeuqMrIiWVS_WjKlUgyffcJEJk2=w1080-h308-s-no-gm?authuser=0",
-
-      // 44
-      "https://lh3.googleusercontent.com/pw/AP1GczNB0hXwDLgO2tCGtcAV9I6gzFW0zz4qLy40qEjAdE3kziojIYJKeXaNMT4-UQbcvxlWmIf_jzOCpzgfjYsMDVIiKbaIVFwmCmLYR0IBWGfCzYJ0NgekaUv2c705JQ7WbMbiY26ECXFAXxxt9sCFB6IG=w1080-h333-s-no-gm?authuser=0", 
-                    
-      // 45
-      "https://lh3.googleusercontent.com/pw/AP1GczNqWUmsnoBtwFbHLziZID33NeHJN_uCMm5ZmeCvgZCZD-UxYkMeLhP4ws243ZW4W7bixa7a72pwe_iHm7KqqTCFf1VI0Mw-V7xNqi9nbVWM4R3uRA6lPtYSKVaEXp_cN9CsHCNBJoaOtbdB4Qb0A_9P=w1080-h322-s-no-gm?authuser=0", 
-                  
-      // 46
-      "https://lh3.googleusercontent.com/pw/AP1GczNFFECodvVHVYNu-suXSPOIUhyy9450azGxTgEtioGhwg8yFyg4mRGVbz-niLE6qay5LTrc3L8FRXYX-Ce_Jdc7dG7l-eBAx7ASOaAjZTRDmF2En0pVQzJEs15pHkbZ7Eexlfdi9Gb3gBxQw03mRP1E=w1080-h311-s-no-gm?authuser=0", 
-                  
-      // 47
-      "https://lh3.googleusercontent.com/pw/AP1GczMMQqDlkS-hu81dUuPctvutWgcfkRS-QFRX9CXEl7j-dTfS5B1N1_ENaOSnsuOG9rWk-252aekh54rFNql-PzLsEn3sXjbnF1OnNb1XO-f-l93z1UwbZ3X9K4PaLX5RBxzuOzg33TbYViNacl0svvGl=w1080-h305-s-no-gm?authuser=0", 
-
-      // 48
-      "https://lh3.googleusercontent.com/pw/AP1GczNFKSw1fcBTv0yEGmqkrzs54kMZe1G-ASZ4b9FyoEAlppycxeNGB-BFmZTBOxUVOq8_PgMKUgLvTkZMuAfP7bUlkPw7cgrNat3PpsEvGjtjTQVYdIG0rc6vZe6AZDa4D7UHNvmsdZYSdfKKUMZo6QpB=w1080-h277-s-no-gm?authuser=0",
-                        
-      // 49
-      "https://lh3.googleusercontent.com/pw/AP1GczN0NIfItO9aMoNgEJsRDnR95iX_f9zTpxt-SNIXIlUqV7AwKKBHpMsRGN3JFkzEqrNibwnZRHTiNbsIwTrRuoI7jrr3kzgZZjI6nKPVwqvf3FGHmeCoJjmubz-QRymvWTm-vqc_T-RgRJ5NPZowMbgw=w1080-h315-s-no-gm?authuser=0",
-
-      // 50
-      "https://lh3.googleusercontent.com/pw/AP1GczNREc7-1OqVr_KpktkA1_y_9wuAdB0O8qn-z_2XDuIM0idQdNLVSRae5MHH3kD30yKEkHBOeS3noonDhdolw0AafEzBDNh17gWfKVBdWB9ZnY-J_94NPYvunsDAK4mYcUkniAgaPSuDQHE05WTs0Ddm=w1075-h313-s-no-gm?authuser=0", 
-
-      // 51
-      "https://lh3.googleusercontent.com/pw/AP1GczON4cwyrCXabH-VJDr0ZbQ9VlbX_3vLfYaAPfOnJkC--3jT02acjxy8rNXlNg4Ik5b3wGdvC6hBLkTr_kmzGyBzLr0wfH0zRDGeNTr4vzguJ3JQHU87lkOUrFqQ7AY9N_MjYUVpWppXrmoTEQ-mkM9c=w1080-h281-s-no-gm?authuser=0",    
-      
-      // 52
-      "https://lh3.googleusercontent.com/pw/AP1GczOFbQVPwdEDCU1VzoF1Bl2iv5msPAy6ubesl9uTPjP44uuZtr-PIHA6vKAfUF5PnEGTqBv1783hEMDRO2ewUPdxgSdO9zuwsk-4xTewd5sBCVnN-28pms9q_K8M2TE-VN5vFYyl3ixGHEFQ-U7N6UBB=w1080-h287-s-no-gm?authuser=0", 
-                  
-      // 53
-      "https://lh3.googleusercontent.com/pw/AP1GczNcfFaZIhZ7wDOvcssx9u7EkU7ItrHkcp6Mr6gGt9eyXtnPput_pcve4YbEpcHXNQzYrWVsxXkAHtAgIX2IKfBMu43fM44RzhcQM7ynu4OWZkjTj5gVm6FEHkNcpK1pvVL-rDtj3zrPgecYWFAGvRAT=w1080-h316-s-no-gm?authuser=0", 
-
-      // 54
-      "https://lh3.googleusercontent.com/pw/AP1GczP5qRkWgcsbSWMwLolX0ekSIGOvl0Ffg14z2IBJT2U-fg3cbK-O1OG2qcmLu6MurYHwsFq7jXpEKu8EbqdJ3xjfas9CddgmapZ34LcyDMP6fcJN8Xw0nemOWplJvVnX3EgSAqUG2PiLmMZRYKt_edt4=w1080-h319-s-no-gm?authuser=0",
-
-      // 55
-      "https://lh3.googleusercontent.com/pw/AP1GczOHJWR_2X06ajV_JHYc8Nfy7baYEgnHSB_Qq3ARY7aIKeaTi5Ru3ySsvCY0N83aGBiNTZ2bfMMSSx5RhXDbRDKh0C3ZWHEhUi4raZgqOpytYfoNqJmFhP_kEVoz9FNLv5lD-_riA8PzAyMciHihr1mk=w952-h322-s-no-gm?authuser=0",
-      
-      // 56
-      "https://lh3.googleusercontent.com/pw/AP1GczNM2fCcg1BIAxYwqPB4jJR7yYtV9Uh7MnTD-AqnhJWFxh2aMaY-2m7nU7Jz3hmFY-kpFMO2bUzAfI5P16YRms-BEDJWBzFI0EOthZLKbq3OD6XvtsZskH5wcxzDGk8Bc0YDvlfY6rPVJQa4jbLOCm-K=w1080-h411-s-no-gm?authuser=0", 
-                  
-      // 57
-      "https://lh3.googleusercontent.com/pw/AP1GczN2y7Dfl_anJ3UvX3KKzZGvYD7B9AxTZF9YjcYacgUt9j7ZouRqLmJp06BblMG9oTnA1jfAW8nKFT-x89-85J4eJwpedned3isAp6Rq5BQj9T9lo1F4z7xqCWdZYtSozruoDqZIH7c20GYqJE1budFa=w1080-h382-s-no-gm?authuser=0", 
-
-      // 58
-      "https://lh3.googleusercontent.com/pw/AP1GczOlfqkmSSvR__86FMy3yLMzblZVaS_LOtHf7aMeHtfyGdlkbAMxzBadbLDdB00C7vTx6bGOtyvCJowVEbNe3pzVDH8u2izM2yLAK9YCwjW7M-rlSTWsJFQhayI_mR8UP_l7zexTdg1GiHVBiCfrjig_=w1080-h391-s-no-gm?authuser=0", 
-
-      // 59
-      "https://lh3.googleusercontent.com/pw/AP1GczNFWgbzHbjwV6ot2ZhAPuumjykT8_ZdbCCkA9wKV2Ta7vGue40p5rRtQirKu_qBLelwNSJxkBZppnIkACQLDNdG8737GBm8B24nDxcSDheu_EHydvROuwtM-mGYJ1-p5HKjUad6vArJ3Ut4rRGdnto0=w1080-h375-s-no-gm?authuser=0", 
-                  
-      // 60
-      "https://lh3.googleusercontent.com/pw/AP1GczOBcGjeKUGOWkx0oqgRSFAKlfoL5MfYV7Uf-noN-x24x0BJB7MQYkpt8AHDwioW4cWWyxVAYgZcs39HbQ7ofJaf-TFVeK3-YFqdj5-YczOjyFt2ofh_XEprYo9qkArQt8XLDv6gbdRKyknt6ajP-67Q=w1080-h364-s-no-gm?authuser=0", 
-                                    
-      // 61
-      "https://lh3.googleusercontent.com/pw/AP1GczN_KMOiE6EScbQzFwgKg9_xCkrLnsE55FLFnGqH_GbNKpcGK9TARryuCYW2JalKDFzq9x3rPuk9IAgur2gbrwcB-epzimLufbExvx-_55IiCZ0LFmQHaWz9_CXH7ZPT5qs2NUZJAU8Tgg5UdFlR_h8X=w1080-h301-s-no-gm?authuser=0", 
-                  
-      // 62
-      "https://lh3.googleusercontent.com/pw/AP1GczOnhURk7Ce3GYvQsQS-mz-5jyuxBLZZ-i4KP2kprJ8NCGUieAk6c7DLK3TMwTpojxT14jEn7yW5cbv46lO_K5SDN--OxZvt6WrHM1slxlu0xhaSwoSwPOZMYnZD-MZxZkmpsru9rtiUsMnttsVaUSqi=w1080-h302-s-no-gm?authuser=0", 
-                
-      // 63
-      "https://lh3.googleusercontent.com/pw/AP1GczMeokbCxOg5ToJ_e3hW-llpyF6d4PRETZJtQOQ6H4Qg1mcXj11VYZ7Ctwswr1vEwh7XefACW18Hd44TsrCIfZHPgyESmvts6bOcX-pV0UmWSq_DdnOgNmUdSeVzZY9UpYpct-HUNdp1H8Fd2-ewk1XF=w1080-h296-s-no-gm?authuser=0", 
-                  
-      // 64
-      "https://lh3.googleusercontent.com/pw/AP1GczMiIx3YPuudNvrAIbkcV8lY8fJH-MLCf-4KMsKPUfGoHL6k_YHJ-P9RRQEmjqL14gNSekDl0rcXLVy6C_JnF3xacfXw0H5r7KfAHNIJqqHYGfbh1sRasyJJA7n-RhhmzFgmVI-Imh74BfmgJa-PQ0lK=w1080-h284-s-no-gm?authuser=0", 
-
-      // 65
-      "https://lh3.googleusercontent.com/pw/AP1GczN7bz7cUQ8lB6LSOluIiQ4bQY0XnoVwqo_AM22Sel9iMlTQdIBg-lVfI9tel1chS53q1_yYO-uzplOfFJ7dAsRNIGZFjQDmMMTg428sRtR_oG0x7oA0_neWBC8x6Rf_QcYz9eomWUI5G5R-NtlbdoXh=w1080-h304-s-no-gm?authuser=0", 
-                  
-      // 66
-      "https://lh3.googleusercontent.com/pw/AP1GczO1oAYXTeJcn9TOF9HL97JZaojKVCZU7M4PntxvSQnn6xo3j2VXZG6pflZoPGVDaDox_bdvObrJAwdZRBXQiKpxmbWyq0YlME5piZY7IZXWV2v_4cyecAVwKUtf8yC5LSYfXNSvlO_f1olBPAf7hyQU=w1080-h303-s-no-gm?authuser=0", 
-                  
-      // 67
-      "https://lh3.googleusercontent.com/pw/AP1GczOB-sBJ3bel_DSlk7lK1hbeOd7neXnV03vzKZ2xhO_fki8GD7IUQ_a_eEaRJoQBPouK0BqHY9sh_XxJBaOHPY26Aai3Man3Q69yJ8BI99ycZ2MqqOC8byauGxvgJT2p5PJ72k9zWauAUsPBK4WjKx7e=w1080-h740-s-no-gm?authuser=0", 
-                  
-      // 68
-      "https://lh3.googleusercontent.com/pw/AP1GczMbQq87PrdMUd_NTQjZ4bF0OzYhGjfYSx65YAZq5pKfr1c0z4Z5b4ysd1lQIyuLrsFTAG7TeydGahPj_5m4jDucux7iFXOjvkdd6jYZi1odRGVhlTdXZNgaVZ9gCCUYF9gG4GA-2jVhmKnh5rO7dKn5=w1080-h718-s-no-gm?authuser=0", 
-
-      // 69
-      "https://lh3.googleusercontent.com/pw/AP1GczMqdB8qXCXAgiq8bF-ITSV6qtns7XscuVoKe8yE55iEf9mOtigs_OPR9IS83-_JdKjinALjiIX1TNPy9-8tA19-C9D9o-fjLrUjJiIvy0nUbhgfnf7G8JFEjlaShW-x3m8_pvZ2msQRKKGiV70QQbDO=w1080-h646-s-no-gm?authuser=0", 
-      
-      // 70
-      "https://lh3.googleusercontent.com/pw/AP1GczNamLFFXr-KHtwOvMoXY6JNvCtd1HTT5wXo3Z94-37N5PmR3Be4GjPkvplrulMe2qxV9kAqriiIpVqa_ULr6uQyH7bDyHruBkXzOB8_K1EvVh48MHr_ZDsBzF5Cbh-SuSMpsaa3PgrhChUrVRWN8qxM=w1080-h625-s-no-gm?authuser=0", 
-
-      // 71
-      "https://lh3.googleusercontent.com/pw/AP1GczPAKPe7qzRjpnIq22vZza3h-E7VOelYC3-GQRsCf7OyKqYnAHnJ2UBMak-R5q_xPKTzkhaY8OYw4-Io-lqIviqvIExWDmUop2ugAWL44xDEmLKpRledmdazlRwhmGRzdfOC4p8glTYJ46HEAJZp5iYu=w1080-h581-s-no-gm?authuser=0", 
-
-      // 73
-      "https://lh3.googleusercontent.com/pw/AP1GczNJACdGi7NwwA64WkajKEHXrV_g0J5SIEC3BYPHCFXRYRm191ekOwWiceJkRTu_lXmpF1MEOJWPXqcUofuLbAXdmor7tncON05gJ5kih_-v3UnnBVp0Doj0ZWAJq7b3b_0vvj0LB7CcoBnJuHJu2QTR=w1080-h497-s-no-gm?authuser=0", 
-
-      // 72
-      "https://lh3.googleusercontent.com/pw/AP1GczPHintrOH9_h4KFujQS7_we6hQ9bt5HjDptkk0F1J43uPmH_2bn7xnnpxwSpy-CPM5LQZYqNkGa-mwhrg1HmR5H4Fz9jhU3ni5vE8nR4Rik7aoNwTKT1mm2n6d1zpCmTapCMn2pQ0ElaRWmIWbTycqh=w1080-h486-s-no-gm?authuser=0", 
-
-      // 74
-      "https://lh3.googleusercontent.com/pw/AP1GczOxSyEhhh9iwZTr56rPJ5EVj2dYaVLWbTHmdEJ_K2qPiNxjCl1Q1PUNh_cm9efUOC4BIyhAJK_O5-M8p7WgdGrTY4CGDHIz8ksIuJkeQZpToWLNX8hbkJe2qtFJ_lTbpdNjEX5IU-dYcXh-XoGY4lDQ=w1080-h459-s-no-gm?authuser=0",     
-
-      // 75
-      "https://lh3.googleusercontent.com/pw/AP1GczNxzd7VoxnMAYoL8iYnGC91wzPJia3GdZCsZMU11xS1pcRQ67MdI6PntFOKuEx46rPC0A1K13ND1-c9G8ap22qOvPQ-v6q9klp6T9OAfqzH94pUjTtu-yPVoQ7h0RWdiWyphI4XlSg1Ex_2STTbFbev=w1080-h342-s-no-gm?authuser=0",
+    { id: "youtube/1", alt: "感恩 救人一命視人猶親 阿彌陀佛！！！祝福也注意安全喔！！！" },
+    { id: "youtube/2", alt: "你們真的辛苦了 在救援同時千萬要記得注意自身安全。" },
+    { id: "youtube/3", alt: "專業! 安全維護永不嫌多！大家辛苦了加油 " },
+    { id: "youtube/4", alt: "老師傅的一些經驗跟技術真的是值得學習的" },
+    { id: "youtube/5", alt: "看到大家一直在高速公路上走來走去真的很危險" },
+    { id: "youtube/6", alt: "挖靠 太酷了吧！超真實救援耶，一個case感覺搞上整天，辛苦了（敬禮）" },
+    { id: "youtube/7", alt: "辛苦了 注意安全！！" },
+    { id: "youtube/8", alt: "超棒的！" },
+    { id: "youtube/9", alt: "看了真舒服" },
+    { id: "youtube/10", alt: "辛苦了" },
+    { id: "youtube/11", alt: "辛苦了..." },
+    { id: "youtube/12", alt: "辛苦了！！注意安全" },
+    { id: "youtube/13", alt: "看了都好緊張~在國道上真的都拿命在拚鑽到車底或站在車旁，只要後面有個不小心的駕駛衝過來真的都沒命在搞⋯真的辛苦了" },
+    { id: "youtube/14", alt: "太辛苦了 我爸也是每天開油罐車在高速公路上的 所以我更能體會您們的危險辛苦了！注意安全" },
+    { id: "youtube/15", alt: "你們的拖吊車最乾淨，也保養得很好去了日本旅遊才知道台灣的卡車有多髒賺錢之餘也要有職人精神" },
+    { id: "youtube/16", alt: "認真的救援人員令人敬佩《習慣黏很緊的令人不齒。路上最討厭這種的。保持適當距離是很基本的" },
+    { id: "youtube/17", alt: "人沒事就好了車壞掉了還可以修人懷了就涼涼了個位朋友都要注意安全平安順利哦" },
+    { id: "youtube/18", alt: "影片裡很多好人、認真工作的人，看了心情都好了起來。辛苦了" },
+    { id: "youtube/19", alt: "新年快樂 行車平安" },
+    { id: "youtube/20", alt: "滿滿的人情味" },
+    { id: "youtube/21", alt: "你們很辛苦，一定要注意安全！" },
+    { id: "youtube/22", alt: "感謝紀錄 請小心安全" },
+    { id: "youtube/23", alt: "要怎麼應徵你們這種行業啊？" },
+    { id: "youtube/24", alt: "在國道拖車真的是勇士～！英雄" },
+    { id: "youtube/25", alt: "在救援同時千萬要記得注意自身安全.辛苦辛苦感恩" },
+    { id: "youtube/26", alt: "在這危險的地方還好有你們辛苦了，自己也小哦" },
+    { id: "youtube/27", alt: "在快車道上處置還是蠻讓人擔心的，多注意安全！感謝有你們辛苦了" },
+    { id: "youtube/28", alt: "一看就知夠專業救援" },
+    { id: "youtube/29", alt: "台灣就是有這樣的吊車服務，大家才會安全回家，平安就是福" },
+    { id: "youtube/30", alt: "當然專業了，三寶太多 事故就多，不專業忙得過來嗎？" },
+    { id: "youtube/31", alt: "人沒事，車再買就好。" },
+    { id: "youtube/32", alt: "厲害 讚讚讚" },
+    { id: "youtube/33", alt: "無名英雄~~辛苦了" },
+    { id: "youtube/34", alt: "專業，有你真好。" },
+    { id: "youtube/35", alt: "想學 還收學徒嗎" },
+    { id: "youtube/36", alt: "辛苦拖吊車 時刻皮都要繃緊 就怕天兵" },
+    { id: "youtube/37", alt: "拖吊車有在顧喔 很漂亮" },
+    { id: "youtube/38", alt: "大機器救援大機器，感覺好厲害" },
+    { id: "youtube/39", alt: "老師傅厲害 1拖3" },
+    { id: "youtube/40", alt: "吊車司機大哥好專業！" },
+    { id: "youtube/41", alt: "辛苦了版主！道路救援隊真的很偉大" },
+    { id: "youtube/42", alt: "這是怎麼撞啊" },
+    { id: "youtube/44", alt: "哇塞，拖車大哥真強拖聯結，真的像開火車" },
+    { id: "youtube/45", alt: "拖車司機真的很辛苦也很危險值得敬佩" },
+    { id: "youtube/46", alt: "緊張刺激、出生入死~直擊國道車禍後的救援，感恩分享" },
+    { id: "youtube/47", alt: "車禍現場拖車處理也是有風險的..辛苦了" },
+    { id: "youtube/48", alt: "那天晚上吃晚餐有巧遇拾八學長 人非常親切 也很大方的同意跟他合照" },
+    { id: "youtube/49", alt: "小心安全很多車工作時要注意安全" },
+    { id: "youtube/50", alt: "這些大哥 都是真功夫欸⋯" },
+    { id: "youtube/51", alt: "拖吊很專業.Focus癱瘓大學長真強" },
+    { id: "youtube/53", alt: "真的辛苦了！感覺待越久越危險" },
+    { id: "youtube/55", alt: "拖吊真的很辛苦，建議穿個綱頭鞋或運動鞋好過穿布鞋，工作難免拿工具或東西不小心滑掉砸到腳真的會痛到噴眼淚出來，要注意安全呀，曾經被小小的活動扳手砸到腳大拇指導致粉碎性骨折經過。" },
+    { id: "youtube/56", alt: "在國道上跑來跑去 真替你們捏一把冷汗 不只要注意來車 更要當心把自動輔助駕駛當自動駕駛開的移動棺材！" },
+    { id: "youtube/57", alt: "感覺在高速公路上面處理事故時，壓力真的很大尤其車輛在身邊呼嘯時，還有視訊中要躺在車底下危險真的很多，如果下雨天或是晚上時視線跟壓力相信更大" },
+    { id: "youtube/58", alt: "拖吊車人員辛苦，感謝有你們幫忙排除車禍！在你的視頻看到很多不同領域的工作！尤其是在高速公路上工作要時時刻刻注意安全！真的給你們大讚" },
+    { id: "youtube/59", alt: "預防勝於救援，想想如果好好開車就不會後續麻煩的處理，辛苦所有道路救援人員，雖是你們的職責還是希望都能平安救援" },
+    { id: "youtube/60", alt: "原來當拖車司機，需要好多專業知識.. 對每個車種的了解、現場判斷如何拖吊比我想像中的辛苦、厲害" },
+    { id: "youtube/61", alt: "真的是國道英雄，拯救大家塞車的狀況，後面在車上聊天還蠻有趣的，祝你們賺大錢，注意自身安全" },
+    { id: "youtube/62", alt: "這些救援的 辛苦了 這種肇事的駕駛理應要負更多的道路救援費用 健保不要給付才對" },
+    { id: "youtube/54", alt: "那麼剛好，撞車剛好旁邊有拖車" },
+    { id: "youtube/63", alt: "希望駕駛人沒事" },
 
       // 這裡繼續添加超過100條評價圖片URL
   ];
