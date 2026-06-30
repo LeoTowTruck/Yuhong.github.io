@@ -673,7 +673,7 @@
     /* 滾動到底部輕微放大 */
     .fixed-buttons-container.is-scrolled {
         flex-direction: row;    /* 改為水平排列 */
-        gap: 16px;              /* 按鈕間距      */
+        gap: 16px;              /* 按鈕間距      */ 
         right: 60px;            /* 距離右邊的距離 */
         bottom: 80px;           /* 距離底部的距離 */
         transform: scale(1.5); /* 整個按鈕容器變大 */
@@ -1720,8 +1720,9 @@
     </div>
   </div>
   -->
+
   <footer class="bg-gradient bg-dark">
-      <p>&copy; 2024 拾捌拖吊車 服務公司版權所有.</p>
+      <p>&copy; <span id="year"></span> 拾捌拖吊車 服務公司版權所有.</p>
   </footer>
 
 <!----------------------------------------------------------------------------------------------------------------------------->
@@ -1733,6 +1734,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 <script> 
+
+  document.getElementById("year").textContent = new Date().getFullYear(); // 頁腳自動載入年份
 
 /* 這是兩隻的電話號碼
   function showPhoneOptions() {
@@ -1848,7 +1851,7 @@
           btnContainer.classList.remove('is-scrolled');
       }
       
-        lastScrollY = currentScrollY; // 更新上一次滾動位置
+      lastScrollY = currentScrollY; // 更新上一次滾動位置
     });
 
     // 當點擊事件發生時隱藏下拉式選單
@@ -1864,10 +1867,12 @@
 
   // 添加滾動事件監聽器
   document.addEventListener('scroll', function() {
-      // 選取所有帶有 image 類的圖片元素
-      const images = document.querySelectorAll('.image');
+
       // 設定最大放大倍數
       const maxScale = 1.1;
+
+      // 選取所有帶有 image 類的圖片元素
+      const images = document.querySelectorAll('.image');
       
       // 遍歷每一個圖片元素
       images.forEach(image => {
@@ -2156,7 +2161,8 @@
   }
 
   function openLine() {
-    // 原本的 LINE 網頁跳轉註解掉
+
+    // 原本的 LINE 網頁跳轉註解掉(Google ads禁止使用跳轉Line)
     // window.open("https://line.me/ti/p/idtb0LETDp", "_blank");
     
     // 改成跳轉到本地頁面
