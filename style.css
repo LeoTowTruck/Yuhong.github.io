@@ -1,0 +1,866 @@
+
+    /* Reset CSS */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-padding-top: 65px; /* 設置距離頁面頂部的距離 */
+        scroll-behavior: smooth; /* 启用平滑滚动 */
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden; /* 隱藏水平滾動條 */
+        touch-action: manipulation; /* 禁止雙擊縮放 */
+    }
+
+    body {
+        background-color: #1e1e1e; /* 設置背景顏色*/
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .container-fluid {
+        width: 100%;
+        max-width: 1400px;
+        transition: padding 0.5s ease;
+    }
+
+    .col-12 {
+        padding-top: 1vh; 
+        padding-bottom: 1vh;
+    }
+
+    /*********************************************************************/
+
+    /* -- 頭部 -- */
+    .navbar {
+        font-size: 18px;
+        font-weight: 700; /* 粗體字重 */
+        width: 100%;
+        padding: 5px 10px;
+        transition: transform 0.5s ease; /* 添加平滑過渡效果 */
+        position: fixed; /* 固定在頂部 */
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000; /* 確保導航欄在頂層 */
+    }
+
+    .navbar.hidden {
+        transform: translateY(-100%); /* 隱藏導航欄 */
+    }
+
+    .noto-serif-hk-logo {
+        font-family: "Noto Serif HK", serif;
+        font-weight: 900; /* 使用最粗字重 */
+        font-style: normal;
+        letter-spacing: 0.1em; /* 增加字母間距 */
+        font-size: 1.3em; /* 調整字體大小 */
+        color: #EAC100; /* 設置顏色，可根據需要調整 */
+        text-shadow: 2px 2px 4px rgba(150, 150, 150, 0.5); /* 灰色陰影 */
+        text-decoration: none;
+    }
+
+    .navbar .d-flex .logo img {
+        width: 50px;
+        border-radius: 50%; /* 使圖片成為圓形 */
+    }
+
+    .nav-item {
+        padding: 5px 0 5px 20px;
+    }
+
+  /*********************************************************************/    
+
+    /* -- 輪播  -- */
+    #carouselExampleCaptions {
+        margin-top: 60px;
+    }
+
+    .carousel-item {
+        transition: transform 0.5s ease-out; /* 添加過渡效果 */
+    }
+
+    .carousel-caption h5 {
+        font-family: "Noto Serif HK", serif;         /* 設置字體為 "Noto Serif HK" 和預設字體為 serif */
+        font-weight: 900;                            /* 使用最粗字重 */
+        font-style: normal;                          /* 設置字體風格為正常 */
+        letter-spacing: 0.1em;                       /* 增加字母間距 */
+        font-size: 1.1em;                            /* 調整字體大小 */
+        color: #fff;                                 /* 設置文字顏色為白色 */
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);   /* 設置文字陰影 */
+        text-decoration: none;                       /* 移除文字裝飾 */
+        display: inline-flex;                        /* 使用內聯彈性盒子模型 */
+        align-items: center;                         /* 垂直居中對齊 */
+        padding: 10px 10px;                          /* 設置內邊距為 10px */
+        position: relative;                          /* 確保伪元素相对于 h5 定位 */
+        white-space: nowrap;                         /* 不換行 */
+        min-width: 0;                                /* 避免溢出 */
+    }
+
+    .carousel-caption h5::after {
+        content: '';
+        position: absolute;
+        left: 0;  
+        right: 0;
+        bottom: 5px; /* 根據需要調整 */
+        height: 10px; /* 高度應等於陰影的模糊半徑 */
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, 1); /* 僅在底部添加陰影效果 */
+        z-index: 1; /* 確保陰影在文字後面 */
+        border-bottom: 3px solid rgba(255, 215, 0, 1);
+    }
+
+    .carousel-caption p {
+        font-weight: 700; /* 粗體字重 */
+        font-size: 16px;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.1);           /* 半透明背景色 */
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);      /* 設置文字陰影        */
+        padding: 10px 10px;
+        text-align: center;
+    }
+
+    #carouselExampleCaptions .carousel-item img {
+        width: 100%;
+        aspect-ratio: 16 / 9; 
+        object-fit: cover;
+        background-color: #2e2e2e; /* 圖片加載前顯示深色底色，避免閃爍白光 */
+    }
+
+  /*********************************************************************/     
+
+    /* --  Google icon  -- */
+    .material-symbols-outlined {
+        width: 24px;           
+        height: 24px; 
+        margin-right: 8px;
+        
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 700,
+            'GRAD' 1,
+            'opsz' 48;
+    }
+
+  /*********************************************************************/     
+
+    /* --  卡片 -- */
+    .card {
+      border: none;  /* 取消邊框 */
+      overflow: hidden; /* 截斷超出容器的內容 */
+      z-index: 2;
+    }
+
+    .card .image {
+        max-width: 100%;
+        transition: transform 1s;
+        z-index: 1;
+    }
+
+    /*********************************************************************/
+
+    .move-image-container {
+        position: relative;
+        overflow: visible;       /* 允許內容超出邊界 */
+    }
+
+    .move-image-container .row .col-12 {
+        display: flex;
+        justify-content: center; /* 水平置中 */
+        flex-direction: column;  /* 元素由上往下排序 */
+        align-items: center;     /* 垂直居中 */
+    }
+
+    .gpsbtn {
+      /* 1. 排版鎖定：將 inline-block 改為 flex，確保文字精準置中且寬高穩定 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      /* 2. 空間預留：鎖定寬度與高度，不讓字型載入落差推擠到下方內容 */
+      width: calc(100% - 48px); /* 總寬度減去左右各 16px 的空間 */
+      max-width: 320px;        /* 限制最大寬度，避免在大螢幕過寬 */
+      height: 80px;            /* 固定高度，這是消除 CLS 的關鍵 */
+      margin: 30px auto;       /* 使用 margin 置中，並給予上下固定間距 */
+      box-sizing: border-box;  /* 確保 padding 不會額外撐開高度 */
+
+      /* 3. 文字與字型優化 */
+      font-family: "Noto Serif HK", serif;
+      font-weight: 900;
+      font-style: normal;
+      letter-spacing: 0.1em;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      text-decoration: none;
+      color: #1e1e1e;
+      text-align: center;
+      line-height: 1;          /* 在 flex 模式下 line-height 改為 1 較好控制 */
+      white-space: nowrap;     /* 防止字型載入時因寬度微變而產生的換行位移 */
+
+      /* 4. 外觀設定 */
+      background-color: #FFDC35;
+      border: none;
+      border-radius: 8px;      /* 稍微圓潤一點，增加質感 */
+      z-index: 10;             /* 確保在裝飾圖案上方 */
+      position: relative;
+      overflow: hidden;        /* 隱藏偽元素溢出 */
+
+      /* 5. 動畫與交互 */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      animation: pulse 2s infinite ease-in-out;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      will-change: transform;  /* 告知瀏覽器此元素有動畫，優化渲染效能 */
+  }
+
+  /* 懸停效果 */
+  .gpsbtn:hover {
+      background-color: #f5c300;
+      transform: translateY(-2px); /* 輕微上浮感 */
+  }
+
+    /* 脈衝動畫 */
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        50% {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(255, 183, 0, 0.4);
+        }
+        100% {
+            transform: scale(1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    @keyframes move1 {
+        0% {
+            transform: rotate(0deg) translateX(20px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(20px) rotate(-360deg);
+        }
+    }
+
+    @keyframes move2 {
+        0% {
+            transform: rotate(0deg) translateX(15px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(15px) rotate(-360deg);
+        }
+    }
+
+    @keyframes move3 {
+        0% {
+            transform: rotate(0deg) translateX(25px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg) translateX(25px) rotate(360deg);
+        }
+    }
+    @keyframes move4 {
+        0% {
+            transform: rotate(0deg) translateX(11px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg) translateX(11px) rotate(360deg);
+        }
+    }
+    @keyframes move5 {
+        0% {
+            transform: rotate(0deg) translateX(14px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(-360deg) translateX(14px) rotate(360deg);
+        }
+    }
+    @keyframes move6 {
+        0% {
+            transform: rotate(0deg) translateX(17px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(17px) rotate(-360deg);
+        }
+    }
+    .moving-image1 {
+        position: absolute;
+        top: 4%; /* 圖片初始位置 */
+        left: 20px; /* 圖片初始位置 */
+        width: 16%;
+        max-width: 120px;
+        aspect-ratio: 1 / 1;  /* 強制維持 512x512 的正方形比例 */
+        height: auto;
+        will-change: transform; /* 提示瀏覽器進行優化 */
+        animation: move4 10s infinite linear;
+        object-fit: contain;  /* 確保圖片在容器內不變形 */
+    }
+    .moving-image2 {
+        position: absolute;
+        left: 40px; 
+        bottom: 1%;
+        width: 14%;
+        max-width: 120px;
+        aspect-ratio: 1 / 1;  /* 強制維持 512x512 的正方形比例 */
+        height: auto;
+        will-change: transform; /* 提示瀏覽器進行優化 */
+        animation: move5 12s infinite linear;
+        object-fit: contain;  /* 確保圖片在容器內不變形 */
+    }
+    .moving-image3 {
+        position: absolute;
+        top: 38%; 
+        right: 4px; 
+        width: 17%;
+        max-width: 120px;
+        aspect-ratio: 1 / 1;  /* 強制維持 512x512 的正方形比例 */
+        height: auto;
+        will-change: transform; /* 提示瀏覽器進行優化 */
+        animation: move6 9s infinite linear;
+        object-fit: contain;  /* 確保圖片在容器內不變形 */
+    }
+    /* 動畫 */
+    .shapeAll {
+        position: absolute;
+        border-radius: 5px;
+        border: 3px solid rgba(240, 240, 240, 1); /* 邊框 */
+        padding: 0;
+    }
+    .shape1 {
+        top: -2%;
+        left: 10px;
+        width: 15px;
+        height: 15px;
+        animation: move6 10s infinite linear;
+    }
+    .shape2 {
+        top: calc(min(180px, 10% + 10vw)); /* 16% 基礎值，加上螢幕寬度的 4%，但最大為 30px */
+        left: 20px;
+        width: 17px;
+        height: 17px;
+        animation: move5 12s infinite linear;
+    }
+    .shape3 {
+        top: 6%;
+        left: calc(min(30%, 200px)); /* 左偏移量最大為 N px */
+        width: 19px;
+        height: 19px;
+        animation: move6 9s infinite linear;
+    }
+    .shape4 {
+        left: -3px;
+        bottom: -4%;
+        width: 15px;
+        height: 15px;
+        animation: move4 11s infinite linear;
+    }
+    .shape5 {
+        left: calc(min(32%, 220px)); /* 左偏移量最大為 N px */
+        bottom: 2%;
+        width: 17px;
+        height: 17px;
+        animation: move6 12s infinite linear;
+    }
+    .shape6 {
+        left: calc(min(7%, 60px)); /* 左偏移量最大為 N px */
+        bottom: calc(min(180px, 10% + 8vw)); /* 16% 基礎值，加上螢幕寬度的 4%，但最大為 30px */
+        width: 13px;
+        height: 13px;
+        animation: move5 9s infinite linear;
+    }
+    .shape7 {
+        top: 27%;
+        right: 5px;
+        width: 15px;
+        height: 15px;
+        animation: move6 10s infinite linear;
+    }
+    .shape8 {
+        top: 42%;
+        right: calc(min(26%, 170px)); /* 左偏移量最大為 N px */  
+        width: 17px;
+        height: 17px;
+        animation: move5 12s infinite linear;
+    }
+    .shape9 {
+        right: -10px;
+        bottom: 42%;
+        width: 18px;
+        height: 18px;
+        animation: move4 11s infinite linear;
+    }    
+    
+    .flash-box {
+        position: relative;
+        overflow: hidden;
+        width: 100%;            /* 設置格子的寬度 */
+        height: 100%;           /* 設置格子的高度 */
+        padding: 70px 0px;  
+    }
+
+    .flash-box::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0; 
+        width: 40%;
+        max-width: 250px;
+        height: 100%;
+        background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
+        transform: skewX(-45deg) translateX(-300%); 
+        filter: blur(16px);
+        will-change: transform; 
+        animation: flash 10s infinite;
+    }
+
+    @keyframes flash {
+        0% {
+            transform: skewX(-45deg) translateX(-300%);
+        }
+        70% {
+            transform: skewX(-45deg) translateX(500%);
+        }
+        100% {
+            transform: skewX(-45deg) translateX(500%);
+        }
+    }
+
+  /*********************************************************************/
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* 垂直置中 */
+      color: rgb(255,255,255);
+      padding: 1vh 5%;
+      border-left: 1vh solid rgba(255, 215, 0, 1); /* 左邊框黃色 */
+      border-right: 0.5vh solid transparent;         /* 右邊框透明 */
+      text-align: center;
+      height: 100%;
+    }
+
+    .section .d-flex {
+      align-items: flex-end;
+      justify-content: center; /* 垂直置中 */
+    }
+
+
+    .w-settingHead {
+      min-width: 60px;
+      width: 9%;
+    }
+
+    .w-setting {
+      min-width: 40px;
+      width: 15%;
+    }
+
+    .ml-setting {
+      margin-left: 5px; /* 可根據需要調整 */
+    }
+
+    h1, h2, h3 {
+        font-family: "Noto Serif HK", serif;         /* 設置字體為 "Noto Serif HK" 和預設字體為 serif */
+        font-style: normal;                          /* 設置字體風格為正常 */
+        letter-spacing: 0.1em;                       /* 增加字母間距 */
+        color: #fff;                                 /* 設置文字顏色為白色 */
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);   /* 設置文字陰影 */
+        text-decoration: none;                       /* 移除文字裝飾 */
+        align-items: center;                         /* 垂直居中對齊 */
+        padding: 5px 5px;                            /* 設置內邊距為 5px */
+        white-space: nowrap;                         /* 不換行 */
+        min-width: 0;                                /* 避免溢出 */
+        z-index: 1;                                  /* 設置z-index，以確保元素在正確的層級 */
+        display: inline-flex;
+        align-items: center; /* 水平對齊 */
+    }
+
+    h1 {
+      margin-top: 12px;
+      font-weight: 900; /* 粗體字重 */
+      font-size: clamp(1.8rem, 2.5vw, 2.4rem);  /* 使用 clamp 設置字體大小，最小 2rem，最大 3rem */
+    }
+
+    h2 {
+      font-weight: 900; /* 粗體字重 */
+      font-size: clamp(1.4rem, 2.5vw, 2rem); 
+    }
+
+    .section h3 { 
+      font-weight: 700; /* 粗體字重 */
+      font-size: clamp(1.4rem, 2.5vw, 2rem); 
+    }
+
+    .section p {
+      font-weight: 700; /* 粗體字重 */
+      font-size: 1em;
+      line-height: 1.5em;
+      padding: 5px 5px;
+      z-index: 1;
+    }
+
+    /*********************************************************************/
+
+    /*  背景圖  */
+    .ink-background {
+        width: 140%;
+        position: relative;   /* 設置容器的定位為相對定位，這樣內部的絕對定位元素可以根據此容器進行定位 */
+        filter: grayscale(0%) contrast(100%) brightness(100%) blur(0px); 
+        /* 應用過濾效果： grayscale(0%): 不應用灰階效果（0% 灰階）       /  contrast(100%): 保持原始對比度（100% 對比度）  */
+        /*              brightness(100%): 保持原始亮度（100% 亮度）   /  blur(0px): 不應用模糊效果（0 像素模糊）         */
+        z-index: -1;
+    }
+
+    .ink-background img {
+        position: absolute;      /* 設置圖片的定位為絕對定位 */
+        opacity: 0.2;            /* 設置圖片的透明度        */
+        -webkit-user-drag: none; /* 禁用圖片拖拽功能        */
+        height: auto !important; 
+        object-fit: contain;     /* 保持比例縮放，不裁切且不變形 */
+    }
+
+    .ink-background .img-1 {
+        width: 130%;
+        aspect-ratio: 1114 / 776;
+        left: -30%; /* 設置圖片的左邊位置為容器的左邊 */
+        top: 10%; /* 設置圖片的頂部位置為容器的頂部 */
+        transform: translateY(-22%); /* 確保圖片居中顯示 */
+    }
+
+    .ink-background .img-2 {
+        width: 90%;
+        aspect-ratio: 697 / 477;
+        left: -9%; /* 設置圖片的左邊位置為容器的左邊 */
+        top: 85%; /* 設置圖片的頂部位置為容器的頂部 */
+        transform: translateY(-21%); /* 確保圖片居中顯示 */
+    }
+
+    .ink-background .img-3 {  
+        width: 100%;
+        aspect-ratio: 1206 / 813;
+        left: -15%; /* 設置圖片的左邊位置為容器的左邊 */
+        top: 50%; /* 設置圖片的頂部位置為容器的頂部 */
+        transform: translateY(-15%); /* 確保圖片居中顯示 */
+    }
+
+    /*********************************************************************/
+
+    /* 服務項目圖反白 */
+    .white-image {
+        filter: brightness(0) invert(1); 
+    }
+
+    /*********************************************************************/   
+
+    /*  右下電話 & Line  */
+    .fixed-buttons-container {
+        position: fixed;
+        bottom: 30px;           /* 距離底部的距離 */
+        right: 20px;            /* 距離右邊的距離 */
+        display: flex;
+        flex-direction: column; /* 垂直排列按鈕   */
+        gap: 10px;              /* 按鈕間距      */
+        z-index: 999;
+        transition: all 0.4s ease;
+    }
+    
+    .call-button, .Line-button {
+        width: 60px;
+        height: 60px;
+        box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3); /* 僅在底部添加陰影效果 */
+        border-radius: 10px;
+        border: none; /* 移除邊框 */
+        padding: 10px 10px;
+        animation: shake 5s infinite; /* 添加動畫 */
+    }
+
+    /* 滾動到底部輕微放大 */
+    .fixed-buttons-container.is-scrolled {
+        flex-direction: row;    /* 改為水平排列 */
+        gap: 16px;              /* 按鈕間距      */ 
+        right: 60px;            /* 距離右邊的距離 */
+        bottom: 80px;           /* 距離底部的距離 */
+        transform: scale(1.5); /* 整個按鈕容器變大 */
+    }
+
+    .call-button .icon, .Line-button .icon {
+        width: 100%;
+        height: 100%;
+        fill: #fff; 
+    }  
+
+    .call-button {
+        background-color: #FF2D2D;
+    }
+
+    .Line-button {
+        background-color: #00C300;
+    }
+
+    .call-button:hover {
+        background-color: #D32F2F; /* 深紅色 */
+    }
+
+    .Line-button:hover {
+        background-color: #009B00; /* 深綠色 */
+    }
+
+    /* 定義動畫 */
+    @keyframes shake {
+        0% { transform: translateX(0) rotate(0deg); }
+        12% { transform: translateX(-7px) rotate(-7deg); }
+        24% { transform: translateX(7px) rotate(7deg); }
+        36% { transform: translateX(-7px) rotate(-7deg); }
+        100% { transform: translateX(0) rotate(0deg); }
+    }
+
+    /*********************************************************************/
+
+    /* 救援案例 */
+    .photo {
+      margin-left: -5%; /* 調整間距 */
+      margin-right: -5%; /* 調整間距 */ 
+    }
+
+    /* 滑鼠懸停（Hover）時的微放大與變亮 */
+    .photo:hover {
+      opacity: 0.9;
+      transform: translateY(-3px); /* 往上微飄 */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .rescueBlock {
+      text-align: center;
+      border-radius: 10px;
+      padding-top: 15px;
+      background-color: #2e2e2e;
+      border: 1px solid #444; /* 設置邊框顏色 */
+      padding: 20px 2% 20px 2%; /* 內邊距10px */
+    }
+            
+    .photo img {
+      width: 100%;
+      height: 140px; /* 設定高度為長方形 */
+      object-fit: cover; /* 確保圖片不會變形 */
+      transform: skewY(-12deg); /* 斜著顯示圖片 */
+      transition: 0.5s cubic-bezier(.87, -1.38, .03, 1.54); /* 增加過渡效果 */
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 1); /* 黑色陰影 */
+      border-radius: 5px;
+      cursor: pointer; /* 設定鼠標樣式為可點擊 */
+    }
+
+    .photo:focus img, .photo img.focused {
+      transform: scale(1.2) translateY(-7%); /* 略微放大並向上移動 */
+    }
+
+    .display-photo img {
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 1); /* 黑色陰影 */
+      object-fit: cover; /* 確保圖片不會變形 */
+      opacity: 0; /* 初始透明度 */
+      transform: scale(0.95); /* 初始縮放 */
+      animation: fadeIn 1.3s forwards; /* 動畫效果 */
+      border-radius: 5px;
+    }
+
+    @keyframes fadeIn {
+      to {  
+        opacity: 1; /* 最終透明度 */
+        transform: scale(1); /* 最終縮放 */
+      }
+    }
+
+    /*********************************************************************/
+
+    /*  客戶評價  */
+    .reviews-container {
+        text-align: center;
+        padding: 0 12px 20px 12px; /* 內邊距10px */
+        background-color: #2e2e2e; /* 設置容器背景顏色 */
+        border-radius: 8px; /* 設置圓角 */
+        margin-bottom: 120px;
+    }
+
+    .review {
+        background-color: #3e3e3e; /* 設置評價項背景顏色 */
+        border: 1px solid #444; /* 設置邊框顏色 */
+        border-radius: 5px; /* 設置圓角 */
+        padding: 8px; /* 內邊距10px */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 設置陰影 */
+    }
+
+    .review img {
+        width: 100%; /* 設置圖片的最大寬度 */
+        object-fit: cover; /* 圖片覆蓋容器 */
+        border-radius: 10px; /* 設置圖片的圓角 */
+    }
+
+    /*********************************************************************/
+
+    /*  頁腳  */
+    footer {
+        color: #fff;
+        padding-top: 10px;
+        display: flex;
+        justify-content: center; /* 確保子元素均勻分佈 */
+        align-items: center; /* 垂直居中對齊 */
+        white-space: nowrap; /* 不換行 */
+    }
+
+    /*********************************************************************/
+
+    /* 垂直螢幕手機，小於 576px */
+    @media (max-width: 575.98px) {  
+      .container-fluid {
+          padding: 0 8px;
+      }
+      .carousel-caption h5 {
+          margin-bottom: -30px; /* 調整 h5 的位置 */
+      }
+      .carouselExampleCaptions_bottom {
+          margin-bottom: -10px; /* 調整 h5 的位置 */
+      }
+    }
+
+    /* 橫向手機、576px 以上 */
+    @media (min-width: 576px) { 
+      .container-fluid {
+          padding: 0 20px;
+      }
+     }
+
+    /* 平板電腦、768px 以上 */
+    @media (min-width: 768px) { 
+      .container-fluid {
+          padding: 0 28px;
+      }
+      .ink-background .img-2 {
+          left: -6%;
+          top: 85%; /* 設置圖片的頂部位置為容器的頂部 */
+          transform: translateY(-15%); /* 確保圖片居中顯示 */
+      }
+      .call-button, .Line-button {
+        width: 66px;
+        height: 66px;
+      }
+    }
+
+    /* 桌面、992px 以上 */
+    @media (min-width: 992px) { 
+        .call-button, .Line-button {
+            width: 72px;
+            height: 72px;
+        }
+
+        @keyframes flash {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 200%;
+            }
+        }
+    }
+
+    /*********************************************************************/
+
+    /* 這是兩隻的電話號碼 */
+    /*
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      display: none;
+    }
+
+    .modal-content {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 300px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .modal.show .modal-content {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .phone-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .phone-btn span {
+      font-size: 0.8em; 
+      color: #a0a0a0; 
+      margin-left: 4px;
+    }
+
+    .phone-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      fill: white; 
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px; 
+      width: 44px; 
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .close-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+    }
+
+    .close-icon {
+      width: 24px;
+      height: 24px;
+    }
+    */
