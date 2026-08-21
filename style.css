@@ -584,7 +584,7 @@
         flex-direction: row;    /* 改為水平排列 */
         gap: 16px;              /* 按鈕間距      */ 
         right: 60px;            /* 距離右邊的距離 */
-        bottom: 80px;           /* 距離底部的距離 */
+        bottom: 40px;           /* 距離底部的距離 */
         transform: scale(1.5); /* 整個按鈕容器變大 */
     }
 
@@ -680,10 +680,9 @@
     /*  客戶評價  */
     .reviews-container {
         text-align: center;
-        padding: 0 12px 20px 12px; /* 內邊距10px */
+        padding: 0px 12px 20px 12px; /* 內邊距10px */
         background-color: #2e2e2e; /* 設置容器背景顏色 */
-        border-radius: 8px; /* 設置圓角 */
-        margin-bottom: 120px;
+        border-radius: 8px; /* 設置圓角 */        
     }
 
     .review {

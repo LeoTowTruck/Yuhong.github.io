@@ -247,7 +247,6 @@
 
     <!--------------------------------------------------------------------------------------->
 
-    <!-- 1 -->
     <div class="container-fluid">
       <div class="row mt-md-2 mb-md-5">
         <div class="col-12 col-md-6 mt-3 mb-3">
@@ -346,7 +345,6 @@
 
     <!--------------------------------------------------------------------------------------->
 
-
     <div id="about-us" class="container-fluid">
       <div class="row mb-5 mt-5">
         <div class="col-12 col-lg-4 mb-3 mt-3" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
@@ -370,9 +368,7 @@
       </div>
     </div> 
 
-    
     <!--------------------------------------------------------------------------------------->
-    
     
     <div id="cases" class="container-fluid">
       <!-- 第一區塊 -->
@@ -817,7 +813,7 @@
     <!--------------------------------------------------------------------------------------->
 
     <!-- 客戶評價 -->
-    <div id="reviews" class="container-fluid">
+    <div id="reviews" class="container-fluid pb-4">
       <div class="reviews-container">
         <div class="row align-items-start" id="reviews-container">
           <div col-12>
@@ -863,10 +859,81 @@
 
   </main>
 
-  <footer class="bg-gradient bg-dark">
-      <p>&copy; <span id="year"></span> 拾捌拖吊車 服務公司版權所有.</p>
-  </footer>
+  <footer class="bg-gradient bg-dark text-white pt-4 pb-4">
+    <div class="container">
+      <div class="row">
 
+        <!-- 商家 NAP 資訊區 -->
+        <div class="col-12 col-md-6 mb-2">
+          
+          <!-- Logo 區塊 -->
+          <div class="d-flex align-items-center mb-4">
+            <img src="images/logo-720.webp" alt="拾捌拖吊車 Logo" width="56" height="56" class="me-3 flex-shrink-0" loading="lazy">
+            <div>
+              <h4 class="mb-1 text-light fw-bold fs-5">拾捌拖吊車</h4>
+              <div class="text-white-50" style="font-size: 0.9em;">高雄屏東 24H 道路救援</div>
+            </div>
+          </div>
+
+          <ul class="list-unstyled">
+            <!-- 地址 -->
+            <li class="mb-3 d-flex align-items-start">
+              <span class="material-symbols-outlined me-3 text-warning flex-shrink-0" style="font-size: 1.5rem;" aria-hidden="true">location_on</span>
+              <div class="text-white mt-1 opacity-75">屏東縣新園鄉平和路289號</div>
+            </li>
+            
+            <!-- 電話 -->
+            <li class="mb-3 d-flex align-items-start">
+              <span class="material-symbols-outlined me-3 text-warning flex-shrink-0" style="font-size: 1.5rem;" aria-hidden="true">call</span>
+              <a href="tel:0981263978" class="text-white mt-1 opacity-75" aria-label="點擊撥打救援專線">0981-263-978</a>
+            </li>
+            
+            <!-- 營業時間 -->
+            <li class="mb-3 d-flex align-items-start">
+              <span class="material-symbols-outlined me-3 text-warning flex-shrink-0" style="font-size: 1.5rem;" aria-hidden="true">schedule</span>
+              <div class="text-white mt-1 opacity-75">24 小時全年無休</div>
+            </li>
+            
+            <!-- 服務區域 -->
+            <li class="mb-3 d-flex align-items-start">
+              <span class="material-symbols-outlined me-3 text-warning flex-shrink-0" style="font-size: 1.5rem;" aria-hidden="true">map</span>
+              <div class="text-white mt-1 opacity-75 lh-base">高雄市、屏東縣、屏東市及各大國道</div>
+            </li>
+          </ul>
+          
+          <p class="mt-4 text-white opacity-50 text-wrap lh-lg" style="font-size: 0.9em;">
+            提供超跑低底盤拖吊、事故車救援、全載拖吊服務。GPS 快速派車，誠信報價。
+          </p>
+        </div>
+
+
+        <!-- Google 地圖嵌入區 -->
+        <div class="col-12 col-md-6 mb-2">
+          <div class="ratio ratio-16x9 shadow-sm rounded overflow-hidden">
+            <!-- 已經將 q= 改為精確的商家名稱，會直接定點顯示您的專屬商家地標 -->
+            <iframe 
+              src="https://maps.google.com/maps?q=拾捌+高雄屏東拖吊車+24H道路救援&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="拾捌拖吊車 實體位置地圖"
+              aria-label="拾捌拖吊車 Google 地圖">
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- 版權宣告區 -->
+      <hr class="border-secondary mt-3 mb-4">
+      <div class="row">
+        <div class="col-12 text-center text-secondary">
+          <p class="mb-0">&copy; <span id="year"></span> 拾捌拖吊車 服務公司版權所有.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+    
 <!--------------------------------------------------------------------------------------->
 
   <!-- 引入 Bootstrap JS -->
@@ -876,7 +943,7 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <!-- 最後引入自己寫的 JS 檔案 -->
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 
 </body>
 </html>

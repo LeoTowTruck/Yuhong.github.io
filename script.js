@@ -73,45 +73,61 @@
     const navbar = document.querySelector('.navbar'); // 獲取導航欄元素
     const navbarCollapse = document.querySelector('.navbar-collapse'); // 獲取折疊菜單元素
     const btnContainer = document.querySelector('.fixed-buttons-container');
-    const navLinks = document.querySelectorAll('.nav-link, .noto-serif-hk-logo'); // 獲取所有導航鏈接和 logo
     const bootstrapCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false }); // 創建 Bootstrap 折疊實例，不自動切換
+
+
+    // --- 閒置計時器變數 ---
+    let idleTimer; 
+    const idleWaitTime = 3500; // N豪秒
+
+    // 重置閒置計時器的函數
+    function resetIdleTimer() {
+      // 1. 清除舊的計時器
+      clearTimeout(idleTimer);
+      
+      // 2. 只要觸發重置（代表使用者正在滑動），就立刻「縮小」按鈕
+      btnContainer.classList.remove('is-scrolled');
+      
+      // 3. 重新開始倒數 4 秒
+      idleTimer = setTimeout(() => {
+        // 4 秒到了都沒動，才加上放大效果
+        btnContainer.classList.add('is-scrolled');
+      }, idleWaitTime); 
+    }
+
+    // 網頁一載入就先啟動一次倒數計時
+    resetIdleTimer();
+    
 
     // 滾動事件監聽器
     window.addEventListener('scroll', () => {
-      const currentScrollY = window.scrollY; // 當前滾動位置
-      const scrollDifference = lastScrollY - currentScrollY; // 計算與上次滾動位置的差異
+        const currentScrollY = window.scrollY; // 當前滾動位置
+        const scrollDifference = lastScrollY - currentScrollY; // 計算與上次滾動位置的差異
 
-      if (currentScrollY > lastScrollY && currentScrollY > 70) {
-        // 如果向下滾動且超過 70px（或 20vh），隱藏導航欄
-        navbar.classList.add('hidden'); // 添加隱藏類別
-        hidden = true; // 更新隱藏狀態
-      } else if ((hidden && scrollDifference > revealOffset) || currentScrollY < 60) {
-        // 如果導航欄已隱藏且向上滾動距離超過 revealOffset，或滾動位置小於 60px，顯示導航欄
-        navbar.classList.remove('hidden'); // 移除隱藏類別
-        hidden = false; // 更新隱藏狀態
-        if (window.innerWidth < 992) { // 檢查是否為中小螢幕
-          bootstrapCollapse.hide(); // 使用 Bootstrap 折疊 API 隱藏菜單
+        if (currentScrollY > lastScrollY && currentScrollY > 70) {
+            // 如果向下滾動且超過 70px（或 20vh），隱藏導航欄
+            navbar.classList.add('hidden'); // 添加隱藏類別
+            hidden = true; // 更新隱藏狀態
+        } else if ((hidden && scrollDifference > revealOffset) || currentScrollY < 60) {
+            // 如果導航欄已隱藏且向上滾動距離超過 revealOffset，或滾動位置小於 60px，顯示導航欄
+            navbar.classList.remove('hidden'); // 移除隱藏類別
+            hidden = false; // 更新隱藏狀態
+            if (window.innerWidth < 992) { // 檢查是否為中小螢幕
+            bootstrapCollapse.hide(); // 使用 Bootstrap 折疊 API 隱藏菜單
+            }
         }
-      }
 
-      // ---  滾動到底部放大按鈕的邏輯 ---
-      // 計算是否到達底部 (頁面總高 - 視窗高度 - 滾動距離 < 5px 為誤差範圍)
-      const isBottom = (document.documentElement.scrollHeight - window.innerHeight - currentScrollY) < 5;
+        // 每次觸發滾動時，重置 Ｎ 秒閒置計時器
+        resetIdleTimer();
 
-      if (isBottom) {
-          btnContainer.classList.add('is-scrolled');
-      } else {
-          btnContainer.classList.remove('is-scrolled');
-      }
-      
-      lastScrollY = currentScrollY; // 更新上一次滾動位置
+        lastScrollY = currentScrollY; // 更新上一次滾動位置 
     });
 
     // 當點擊事件發生時隱藏下拉式選單
     document.addEventListener('click', (event) => {
-      if (window.innerWidth < 992) { // 檢查是否為中小螢幕
-        bootstrapCollapse.hide(); // 使用 Bootstrap 折疊 API 隱藏菜單
-      }
+        if (window.innerWidth < 992) { // 檢查是否為中小螢幕
+            bootstrapCollapse.hide(); // 使用 Bootstrap 折疊 API 隱藏菜單
+        }
     });
 
   });
@@ -275,7 +291,6 @@
       }, 100); // 毫秒的延遲            
     });
   });
-
 
 
   // 通用的函數，用於選取第一張圖片並複製其節點
