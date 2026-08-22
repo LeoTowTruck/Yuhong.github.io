@@ -96,6 +96,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <!-- 讀取 CSS 檔案 -->
   <link rel="stylesheet" href="style.css"> 
@@ -105,40 +107,71 @@
 
 <!--------------------------------------------------------------------------------------->
 
-  <!--   頭部   -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-gradient bg-dark"> 
-    <div class="d-flex align-items-center">
-      <a href="#" class="logo">
-        <img src="images/logo-720.webp" alt="拾捌拖吊車 - 高雄屏東24小時道路救援、拖吊服務" fetchpriority="high">
+
+  <!--   頭部 (現代精緻頂部導航欄)   -->
+  <nav class="navbar navbar-expand-lg navbar-dark" id="mainNavbar"> 
+    <div class="container-fluid navbar-inner-container">
+      <a href="#" class="navbar-brand-wrapper d-flex align-items-center text-decoration-none">
+        <div class="nav-logo-box">
+          <img src="images/logo-720.webp" alt="拾捌拖吊車 - 高雄屏東24小時道路救援、拖吊服務" fetchpriority="high" class="nav-brand-logo">
+        </div>
+        <div class="d-flex flex-column ms-2">
+          <span class="nav-brand-title">拾捌拖吊車</span>
+          <span class="nav-brand-sub">高屏 24H 道路救援</span>
+        </div>
       </a>
-      <a class="noto-serif-hk-logo" href="#">拾捌拖吊車</a>
-    </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="https://leotowtruck.github.io/Yuhong.github.io/GPS">GPS定位派車</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#about-us">關於我們</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#services">服務項目</a>
-        </li>          
-        <li class="nav-item">
-          <a class="nav-link" href="#cases">救援案例</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#operations">吊掛作業</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#reviews">客戶評價</a>
-        </li>
-      </ul>
+
+      <!-- 手機端右側操作區：僅保留漢堡按鈕 -->
+      <div class="d-flex align-items-center d-lg-none gap-2">
+        <button class="navbar-toggler custom-nav-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="切換選單">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <!-- 導航項目 -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link nav-link-gps" href="/GPS">
+              <span class="gps-pulse-dot"></span>
+              GPS定位派車
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#about-us">關於我們</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">服務項目</a>
+          </li>          
+          <li class="nav-item">
+            <a class="nav-link" href="#cases">救援案例</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#operations">吊掛作業</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#reviews">客戶評價</a>
+          </li>
+          <!-- 移至菜單內的電話按鈕 (使用 style 加強覆蓋色值) -->
+          <li class="nav-item d-lg-none mt-2">
+            <a class="nav-link nav-call-action-btn d-flex align-items-center justify-content-center gap-1 fw-bold" href="tel:0981263978" style="color: #000000 !important;">
+              <span class="material-symbols-outlined" style="color: #000000 !important;">call</span>
+              <span style="color: #000000 !important;">24H 撥打救援專線：0981-263-978</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 桌面端最右側 24H 專線 CTA -->
+      <div class="nav-cta-box d-none d-lg-flex align-items-center">
+        <a href="tel:0981263978" class="nav-call-action-btn" aria-label="撥打 24H 救援專線">
+          <span class="material-symbols-outlined">call</span>
+          <span>0981-263-978</span>
+        </a>
+      </div>
     </div>
   </nav>
+
 
   <!--------------------------------------------------------------------------------------->
 
@@ -157,81 +190,131 @@
   <!--------------------------------------------------------------------------------------->
 
   <main>
-    <!-- 輪播圖 -->
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" aria-label="Slide 1" class="carouselExampleCaptions_bottom active" aria-current="true"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2" class="carouselExampleCaptions_bottom"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3" class="carouselExampleCaptions_bottom"></button>
+
+    <!-- 寬螢幕滿版 (100vh) Hero Swiper 區塊 -->
+    <section id="heroSwiperSection" class="position-relative">
+      <div class="swiper heroSwiper">
+        <div class="swiper-wrapper">
+          
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="hero-slide-bg">
+              <picture>
+                <!-- 小螢幕（767px 以下）載入手機版圖 -->
+                <source media="(max-width: 767px)" srcset="images/roadside-assistance-service-mb.webp">
+                <!-- 大螢幕（預設）載入電腦版圖 -->
+                <img src="images/roadside-assistance-service.webp" alt="24小時高速公路道路救援" fetchpriority="high">
+              </picture>
+            </div>
+            <div class="hero-caption-wrapper">
+              <div class="container">
+                <div class="hero-caption-content">
+                  <div class="hero-badge">
+                    <span class="material-symbols-outlined">bolt</span> 24H 快速到場
+                  </div>
+                  <h1 class="hero-title">每次救援<br><span class="highlight-yellow">都是承諾</span></h1>
+                  <p class="hero-subtitle">我們不僅是您的救援夥伴，更是您的信任之選，以真誠態度面對每一次救援任務。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="hero-slide-bg">
+              <picture>
+                <source media="(max-width: 767px)" srcset="images/highway-roadside-assistance-mb.webp">
+                <img src="images/highway-roadside-assistance.webp" alt="高速公路24小時道路救援" loading="lazy">
+              </picture>
+            </div>
+            <div class="hero-caption-wrapper">
+              <div class="container">
+                <div class="hero-caption-content">
+                  <div class="hero-badge">
+                    <span class="material-symbols-outlined">verified</span> 國道/快速道路救援
+                  </div>
+                  <h1 class="hero-title">您的安全<br><span class="highlight-yellow">我們的使命</span></h1>
+                  <p class="hero-subtitle">提供高效、專業的全載與一般拖吊服務，讓您的旅程更安心順暢。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <div class="hero-slide-bg">
+              <picture>
+                <source media="(max-width: 767px)" srcset="images/highway-emergency-towing-mb.webp">
+                <img src="images/highway-emergency-towing.webp" alt="專業車輛緊急拖吊服務" loading="lazy">
+              </picture>
+            </div>
+            <div class="hero-caption-wrapper">
+              <div class="container">
+                <div class="hero-caption-content">
+                  <div class="hero-badge">
+                    <span class="material-symbols-outlined">location_on</span> GPS 精準定位
+                  </div>
+                  <h1 class="hero-title">隨時在身邊<br><span class="highlight-yellow">我們在 您安心</span></h1>
+                  <p class="hero-subtitle">超跑低底盤拖吊、事故車排除，迅速出動確保您的安全。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 輪播頁碼指示點 -->
+        <div class="swiper-pagination"></div>
       </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="images/roadside-assistance-service.webp" class="d-block w-100" alt="24小時高速公路道路救援，專業快速協助故障車輛排除狀況" fetchpriority="high">
-          <div class="carousel-caption animate__animated animate__rotateInDownLeft">
-            <h5><span class="material-symbols-outlined" aria-hidden="true">person_celebrate</span>每次救援 都是承諾</h5>
-            <p class="d-none d-sm-block">我們不僅是您的救援夥伴，更是您的信任之選，每次救援都是我們的承諾。每一位客戶都是我們服務的中心，我們以真誠的態度面對每一次救援任務。</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images/highway-roadside-assistance.webp" class="d-block w-100" alt="高速公路24小時道路救援，專業快速協助故障車輛排除狀況" loading="lazy">
-          <div class="carousel-caption animate__animated animate__rotateInDownLeft">
-            <h5><span class="material-symbols-outlined" aria-hidden="true">person_play</span>您的安全 是我們的使命</h5>
-            <p class="d-none d-sm-block">您的安全是我們的使命，您的滿意是我們的動力。我們提供高效、專業的拖吊服務，讓您的旅程更安心順暢。感謝您的選擇，我們期待為您服務。</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="images/highway-emergency-towing.webp" class="d-block w-100" alt="專業車輛緊急拖吊服務，安全轉運故障或事故車輛" loading="lazy">
-          <div class="carousel-caption animate__animated animate__rotateInDownLeft">
-            <h5><span class="material-symbols-outlined" aria-hidden="true">partner_exchange</span>我們在 您安心</h5>
-            <p class="d-none d-sm-block">當您遇到困難時，我們隨時在您身邊。無論何時何地，我們都會迅速出動，確保您的安全與安心。</p>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+    </section>
+      
 
     <!--------------------------------------------------------------------------------------->
 
-    <div class="container-fluid">
+    <div class="container-fluid pt-4 pb-4">
       <div class="move-image-container">
-        <div class="flash-box mt-3 mb-3">
+        <div class="flash-box">
           <div class="row">
             
-            <div class="col-12">
-              <img src="images/icon/top-ranking.png" class="white-image w-settingHead mb-2" alt="">
-              <h1>高雄屏東道路救援</h1>
+            <!-- 標題列 -->
+            <div class="col-12 text-center">
+              <div class="d-inline-flex align-items-center justify-content-center mb-1">
+                <img src="images/icon/top-ranking.png" class="white-image w-settingHead me-2" alt="高屏首選">
+                <h1>高雄屏東道路救援</h1>
+              </div>
             </div>
 
-            <div class="col-12">
+            <!-- 副標題 -->
+            <div class="col-12 text-center">
               <h2>24小時快速、高效的拖吊專家!</h2>
             </div>
 
-            <div class="col-12">
-              <a href="https://leotowtruck.github.io/Yuhong.github.io/GPS" class="gpsbtn">使用GPS定位派車</a>
+            <!-- 主行動按鈕 -->
+            <div class="col-12 text-center">
+              <a href="https://leotowtruck.github.io/Yuhong.github.io/GPS" class="gpsbtn">
+                <span class="material-symbols-outlined me-2">near_me</span>
+                使用GPS定位派車
+              </a>
             </div>
 
+            <!-- 3步驟引導 -->
             <div class="col-12">
-              <div class="d-flex flex-column">
+              <div class="d-flex flex-column align-items-center gps-steps-wrapper">
                 <h3><span class="material-symbols-outlined" aria-hidden="true">counter_1</span>上傳兩張汽車與背景照片</h3>
                 <h3><span class="material-symbols-outlined" aria-hidden="true">counter_2</span>使用衛星地圖GPS定位</h3>
                 <h3><span class="material-symbols-outlined" aria-hidden="true">counter_3</span>填寫您的稱呼與電話</h3>
               </div>
             </div>
+
           </div>
         </div>
 
+        <!-- 原有動態飄浮圖片 -->
         <img src="images/icon/booking.png" alt="" width="512" height="512" class="moving-image1 white-image">
         <img src="images/icon/image.png" alt="" width="512" height="512" class="moving-image2 white-image">
-        <img src="images/icon/map.png"alt="" width="512" height="512" class="moving-image3 white-image">
+        <img src="images/icon/map.png" alt="" width="512" height="512" class="moving-image3 white-image">
 
-        <!-- 添加形狀 -->
+        <!-- 原有背景幾何圖案 -->
         <div class="shapeAll shape1"></div>
         <div class="shapeAll shape2"></div>
         <div class="shapeAll shape3"></div>
@@ -244,6 +327,7 @@
 
       </div>
     </div>
+
 
     <!--------------------------------------------------------------------------------------->
 
@@ -370,450 +454,361 @@
 
     <!--------------------------------------------------------------------------------------->
     
-    <div id="cases" class="container-fluid">
-      <!-- 第一區塊 -->
-      <div class="row mt-5 justify-content-around">
-        <!-- 救援案例1 -->
-        <div class="col-12 col-md mb-5">
-          <div class="rescueBlock">
-            <h3><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>救援案例 一</h3>
-            <div class="row">
-              <div class="col-12">
-                <div class="display-photo" id="display-photo_1">
-                    <!-- 顯示照片 -->
-                </div>
-              </div>
-            </div>            
-            <div class="row mt-3 mb-3 px-2">
-              <div class="col">
-                <div class="photo photo_1">
-                  <img src="images/kaohsiung-highway/hgv-crash-kaohsiung-001.webp" loading="lazy" alt="高雄高速公路重型貨車追撞事故，拖吊救援現場實拍">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_1">
-                  <img src="images/kaohsiung-highway/heavy-duty-towing-kaohsiung-002.webp" loading="lazy" alt="高雄重型聯結車高速公路拖吊服務，專業排除道路障礙">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_1">
-                  <img src="images/kaohsiung-highway/truck-recovery-kaohsiung-003.webp" loading="lazy" alt="高雄高速公路貨卡追撞，專業重型救援車輛到場">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_1">
-                  <img src="images/kaohsiung-highway/emergency-response-kaohsiung-004.webp" loading="lazy" alt="高雄高速公路重型車輛事故緊急救援，多方單位現場協作">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_1">
-                  <img src="images/kaohsiung-highway/freeway-accident-clearing-kaohsiung-005.webp" loading="lazy" alt="高雄高速公路貨車事故清理與拖吊作業，快速恢復交通">
-                </div>
-              </div>
-            </div>
-          </div>  
+    <!-- ==================== 專業道路救援案例與吊掛作業實績 (極簡風格 Minimalist Showcase) ==================== -->
+    <section id="cases" class="minimal-cases-section container-fluid pb-4">
+      <!-- 錨點支援吊掛作業導航 -->
+      <div id="operations" style="position: relative; top: -80px; visibility: hidden;"></div>
+
+      <div class="container-xl">
+        <!-- 極簡區塊標題 -->
+        <div class="minimal-header text-center" data-aos="fade-up">
+          <span class="minimal-sub-badge">實績紀錄・真實出勤</span>
+          <h2 class="minimal-title">專業道路救援與起重吊掛實績</h2>
+          <p class="minimal-lead">
+            高雄、屏東全區 24 小時出勤紀錄・國道事故排除・邊坡翻正脫困・大型重機運送・特種起重工程
+          </p>
         </div>
 
-        <!-- 救援案例2 -->
-        <div class="col-12 col-md mb-5">
-          <div class="rescueBlock">
-            <h3><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>救援案例 二</h3>
-            <div class="row">
-              <div class="col-12">
-                <div class="display-photo" id="display-photo_2">
-                  <!-- 顯示照片 -->
-                </div>
+        <!-- 極簡分類篩選條 -->
+        <div class="minimal-filter-nav" data-aos="fade-up" data-aos-delay="100">
+          <button class="minimal-filter-tab active" data-filter="all">全部實績 (10)</button>
+          <button class="minimal-filter-tab" data-filter="highway">國道救援 (3)</button>
+          <button class="minimal-filter-tab" data-filter="terrain">邊坡山區 (1)</button>
+          <button class="minimal-filter-tab" data-filter="roadside">道路救援 (3)</button>
+          <button class="minimal-filter-tab" data-filter="operations" id="tab-operations">特種起重吊掛 (3)</button>
+        </div>
+
+        <!-- 極簡案例網格 (3列響應式，清爽大氣，無冗贅邊框，提升留白呼吸感) -->
+        <div class="minimal-grid" id="minimalCasesGrid" data-aos="fade-up" data-aos-delay="150">
+
+          <!-- 實績卡片 1 -->
+          <article class="minimal-case-card" data-category="highway" data-case-id="case-1"
+                   data-title="高雄國道重型聯結車與大貨卡追撞・緊急拖吊排除" data-category-name="國道高速公路救援"
+                   data-location="國道一號 / 國道十號 高雄路段" data-equipment="大噸位重型拖吊車 ＋ 專用傳動軸拆卸設備"
+                   data-desc="重大事故現場迅速佈署交通安全防護警戒，出動大噸位重型拖吊車拆解傳動軸與煞車鎖死機構，精準固定聯結車底盤，安全將事故車輛拖離主線，迅速恢復交通暢通。" data-photos="[{&quot;src&quot;:&quot;images/kaohsiung-highway/hgv-crash-kaohsiung-001.webp&quot;,&quot;alt&quot;:&quot;高雄高速公路重型貨車追撞事故，拖吊救援現場實拍&quot;},{&quot;src&quot;:&quot;images/kaohsiung-highway/heavy-duty-towing-kaohsiung-002.webp&quot;,&quot;alt&quot;:&quot;高雄重型聯結車高速公路拖吊服務，專業排除道路障礙&quot;},{&quot;src&quot;:&quot;images/kaohsiung-highway/truck-recovery-kaohsiung-003.webp&quot;,&quot;alt&quot;:&quot;高雄高速公路貨卡追撞，專業重型救援車輛到場&quot;},{&quot;src&quot;:&quot;images/kaohsiung-highway/emergency-response-kaohsiung-004.webp&quot;,&quot;alt&quot;:&quot;高雄高速公路重型車輛事故緊急救援，多方單位現場協作&quot;},{&quot;src&quot;:&quot;images/kaohsiung-highway/freeway-accident-clearing-kaohsiung-005.webp&quot;,&quot;alt&quot;:&quot;高雄高速公路貨車事故清理與拖吊作業，快速恢復交通&quot;}]">
+            <div class="minimal-card-media">
+              <img src="images/kaohsiung-highway/hgv-crash-kaohsiung-001.webp" alt="高雄高速公路重型貨車追撞事故，拖吊救援現場實拍" loading="lazy" class="minimal-card-img">
+              <span class="minimal-card-badge">國道高速公路救援</span>
+              <span class="minimal-card-count">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">photo_library</span> 5 張實拍
+              </span>
+            </div>
+            <div class="minimal-card-content">
+              <div class="minimal-card-meta">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">location_on</span>
+                國道一號 / 國道十號 高雄路段
+              </div>
+              <h3 class="minimal-card-title">高雄國道重型聯結車與大貨卡追撞・緊急拖吊排除</h3>
+              <p class="minimal-card-desc">重大事故現場迅速佈署交通安全防護警戒，出動大噸位重型拖吊車拆解傳動軸與煞車鎖死機構，精準固定聯結車底盤，安全將事故車輛拖離主線，迅速恢復交通暢通。</p>
+              <div class="minimal-card-footer">
+                <span class="minimal-card-btn">查看現場照片與處置 →</span>
+              </div>
+            </div> 
+          </article>
+
+          <!-- 實績卡片 2 -->
+          <article class="minimal-case-card" data-category="highway" data-case-id="case-2"
+                   data-title="高雄國道大貨車翻覆事故・專業鋼索翻正與全載拖救" data-category-name="國道高速公路救援"
+                   data-location="國道一號 / 國道三號 高雄路段" data-equipment="重型油壓吊臂 ＋ 雙絞盤精準拉力平衡"
+                   data-desc="大貨車於國道主線失控側翻，救援團隊抵達後佈設交維防撞警戒，利用雙絞盤平衡拉力控制車身回正角度，輔以高強度起重吊帶分擔應力，保護車斗與貨物不受二次擠壓，順利完成安全翻正並迅速拖離排除。" data-photos="[{&quot;src&quot;:&quot;images/kaohsiung-highway/truck-rollover-emergency-002.webp&quot;,&quot;alt&quot;:&quot;高雄路段貨車翻覆緊急救援，事故現場安全處置&quot;},{&quot;src&quot;:&quot;images/kaohsiung-highway/highway-rollover-rescue-001.webp&quot;,&quot;alt&quot;:&quot;高速公路重型貨車翻覆，消防與拖吊救援現場&quot;},{&quot;src&quot;:&quot;images/kaohsiung-highway/heavy-duty-truck-tow-003.webp&quot;,&quot;alt&quot;:&quot;高速公路翻覆車輛專業拖吊作業，迅速排除障礙&quot;},{&quot;src&quot;:&quot;images/kaohsiung-highway/overturned-truck-recovery-004.webp&quot;,&quot;alt&quot;:&quot;高雄重型車輛翻覆翻正救援，專業拖吊設備作業&quot;},{&quot;src&quot;:&quot;images/kaohsiung-highway/highway-accident-support-005.webp&quot;,&quot;alt&quot;:&quot;高速公路事故現場封鎖與救援，專業道路救援實績&quot;}]">
+            <div class="minimal-card-media">
+              <img src="images/kaohsiung-highway/truck-rollover-emergency-002.webp" alt="高雄路段貨車翻覆緊急救援，事故現場安全處置" loading="lazy" class="minimal-card-img">
+              <span class="minimal-card-badge">國道高速公路救援</span>
+              <span class="minimal-card-count">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">photo_library</span> 5 張實拍
+              </span>
+            </div>
+            <div class="minimal-card-content">
+              <div class="minimal-card-meta">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">location_on</span>
+                國道一號 / 國道三號 高雄路段
+              </div>
+              <h3 class="minimal-card-title">高雄國道大貨車翻覆事故・專業鋼索翻正與全載拖救</h3>
+              <p class="minimal-card-desc">大貨車於國道主線失控側翻，救援團隊抵達後佈設交維防撞警戒，利用雙絞盤平衡拉力控制車身回正角度，輔以高強度起重吊帶分擔應力，保護車斗與貨物不受二次擠壓，順利完成安全翻正並迅速拖離排除。</p>
+              <div class="minimal-card-footer">
+                <span class="minimal-card-btn">查看現場照片與處置 →</span>
               </div>
             </div>
-            <div class="row mt-3 mb-3 px-2">
-              <div class="col">
-                <div class="photo photo_2">
-                  <img src="images/kaohsiung-highway/truck-rollover-emergency-002.webp" loading="lazy" alt="高雄路段貨車翻覆緊急救援，事故現場安全處置">
-                </div>
+          </article>
+
+          <!-- 實績卡片 3 -->
+          <article class="minimal-case-card" data-category="highway" data-case-id="case-3"
+                   data-title="國道大貨車與轎車嚴重追撞・重大事故全載拖運與緊急排除" data-category-name="國道高速公路救援"
+                   data-location="高雄國道交流道主線" data-equipment="全落地傾斜式平板車 ＋ 重型拖救絞盤與輔助輪"
+                   data-desc="國道主線轎車與大貨車發生強烈追撞，自小客車車體嚴重受損變形、懸吊斷裂且輪胎鎖死。救援團隊第一時間抵達佈署防撞警戒，使用全落地傾斜平板車配合重型絞盤與輔助滑輪，安全固定載運排除現場障礙，迅速恢復車道通行。" data-photos="[{&quot;src&quot;:&quot;images/kaohsiung-highway/highway-collision-rescue-001.webp&quot;,&quot;alt&quot;:&quot;高速公路大型貨櫃車與轎車追撞，專業事故現場救援&quot;},{&quot;src&quot;:&quot;images/kaohsiung-highway/car-crash-towing-002.webp&quot;,&quot;alt&quot;:&quot;轎車追撞大型車輛嚴重受損，緊急拖吊作業實拍&quot;},{&quot;src&quot;:&quot;images/kaohsiung-highway/highway-emergency-support-003.webp&quot;,&quot;alt&quot;:&quot;高速公路事故現場處理，警員協助與拖吊車救援協作&quot;},{&quot;src&quot;:&quot;images/kaohsiung-highway/vehicle-accident-clearing-004.webp&quot;,&quot;alt&quot;:&quot;事故車輛移至安全區域，高速公路道路障礙排除&quot;},{&quot;src&quot;:&quot;images/kaohsiung-highway/accident-car-recovery-005.webp&quot;,&quot;alt&quot;:&quot;事故轎車受損處置，提供安全專業的拖吊救援服務&quot;}]">
+            <div class="minimal-card-media">
+              <img src="images/kaohsiung-highway/highway-collision-rescue-001.webp" alt="高速公路大型貨櫃車與轎車追撞，專業事故現場救援" loading="lazy" class="minimal-card-img">
+              <span class="minimal-card-badge">國道高速公路救援</span>
+              <span class="minimal-card-count">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">photo_library</span> 5 張實拍
+              </span>
+            </div>
+            <div class="minimal-card-content">
+              <div class="minimal-card-meta">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">location_on</span>
+                高雄國道交流道主線
               </div>
-              <div class="col">
-                <div class="photo photo_2">
-                  <img src="images/kaohsiung-highway/highway-rollover-rescue-001.webp" loading="lazy" alt="高速公路重型貨車翻覆，消防與拖吊救援現場">
-                </div>
-              </div>
-              <div class="col">  
-                <div class="photo photo_2">
-                  <img src="images/kaohsiung-highway/heavy-duty-truck-tow-003.webp" loading="lazy" alt="高速公路翻覆車輛專業拖吊作業，迅速排除障礙">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_2">
-                  <img src="images/kaohsiung-highway/overturned-truck-recovery-004.webp" loading="lazy" alt="高雄重型車輛翻覆翻正救援，專業拖吊設備作業">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_2">
-                  <img src="images/kaohsiung-highway/highway-accident-support-005.webp" loading="lazy" alt="高速公路事故現場封鎖與救援，專業道路救援實績">
-                </div>
+              <h3 class="minimal-card-title">國道大貨車與轎車嚴重追撞・重大事故全載拖運與緊急排除</h3>
+              <p class="minimal-card-desc">國道主線轎車與大貨車發生強烈追撞，自小客車車體嚴重受損變形、懸吊斷裂且輪胎鎖死。救援團隊第一時間抵達佈署防撞警戒，使用全落地傾斜平板車配合重型絞盤與輔助滑輪，安全固定載運排除現場障礙，迅速恢復車道通行。</p>
+              <div class="minimal-card-footer">
+                <span class="minimal-card-btn">查看現場照片與處置 →</span>
               </div>
             </div>
-          </div>
+          </article>
+
+          <!-- 實績卡片 4 -->
+          <article class="minimal-case-card" data-category="terrain" data-case-id="case-4"
+                   data-title="各類車輛與機具道路救援・快速出勤故障排除與安全拖吊" data-category-name="24H 道路救援"
+                   data-location="高雄市區 / 屏東各鄉鎮幹道" data-equipment="專業平板拖吊車 ＋ 輔助輪與現場快修工具組"
+                   data-desc="涵蓋各型自小客車、改裝三輪車、小型商用車及農業機械之日常道路救援。提供即時故障排除、底盤安全防護全載拖運與巷弄障礙排除，24小時全天候守護駕駛行車安全。" data-photos="[{&quot;src&quot;:&quot;images/terrain-recovery/embankment-vehicle-recovery-001.webp&quot;,&quot;alt&quot;:&quot;特殊改裝車與三輪搬運車道路救援吊掛運送&quot;},{&quot;src&quot;:&quot;images/terrain-recovery/off-road-rollover-rescue-002.webp&quot;,&quot;alt&quot;:&quot;一般轎車道路救援與前輪拖吊作業&quot;},{&quot;src&quot;:&quot;images/terrain-recovery/ditch-trapped-car-recovery-003.webp&quot;,&quot;alt&quot;:&quot;農用曳引機與重型農機道路救援服務&quot;},{&quot;src&quot;:&quot;images/terrain-recovery/steep-slope-winch-out-004.webp&quot;,&quot;alt&quot;:&quot;小型商用貨車道路救援與車輛拖吊&quot;},{&quot;src&quot;:&quot;images/terrain-recovery/deep-trench-vehicle-extrication-005.webp&quot;,&quot;alt&quot;:&quot;都會區狹窄巷弄事故車輛拖吊與道路救援&quot;}]">
+            <div class="minimal-card-media">
+              <img src="images/terrain-recovery/embankment-vehicle-recovery-001.webp" alt="特殊改裝車與三輪搬運車道路救援吊掛運送" loading="lazy" class="minimal-card-img">
+              <span class="minimal-card-badge">24H 道路救援</span>
+              <span class="minimal-card-count">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">photo_library</span> 5 張實拍
+              </span>
+            </div>
+            <div class="minimal-card-content">
+              <div class="minimal-card-meta">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">location_on</span>
+                高雄市區 / 屏東各鄉鎮幹道
+              </div>
+              <h3 class="minimal-card-title">各類車輛與機具道路救援・快速出勤故障排除與安全拖吊</h3>
+              <p class="minimal-card-desc">涵蓋各型自小客車、改裝三輪車、小型商用車及農業機械之日常道路救援。提供即時故障排除、底盤安全防護全載拖運與巷弄障礙排除，24小時全天候守護駕駛行車安全。</p>
+              <div class="minimal-card-footer">
+                <span class="minimal-card-btn">查看現場照片與處置 →</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 實績卡片 5 -->
+          <article class="minimal-case-card" data-category="roadside" data-case-id="case-5"
+                   data-title="夜間偏遠道路救援・車輛脫困與事故機車安全吊掛" data-category-name="24H 道路救援"
+                   data-location="高屏山區 / 郊區產業道路" data-equipment="高亮度夜間探照設備 ＋ 油壓吊臂與專業吊帶"
+                   data-desc="針對夜間視線不佳的偏遠郊區與產業道路救援，配備高亮度投射照明系統與多功能起重吊臂，提供受困車輛牽引脫困，以及故障事故機車之安全吊掛運送排除路障。" data-photos="[{&quot;src&quot;:&quot;images/special-rescue/nighttime-rural-rescue-004.webp&quot;,&quot;alt&quot;:&quot;夜間郊區產業道路救援，專業設備協助受困車輛脫困&quot;},{&quot;src&quot;:&quot;images/special-rescue/crane-precision-operation-001.webp&quot;,&quot;alt&quot;:&quot;大型吊車專業作業現場，精準控制吊掛角度&quot;},{&quot;src&quot;:&quot;images/special-rescue/towing-equipment-detail-002.webp&quot;,&quot;alt&quot;:&quot;專業拖吊起重設備，確保車輛救援作業安全&quot;},{&quot;src&quot;:&quot;images/special-rescue/heavy-machinery-towing-003.webp&quot;,&quot;alt&quot;:&quot;重型車輛與機具拖吊作業，展現專業救援實力&quot;},{&quot;src&quot;:&quot;images/special-rescue/motorcycle-towing-service-005.webp&quot;,&quot;alt&quot;:&quot;專業機車道路救援，安全吊掛故障機車排除路障&quot;}]">
+            <div class="minimal-card-media">
+              <img src="images/special-rescue/nighttime-rural-rescue-004.webp" alt="夜間郊區產業道路救援，專業設備協助受困車輛脫困" loading="lazy" class="minimal-card-img">
+              <span class="minimal-card-badge">24H 道路救援</span>
+              <span class="minimal-card-count">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">photo_library</span> 5 張實拍
+              </span>
+            </div>
+            <div class="minimal-card-content">
+              <div class="minimal-card-meta">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">location_on</span>
+                高屏山區 / 郊區產業道路
+              </div>
+              <h3 class="minimal-card-title">夜間偏遠道路救援・車輛脫困與事故機車安全吊掛</h3>
+              <p class="minimal-card-desc">針對夜間視線不佳的偏遠郊區與產業道路救援，配備高亮度投射照明系統與多功能起重吊臂，提供受困車輛牽引脫困，以及故障事故機車之安全吊掛運送排除路障。</p>
+              <div class="minimal-card-footer">
+                <span class="minimal-card-btn">查看現場照片與處置 →</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 實績卡片 6 -->
+          <article class="minimal-case-card" data-category="roadside" data-case-id="case-6"
+                   data-title="高屏市區24H緊急道路救援・汽車故障快速排除" data-category-name="24H 道路救援"
+                   data-location="高雄市區 / 屏東各鄉鎮幹道" data-equipment="24H 移動道路救援車 ＋ 電瓶檢測換胎組"
+                   data-desc="提供高屏地區全天候道路救援，包含緊急接電、換胎打氣、水箱過熱降溫、機械故障排除及長短途全載拖吊，誠信報價，守護每位駕駛人的行車平安。" data-photos="[{&quot;src&quot;:&quot;images/roadside-assistance/roadside-assistance-001.webp&quot;,&quot;alt&quot;:&quot;專業大型吊車道路救援，協助故障車輛排除障礙&quot;},{&quot;src&quot;:&quot;images/roadside-assistance/professional-towing-service-002.webp&quot;,&quot;alt&quot;:&quot;專業汽車拖吊服務，迅速到場處理車輛故障&quot;},{&quot;src&quot;:&quot;images/roadside-assistance/car-maintenance-support-003.webp&quot;,&quot;alt&quot;:&quot;車輛維修保養支援，現場技術排除故障問題&quot;},{&quot;src&quot;:&quot;images/roadside-assistance/emergency-car-rescue-004.webp&quot;,&quot;alt&quot;:&quot;緊急道路救援服務，提供專業設備解決車輛突發狀況&quot;},{&quot;src&quot;:&quot;images/roadside-assistance/towing-and-recovery-005.webp&quot;,&quot;alt&quot;:&quot;大型專業拖吊與車輛救援，值得信賴的拖吊服務品牌&quot;}]">
+            <div class="minimal-card-media">
+              <img src="images/roadside-assistance/roadside-assistance-001.webp" alt="專業大型吊車道路救援，協助故障車輛排除障礙" loading="lazy" class="minimal-card-img">
+              <span class="minimal-card-badge">24H 道路救援</span>
+              <span class="minimal-card-count">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">photo_library</span> 5 張實拍
+              </span>
+            </div>
+            <div class="minimal-card-content">
+              <div class="minimal-card-meta">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">location_on</span>
+                高雄市區 / 屏東各鄉鎮幹道
+              </div>
+              <h3 class="minimal-card-title">高屏市區24H緊急道路救援・汽車故障快速排除</h3>
+              <p class="minimal-card-desc">提供高屏地區全天候道路救援，包含緊急接電、換胎打氣、水箱過熱降溫、機械故障排除及長短途全載拖吊，誠信報價，守護每位駕駛人的行車平安。</p>
+              <div class="minimal-card-footer">
+                <span class="minimal-card-btn">查看現場照片與處置 →</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 實績卡片 7 -->
+          <article class="minimal-case-card" data-category="roadside" data-case-id="case-7"
+                   data-title="重型起重吊掛與事故車復原・精準吊升排除路障" data-category-name="24H 道路救援"
+                   data-location="高雄港區 / 工業區幹道" data-equipment="大噸位重型吊車 ＋ 多點平衡受力吊帶"
+                   data-desc="重型卡車與特種工程機具在複雜路況托底受困，採用多點受力吊帶精準起吊，在高空起重過程中維持車體重心平衡，安全卸除路障並完成復原。" data-photos="[{&quot;src&quot;:&quot;images/heavy-duty-recovery/heavy-duty-lifting-001.webp&quot;,&quot;alt&quot;:&quot;高速公路汽車火燒車突發狀況與緊急道路救援&quot;},{&quot;src&quot;:&quot;images/heavy-duty-recovery/technical-recovery-002.webp&quot;,&quot;alt&quot;:&quot;高難度拖吊現場，運用精準吊掛技術排除事故&quot;},{&quot;src&quot;:&quot;images/heavy-duty-recovery/heavy-crane-operation-003.webp&quot;,&quot;alt&quot;:&quot;重型吊車現場操作，專業處理複雜車輛受困事故&quot;},{&quot;src&quot;:&quot;images/heavy-duty-recovery/professional-winch-recovery-004.webp&quot;,&quot;alt&quot;:&quot;專業鋼索吊掛救援，快速恢復道路交通安全&quot;},{&quot;src&quot;:&quot;images/heavy-duty-recovery/complex-vehicle-recovery-005.webp&quot;,&quot;alt&quot;:&quot;高難度車輛復原作業，展現頂級拖吊專業技術&quot;}]">
+            <div class="minimal-card-media">
+              <img src="images/heavy-duty-recovery/heavy-duty-lifting-001.webp" alt="高速公路汽車火燒車突發狀況與緊急道路救援" loading="lazy" class="minimal-card-img">
+              <span class="minimal-card-badge">24H 道路救援</span>
+              <span class="minimal-card-count">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">photo_library</span> 5 張實拍
+              </span>
+            </div>
+            <div class="minimal-card-content">
+              <div class="minimal-card-meta">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">location_on</span>
+                高雄港區 / 工業區幹道
+              </div>
+              <h3 class="minimal-card-title">重型起重吊掛與事故車復原・精準吊升排除路障</h3>
+              <p class="minimal-card-desc">重型卡車與特種工程機具在複雜路況托底受困，採用多點受力吊帶精準起吊，在高空起重過程中維持車體重心平衡，安全卸除路障並完成復原。</p>
+              <div class="minimal-card-footer">
+                <span class="minimal-card-btn">查看現場照片與處置 →</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 實績卡片 8 -->
+          <article class="minimal-case-card" data-category="operations" data-case-id="case-8"
+                   data-title="工廠大型機械設備與重物吊運・精密起重吊掛" data-category-name="特種精密起重吊掛"
+                   data-location="高雄 / 屏東工業園區廠房" data-equipment="合格證照吊車 ＋ 專用高強度防護吊具"
+                   data-desc="提供各類型廠房機具搬遷、大噸位機械吊運、精密儀器高空進出廠房作業，嚴格控管吊升半徑與受力平衡，確保昂貴設備萬無一失。" data-photos="[{&quot;src&quot;:&quot;images/material-lifting/material-lifting-service-001.webp&quot;,&quot;alt&quot;:&quot;專業吊車物品吊掛作業，工廠重物與大型設備精密起重&quot;},{&quot;src&quot;:&quot;images/material-lifting/crane-cargo-handling-002.webp&quot;,&quot;alt&quot;:&quot;大型起重吊車現場作業，提供安全高效的物料吊裝服務&quot;},{&quot;src&quot;:&quot;images/material-lifting/heavy-object-hoisting-003.webp&quot;,&quot;alt&quot;:&quot;專業工程吊車物品吊運，精密機械與重型貨物吊掛實績&quot;},{&quot;src&quot;:&quot;images/material-lifting/industrial-lifting-crane-004.webp&quot;,&quot;alt&quot;:&quot;工業級吊車重物起重工程，嚴格把關現場吊掛安全細節&quot;},{&quot;src&quot;:&quot;images/material-lifting/specialized-cargo-lifting-005.webp&quot;,&quot;alt&quot;:&quot;特殊物品與重型機具起重吊運，專業吊車團隊現場施作&quot;}]">
+            <div class="minimal-card-media">
+              <img src="images/material-lifting/material-lifting-service-001.webp" alt="專業吊車物品吊掛作業，工廠重物與大型設備精密起重" loading="lazy" class="minimal-card-img">
+              <span class="minimal-card-badge">特種精密起重吊掛</span>
+              <span class="minimal-card-count">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">photo_library</span> 5 張實拍
+              </span>
+            </div>
+            <div class="minimal-card-content">
+              <div class="minimal-card-meta">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">location_on</span>
+                高雄 / 屏東工業園區廠房
+              </div>
+              <h3 class="minimal-card-title">工廠大型機械設備與重物吊運・精密起重吊掛</h3>
+              <p class="minimal-card-desc">提供各類型廠房機具搬遷、大噸位機械吊運、精密儀器高空進出廠房作業，嚴格控管吊升半徑與受力平衡，確保昂貴設備萬無一失。</p>
+              <div class="minimal-card-footer">
+                <span class="minimal-card-btn">查看現場照片與處置 →</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 實績卡片 9 -->
+          <article class="minimal-case-card" data-category="operations" data-case-id="case-9"
+                   data-title="重型卡車引擎吊裝・景觀石材與工業發電機吊運" data-category-name="特種精密起重吊掛"
+                   data-location="大型修配廠 / 營造工地 / 景觀園藝" data-equipment="高精密液壓吊臂 ＋ 特殊定位夾具"
+                   data-desc="支援大型修車廠進行柴油大卡車引擎拆裝吊升、重型景觀石材定位及發電機搬移，高精度吊臂操作滿足各類特殊吊掛與農漁業起重需求。" data-photos="[{&quot;src&quot;:&quot;images/special-heavy-lifting/truck-engine-hoisting-001.webp&quot;,&quot;alt&quot;:&quot;專業吊車協助修車廠進行卡車引擎吊掛與維修作業&quot;},{&quot;src&quot;:&quot;images/special-heavy-lifting/stone-artwork-lifting-002.webp&quot;,&quot;alt&quot;:&quot;景觀石桌與重型藝術品吊掛，精準控制確保物件安全無損&quot;},{&quot;src&quot;:&quot;images/special-heavy-lifting/fish-pond-equipment-crane-003.webp&quot;,&quot;alt&quot;:&quot;魚塭養殖設備與重型裝箱吊掛，提供農漁業專屬起重服務&quot;},{&quot;src&quot;:&quot;images/special-heavy-lifting/industrial-generator-transport-004.webp&quot;,&quot;alt&quot;:&quot;大型工業發電機吊掛與搬運，支援廠房重型機具起重工程&quot;},{&quot;src&quot;:&quot;images/special-heavy-lifting/scrap-metal-recycling-lifting-005.webp&quot;,&quot;alt&quot;:&quot;大量廢鐵鋼筋與回收物資吊掛作業，高效率配合環保工程&quot;}]">
+            <div class="minimal-card-media">
+              <img src="images/special-heavy-lifting/truck-engine-hoisting-001.webp" alt="專業吊車協助修車廠進行卡車引擎吊掛與維修作業" loading="lazy" class="minimal-card-img">
+              <span class="minimal-card-badge">特種精密起重吊掛</span>
+              <span class="minimal-card-count">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">photo_library</span> 5 張實拍
+              </span>
+            </div>
+            <div class="minimal-card-content">
+              <div class="minimal-card-meta">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">location_on</span>
+                大型修配廠 / 營造工地 / 景觀園藝
+              </div>
+              <h3 class="minimal-card-title">重型卡車引擎吊裝・景觀石材與工業發電機吊運</h3>
+              <p class="minimal-card-desc">支援大型修車廠進行柴油大卡車引擎拆裝吊升、重型景觀石材定位及發電機搬移，高精度吊臂操作滿足各類特殊吊掛與農漁業起重需求。</p>
+              <div class="minimal-card-footer">
+                <span class="minimal-card-btn">查看現場照片與處置 →</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 實績卡片 10 -->
+          <article class="minimal-case-card" data-category="operations" data-case-id="case-10"
+                   data-title="鋼構建築組裝・車棚鋼架吊裝・大型儲水槽定位" data-category-name="特種精密起重吊掛"
+                   data-location="鋼構廠房 / 鐵工營造工地" data-equipment="大伸臂工程吊車 ＋ 專業高空作業防護"
+                   data-desc="配合營造廠、鐵工廠高空鋼骨組裝、車棚結構架設、大噸位水塔與儲存槽吊裝定位，提供穩定可靠的高空吊車吊臂支援。" data-photos="[{&quot;src&quot;:&quot;images/engineering-installation/carport-structure-lifting-001.webp&quot;,&quot;alt&quot;:&quot;鋼構建築工程吊車吊掛作業，專業吊裝廠房鋼架結構&quot;},{&quot;src&quot;:&quot;images/engineering-installation/truck-engine-installation-hoist-002.webp&quot;,&quot;alt&quot;:&quot;車棚與棚架鋼骨結構吊裝，專業吊車配合鐵工作業&quot;},{&quot;src&quot;:&quot;images/engineering-installation/water-tank-installation-lifting-003.webp&quot;,&quot;alt&quot;:&quot;大型水車與儲水桶吊掛安裝，提供農業與工業用水設備起重服務&quot;},{&quot;src&quot;:&quot;images/engineering-installation/steel-structure-assembly-lifting-004.webp&quot;,&quot;alt&quot;:&quot;廠房鋼構建築吊掛與安裝工程，專業配合鐵工高空作業&quot;},{&quot;src&quot;:&quot;images/engineering-installation/steel-materials-transport-crane-005.webp&quot;,&quot;alt&quot;:&quot;建築鋼材與鐵件建材吊掛運輸，支援營造廠與鐵工廠物流配送&quot;}]">
+            <div class="minimal-card-media">
+              <img src="images/engineering-installation/carport-structure-lifting-001.webp" alt="鋼構建築工程吊車吊掛作業，專業吊裝廠房鋼架結構" loading="lazy" class="minimal-card-img">
+              <span class="minimal-card-badge">特種精密起重吊掛</span>
+              <span class="minimal-card-count">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">photo_library</span> 5 張實拍
+              </span>
+            </div>
+            <div class="minimal-card-content">
+              <div class="minimal-card-meta">
+                <span class="material-symbols-outlined" style="font-size: 14px; margin-right: 3px;">location_on</span>
+                鋼構廠房 / 鐵工營造工地
+              </div>
+              <h3 class="minimal-card-title">鋼構建築組裝・車棚鋼架吊裝・大型儲水槽定位</h3>
+              <p class="minimal-card-desc">配合營造廠、鐵工廠高空鋼骨組裝、車棚結構架設、大噸位水塔與儲存槽吊裝定位，提供穩定可靠的高空吊車吊臂支援。</p>
+              <div class="minimal-card-footer">
+                <span class="minimal-card-btn">查看現場照片與處置 →</span>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
+    </section>
 
-
-      <!-- 第二區塊 -->
-      <div class="row justify-content-around">
-        <!-- 救援案例3 -->
-        <div class="col-12 col-md mb-5">
-          <div class="rescueBlock">
-            <h3><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>救援案例 三</h3>
-            <div class="row">
-              <div class="col-12">
-                <div class="display-photo" id="display-photo_3">
-                    <!-- 顯示照片 -->
-                </div>
-              </div>
-            </div>
-            <div class="row mt-3 mb-3 px-2">
-              <div class="col">
-                <div class="photo photo_3">
-                  <img src="images/kaohsiung-highway/highway-collision-rescue-001.webp" loading="lazy" alt="高速公路大型貨櫃車與轎車追撞，專業事故現場救援">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_3">
-                  <img src="images/kaohsiung-highway/car-crash-towing-002.webp" loading="lazy" alt="轎車追撞大型車輛嚴重受損，緊急拖吊作業實拍">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_3">
-                  <img src="images/kaohsiung-highway/highway-emergency-support-003.webp" loading="lazy" alt="高速公路事故現場處理，警員協助與拖吊車救援協作">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_3">
-                  <img src="images/kaohsiung-highway/vehicle-accident-clearing-004.webp" loading="lazy" alt="事故車輛移至安全區域，高速公路道路障礙排除">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_3">
-                  <img src="images/kaohsiung-highway/accident-car-recovery-005.webp" loading="lazy" alt="事故轎車受損處置，提供安全專業的拖吊救援服務">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- 救援案例4 -->
-        <div class="col-12 col-md mb-5">
-          <div class="rescueBlock">
-            <h3><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>救援案例 四</h3>
-            <div class="row">
-              <div class="col-12">
-                <div class="display-photo" id="display-photo_4">
-                  <!-- 顯示照片 -->
-                </div>
-              </div>
-            </div>
-
-            <div class="row mt-3 mb-3 px-2">
-              <div class="col">
-                <div class="photo photo_4">
-                  <img src="images/roadside-assistance/roadside-assistance-001.webp" loading="lazy" alt="專業大型吊車道路救援，協助故障車輛排除障礙">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_4">
-                  <img src="images/roadside-assistance/professional-towing-service-002.webp" loading="lazy" alt="專業汽車拖吊服務，迅速到場處理車輛故障">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_4">
-                  <img src="images/roadside-assistance/car-maintenance-support-003.webp" loading="lazy" alt="車輛維修保養支援，現場技術排除故障問題">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_4">
-                  <img src="images/roadside-assistance/emergency-car-rescue-004.webp" loading="lazy" alt="緊急道路救援服務，提供專業設備解決車輛突發狀況">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_4">
-                  <img src="images/roadside-assistance/towing-and-recovery-005.webp" loading="lazy" alt="大型專業拖吊與車輛救援，值得信賴的拖吊服務品牌">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- 第三區塊 -->
-      <div class="row justify-content-around">
-        <!-- 救援案例5 -->
-        <div class="col-12 col-md mb-5">
-          <div class="rescueBlock">
-            <h3><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>救援案例 五</h3>
-            <div class="row">
-              <div class="col-12">
-                <div class="display-photo" id="display-photo_5">
-                    <!-- 顯示照片 -->
-                </div>
-              </div>
-            </div>
-            <div class="row mt-3 mb-3 px-2">
-              <div class="col">
-                <div class="photo photo_5">
-                  <img src="images/heavy-duty-recovery/heavy-duty-lifting-001.webp" loading="lazy" alt="大型專業起重吊掛救援，確保事故車輛安全移除">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_5">
-                  <img src="images/heavy-duty-recovery/technical-recovery-002.webp" loading="lazy" alt="高難度拖吊現場，運用精準吊掛技術排除事故">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_5">
-                  <img src="images/heavy-duty-recovery/heavy-crane-operation-003.webp" loading="lazy" alt="重型吊車現場操作，專業處理複雜車輛受困事故">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_5">
-                  <img src="images/heavy-duty-recovery/professional-winch-recovery-004.webp" loading="lazy" alt="專業鋼索吊掛救援，快速恢復道路交通安全">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_5">
-                  <img src="images/heavy-duty-recovery/complex-vehicle-recovery-005.webp" loading="lazy" alt="高難度車輛復原作業，展現頂級拖吊專業技術">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- 救援案例6 -->
-        <div class="col-12 col-md mb-5">
-          <div class="rescueBlock">
-            <h3><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>救援案例 六</h3>
-            <div class="row">
-              <div class="col-12">
-                <div class="display-photo" id="display-photo_6">
-                  <!-- 顯示照片 -->
-                </div>
-              </div>
-            </div>
-
-            <div class="row mt-3 mb-3 px-2">
-              <div class="col">
-                <div class="photo photo_6">
-                  <img src="images/special-rescue/crane-precision-operation-001.webp" loading="lazy" alt="大型吊車專業作業現場，精準控制吊掛角度">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_6">
-                  <img src="images/special-rescue/towing-equipment-detail-002.webp" loading="lazy" alt="專業拖吊起重設備，確保車輛救援作業安全">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_6">
-                  <img src="images/special-rescue/heavy-machinery-towing-003.webp" loading="lazy" alt="重型車輛與機具拖吊作業，展現專業救援實力">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_6">
-                  <img src="images/special-rescue/nighttime-rural-rescue-004.webp" loading="lazy" alt="夜間郊區產業道路救援，專業設備協助受困車輛脫困">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_6">
-                  <img src="images/special-rescue/motorcycle-towing-service-005.webp" loading="lazy" alt="專業機車道路救援，安全吊掛故障機車排除路障">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      
-      <!-- 第四區塊 -->
-      <div class="row justify-content-around">
-        <!-- 救援案例7 -->
-        <div class="col-12 col-md mb-5">
-          <div class="rescueBlock">
-            <h3><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>救援案例 七</h3>
-            <div class="row">
-              <div class="col-12">
-                <div class="display-photo" id="display-photo_7">
-                    <!-- 顯示照片 -->
-                </div>
-              </div>
-            </div>
-            <div class="row mt-3 mb-3 px-2">
-              <div class="col">
-                <div class="photo photo_7">
-                  <img src="images/terrain-recovery/embankment-vehicle-recovery-001.webp" loading="lazy" alt="道路邊坡滑落車輛救援，使用專業吊臂進行安全吊掛">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_7">
-                  <img src="images/terrain-recovery/off-road-rollover-rescue-002.webp" loading="lazy" alt="休旅車翻覆受困救援，專業拖吊車進行翻正與脫困作業">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_7">
-                  <img src="images/terrain-recovery/ditch-trapped-car-recovery-003.webp" loading="lazy" alt="汽車意外跌落田間水溝，出動專業吊車協助車輛脫困">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_7">
-                  <img src="images/terrain-recovery/steep-slope-winch-out-004.webp" loading="lazy" alt="陡峭邊坡受困車輛救援，使用專業鋼索拖救排除險境">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_7">
-                  <img src="images/terrain-recovery/deep-trench-vehicle-extrication-005.webp" loading="lazy" alt="休旅車跌落深溝事故救援，高難度地形吊掛脫困實績">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- 極簡照片與詳情燈箱 Modal (點擊卡片彈出高解析相簿與處置規格) -->
+    <div id="minimalCaseModal" class="minimal-modal" role="dialog" aria-modal="true" aria-label="案例詳情照片預覽">
+      <div class="minimal-modal-backdrop" id="minimalModalBackdrop"></div>
+      <div class="minimal-modal-dialog">
+        <button class="minimal-modal-close" id="minimalModalClose" aria-label="關閉視窗"><span class="material-symbols-outlined">close</span></button>
         
+        <div class="minimal-modal-body">
+          <div class="row g-4">
+            <!-- 左側：高解析大圖 Swiper 與縮圖列 Swiper -->
+            <div class="col-12 col-lg-7">
+              
+              <!-- 1. 主圖 Swiper -->
+              <div class="swiper modalMainSwiper minimal-viewer-box">
+                <div class="swiper-wrapper" id="modalSwiperWrapper">
+                  <!-- JavaScript 會動態建立 slides -->
+                  <!-- <div class="swiper-slide"><img src="..." alt=""></div> -->
+                </div>
+                
+                <!-- 左右切換按鈕 -->
+                <div class="swiper-button-prev minimal-arrow-btn prev"></div>
+                <div class="swiper-button-next minimal-arrow-btn next"></div>
+                
+                <div class="minimal-viewer-caption" id="minimalModalCaption"></div>
+              </div>
 
-        <!-- 吊掛作業1 -->
-        <div id="operations" class="col-12 col-md mb-5">
-          <div class="rescueBlock">
-            <h3><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>吊掛作業 一</h3>
-            <div class="row">
-              <div class="col-12">
-                <div class="display-photo" id="display-photo_8">
-                  <!-- 顯示照片 -->
+              <!-- 2. 縮圖 Swiper (連動主圖) -->
+              <div class="swiper modalThumbsSwiper minimal-thumbs-bar mt-2">
+                <div class="swiper-wrapper" id="modalThumbsWrapper">
+                  <!-- JavaScript 會動態建立縮圖 slides -->
                 </div>
               </div>
+
             </div>
+            <!-- 右側：結構化作業資訊與 24H 撥打 -->
+            <div class="col-12 col-lg-5 d-flex flex-column justify-content-between">
+              <div>
+                <span class="minimal-badge-tag" id="modalCategoryTag">國道高速公路救援</span>
+                <h3 class="minimal-dialog-title" id="modalTitle">案例標題</h3>
+                
+                <div class="minimal-dialog-meta">
+                  <div class="meta-row">
+                    <span class="material-symbols-outlined">location_on</span>
+                    <span id="modalLocation">高雄路段</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="material-symbols-outlined">rv_hookup</span>
+                    <span id="modalEquipment">大噸位重型拖吊車</span>
+                  </div>
+                </div>
 
-            <div class="row mt-3 mb-3 px-2">
-              <div class="col">
-                <div class="photo photo_8">
-                  <img src="images/material-lifting/material-lifting-service-001.webp" loading="lazy" alt="專業吊車物品吊掛作業，工廠重物與大型設備精密起重">
+                <div class="minimal-dialog-desc">
+                  <h4 style="font-size: 0.95rem; font-weight: 700; color: #f1f5f9; margin-bottom: 6px;">現場處置與作業重點：</h4>
+                  <p id="modalDesc" style="font-size: 0.9rem; color: #94a3b8; line-height: 1.6; margin: 0;"></p>
                 </div>
               </div>
-              <div class="col">
-                <div class="photo photo_8">
-                  <img src="images/material-lifting/crane-cargo-handling-002.webp" loading="lazy" alt="大型起重吊車現場作業，提供安全高效的物料吊裝服務">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_8">
-                  <img src="images/material-lifting/heavy-object-hoisting-003.webp" loading="lazy" alt="專業工程吊車物品吊運，精密機械與重型貨物吊掛實績">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_8">
-                  <img src="images/material-lifting/industrial-lifting-crane-004.webp" loading="lazy" alt="工業級吊車重物起重工程，嚴格把關現場吊掛安全細節">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_8">
-                  <img src="images/material-lifting/specialized-cargo-lifting-005.webp" loading="lazy" alt="特殊物品與重型機具起重吊運，專業吊車團隊現場施作">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      
-      <!-- 第五區塊 -->
-      <div class="row justify-content-around">
-        <!-- 吊掛作業2 -->
-        <div class="col-12 col-md mb-5">
-          <div class="rescueBlock">
-            <h3><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>吊掛作業 二</h3>
-            <div class="row">
-              <div class="col-12">
-                <div class="display-photo" id="display-photo_9">
-                    <!-- 顯示照片 -->
-                </div>
-              </div>
-            </div>
-            <div class="row mt-3 mb-3 px-2">
-              <div class="col">
-                <div class="photo photo_9">
-                  <img src="images/special-heavy-lifting/truck-engine-hoisting-001.webp" loading="lazy" alt="專業吊車協助修車廠進行卡車引擎吊掛與維修作業">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_9">
-                  <img src="images/special-heavy-lifting/stone-artwork-lifting-002.webp" loading="lazy" alt="景觀石桌與重型藝術品吊掛，精準控制確保物件安全無損">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_9">
-                  <img src="images/special-heavy-lifting/fish-pond-equipment-crane-003.webp" loading="lazy" alt="魚塭養殖設備與重型裝箱吊掛，提供農漁業專屬起重服務">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_9">
-                  <img src="images/special-heavy-lifting/industrial-generator-transport-004.webp" loading="lazy" alt="大型工業發電機吊掛與搬運，支援廠房重型機具起重工程">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_9">
-                  <img src="images/special-heavy-lifting/scrap-metal-recycling-lifting-005.webp" loading="lazy" alt="大量廢鐵鋼筋與回收物資吊掛作業，高效率配合環保工程">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- 吊掛作業3 -->
-        <div class="col-12 col-md mb-5">
-          <div class="rescueBlock">
-            <h3><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>吊掛作業 三</h3>
-            <div class="row">
-              <div class="col-12">
-                <div class="display-photo" id="display-photo_10">
-                  <!-- 顯示照片 -->
-                </div>
-              </div>
-            </div>
-
-            <div class="row mt-3 mb-3 px-2">
-              <div class="col">
-                <div class="photo photo_10">
-                  <img src="images/engineering-installation/carport-structure-lifting-001.webp" loading="lazy" alt="專業吊車協助車棚結構吊掛與廢棄物清理作業">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_10">
-                  <img src="images/engineering-installation/truck-engine-installation-hoist-002.webp" loading="lazy" alt="大型卡車引擎吊掛與精密安裝作業，展現高難度起重技術">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_10">
-                  <img src="images/engineering-installation/water-tank-installation-lifting-003.webp" loading="lazy" alt="大型水車與儲水桶吊掛安裝，提供農業與工業用水設備起重服務">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_10">
-                  <img src="images/engineering-installation/steel-structure-assembly-lifting-004.webp" loading="lazy" alt="廠房鋼構建築吊掛與安裝工程，專業配合鐵工高空作業">
-                </div>
-              </div>
-              <div class="col">
-                <div class="photo photo_10">
-                  <img src="images/engineering-installation/steel-materials-transport-crane-005.webp" loading="lazy" alt="建築鋼材與鐵件建材吊掛運輸，支援營造廠與鐵工廠物流配送">
-                </div>
+              <div class="minimal-dialog-cta pt-3">
+                <a href="tel:0981263978" class="minimal-call-action">
+                  <span class="material-symbols-outlined">call</span>
+                  <span class="call-text-full">24H 即時通報救援 (0981-263-978)</span>
+                  <span class="call-text-short">24H 通報 (0981-263-978)</span>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
+
+
 
     <!--------------------------------------------------------------------------------------->
 
     <!-- 客戶評價 -->
-    <div id="reviews" class="container-fluid pb-4">
+    <div id="reviews" class="container-fluid pt-4 pb-4"> 
       <div class="reviews-container">
         <div class="row align-items-start" id="reviews-container">
           <div col-12>
@@ -836,81 +831,61 @@
       </button>
     </div>
 
-    <!-- 這是兩隻的電話號碼 (暫時保留)
-    <div id="phoneModal" class="modal">
-      <div class="modal-content">
-        <button class="close-btn" onclick="closeModal()" aria-label="關閉">
-          <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-            <path d="M6 18L18 6M6 6l12 12"/>
-          </svg>
-        </button>
-        <h3>選擇電話號碼</h3>
-        <button class="phone-btn" onclick="callNumber('09xx-xxxxxx')">
-          <svg class="icon"><use xlink:href="#icon-phone"></use></svg>
-          09xx-xxxxxx <span>(主要)</span>
-        </button>
-        <button class="phone-btn" onclick="callNumber('09xx-xxxxxx')">
-          <svg class="icon"><use xlink:href="#icon-phone"></use></svg>
-          09xx-xxxxxx <span>(備用)</span>
-        </button>
-      </div>
-    </div>
-    -->
-
   </main>
 
-  <footer class="bg-gradient bg-dark text-white pt-4 pb-4">
+  <!-- 頁腳 (與導航列一致的現代精緻深色風格) -->
+  <footer class="footer-modern text-white pt-5 pb-4" style="background: rgba(18, 22, 28, 0.96); backdrop-filter: blur(12px); border-top: 1px solid rgba(255, 255, 255, 0.08);">
     <div class="container">
-      <div class="row">
+      <div class="row g-4 align-items-center">
 
         <!-- 商家 NAP 資訊區 -->
         <div class="col-12 col-md-6 mb-2">
           
           <!-- Logo 區塊 -->
           <div class="d-flex align-items-center mb-4">
-            <img src="images/logo-720.webp" alt="拾捌拖吊車 Logo" width="56" height="56" class="me-3 flex-shrink-0" loading="lazy">
+            <div class="nav-logo-box me-3 flex-shrink-0" style="width: 56px; height: 56px; border-radius: 12px; overflow: hidden; background: rgba(255, 255, 255, 0.05); padding: 4px; border: 1px solid rgba(255, 255, 255, 0.1);">
+              <img src="images/logo-720.webp" alt="拾捌拖吊車 Logo" class="w-100 h-100 object-fit-contain" loading="lazy">
+            </div>
             <div>
-              <h4 class="mb-1 text-light fw-bold fs-5">拾捌拖吊車</h4>
-              <div class="text-white-50" style="font-size: 0.9em;">高雄屏東 24H 道路救援</div>
+              <h4 class="mb-1 text-light fw-bold fs-5 tracking-wide">拾捌拖吊車</h4>
+              <div class="text-white-50" style="font-size: 0.88rem; letter-spacing: 0.5px;">高屏 24H 道路救援</div>
             </div>
           </div>
 
-          <ul class="list-unstyled">
+          <ul class="list-unstyled mb-4">
             <!-- 地址 -->
-            <li class="mb-3 d-flex align-items-start">
-              <span class="material-symbols-outlined me-3 text-warning flex-shrink-0" style="font-size: 1.5rem;" aria-hidden="true">location_on</span>
-              <div class="text-white mt-1 opacity-75">屏東縣新園鄉平和路289號</div>
+            <li class="mb-3 d-flex align-items-center">
+              <span class="material-symbols-outlined me-3 text-warning flex-shrink-0" style="font-size: 1.35rem;" aria-hidden="true">location_on</span>
+              <div class="text-white-50 fs-6">屏東縣新園鄉平和路289號</div>
             </li>
             
             <!-- 電話 -->
-            <li class="mb-3 d-flex align-items-start">
-              <span class="material-symbols-outlined me-3 text-warning flex-shrink-0" style="font-size: 1.5rem;" aria-hidden="true">call</span>
-              <a href="tel:0981263978" class="text-white mt-1 opacity-75" aria-label="點擊撥打救援專線">0981-263-978</a>
+            <li class="mb-3 d-flex align-items-center">
+              <span class="material-symbols-outlined me-3 text-warning flex-shrink-0" style="font-size: 1.35rem;" aria-hidden="true">call</span>
+              <a href="tel:0981263978" class="text-white fw-bold fs-6 text-decoration-none" aria-label="點擊撥打救援專線">0981-263-978</a>
             </li>
             
             <!-- 營業時間 -->
-            <li class="mb-3 d-flex align-items-start">
-              <span class="material-symbols-outlined me-3 text-warning flex-shrink-0" style="font-size: 1.5rem;" aria-hidden="true">schedule</span>
-              <div class="text-white mt-1 opacity-75">24 小時全年無休</div>
+            <li class="mb-3 d-flex align-items-center">
+              <span class="material-symbols-outlined me-3 text-warning flex-shrink-0" style="font-size: 1.35rem;" aria-hidden="true">schedule</span>
+              <div class="text-white-50 fs-6">24 小時全年無休</div>
             </li>
             
             <!-- 服務區域 -->
-            <li class="mb-3 d-flex align-items-start">
-              <span class="material-symbols-outlined me-3 text-warning flex-shrink-0" style="font-size: 1.5rem;" aria-hidden="true">map</span>
-              <div class="text-white mt-1 opacity-75 lh-base">高雄市、屏東縣、屏東市及各大國道</div>
+            <li class="mb-3 d-flex align-items-center">
+              <span class="material-symbols-outlined me-3 text-warning flex-shrink-0" style="font-size: 1.35rem;" aria-hidden="true">map</span>
+              <div class="text-white-50 fs-6 lh-base">高雄市、屏東縣、屏東市及各大國道</div>
             </li>
           </ul>
           
-          <p class="mt-4 text-white opacity-50 text-wrap lh-lg" style="font-size: 0.9em;">
-            提供超跑低底盤拖吊、事故車救援、全載拖吊服務。GPS 快速派車，誠信報價。
+          <p class="text-white-50 lh-lg mb-0" style="font-size: 0.88rem; max-width: 480px;">
+            提供超跑低底盤拖吊、事故車救援、全載拖吊服務。<br class="d-block d-md-none">GPS 快速派車，誠信報價。
           </p>
         </div>
 
-
         <!-- Google 地圖嵌入區 -->
         <div class="col-12 col-md-6 mb-2">
-          <div class="ratio ratio-16x9 shadow-sm rounded overflow-hidden">
-            <!-- 已經將 q= 改為精確的商家名稱，會直接定點顯示您的專屬商家地標 -->
+          <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg" style="border: 1px solid rgba(255, 255, 255, 0.12);">
             <iframe 
               src="https://maps.google.com/maps?q=拾捌+高雄屏東拖吊車+24H道路救援&t=&z=15&ie=UTF8&iwloc=&output=embed" 
               style="border:0;" 
@@ -925,14 +900,14 @@
       </div>
 
       <!-- 版權宣告區 -->
-      <hr class="border-secondary mt-3 mb-4">
-      <div class="row">
-        <div class="col-12 text-center text-secondary">
-          <p class="mb-0">&copy; <span id="year"></span> 拾捌拖吊車 服務公司版權所有.</p>
-        </div>
+      <div class="pt-4 mt-4 text-center" style="border-top: 1px solid rgba(255, 255, 255, 0.06);">
+        <p class="mb-0 text-white-50" style="font-size: 0.825rem; letter-spacing: 0.5px;">
+          &copy; <span id="year"></span> 拾捌拖吊車 服務公司版權所有.
+        </p>
       </div>
     </div>
   </footer>
+
     
 <!--------------------------------------------------------------------------------------->
 
@@ -941,6 +916,9 @@
 
   <!-- 引入 Aos JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.min.js"></script>
 
   <!-- 最後引入自己寫的 JS 檔案 -->
   <script src="script.js" defer></script>

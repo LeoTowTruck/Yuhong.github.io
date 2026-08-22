@@ -1,31 +1,21 @@
 
   document.getElementById("year").textContent = new Date().getFullYear(); // 頁腳自動載入年份
 
-/* 這是兩隻的電話號碼
-  function showPhoneOptions() {
-    const modal = document.getElementById('phoneModal');
-    modal.style.display = 'block';
-    modal.classList.add('show');
-  }
-
-  function callNumber(number) {
-    window.location.href = 'tel:' + number;
-    closeModal();
-  }
-
-  function closeModal() {
-    const modal = document.getElementById('phoneModal');
-    modal.classList.remove('show');
-    modal.style.display = 'none';
-  }
-
-  // 點擊背景關閉
-  document.getElementById('phoneModal').addEventListener('click', function(e) {
-    if (e.target === this) {
-      closeModal();
-    }
-  });
-*/
+  document.addEventListener('DOMContentLoaded', function () {
+    const heroSwiper = new Swiper('.heroSwiper', {
+        loop: true,
+        speed: 800,
+        autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        },
+        grabCursor: true, // 滑鼠移上去會變成抓取手勢
+        pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        },
+    });
+    });
 
  //========================================================================
 
@@ -64,7 +54,7 @@
 
   //========================================================================
 
-  document.addEventListener("DOMContentLoaded", function() {
+ document.addEventListener("DOMContentLoaded", function() {
 
     // 初始化變量
     let lastScrollY = window.scrollY; // 追蹤上一次滾動的位置
@@ -73,61 +63,63 @@
     const navbar = document.querySelector('.navbar'); // 獲取導航欄元素
     const navbarCollapse = document.querySelector('.navbar-collapse'); // 獲取折疊菜單元素
     const btnContainer = document.querySelector('.fixed-buttons-container');
-    const bootstrapCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false }); // 創建 Bootstrap 折疊實例，不自動切換
+    
+    // 判斷選單是否處於展開狀態的輔助函式
+    function isMenuOpen() {
+      return navbarCollapse && navbarCollapse.classList.contains('show');
+    }
 
+    // 關閉選單的安全函式 (防止重複觸發導致跳動)
+    function safeHideMenu() {
+      if (window.innerWidth < 992 && isMenuOpen()) {
+        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, { toggle: false });
+        bsCollapse.hide();
+      }
+    }
 
     // --- 閒置計時器變數 ---
     let idleTimer; 
-    const idleWaitTime = 3500; // N豪秒
+    const idleWaitTime = 3500; // N毫秒
 
     // 重置閒置計時器的函數
     function resetIdleTimer() {
-      // 1. 清除舊的計時器
       clearTimeout(idleTimer);
+      if (btnContainer) btnContainer.classList.remove('is-scrolled');
       
-      // 2. 只要觸發重置（代表使用者正在滑動），就立刻「縮小」按鈕
-      btnContainer.classList.remove('is-scrolled');
-      
-      // 3. 重新開始倒數 4 秒
       idleTimer = setTimeout(() => {
-        // 4 秒到了都沒動，才加上放大效果
-        btnContainer.classList.add('is-scrolled');
+        if (btnContainer) btnContainer.classList.add('is-scrolled');
       }, idleWaitTime); 
     }
 
-    // 網頁一載入就先啟動一次倒數計時
     resetIdleTimer();
-    
 
     // 滾動事件監聽器
     window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY; // 當前滾動位置
         const scrollDifference = lastScrollY - currentScrollY; // 計算與上次滾動位置的差異
 
-        if (currentScrollY > lastScrollY && currentScrollY > 70) {
-            // 如果向下滾動且超過 70px（或 20vh），隱藏導航欄
-            navbar.classList.add('hidden'); // 添加隱藏類別
-            hidden = true; // 更新隱藏狀態
+        if (currentScrollY > lastScrollY && currentScrollY > 280) {
+            // 下滑隱藏 Navbar，若選單開著則順便收起
+            navbar.classList.add('hidden');
+            hidden = true;
+            safeHideMenu(); 
         } else if ((hidden && scrollDifference > revealOffset) || currentScrollY < 60) {
-            // 如果導航欄已隱藏且向上滾動距離超過 revealOffset，或滾動位置小於 60px，顯示導航欄
-            navbar.classList.remove('hidden'); // 移除隱藏類別
-            hidden = false; // 更新隱藏狀態
-            if (window.innerWidth < 992) { // 檢查是否為中小螢幕
-            bootstrapCollapse.hide(); // 使用 Bootstrap 折疊 API 隱藏菜單
-            }
+            // 上滑顯示 Navbar
+            navbar.classList.remove('hidden');
+            hidden = false;
+            // ⚠️ 修正：上滑顯示 Header 時，不要強制收起選單，避免展開畫面閃爍與跳動
         }
 
-        // 每次觸發滾動時，重置 Ｎ 秒閒置計時器
         resetIdleTimer();
-
-        lastScrollY = currentScrollY; // 更新上一次滾動位置 
+        lastScrollY = currentScrollY; 
     });
 
-    // 當點擊事件發生時隱藏下拉式選單
-    document.addEventListener('click', (event) => {
-        if (window.innerWidth < 992) { // 檢查是否為中小螢幕
-            bootstrapCollapse.hide(); // 使用 Bootstrap 折疊 API 隱藏菜單
-        }
+    // 當點擊導航連結 (例如 #about-us) 時才自動關閉選單，避免全域無差別觸發
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        safeHideMenu();
+      });
     });
 
   });
@@ -165,165 +157,191 @@
   });
 
   //========================================================================
+  // 案例展廳互動邏輯 (Swiper 雙重輪播與連動、分類篩選、Modal 彈窗)
+  //========================================================================
 
-    // 當 DOM 內容完全加載完畢後執行此函數
-    document.addEventListener('DOMContentLoaded', (event) => {
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.minimal-filter-tab');
+    const caseCards = document.querySelectorAll('.minimal-case-card');
+    
+    // Modal 核心元素
+    const modal = document.getElementById('minimalCaseModal');
+    const modalBackdrop = document.getElementById('minimalModalBackdrop');
+    const modalCloseBtn = document.getElementById('minimalModalClose');
+    
+    // 文字屬性元素
+    const modalCategoryTag = document.getElementById('modalCategoryTag');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalLocation = document.getElementById('modalLocation');
+    const modalEquipment = document.getElementById('modalEquipment');
+    const modalDesc = document.getElementById('modalDesc');
 
-      // 使用一個 for 迴圈來初始化顯示圖片
-      for (let i = 1; i <= 10; i++) {
-          // 使用一個 for 迴圈來初始化顯示圖片
-          copyFirstPhoto(`.photo_${i}`, `display-photo_${i}`);
-          // 為每個 .photo 元素添加鼠標懸停事件監聽器
-          addHoverEffect(`.photo_${i}`, `display-photo_${i}`);
-      }
+    // 儲存 Swiper 實例
+    let modalMainSwiper = null;
+    let modalThumbsSwiper = null;
 
-      let photos = document.querySelectorAll('.photo img');
-      var currentIndex = -1;
-      var first_photos = 1;
-      var last_photos = 5;
-      var timer;
-
-      // 函數用來添加和移除焦點
-      function updateFocus() {
-          if (first_photos !== -1) {
-              if (currentIndex > last_photos) {
-                  currentIndex = first_photos;
-              }
-
-              document.activeElement.blur(); // 讓當前有焦點的元素失去焦點
-              photos.forEach(photo => photo.classList.remove('focused'));  // 移除當前焦點樣式
-              
-              // 添加焦點樣式到當前元素
-              photos[currentIndex].classList.add('focused');
-
-              // 獲取當前圖片的父容器元素
-              const currentPhoto = photos[currentIndex].closest('.photo');
-              const rescueBlock = currentPhoto.closest('.rescueBlock'); // 獲取到父容器 .rescueBlock
-              const displayPhotoDiv = rescueBlock.querySelector('.display-photo'); // 獲取對應的 .display-photo
-
-              // 獲取父容器裡面的圖片元素
-              const imgElement = displayPhotoDiv.querySelector('img');
-
-              // 複製當前圖片節點
-              const img = photos[currentIndex].cloneNode(true);
-
-              if (imgElement.src !== img.src) {
-                  // 清空顯示圖片元素中的內容
-                  displayPhotoDiv.innerHTML = '';
-
-                  // 將複製的圖片節點添加到顯示圖片的元素中
-                  displayPhotoDiv.appendChild(img);
-              }
-
-              // 更新索引，並循環
-              currentIndex = currentIndex + 1;
-          }
-      }
-
-
-
-      // 處理圖片點擊事件
-      function handleClick(event) {
-
-          // 移除所有圖片的焦點樣式
-          photos.forEach(photo => photo.classList.remove('focused')); 
-          const clickedIndex = Array.from(photos).indexOf(event.target);
-          currentIndex = clickedIndex+1; // 設置為點擊圖片的索引
-          clearInterval(timer); // 清除之前設定的定時器
-          timer = setInterval(updateFocus, 6000);
-
-      }
-
-      // 為每個圖片添加點擊事件監聽器
-      photos.forEach(photo => photo.addEventListener('click', handleClick));
-
-//===================================================================
-
-    // 更新顯示焦點的圖片
-    function updateVisibleFocus() {
-
-      // 遍歷所有圖片元素，篩選出在視口中可見的圖片
-      const visiblePhotos = Array.from(photos).filter(photo => {
-        // 獲取圖片元素的邊界矩形
-        const rect = photo.getBoundingClientRect();
-        // 檢查圖片是否完全在視口中
-        return (
-          rect.top >= 160 &&                          // 圖片頂部在視口上方
-          rect.left >= 0 &&                           // 圖片左邊在視口左邊
-          rect.bottom <= window.innerHeight + 150 &&  // 圖片底部在視口下方
-          rect.right <= window.innerWidth             // 圖片右邊在視口右邊
-        );
+    // 1. 分類篩選
+    function applyFilter(filter) {
+      filterButtons.forEach(btn => {
+        if (btn.getAttribute('data-filter') === filter) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
       });
 
-      // 取得可見圖片中最小和最大索引
-      first_photos = Array.from(photos).indexOf(visiblePhotos[0]);
-      last_photos = Array.from(photos).indexOf(visiblePhotos[visiblePhotos.length - 1]);
-      
-      // alert(first_photos + " / " + last_photos);
+      caseCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
+        } else {
+          card.style.display = 'none';
+        }
+      });
 
-      // 如果視口內已有圖片，不進行任何操作
-      if (first_photos <= currentIndex && currentIndex <= last_photos ) {
-        return;
-      }
-      
-      // 焦點
-      if (visiblePhotos.length > 0) {
-        clearInterval(timer); // 清除定時器
-        // 獲取第一張可見圖片的索引
-        currentIndex = first_photos;
-        // 更新焦點，根據 currentIndex 顯示對應的圖片
-        updateFocus();  // 立刻執行
-        timer = setInterval(updateFocus, 3500);
+      if (window.AOS) {
+        window.AOS.refresh();
       }
     }
 
-    let isScrolling; // 用於存儲 setTimeout ID
-
-    window.addEventListener('scroll', function() {
-      // 清除之前的滾動計時器
-      clearTimeout(isScrolling);
-
-      // 設定新的計時器，在滾動結束後N毫秒執行 updateVisibleFocus()
-      isScrolling = setTimeout(function() {
-        window.requestAnimationFrame(function() {
-          updateVisibleFocus();
-        });
-      }, 100); // 毫秒的延遲            
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        applyFilter(filter);
+      });
     });
-  });
 
+    // 2. 初始化 Modal 的 Swiper 輪播
+    function initModalSwipers() {
+      if (modalMainSwiper) modalMainSwiper.destroy(true, true);
+      if (modalThumbsSwiper) modalThumbsSwiper.destroy(true, true);
 
-  // 通用的函數，用於選取第一張圖片並複製其節點
-  const copyFirstPhoto = (sourceSelector, targetId) => {
-      // 使用 sourceSelector 選取第一個匹配的圖片元素（假設該 selector 選取的是一個或多個包含圖片的容器）
-      const firstPhoto = document.querySelector(sourceSelector + ' img').cloneNode(true);
-      // 將複製的圖片節點添加到目標元素中
-      document.getElementById(targetId).appendChild(firstPhoto);
-  };
-
-
-  // 通用的函數，用於處理鼠標懸停事件
-  const addHoverEffect = (sourceSelector, targetId) => {
-    document.querySelectorAll(sourceSelector).forEach(photo => {
-      photo.addEventListener('focus', (e) => {
-        // 選取.photo 元素中的圖片，並複製其節點
-        const img = e.currentTarget.querySelector('img').cloneNode(true);
-        
-        // 獲取用於顯示圖片的元素
-        const displayPhotoDiv = document.getElementById(targetId);
-        
-        // 清空顯示圖片元素中的內容
-        displayPhotoDiv.innerHTML = '';
-        
-        // 將複製的圖片節點添加到顯示圖片的元素中
-        displayPhotoDiv.appendChild(img);
+      // 下方縮圖 Swiper
+      modalThumbsSwiper = new Swiper('.modalThumbsSwiper', {
+        spaceBetween: 8,
+        slidesPerView: 'auto', // 依縮圖寬度彈性排列
+        freeMode: true,
+        watchSlidesProgress: true, // 必須開啟，主圖才能追蹤縮圖進度
       });
 
-      // 確保元素可以獲得焦點
-      photo.tabIndex = 0;
-    });
-  };
+      // 上方主圖 Swiper (連動縮圖)
+      modalMainSwiper = new Swiper('.modalMainSwiper', {
+        spaceBetween: 10,
+        speed: 500,
+        grabCursor: true,
+        navigation: {
+          nextEl: '.modalMainSwiper .swiper-button-next',
+          prevEl: '.modalMainSwiper .swiper-button-prev',
+        },
+        thumbs: {
+          swiper: modalThumbsSwiper,
+          slideThumbActiveClass: 'swiper-slide-thumb-active' // 確保 Class 名稱完全匹配
+        },
+      });
+    }
 
+    // 3. 打開案例彈窗
+    function openCaseModal(card) {
+      if (!modal) return;
+
+      const title = card.getAttribute('data-title');
+      const catName = card.getAttribute('data-category-name');
+      const loc = card.getAttribute('data-location');
+      const eq = card.getAttribute('data-equipment');
+      const desc = card.getAttribute('data-desc');
+      const photosRaw = card.getAttribute('data-photos');
+
+      let currentCardPhotos = [];
+      try {
+        currentCardPhotos = JSON.parse(photosRaw) || [];
+      } catch (e) {
+        currentCardPhotos = [];
+      }
+
+      // 寫入文字資訊
+      if (modalTitle) modalTitle.textContent = title || '';
+      if (modalCategoryTag) modalCategoryTag.textContent = catName || '';
+      if (modalLocation) modalLocation.textContent = loc || '';
+      if (modalEquipment) modalEquipment.textContent = eq || '';
+      if (modalDesc) modalDesc.textContent = desc || '';
+
+      // 動態建立大圖與縮圖的 Swiper Slide 結構
+      const mainWrapper = document.getElementById('modalSwiperWrapper');
+      const thumbsWrapper = document.getElementById('modalThumbsWrapper');
+
+      if (mainWrapper && thumbsWrapper) {
+        mainWrapper.innerHTML = '';
+        thumbsWrapper.innerHTML = '';
+
+        currentCardPhotos.forEach((photo) => {
+          // 大圖 Slide
+          const mainSlide = document.createElement('div');
+          mainSlide.className = 'swiper-slide';
+          mainSlide.innerHTML = `<img src="${photo.src}" alt="${photo.alt || title}">`;
+          mainWrapper.appendChild(mainSlide);
+
+          // 縮圖 Slide
+          const thumbSlide = document.createElement('div');
+          thumbSlide.className = 'swiper-slide minimal-thumb-item';
+          thumbSlide.innerHTML = `<img src="${photo.src}" alt="${photo.alt || title}">`;
+          thumbsWrapper.appendChild(thumbSlide);
+        });
+      }
+
+      // 顯示 Modal
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      // 關鍵：必須在 Modal 展開（容器有寬度）後初始化 Swiper
+      setTimeout(() => {
+        initModalSwipers();
+      }, 50);
+    }
+
+    // 關閉 Modal
+    function closeModal() {
+      if (!modal) return;
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    // 綁定卡片點擊與鍵盤開啟
+    caseCards.forEach(card => {
+      card.addEventListener('click', () => openCaseModal(card));
+      card.tabIndex = 0;
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openCaseModal(card);
+        }
+      });
+    });
+
+    if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+    if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+
+    // 支援 Esc 鍵關閉 Modal
+    document.addEventListener('keydown', (e) => {
+      if (!modal || !modal.classList.contains('active')) return;
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    // 4. 支援點擊導航欄 #operations 自動跳轉並啟用吊掛分類
+    const checkHashNavigation = () => {
+      const hash = window.location.hash;
+      if (hash === '#operations') {
+        applyFilter('operations');
+      }
+    };
+
+    window.addEventListener('hashchange', checkHashNavigation);
+    checkHashNavigation();
+  });
 
   //========================================================================
 
@@ -437,6 +455,6 @@
     // window.open("https://line.me/ti/p/idtb0LETDp", "_blank");
     
     // 改成跳轉到本地頁面
-    window.location.href = "https://leotowtruck.github.io/Yuhong.github.io/line-tutorial.html";
+    window.location.href = "/line-tutorial.html";
   }
 
