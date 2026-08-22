@@ -394,7 +394,7 @@
     /* 文字位置：定位在左側中上方 */
     .hero-caption-wrapper {
         position: absolute;
-        top: 40%; /* 從頂部算起 22% 位置，避開 Header 後位於中上 */        
+        top: 42%; 
         left: 0;
         padding-right: 15px;
         width: 100%;
