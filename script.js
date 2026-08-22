@@ -11,9 +11,51 @@
         },
         grabCursor: true, // 滑鼠移上去會變成抓取手勢
         pagination: {
-        el: '.swiper-pagination',
+        el: '.heroSwiper .swiper-pagination',
         clickable: true,
         },
+    });
+
+    const servicesSwiper = new Swiper('.servicesSwiper', {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: true,
+        grabCursor: true,
+        pagination: {
+          el: '.services-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 24,
+          },
+          992: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          }
+        }
+    });
+
+    const aboutSwiper = new Swiper('.aboutSwiper', {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: true,
+        grabCursor: true,
+        pagination: {
+          el: '.about-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 24,
+          },
+          992: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          }
+        }
     });
     });
 

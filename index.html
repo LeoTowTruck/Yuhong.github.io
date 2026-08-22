@@ -365,6 +365,7 @@
     <!--------------------------------------------------------------------------------------->
 
     <div class="container-fluid">
+      <!-- 1 -->
       <div class="row mt-md-2 mb-md-5">
         <div class="col-12 col-md-6 mt-3 mb-3">
           <div class="card">
@@ -427,68 +428,360 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <div id="services" class="container-fluid">
-      <div class="section mb-5 mt-5" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
-        <h3 class="justify-content-center"><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>服務項目</h3>
-        <div class="row">
-          <div class="col-4 col-md-2 mb-3 mt-3">
-            <img src="images/icon/emergency-towing-icon.png" class="white-image w-75" loading="lazy" alt="緊急拖吊服務圖示">
-            <h3>緊急拖吊</h3>
-          </div>
-          <div class="col-4 col-md-2 mb-3 mt-3">
-            <img src="images/icon/roadside-rescue-icon.png" class="white-image w-75" loading="lazy" alt="車輛救援服務圖示">
-            <h3>車輛救援</h3>
-          </div>
-          <div class="col-4 col-md-2 mb-3 mt-3">
-            <img src="images/icon/special-recovery-icon.png" class="white-image w-75" loading="lazy" alt="特殊救援服務圖示">
-            <h3>特殊救援</h3>
-          </div>
-          <div class="col-4 col-md-2 mb-3 mt-3">
-            <img src="images/icon/long-distance-towing-icon.png" class="white-image w-75" loading="lazy" alt="長途拖吊服務圖示">
-            <h3>長途拖吊</h3>
-          </div>
-          <div class="col-4 col-md-2 mb-3 mt-3">
-            <img src="images/icon/hoisting-service-icon.png" class="white-image w-75" loading="lazy" alt="物品吊掛服務圖示">
-            <h3>物品吊掛</h3>
-          </div>
-          <div class="col-4 col-md-2 mb-3 mt-3">
-            <img src="images/icon/transport-lifting-icon.png" class="white-image w-75" loading="lazy" alt="吊運服務圖示">
-            <h3>吊運服務</h3>
-          </div>
+  <div class="container-fluid py-5">
+    <div id="services" class="container-xl">
+      <!-- 區塊標題：與英雄介面完美搭配 -->
+      <div class="text-center mb-5" data-aos="fade-up">
+        <div class="hero-badge mx-auto mb-3">
+          <span class="material-symbols-outlined">bolt</span>
+          <span>高屏專業救援・全方位保障</span>
         </div>
+        <h2 class="display-6 fw-bold text-white mb-3" style="font-family: 'Noto Serif HK', serif; letter-spacing: 0.05em;">
+          24H 核心服務項目
+        </h2>
+        <p class="text-white-50 mx-auto" style="max-width: 650px; font-size: 1.05rem;">
+          一通電話 GPS 定位快速到達。我們提供高規格低底盤平板拖吊、國道事故救援、重機拖運及精密物品起重吊掛服務。
+        </p>
+      </div>
+
+      <!-- 6大服務卡片 Swiper 輪播 -->
+      <div class="swiper servicesSwiper pb-5 position-relative px-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper pt-4 pb-4">
+          
+          <!-- 服務 1 -->
+          <div class="swiper-slide h-auto">
+            <div class="p-4 rounded-4 h-100 d-flex flex-column align-items-start position-relative service-card-box overflow-hidden" style="background: rgba(22, 25, 33, 0.92); border: 1px solid rgba(255, 220, 53, 0.25); backdrop-filter: blur(16px); transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);">
+              <!-- 頂部精緻金屬光澤條 -->
+              <div class="position-absolute top-0 start-0 end-0" style="height: 3px; background: linear-gradient(90deg, #FFDC35 0%, #FFA000 100%);"></div>
+              
+              <div class="d-flex align-items-center justify-content-between w-100 mb-3">
+                <div class="rounded-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 72px; height: 72px; background: linear-gradient(135deg, rgba(255, 220, 53, 0.2) 0%, rgba(212, 175, 55, 0.08) 100%); border: 1px solid rgba(255, 220, 53, 0.4);">
+                  <img src="images/icon/emergency-towing-icon.png" class="object-fit-contain" style="width: 46px; height: 46px; filter: brightness(0) invert(1);" loading="lazy" alt="緊急拖吊服務圖示">
+                </div>
+                <span class="badge rounded-pill px-3 py-2" style="background: rgba(255, 220, 53, 0.12); color: #FFDC35; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(255,220,53,0.35); letter-spacing: 0.05em;">24H 快速出勤</span>
+              </div>
+              <h3 class="h4 text-white fw-bold mb-2" style="letter-spacing: 0.03em; font-family: 'Noto Serif HK', serif;">緊急拖吊</h3>
+              <p class="text-white-50 small mb-3 flex-grow-1" style="line-height: 1.6;">
+                無論高速公路、快速道路或市區巷弄，第一時間 GPS 定位派車，專業處理各類故障與事故車輛拖吊。
+              </p>
+              
+              <!-- 專業特點標籤 -->
+              <div class="d-flex flex-wrap gap-2 mb-4 w-100 pt-2 border-top border-secondary border-opacity-25">
+                <span class="d-flex align-items-center gap-1 text-white-50" style="font-size: 0.78rem;">
+                  <span class="material-symbols-outlined text-warning" style="font-size: 14px;">check_circle</span> GPS 快速派車
+                </span>
+                <span class="d-flex align-items-center gap-1 text-white-50" style="font-size: 0.78rem;">
+                  <span class="material-symbols-outlined text-warning" style="font-size: 14px;">check_circle</span> 國道事故清理
+                </span>
+              </div>
+
+              <a href="tel:0981263978" class="text-decoration-none d-flex align-items-center justify-content-between w-100 p-2 rounded-3 fw-bold transition-all" style="background: rgba(255, 220, 53, 0.1); color: #FFDC35; font-size: 0.9rem; border: 1px solid rgba(255, 220, 53, 0.2);">
+                <span class="ms-1">立即求援專線</span>
+                <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 服務 2 -->
+          <div class="swiper-slide h-auto">
+            <div class="p-4 rounded-4 h-100 d-flex flex-column align-items-start position-relative service-card-box overflow-hidden" style="background: rgba(22, 25, 33, 0.92); border: 1px solid rgba(255, 220, 53, 0.25); backdrop-filter: blur(16px); transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);">
+              <div class="position-absolute top-0 start-0 end-0" style="height: 3px; background: linear-gradient(90deg, #FFDC35 0%, #FFA000 100%);"></div>
+              
+              <div class="d-flex align-items-center justify-content-between w-100 mb-3">
+                <div class="rounded-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 72px; height: 72px; background: linear-gradient(135deg, rgba(255, 220, 53, 0.2) 0%, rgba(212, 175, 55, 0.08) 100%); border: 1px solid rgba(255, 220, 53, 0.4);">
+                  <img src="images/icon/roadside-rescue-icon.png" class="object-fit-contain" style="width: 46px; height: 46px; filter: brightness(0) invert(1);" loading="lazy" alt="車輛救援服務圖示">
+                </div>
+                <span class="badge rounded-pill px-3 py-2" style="background: rgba(255, 220, 53, 0.12); color: #FFDC35; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(255,220,53,0.35); letter-spacing: 0.05em;">現場即時排除</span>
+              </div>
+              <h3 class="h4 text-white fw-bold mb-2" style="letter-spacing: 0.03em; font-family: 'Noto Serif HK', serif;">車輛救援</h3>
+              <p class="text-white-50 small mb-4 flex-grow-1" style="line-height: 1.6;">
+                提供專業電瓶沒電緊急接電、爆胎更換備胎、水箱過熱降溫與各項小型路邊快修支援服務。
+              </p>
+              
+              <div class="d-flex flex-wrap gap-2 mb-4 w-100 pt-2 border-top border-secondary border-opacity-25">
+                <span class="d-flex align-items-center gap-1 text-white-50" style="font-size: 0.78rem;">
+                  <span class="material-symbols-outlined text-warning" style="font-size: 14px;">check_circle</span> 電池高效接電
+                </span>
+                <span class="d-flex align-items-center gap-1 text-white-50" style="font-size: 0.78rem;">
+                  <span class="material-symbols-outlined text-warning" style="font-size: 14px;">check_circle</span> 爆胎快速更換
+                </span>
+              </div>
+
+              <a href="tel:0981263978" class="text-decoration-none d-flex align-items-center justify-content-between w-100 p-2 rounded-3 fw-bold transition-all" style="background: rgba(255, 220, 53, 0.1); color: #FFDC35; font-size: 0.9rem; border: 1px solid rgba(255, 220, 53, 0.2);">
+                <span class="ms-1">立即求援專線</span>
+                <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 服務 3 -->
+          <div class="swiper-slide h-auto">
+            <div class="p-4 rounded-4 h-100 d-flex flex-column align-items-start position-relative service-card-box overflow-hidden" style="background: rgba(22, 25, 33, 0.92); border: 1px solid rgba(255, 220, 53, 0.25); backdrop-filter: blur(16px); transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);">
+              <div class="position-absolute top-0 start-0 end-0" style="height: 3px; background: linear-gradient(90deg, #FFDC35 0%, #FFA000 100%);"></div>
+              
+              <div class="d-flex align-items-center justify-content-between w-100 mb-3">
+                <div class="rounded-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 72px; height: 72px; background: linear-gradient(135deg, rgba(255, 220, 53, 0.2) 0%, rgba(212, 175, 55, 0.08) 100%); border: 1px solid rgba(255, 220, 53, 0.4);">
+                  <img src="images/icon/special-recovery-icon.png" class="object-fit-contain" style="width: 46px; height: 46px; filter: brightness(0) invert(1);" loading="lazy" alt="特殊救援服務圖示">
+                </div>
+                <span class="badge rounded-pill px-3 py-2" style="background: rgba(255, 220, 53, 0.12); color: #FFDC35; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(255,220,53,0.35); letter-spacing: 0.05em;">精密防護技術</span>
+              </div>
+              <h3 class="h4 text-white fw-bold mb-2" style="letter-spacing: 0.03em; font-family: 'Noto Serif HK', serif;">特殊救援</h3>
+              <p class="text-white-50 small mb-4 flex-grow-1" style="line-height: 1.6;">
+                專精超跑與低底盤車輛零死角全載拖吊、地下室限高受困車輛脫困、大型重機專業固定運送。
+              </p>
+              
+              <div class="d-flex flex-wrap gap-2 mb-4 w-100 pt-2 border-top border-secondary border-opacity-25">
+                <span class="d-flex align-items-center gap-1 text-white-50" style="font-size: 0.78rem;">
+                  <span class="material-symbols-outlined text-warning" style="font-size: 14px;">check_circle</span> 超跑低底盤全載
+                </span>
+                <span class="d-flex align-items-center gap-1 text-white-50" style="font-size: 0.78rem;">
+                  <span class="material-symbols-outlined text-warning" style="font-size: 14px;">check_circle</span> 地下室限高脫困
+                </span>
+              </div>
+
+              <a href="tel:0981263978" class="text-decoration-none d-flex align-items-center justify-content-between w-100 p-2 rounded-3 fw-bold transition-all" style="background: rgba(255, 220, 53, 0.1); color: #FFDC35; font-size: 0.9rem; border: 1px solid rgba(255, 220, 53, 0.2);">
+                <span class="ms-1">立即求援專線</span>
+                <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 服務 4 -->
+          <div class="swiper-slide h-auto">
+            <div class="p-4 rounded-4 h-100 d-flex flex-column align-items-start position-relative service-card-box overflow-hidden" style="background: rgba(22, 25, 33, 0.92); border: 1px solid rgba(255, 220, 53, 0.25); backdrop-filter: blur(16px); transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);">
+              <div class="position-absolute top-0 start-0 end-0" style="height: 3px; background: linear-gradient(90deg, #FFDC35 0%, #FFA000 100%);"></div>
+              
+              <div class="d-flex align-items-center justify-content-between w-100 mb-3">
+                <div class="rounded-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 72px; height: 72px; background: linear-gradient(135deg, rgba(255, 220, 53, 0.2) 0%, rgba(212, 175, 55, 0.08) 100%); border: 1px solid rgba(255, 220, 53, 0.4);">
+                  <img src="images/icon/long-distance-towing-icon.png" class="object-fit-contain" style="width: 46px; height: 46px; filter: brightness(0) invert(1);" loading="lazy" alt="長途拖吊服務圖示">
+                </div>
+                <span class="badge rounded-pill px-3 py-2" style="background: rgba(255, 220, 53, 0.12); color: #FFDC35; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(255,220,53,0.35); letter-spacing: 0.05em;">誠信透明報價</span>
+              </div>
+              <h3 class="h4 text-white fw-bold mb-2" style="letter-spacing: 0.03em; font-family: 'Noto Serif HK', serif;">長途拖吊</h3>
+              <p class="text-white-50 small mb-4 flex-grow-1" style="line-height: 1.6;">
+                提供高屏往返全台各縣市之長途安全轉運服務。上車前明確透明報價，絕不亂喊價，給您最安心的承諾。
+              </p>
+              
+              <div class="d-flex flex-wrap gap-2 mb-4 w-100 pt-2 border-top border-secondary border-opacity-25">
+                <span class="d-flex align-items-center gap-1 text-white-50" style="font-size: 0.78rem;">
+                  <span class="material-symbols-outlined text-warning" style="font-size: 14px;">check_circle</span> 全台各縣市轉運
+                </span>
+                <span class="d-flex align-items-center gap-1 text-white-50" style="font-size: 0.78rem;">
+                  <span class="material-symbols-outlined text-warning" style="font-size: 14px;">check_circle</span> 絕不半路加價
+                </span>
+              </div>
+
+              <a href="tel:0981263978" class="text-decoration-none d-flex align-items-center justify-content-between w-100 p-2 rounded-3 fw-bold transition-all" style="background: rgba(255, 220, 53, 0.1); color: #FFDC35; font-size: 0.9rem; border: 1px solid rgba(255, 220, 53, 0.2);">
+                <span class="ms-1">立即諮詢報價</span>
+                <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 服務 5 -->
+          <div class="swiper-slide h-auto">
+            <div class="p-4 rounded-4 h-100 d-flex flex-column align-items-start position-relative service-card-box overflow-hidden" style="background: rgba(22, 25, 33, 0.92); border: 1px solid rgba(255, 220, 53, 0.25); backdrop-filter: blur(16px); transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);">
+              <div class="position-absolute top-0 start-0 end-0" style="height: 3px; background: linear-gradient(90deg, #FFDC35 0%, #FFA000 100%);"></div>
+              
+              <div class="d-flex align-items-center justify-content-between w-100 mb-3">
+                <div class="rounded-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 72px; height: 72px; background: linear-gradient(135deg, rgba(255, 220, 53, 0.2) 0%, rgba(212, 175, 55, 0.08) 100%); border: 1px solid rgba(255, 220, 53, 0.4);">
+                  <img src="images/icon/hoisting-service-icon.png" class="object-fit-contain" style="width: 46px; height: 46px; filter: brightness(0) invert(1);" loading="lazy" alt="物品吊掛服務圖示">
+                </div>
+                <span class="badge rounded-pill px-3 py-2" style="background: rgba(255, 220, 53, 0.12); color: #FFDC35; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(255,220,53,0.35); letter-spacing: 0.05em;">重車起重吊臂</span>
+              </div>
+              <h3 class="h4 text-white fw-bold mb-2" style="letter-spacing: 0.03em; font-family: 'Noto Serif HK', serif;">物品吊掛</h3>
+              <p class="text-white-50 small mb-4 flex-grow-1" style="line-height: 1.6;">
+                備有專業油壓起重吊臂與高強度吊帶，承接各類重型機械、工程建材、藝術石雕及特殊物品吊掛作業。
+              </p>
+              
+              <div class="d-flex flex-wrap gap-2 mb-4 w-100 pt-2 border-top border-secondary border-opacity-25">
+                <span class="d-flex align-items-center gap-1 text-white-50" style="font-size: 0.78rem;">
+                  <span class="material-symbols-outlined text-warning" style="font-size: 14px;">check_circle</span> 專業油壓起重
+                </span>
+                <span class="d-flex align-items-center gap-1 text-white-50" style="font-size: 0.78rem;">
+                  <span class="material-symbols-outlined text-warning" style="font-size: 14px;">check_circle</span> 重型機械吊運
+                </span>
+              </div>
+
+              <a href="tel:0981263978" class="text-decoration-none d-flex align-items-center justify-content-between w-100 p-2 rounded-3 fw-bold transition-all" style="background: rgba(255, 220, 53, 0.1); color: #FFDC35; font-size: 0.9rem; border: 1px solid rgba(255, 220, 53, 0.2);">
+                <span class="ms-1">立即諮詢專線</span>
+                <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 服務 6 -->
+          <div class="swiper-slide h-auto">
+            <div class="p-4 rounded-4 h-100 d-flex flex-column align-items-start position-relative service-card-box overflow-hidden" style="background: rgba(22, 25, 33, 0.92); border: 1px solid rgba(255, 220, 53, 0.25); backdrop-filter: blur(16px); transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);">
+              <div class="position-absolute top-0 start-0 end-0" style="height: 3px; background: linear-gradient(90deg, #FFDC35 0%, #FFA000 100%);"></div>
+              
+              <div class="d-flex align-items-center justify-content-between w-100 mb-3">
+                <div class="rounded-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 72px; height: 72px; background: linear-gradient(135deg, rgba(255, 220, 53, 0.2) 0%, rgba(212, 175, 55, 0.08) 100%); border: 1px solid rgba(255, 220, 53, 0.4);">
+                  <img src="images/icon/transport-lifting-icon.png" class="object-fit-contain" style="width: 46px; height: 46px; filter: brightness(0) invert(1);" loading="lazy" alt="吊運服務圖示">
+                </div>
+                <span class="badge rounded-pill px-3 py-2" style="background: rgba(255, 220, 53, 0.12); color: #FFDC35; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(255,220,53,0.35); letter-spacing: 0.05em;">工程專案承包</span>
+              </div>
+              <h3 class="h4 text-white fw-bold mb-2" style="letter-spacing: 0.03em; font-family: 'Noto Serif HK', serif;">吊運服務</h3>
+              <p class="text-white-50 small mb-4 flex-grow-1" style="line-height: 1.6;">
+                提供鋼構材料組裝搬運、工廠設備移機、水塔與大型金屬結構吊裝等高難度特種吊運與運輸工程。
+              </p>
+              
+              <div class="d-flex flex-wrap gap-2 mb-4 w-100 pt-2 border-top border-secondary border-opacity-25">
+                <span class="d-flex align-items-center gap-1 text-white-50" style="font-size: 0.78rem;">
+                  <span class="material-symbols-outlined text-warning" style="font-size: 14px;">check_circle</span> 鋼構組裝搬運
+                </span>
+                <span class="d-flex align-items-center gap-1 text-white-50" style="font-size: 0.78rem;">
+                  <span class="material-symbols-outlined text-warning" style="font-size: 14px;">check_circle</span> 工廠設備移機
+                </span>
+              </div>
+
+              <a href="tel:0981263978" class="text-decoration-none d-flex align-items-center justify-content-between w-100 p-2 rounded-3 fw-bold transition-all" style="background: rgba(255, 220, 53, 0.1); color: #FFDC35; font-size: 0.9rem; border: 1px solid rgba(255, 220, 53, 0.2);">
+                <span class="ms-1">立即諮詢專線</span>
+                <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Swiper Pagination -->
+        <div class="swiper-pagination services-pagination position-relative mt-4"></div>
       </div>
     </div>
+  </div>
 
     <!--------------------------------------------------------------------------------------->
 
-    <div id="about-us" class="container-fluid">
-      <div class="row mb-5 mt-5">
-        <div class="col-12 col-lg-4 mb-3 mt-3" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
-          <div class="section">
-            <h3 class="justify-content-center"><span class="material-symbols-outlined" aria-hidden="true">groups</span>關於我們</h3>
-            <p>我們的拖吊車公司成立於2009年，從一輛小拖吊車起步，憑著專業技術和真誠服務，迅速成為本地領先的道路救援與拖吊服務提供商。我們的服務範圍涵蓋高雄和屏東地區，憑藉專業的技術、優質的服務和可靠的信譽，贏得了廣大客戶的信任和支持。</p>
+    <section id="about-us" class="py-5 position-relative overflow-hidden" style="background: linear-gradient(180deg, #050608 0%, #080a0d 100%); border-top: 1px solid rgba(255, 220, 53, 0.15); border-bottom: 1px solid rgba(255, 220, 53, 0.15);">
+      <!-- 微弱柔和背景光暈 -->
+      <div class="position-absolute top-0 start-50 translate-middle-x rounded-circle pointer-event-none" style="width: 500px; height: 500px; background: radial-gradient(circle, rgba(255, 220, 53, 0.08) 0%, transparent 50%); filter: blur(120px);"></div>
+
+      <div class="container-xl py-4 position-relative z-1">
+        <!-- 區塊標題 -->
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style="background: rgba(255, 220, 53, 0.1); border: 1px solid rgba(255, 220, 53, 0.3);">
+            <span class="material-symbols-outlined text-warning" style="font-size: 16px;">verified</span>
+            <span style="color: #FFDC35; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em;">高雄屏東在地首選・專業信賴</span>
+          </div>
+          <h2 class="text-white fw-bold display-6 mb-3" style="letter-spacing: 0.02em; font-family: 'Noto Serif HK', serif;">關於我們與專業團隊</h2>
+          <p class="text-white-50 mx-auto" style="max-width: 650px; line-height: 1.7;">
+            深耕高屏地區十餘載，以頂級拖吊設備、專業證照團隊與 24 小時全天候守護，為您的每一次出行提供最堅實的安全後盾。
+          </p>
+        </div>
+
+        <!-- 數據統計橫幅 (Stats Banner) -->
+        <div class="p-4 rounded-4 mb-5" style="background: rgba(14, 16, 22, 0.98); border: 1px solid rgba(255, 220, 53, 0.2); backdrop-filter: blur(12px);" data-aos="fade-up" data-aos-delay="200">
+          <div class="row text-center g-4">
+            <div class="col-6 col-md-3">
+              <div class="h2 text-warning fw-bold mb-1" style="font-family: 'Noto Serif HK', serif;">15+</div>
+              <div class="text-white-50 small">年專業救援經驗</div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="h2 text-warning fw-bold mb-1" style="font-family: 'Noto Serif HK', serif;">24 / 7</div>
+              <div class="text-white-50 small">全年無休即時出勤</div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="h2 text-warning fw-bold mb-1" style="font-family: 'Noto Serif HK', serif;">10,000+</div>
+              <div class="text-white-50 small">成功救援與吊掛案例</div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="h2 text-warning fw-bold mb-1" style="font-family: 'Noto Serif HK', serif;">100%</div>
+              <div class="text-white-50 small">客戶滿意與安全保障</div>
+            </div>
           </div>
         </div>
-        <div class="col-12 col-lg-4 mb-3 mt-3" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
-          <div class="section">
-            <h3 class="justify-content-center"><span class="material-symbols-outlined" aria-hidden="true">diversity_4</span>團隊</h3>
-            <p>我們的團隊由一群經驗豐富、技術精湛且熱愛工作的專業人士組成。我們擁有豐富的道路救援和拖吊經驗，並定期接受培訓以保持最新的行業知識和技能。我們的司機和技術人員不僅擅長操作各類拖吊設備，還具備良好的應變能力和服務態度，確保每次任務都能安全、高效地完成。</p>
+
+        <!-- 3大核心卡片 Swiper 輪播 -->
+        <div class="swiper aboutSwiper pb-5 position-relative px-md-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="swiper-wrapper pt-4 pb-4">
+            
+            <!-- 卡片 1：關於我們 / 品牌沿革 -->
+            <div class="swiper-slide h-auto">
+              <div class="p-4 rounded-4 h-100 d-flex flex-column position-relative overflow-hidden service-card-box" style="background: rgba(14, 16, 22, 0.98); border: 1px solid rgba(255, 220, 53, 0.2); backdrop-filter: blur(16px); transition: all 0.35s ease;">
+                <div class="position-absolute top-0 start-0 end-0" style="height: 3px; background: linear-gradient(90deg, #FFDC35 0%, #FFA000 100%);"></div>
+                
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                  <div class="rounded-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 64px; height: 64px; background: linear-gradient(135deg, rgba(255, 220, 53, 0.18) 0%, rgba(212, 175, 55, 0.05) 100%); border: 1px solid rgba(255, 220, 53, 0.35);">
+                    <span class="material-symbols-outlined text-warning" style="font-size: 32px;">history_edu</span>
+                  </div>
+                  <span class="badge rounded-pill px-3 py-2" style="background: rgba(255, 220, 53, 0.1); color: #FFDC35; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(255,220,53,0.3);">創立於 2009</span>
+                </div>
+
+                <h3 class="h4 text-white fw-bold mb-3" style="letter-spacing: 0.03em; font-family: 'Noto Serif HK', serif;">深耕在地・穩健前行</h3>
+                <p class="text-white-50 small mb-4 flex-grow-1" style="line-height: 1.7;">
+                  自 2009 年從單車起步，憑著卓越技術與誠信經營，迅速成長為高雄與屏東地區最具規模與信譽的道路救援與特種拖吊服務商，贏得萬名車主一致推崇。
+                </p>
+
+                <div class="pt-3 border-top border-secondary border-opacity-25 d-flex align-items-center justify-content-between text-white-50" style="font-size: 0.8rem;">
+                  <span class="d-flex align-items-center gap-1"><span class="material-symbols-outlined text-warning" style="font-size: 16px;">location_on</span> 高屏全區覆蓋</span>
+                  <span class="fw-bold text-warning">15+ 年專業經驗</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 卡片 2：專業菁英團隊 -->
+            <div class="swiper-slide h-auto">
+              <div class="p-4 rounded-4 h-100 d-flex flex-column position-relative overflow-hidden service-card-box" style="background: rgba(14, 16, 22, 0.98); border: 1px solid rgba(255, 220, 53, 0.2); backdrop-filter: blur(16px); transition: all 0.35s ease;">
+                <div class="position-absolute top-0 start-0 end-0" style="height: 3px; background: linear-gradient(90deg, #FFDC35 0%, #FFA000 100%);"></div>
+                
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                  <div class="rounded-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 64px; height: 64px; background: linear-gradient(135deg, rgba(255, 220, 53, 0.18) 0%, rgba(212, 175, 55, 0.05) 100%); border: 1px solid rgba(255, 220, 53, 0.35);">
+                    <span class="material-symbols-outlined text-warning" style="font-size: 32px;">engineering</span>
+                  </div>
+                  <span class="badge rounded-pill px-3 py-2" style="background: rgba(255, 220, 53, 0.1); color: #FFDC35; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(255,220,53,0.3);">專業證照認證</span>
+                </div>
+
+                <h3 class="h4 text-white fw-bold mb-3" style="letter-spacing: 0.03em; font-family: 'Noto Serif HK', serif;">菁英技術・頂級防護</h3>
+                <p class="text-white-50 small mb-4 flex-grow-1" style="line-height: 1.7;">
+                  每位司機與技師皆具備國家專業證照與多年實戰經驗，定期接受精密吊掛與超跑防護培訓，面對各式突發狀況皆能冷靜應變、安全至上。
+                </p>
+
+                <div class="pt-3 border-top border-secondary border-opacity-25 d-flex align-items-center justify-content-between text-white-50" style="font-size: 0.8rem;">
+                  <span class="d-flex align-items-center gap-1"><span class="material-symbols-outlined text-warning" style="font-size: 16px;">shield</span> 零死角安全防護</span>
+                  <span class="fw-bold text-warning">100% 專業完訓</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 卡片 3：核心使命與承諾 -->
+            <div class="swiper-slide h-auto">
+              <div class="p-4 rounded-4 h-100 d-flex flex-column position-relative overflow-hidden service-card-box" style="background: rgba(14, 16, 22, 0.98); border: 1px solid rgba(255, 220, 53, 0.2); backdrop-filter: blur(16px); transition: all 0.35s ease;">
+                <div class="position-absolute top-0 start-0 end-0" style="height: 3px; background: linear-gradient(90deg, #FFDC35 0%, #FFA000 100%);"></div>
+                
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                  <div class="rounded-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 64px; height: 64px; background: linear-gradient(135deg, rgba(255, 220, 53, 0.18) 0%, rgba(212, 175, 55, 0.05) 100%); border: 1px solid rgba(255, 220, 53, 0.35);">
+                    <span class="material-symbols-outlined text-warning" style="font-size: 32px;">verified_user</span>
+                  </div>
+                  <span class="badge rounded-pill px-3 py-2" style="background: rgba(255, 220, 53, 0.1); color: #FFDC35; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(255,220,53,0.3);">24H 全天候守護</span>
+                </div>
+
+                <h3 class="h4 text-white fw-bold mb-3" style="letter-spacing: 0.03em; font-family: 'Noto Serif HK', serif;">極速救援・安心託付</h3>
+                <p class="text-white-50 small mb-4 flex-grow-1" style="line-height: 1.7;">
+                  我們承諾提供即時、高效且價格透明的救援服務。無論深夜或惡劣天候，只要您一通電話，我們立即啟動 GPS 定位派車，陪伴您度過每一個困境。
+                </p>
+
+                <div class="pt-3 border-top border-secondary border-opacity-25 d-flex align-items-center justify-content-between text-white-50" style="font-size: 0.8rem;">
+                  <span class="d-flex align-items-center gap-1"><span class="material-symbols-outlined text-warning" style="font-size: 16px;">bolt</span> 急速出勤響應</span>
+                  <span class="fw-bold text-warning">透明報價絕不加價</span>
+                </div>
+              </div>
+            </div>
+
           </div>
+
+          <!-- Swiper Pagination -->
+          <div class="swiper-pagination about-pagination position-relative mt-4"></div>
         </div>
-        <div class="col-12 col-lg-4 mb-3 mt-3" data-aos="zoom-in-up" data-aos-anchor-placement="top-bottom">
-          <div class="section">
-            <h3 class="justify-content-center"><span class="material-symbols-outlined" aria-hidden="true">workspace_premium</span>使命</h3>
-            <p>我們的使命是提供快速、高效且安全的拖吊和道路救援服務，確保每一位客戶在遇到車輛故障或事故時，都能獲得即時的幫助和安心。我們致力於以客戶為中心，提供全天候24小時服務，確保您在任何時間、地點都能得到我們的支援。</p>
-          </div>
-        </div>
+
       </div>
-    </div> 
+    </section> 
 
     <!--------------------------------------------------------------------------------------->
     
     <!-- ==================== 專業道路救援案例與吊掛作業實績 (極簡風格 Minimalist Showcase) ==================== -->
-    <section id="cases" class="minimal-cases-section container-fluid pb-4">
+    <section id="cases" class="minimal-cases-section container-fluid py-5">
       <!-- 錨點支援吊掛作業導航 -->
       <div id="operations" style="position: relative; top: -80px; visibility: hidden;"></div>
 

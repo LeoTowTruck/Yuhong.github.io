@@ -1,0 +1,6 @@
+{
+  "name": "拾捌拖吊車 - 高雄屏東24小時道路救援",
+  "description": "高雄屏東24小時道路救援、拖吊車服務、汽車故障快速排除與GPS定位派車。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

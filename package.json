@@ -1,0 +1,15 @@
+{
+  "name": "yuhong-towtruck",
+  "private": true,
+  "version": "1.0.0",
+  "description": "高雄屏東24小時道路救援 | 專業拖吊車、汽車故障快速排除",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "echo 'No build step required for static site'"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
