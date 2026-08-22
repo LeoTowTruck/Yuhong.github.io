@@ -1,4 +1,59 @@
 
+    /* ==========================================================================
+       一深一淺大區塊背景系統與卡片一致性風格規範
+       ========================================================================== */
+    .py-6 {
+      padding-top: 6rem !important; 
+      padding-bottom: 4rem !important;
+    }
+    
+    /* 區塊深色背景 (Dark Tone - #0d0f14) */
+    .section-bg-dark {
+        background: linear-gradient(180deg, #0d0f14 0%, #11141a 100%) !important;
+        border-top: 1px solid rgba(255, 220, 53, 0.12);
+        border-bottom: 1px solid rgba(255, 220, 53, 0.12);
+        position: relative;
+    }
+
+    /* 區塊較淺背景 (Lighter/Subtle Tone - #181b22) */
+    .section-bg-alt {
+        background: linear-gradient(180deg, #181b22 0%, #1c202a 100%) !important;
+        border-top: 1px solid rgba(255, 220, 53, 0.14);
+        border-bottom: 1px solid rgba(255, 220, 53, 0.14);
+        position: relative;
+    }
+
+    /* 全站一致性統一卡片基礎風格 (Unified Card Standard) */
+    .unified-card,
+    .service-card-box,
+    .advantage-card,
+    .gps-step-card,
+    .minimal-case-card,
+    .review-card-box {
+        background: radial-gradient(circle at 80% 20%, rgba(35, 38, 48, 0.7) 0%, rgba(18, 20, 26, 0.95) 100%) !important;
+        border: 1px solid rgba(255, 220, 53, 0.18) !important;
+        border-radius: 16px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .unified-card:hover,
+    .service-card-box:hover,
+    .advantage-card:hover,
+    .gps-step-card:hover,
+    .minimal-case-card:hover,
+    .review-card-box:hover {
+        border-color: rgba(255, 220, 53, 0.45) !important;
+        transform: translateY(-4px) !important;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 220, 53, 0.1) !important;
+    }
+
+    .review-card-box:hover .review-img {
+        transform: scale(1.04);
+    }
+
     /* Reset CSS */
     * {
         margin: 0;
@@ -29,12 +84,7 @@
         max-width: 1400px;
         transition: padding 0.5s ease;
     }
-
-    .col-12 {
-        padding-top: 1vh; 
-        padding-bottom: 1vh;
-    }
-
+    
     /*********************************************************************/
 
     /* -- 現代精緻頂部導航欄 (Modern Sleek Navbar) -- */
@@ -528,339 +578,7 @@
         z-index: 1;
     }
 
-    /*********************************************************************/
-
-    /* 區域整體外框與背景暗化 */
-    .move-image-container {
-        position: relative;
-        overflow: visible;
-        background: radial-gradient(circle at 50% 50%, #25252b 0%, #17171a 100%);
-        border-radius: 20px;
-        border: 1px solid rgba(255, 220, 53, 0.15);
-        padding: 10px 0;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    }
-
-    /* 標題細節加強 */
-    .move-image-container h1 {
-        font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-        color: #FFDC35; /* 換成與導航欄一致的黃金品牌色 */
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-        font-weight: 900;
-        margin: 0;
-    }
-
-    .move-image-container h2 {
-        font-size: clamp(1.1rem, 2.2vw, 1.6rem);
-        color: #ffffff;
-        opacity: 0.9;
-        font-weight: 700;
-        margin-top: 4px;
-    }
-
-    .move-image-container .row .col-12 {
-        display: flex;
-        justify-content: center; /* 水平置中 */
-        flex-direction: column;  /* 元素由上往下排序 */
-        align-items: center;     /* 垂直居中 */
-    }
-
-    /* GPS 按鈕 */
-    .gpsbtn {
-        display: inline-flex !important;
-        align-items: center;
-        justify-content: center;
-        width: calc(100% - 32px);
-        max-width: 360px;
-        height: 64px; /* 適當收緊高度更顯俐落 */
-        margin: 20px auto !important;
-        background: linear-gradient(135deg, #FFDC35 0%, #d4af37 100%) !important;
-        color: #111113 !important;
-        font-weight: 900;
-        font-size: clamp(1.15rem, 2.5vw, 1.4rem) !important;
-        border-radius: 12px !important;
-        box-shadow: 0 6px 20px rgba(255, 220, 53, 0.3) !important;
-        text-shadow: none !important;
-    }
-
-    /* 懸停效果 */
-    .gpsbtn:hover {
-        background: linear-gradient(135deg, #ffe359 0%, #e5bd38 100%) !important;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(255, 220, 53, 0.45) !important;
-    }
-
-    /* 步驟清單對齊與膠囊底色 */
-    .gps-steps-wrapper {
-        gap: 10px;
-        margin-top: 10px;
-    }
-
-    .move-image-container h3 {
-        font-size: clamp(0.95rem, 2vw, 1.2rem);
-        color: rgba(255, 255, 255, 0.9);
-        background: rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        padding: 8px 20px;
-        border-radius: 50px;
-        margin: 0;
-        width: fit-content;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    .move-image-container h3 .material-symbols-outlined {
-        color: #FFDC35;
-        font-size: 1.3rem;
-        margin-right: 6px;
-    }
-
-    /* 漂浮圖案微調透明度，避免遮擋文字 */
-    .moving-image1, .moving-image2, .moving-image3 {
-        opacity: 0.18;
-        filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255,220,53,0.3));
-    }
-
-    /* 脈衝動畫 */
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        50% {
-            transform: scale(1.02);
-            box-shadow: 0 6px 20px rgba(255, 183, 0, 0.4);
-        }
-        100% {
-            transform: scale(1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-    }
-
-    @keyframes move1 {
-        0% {
-            transform: rotate(0deg) translateX(20px) rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg) translateX(20px) rotate(-360deg);
-        }
-    }
-
-    @keyframes move2 {
-        0% {
-            transform: rotate(0deg) translateX(15px) rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg) translateX(15px) rotate(-360deg);
-        }
-    }
-
-    @keyframes move3 {
-        0% {
-            transform: rotate(0deg) translateX(25px) rotate(0deg);
-        }
-        100% {
-            transform: rotate(-360deg) translateX(25px) rotate(360deg);
-        }
-    }
-    @keyframes move4 {
-        0% {
-            transform: rotate(0deg) translateX(11px) rotate(0deg);
-        }
-        100% {
-            transform: rotate(-360deg) translateX(11px) rotate(360deg);
-        }
-    }
-    @keyframes move5 {
-        0% {
-            transform: rotate(0deg) translateX(14px) rotate(0deg);
-        }
-        100% {
-            transform: rotate(-360deg) translateX(14px) rotate(360deg);
-        }
-    }
-    @keyframes move6 {
-        0% {
-            transform: rotate(0deg) translateX(17px) rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg) translateX(17px) rotate(-360deg);
-        }
-    }
-    .moving-image1 {
-        position: absolute;
-        top: 4%; /* 圖片初始位置 */
-        left: 20px; /* 圖片初始位置 */
-        width: 16%;
-        max-width: 120px;
-        aspect-ratio: 1 / 1;  /* 強制維持 512x512 的正方形比例 */
-        height: auto;
-        will-change: transform; /* 提示瀏覽器進行優化 */
-        animation: move4 10s infinite linear;
-        object-fit: contain;  /* 確保圖片在容器內不變形 */
-    }
-    .moving-image2 {
-        position: absolute;
-        left: 40px; 
-        bottom: 1%;
-        width: 14%;
-        max-width: 120px;
-        aspect-ratio: 1 / 1;  /* 強制維持 512x512 的正方形比例 */
-        height: auto;
-        will-change: transform; /* 提示瀏覽器進行優化 */
-        animation: move5 12s infinite linear;
-        object-fit: contain;  /* 確保圖片在容器內不變形 */
-    }
-    .moving-image3 {
-        position: absolute;
-        top: 38%; 
-        right: 4px; 
-        width: 17%;
-        max-width: 120px;
-        aspect-ratio: 1 / 1;  /* 強制維持 512x512 的正方形比例 */
-        height: auto;
-        will-change: transform; /* 提示瀏覽器進行優化 */
-        animation: move6 9s infinite linear;
-        object-fit: contain;  /* 確保圖片在容器內不變形 */
-    }
-    /* 動畫 */
-    .shapeAll {
-        position: absolute;
-        border-radius: 5px;
-        border: 3px solid rgba(240, 240, 240, 1); /* 邊框 */
-        padding: 0;
-    }
-    .shape1 {
-        top: -2%;
-        left: 10px;
-        width: 15px;
-        height: 15px;
-        animation: move6 10s infinite linear;
-    }
-    .shape2 {
-        top: calc(min(180px, 10% + 10vw)); /* 16% 基礎值，加上螢幕寬度的 4%，但最大為 30px */
-        left: 20px;
-        width: 17px;
-        height: 17px;
-        animation: move5 12s infinite linear;
-    }
-    .shape3 {
-        top: 6%;
-        left: calc(min(30%, 200px)); /* 左偏移量最大為 N px */
-        width: 19px;
-        height: 19px;
-        animation: move6 9s infinite linear;
-    }
-    .shape4 {
-        left: -3px;
-        bottom: -4%;
-        width: 15px;
-        height: 15px;
-        animation: move4 11s infinite linear;
-    }
-    .shape5 {
-        left: calc(min(32%, 220px)); /* 左偏移量最大為 N px */
-        bottom: 2%;
-        width: 17px;
-        height: 17px;
-        animation: move6 12s infinite linear;
-    }
-    .shape6 {
-        left: calc(min(7%, 60px)); /* 左偏移量最大為 N px */
-        bottom: calc(min(180px, 10% + 8vw)); /* 16% 基礎值，加上螢幕寬度的 4%，但最大為 30px */
-        width: 13px;
-        height: 13px;
-        animation: move5 9s infinite linear;
-    }
-    .shape7 {
-        top: 27%;
-        right: 5px;
-        width: 15px;
-        height: 15px;
-        animation: move6 10s infinite linear;
-    }
-    .shape8 {
-        top: 42%;
-        right: calc(min(26%, 170px)); /* 左偏移量最大為 N px */  
-        width: 17px;
-        height: 17px;
-        animation: move5 12s infinite linear;
-    }
-    .shape9 {
-        right: -10px;
-        bottom: 42%;
-        width: 18px;
-        height: 18px;
-        animation: move4 11s infinite linear;
-    }    
-    
-    .flash-box {
-        position: relative;
-        overflow: hidden;
-        width: 100%;            /* 設置格子的寬度 */
-        height: 100%;           /* 設置格子的高度 */
-        padding: 70px 0px;  
-    }
-
-    .flash-box::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0; 
-        width: 40%;
-        max-width: 250px;
-        height: 100%;
-        background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
-        transform: skewX(-45deg) translateX(-300%); 
-        filter: blur(16px);
-        will-change: transform; 
-        animation: flash 10s infinite;
-    }
-
-    @keyframes flash {
-        0% {
-            transform: skewX(-45deg) translateX(-300%);
-        }
-        70% {
-            transform: skewX(-45deg) translateX(500%);
-        }
-        100% {
-            transform: skewX(-45deg) translateX(500%);
-        }
-    }
-
   /*********************************************************************/
-
-    .section {
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* 垂直置中 */
-      color: rgb(255,255,255);
-      padding: 1vh 5%;
-      border-left: 1vh solid rgba(255, 215, 0, 1); /* 左邊框黃色 */
-      border-right: 0.5vh solid transparent;         /* 右邊框透明 */
-      text-align: center;
-      height: 100%;
-    }
-
-    .section .d-flex {
-      align-items: flex-end;
-      justify-content: center; /* 垂直置中 */
-    }
-
-
-    .w-settingHead {
-      min-width: 60px;
-      width: 9%;
-    }
-
-    .w-setting {
-      min-width: 40px;
-      width: 15%;
-    }
-
-    .ml-setting {
-      margin-left: 5px; /* 可根據需要調整 */
-    }
 
     h1, h2, h3 {
         font-family: "Noto Serif HK", serif;         /* 設置字體為 "Noto Serif HK" 和預設字體為 serif */
@@ -889,61 +607,132 @@
       font-size: clamp(1.4rem, 2.5vw, 2rem); 
     }
 
-    .section h3 { 
-      font-weight: 700; /* 粗體字重 */
-      font-size: clamp(1.4rem, 2.5vw, 2rem); 
-    }
-
-    .section p {
-      font-weight: 700; /* 粗體字重 */
-      font-size: 1em;
-      line-height: 1.5em;
-      padding: 5px 5px;
-      z-index: 1;
-    }
-
     /*********************************************************************/
 
-    /*  背景圖  */
-    .ink-background {
-        width: 140%;
-        position: relative;   /* 設置容器的定位為相對定位，這樣內部的絕對定位元素可以根據此容器進行定位 */
-        filter: grayscale(0%) contrast(100%) brightness(100%) blur(0px); 
-        /* 應用過濾效果： grayscale(0%): 不應用灰階效果（0% 灰階）       /  contrast(100%): 保持原始對比度（100% 對比度）  */
-        /*              brightness(100%): 保持原始亮度（100% 亮度）   /  blur(0px): 不應用模糊效果（0 像素模糊）         */
-        z-index: -1;
+    /*  三大核心優勢 / 為什麼選擇我們  */
+    .core-advantages-section {
+        position: relative;
+        overflow: hidden;
     }
 
-    .ink-background img {
-        position: absolute;      /* 設置圖片的定位為絕對定位 */
-        opacity: 0.2;            /* 設置圖片的透明度        */
-        -webkit-user-drag: none; /* 禁用圖片拖拽功能        */
-        height: auto !important; 
-        object-fit: contain;     /* 保持比例縮放，不裁切且不變形 */
+    .advantage-card {
+        background: radial-gradient(circle at 80% 20%, rgba(38, 38, 48, 0.6) 0%, rgba(20, 20, 24, 0.95) 100%);
+        border: 1px solid rgba(255, 220, 53, 0.16);
+        border-radius: 20px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+        padding: 24px;
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        position: relative;
     }
 
-    .ink-background .img-1 {
-        width: 130%;
-        aspect-ratio: 1114 / 776;
-        left: -30%; /* 設置圖片的左邊位置為容器的左邊 */
-        top: 10%; /* 設置圖片的頂部位置為容器的頂部 */
-        transform: translateY(-22%); /* 確保圖片居中顯示 */
+    .advantage-card:hover {
+        border-color: rgba(255, 220, 53, 0.45);
+        transform: translateY(-4px);
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 220, 53, 0.12);
     }
 
-    .ink-background .img-2 {
-        width: 90%;
-        aspect-ratio: 697 / 477;
-        left: -9%; /* 設置圖片的左邊位置為容器的左邊 */
-        top: 85%; /* 設置圖片的頂部位置為容器的頂部 */
-        transform: translateY(-21%); /* 確保圖片居中顯示 */
+    .advantage-img-box {
+        position: relative;
+        overflow: hidden;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        aspect-ratio: 16 / 10;
+        background: #111113;
     }
 
-    .ink-background .img-3 {  
+    .advantage-img {
         width: 100%;
-        aspect-ratio: 1206 / 813;
-        left: -15%; /* 設置圖片的左邊位置為容器的左邊 */
-        top: 50%; /* 設置圖片的頂部位置為容器的頂部 */
-        transform: translateY(-15%); /* 確保圖片居中顯示 */
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .advantage-card:hover .advantage-img {
+        transform: scale(1.06);
+    }
+
+    .advantage-badge {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: rgba(17, 17, 19, 0.88);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 220, 53, 0.35);
+        color: #FFDC35;
+        font-size: 0.82rem;
+        font-weight: 700;
+        padding: 5px 12px;
+        border-radius: 9999px;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        z-index: 2;
+    }
+
+    .advantage-icon-pill {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, rgba(255, 220, 53, 0.22) 0%, rgba(255, 220, 53, 0.06) 100%);
+        border: 1px solid rgba(255, 220, 53, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: 0 4px 15px rgba(255, 220, 53, 0.15);
+    }
+
+    .advantage-icon-pill img {
+        width: 26px;
+        height: 26px;
+        object-fit: contain;
+        filter: brightness(0) invert(1);
+    }
+
+    .advantage-tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 16px;
+    }
+
+    .advantage-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        color: #e2e8f0;
+        font-size: 0.88rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
+    }
+
+    .advantage-card:hover .advantage-tag {
+        background: rgba(255, 220, 53, 0.08);
+        border-color: rgba(255, 220, 53, 0.25);
+    }
+
+    .advantage-tag .material-symbols-outlined {
+        color: #FFDC35;
+        font-size: 16px;
+        width: 16px;
+        height: 16px;
+    }
+
+    @media (max-width: 767.98px) {
+        .advantage-card {
+            padding: 18px;
+        }
+        .advantage-img-box {
+            aspect-ratio: 16 / 11;
+        }
     }
 
     /*********************************************************************/
@@ -953,95 +742,11 @@
         filter: brightness(0) invert(1); 
     }
 
-    /*********************************************************************/   
-
-    /*  右下電話 & Line  */
-    .fixed-buttons-container {
-        position: fixed;
-        bottom: 30px;           /* 距離底部的距離 */
-        right: 20px;            /* 距離右邊的距離 */
-        display: flex;
-        flex-direction: column; /* 垂直排列按鈕   */
-        gap: 10px;              /* 按鈕間距      */
-        z-index: 999;
-        transition: all 0.4s ease;
-    }
-    
-    .call-button, .Line-button {
-        width: 60px;
-        height: 60px;
-        box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3); /* 僅在底部添加陰影效果 */
-        border-radius: 10px;
-        border: none; /* 移除邊框 */
-        padding: 10px 10px;
-        animation: shake 5s infinite; /* 添加動畫 */
-    }
-
-    /* 滾動到底部輕微放大 */
-    .fixed-buttons-container.is-scrolled {
-        flex-direction: row;    /* 改為水平排列 */
-        gap: 16px;              /* 按鈕間距      */ 
-        right: 60px;            /* 距離右邊的距離 */
-        bottom: 40px;           /* 距離底部的距離 */
-        transform: scale(1.4); /* 整個按鈕容器變大 */
-    }
-
-    .call-button .icon, .Line-button .icon {
-        width: 100%;
-        height: 100%;
-        fill: #fff; 
-    }  
-
-    .call-button {
-        background-color: #FF2D2D;
-    }
-
-    .Line-button {
-        background-color: #00C300;
-    }
-
-    .call-button:hover {
-        background-color: #D32F2F; /* 深紅色 */
-    }
-
-    .Line-button:hover {
-        background-color: #009B00; /* 深綠色 */
-    }
-
-    /* 定義動畫 */
-    @keyframes shake {
-        0% { transform: translateX(0) rotate(0deg); }
-        12% { transform: translateX(-7px) rotate(-7deg); }
-        24% { transform: translateX(7px) rotate(7deg); }
-        36% { transform: translateX(-7px) rotate(-7deg); }
-        100% { transform: translateX(0) rotate(0deg); }
-    }
-
-    /*********************************************************************/
-
-    /* =================================================================== */
-    /*   現代化精品質感 - 救援案例與吊掛作業旗艦展示廳 (Clean Showcase UI)        */
-    /* =================================================================== */
-
-    .case-showcase-section {
-      background: radial-gradient(circle at 50% 0%, #252525 0%, #171717 100%);
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding-top: 4rem;
-      padding-bottom: 4.5rem;
-      position: relative;
-    }
-
-    .section-title-box {
-      margin-bottom: 2rem;
-    }
-
     /*********************************************************************/
     /* 專業道路救援案例與吊掛作業實績 (極簡風格 Minimalist Showcase) */
     /*********************************************************************/
 
     .minimal-cases-section {
-      padding: clamp(2.5rem, 5vw, 4.5rem) 1rem;
       border-top: 1px solid rgba(255, 220, 53, 0.15);
       border-bottom: 1px solid rgba(255, 220, 53, 0.15);
     }
@@ -1630,6 +1335,110 @@
         border-radius: 10px; /* 設置圖片的圓角 */
     }
 
+    /* =================================================================== */
+    /* 現代右下角懸浮按鈕 (電話 & LINE 尊榮極簡風格) */
+    /* =================================================================== */
+    .fixed-buttons-container {
+        position: fixed;
+        right: 20px;
+        bottom: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        z-index: 1000;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    }
+
+    .fixed-buttons-container.is-scrolled {
+        transform: translateY(0);
+        opacity: 0.95;
+    }
+
+    .call-button, .Line-button {
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: relative;
+        border: 1px solid rgba(255, 220, 53, 0.3);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        padding: 0;
+        outline: none;
+    }
+
+    /* 懸浮電話按鈕 (尊貴黑金放射漸層) */
+    .call-button {
+        background: radial-gradient(circle at 30% 30%, #ffd700 0%, #d4af37 60%, #aa820a 100%);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4), 0 2px 6px rgba(0, 0, 0, 0.4);
+        color: #121212;
+    }
+
+    .call-button .icon {
+        width: 24px;
+        height: 24px;
+        fill: #111113;
+        transition: transform 0.3s ease;
+    }
+
+    .call-button:hover {
+        transform: translateY(-4px) scale(1.06);
+        background: radial-gradient(circle at 30% 30%, #ffe04d 0%, #e2be44 60%, #bd9315 100%);
+        box-shadow: 0 12px 30px rgba(255, 220, 53, 0.6), 0 0 20px rgba(255, 220, 53, 0.3);
+    }
+
+    .call-button:hover .icon {
+        transform: scale(1.1) rotate(-8deg);
+    }
+
+    /* 懸浮 LINE 按鈕 (高質感微光翠綠毛玻璃) */
+    .Line-button {
+        background: radial-gradient(circle at 30% 30%, #06c755 0%, #00b345 60%, #008734 100%);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 24px rgba(6, 199, 85, 0.35), 0 2px 6px rgba(0, 0, 0, 0.4);
+        color: #ffffff;
+    }
+
+    .Line-button .icon {
+        width: 28px;
+        height: 28px;
+        fill: #ffffff;
+        transition: transform 0.3s ease;
+    }
+
+    .Line-button:hover {
+        transform: translateY(-4px) scale(1.06);
+        background: radial-gradient(circle at 30% 30%, #15d664 0%, #06c755 60%, #00993b 100%);
+        box-shadow: 0 12px 30px rgba(6, 199, 85, 0.55), 0 0 20px rgba(6, 199, 85, 0.3);
+    }
+
+    .Line-button:hover .icon {
+        transform: scale(1.1);
+    }
+
+    /* 點擊反饋 */
+    .call-button:active, .Line-button:active {
+        transform: scale(0.94);
+    }
+    
+    .call-button, .Line-button {
+        animation: shake 5s infinite; /* 添加動畫 */
+    }
+
+    /* 定義動畫 */
+    @keyframes shake {
+        0% { transform: translateX(0) rotate(0deg); }
+        12% { transform: translateX(-7px) rotate(-7deg); }
+        24% { transform: translateX(7px) rotate(7deg); }
+        36% { transform: translateX(-7px) rotate(-7deg); }
+        100% { transform: translateX(0) rotate(0deg); }
+    }
+
     /*********************************************************************/
 
     /*  頁腳  */
@@ -1649,12 +1458,6 @@
       .container-fluid {
           padding: 0 8px;
       }
-      .carousel-caption h5 {
-          margin-bottom: -30px; /* 調整 h5 的位置 */
-      }
-      .carouselExampleCaptions_bottom {
-          margin-bottom: -10px; /* 調整 h5 的位置 */
-      }
     }
 
     /* 橫向手機、576px 以上 */
@@ -1666,44 +1469,19 @@
 
     /* 平板電腦、768px 以上 */
     @media (min-width: 768px) { 
-      .container-fluid {
-          padding: 0 28px;
-      }
-      .ink-background .img-2 {
-          left: -6%;
-          top: 85%; /* 設置圖片的頂部位置為容器的頂部 */
-          transform: translateY(-15%); /* 確保圖片居中顯示 */
-      }
       .call-button, .Line-button {
-        width: 60px;
-        height: 06px;
+        width: 58px;
+        height: 58px;
       }
     }
 
     /* 桌面、992px 以上 */
     @media (min-width: 992px) { 
         .call-button, .Line-button {
-            width: 66px;
-            height: 66px;
-        }
-
-        @keyframes flash {
-            0% {
-                left: -100%;
-            }
-            100% {
-                left: 200%;
-            }
+            width: 62px;
+            height: 62px;
         }
     }
-
-
-
-    
-
-
-    
-
 
 
   /* 現代尊榮級 GPS 定位派車互動專區 */

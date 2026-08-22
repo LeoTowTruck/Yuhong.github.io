@@ -233,7 +233,6 @@
             // 上滑顯示 Navbar
             navbar.classList.remove('hidden');
             hidden = false;
-            // ⚠️ 修正：上滑顯示 Header 時，不要強制收起選單，避免展開畫面閃爍與跳動
         }
 
         resetIdleTimer();
@@ -248,38 +247,6 @@
       });
     });
 
-  });
-
-  //========================================================================
-
-  // 添加滾動事件監聽器
-  document.addEventListener('scroll', function() {
-
-      // 設定最大放大倍數
-      const maxScale = 1.1;
-
-      // 選取所有帶有 image 類的圖片元素
-      const images = document.querySelectorAll('.image');
-
-      // 獲取視窗的高度
-      const viewportHeight = window.innerHeight;
-      
-      // 遍歷每一個圖片元素
-      images.forEach(image => {
-
-          // 獲取圖片元素相對於視窗的位置
-          const rect = image.getBoundingClientRect();
-
-          // 獲取圖片頂部距離視窗頂部的距離
-          const imageTop = rect.top;
-          
-          // 計算縮放比例
-          // 當圖片在視窗頂部時，scale 為 maxScale
-          // 當圖片在視窗底部時，scale 為 1
-          const scale = maxScale - (imageTop / viewportHeight) * (maxScale - 1);
-          // 設置圖片的 transform 屬性，確保比例不小於 1
-          image.style.transform = `scale(${Math.max(1, scale)})`;
-      });
   });
 
   //========================================================================
