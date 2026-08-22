@@ -2,6 +2,7 @@
   "name": "yuhong-towtruck",
   "private": true,
   "version": "1.0.0",
+  "type": "module",
   "description": "高雄屏東24小時道路救援 | 專業拖吊車、汽車故障快速排除",
   "main": "server.js",
   "scripts": {
