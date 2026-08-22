@@ -271,63 +271,96 @@
 
     <!--------------------------------------------------------------------------------------->
 
-    <div class="container-fluid pt-4 pb-4">
-      <div class="move-image-container">
-        <div class="flash-box">
-          <div class="row">
+
+    <!-- 現代尊榮級 GPS 定位派車互動專區 -->
+    <section class="gps-hero-section py-5">
+      <!-- 1. container 換成 container-fluid，讓大螢幕兩側空間最大化 -->
+      <div class="container-fluid px-3 px-md-5 py-4">
+        <div class="row justify-content-center">
+          <!-- 2. 大螢幕改為 col-12 滿版，避免內容被限制在中間 -->
+          <div class="col-12">
             
-            <!-- 標題列 -->
-            <div class="col-12 text-center">
-              <div class="d-inline-flex align-items-center justify-content-center mb-1">
-                <img src="images/icon/top-ranking.png" class="white-image w-settingHead me-2" alt="高屏首選">
-                <h1>高雄屏東道路救援</h1>
-              </div>
-            </div>
+            <!-- 3. 加大卡片內距 (p-4 p-md-5 p-xl-5)，寬螢幕更吐氣 -->
+            <div class="gps-glass-card p-4 p-md-5 p-xl-5 rounded-4 position-relative">
+              
+              <!-- 裝飾性背景光暈 -->
+              <div class="gps-glow-bg"></div>
 
-            <!-- 副標題 -->
-            <div class="col-12 text-center">
-              <h2>24小時快速、高效的拖吊專家!</h2>
-            </div>
+              <!-- 4. 加大兩側欄位間距 (g-4 g-xl-5) -->
+              <div class="row align-items-center g-4 g-xl-5 position-relative z-1">
+                
+                <!-- 左側：標題與訴求 -->
+                <div class="col-12 col-lg-7 text-center text-lg-start">
+                  <div class="d-inline-flex align-items-center gap-2 position-relative mb-3" style="padding: 8px 18px; background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.2); border-radius: 50px;">
+                    <span class="material-symbols-outlined text-warning" style="font-size: 1.2rem; margin: 0; width: auto; height: auto;">bolt</span>
+                    <span class="text-warning fw-bold small" style="line-height: 1;">24H 衛星即時定位派車・免等待</span>
+                  </div>
+                  
+                  <h2 class="text-white fw-black display-6 mb-3" style="font-size: clamp(2rem, 3vw, 2.8rem); letter-spacing: -0.5px;">
+                    高雄屏東 <span class="gps-title-highlight fw-bold">道路救援首選</span>
+                  </h2>
+                  <p class="text-white-50 fs-5 mb-4 mb-lg-0 lh-lg pe-lg-5">
+                    車輛故障、事故或拋錨？透過一鍵 GPS 衛星精準定位與現場照片上傳，救援車輛立即為您快速出動！
+                  </p>
+                </div>
 
-            <!-- 主行動按鈕 -->
-            <div class="col-12 text-center">
-              <a href="https://leotowtruck.github.io/Yuhong.github.io/GPS" class="gpsbtn">
-                <span class="material-symbols-outlined me-2">near_me</span>
-                使用GPS定位派車
-              </a>
-            </div>
+                <!-- 右側：行動按鈕 -->
+                <div class="col-12 col-lg-5 text-center text-lg-end">
+                  <a href="https://leotowtruck.github.io/Yuhong.github.io/GPS" class="btn gps-action-btn btn-lg px-4 px-xl-5 py-3 py-xl-4 fw-bold d-inline-flex align-items-center justify-content-center gap-2 rounded-3 pulse-btn mb-3 w-100 w-sm-auto" style="font-size: 1.25rem; letter-spacing: 0.5px;">
+                    <span class="material-symbols-outlined fs-2" style="margin: 0;">near_me</span>
+                    立即使用 GPS 定位派車
+                  </a>
+                  <div class="text-white-50 small d-flex align-items-center justify-content-center justify-content-lg-end w-100 gap-1 opacity-75">
+                    <span class="material-symbols-outlined text-warning" style="font-size: 1.1rem; margin: 0; width: auto; height: auto;">verified</span>
+                    <span>全年無休 24 小時線上即時派發</span>
+                  </div>
+                </div>
 
-            <!-- 3步驟引導 -->
-            <div class="col-12">
-              <div class="d-flex flex-column align-items-center gps-steps-wrapper">
-                <h3><span class="material-symbols-outlined" aria-hidden="true">counter_1</span>上傳兩張汽車與背景照片</h3>
-                <h3><span class="material-symbols-outlined" aria-hidden="true">counter_2</span>使用衛星地圖GPS定位</h3>
-                <h3><span class="material-symbols-outlined" aria-hidden="true">counter_3</span>填寫您的稱呼與電話</h3>
+                <!-- 底部：3 步驟引導卡片 -->
+                <div class="col-12 pt-4 pt-lg-5 mt-3 border-top border-secondary border-opacity-25">
+                  <!-- 加大步驟卡片間距 g-4 -->
+                  <div class="row g-3 g-lg-4">
+                    
+                    <div class="col-12 col-md-4">
+                      <div class="gps-step-card p-3 p-xl-4 rounded-3 h-100 d-flex align-items-center gap-3">
+                        <div class="gps-step-num rounded-circle d-flex align-items-center justify-content-center fw-bold fs-5 flex-shrink-0" style="width: 48px; height: 48px;">1</div>
+                        <div>
+                          <div class="text-white fw-bold fs-6 mb-1">上傳現場照片</div>
+                          <div class="text-white-50 small">拍攝汽車與周遭環境兩張照片</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                      <div class="gps-step-card p-3 p-xl-4 rounded-3 h-100 d-flex align-items-center gap-3">
+                        <div class="gps-step-num rounded-circle d-flex align-items-center justify-content-center fw-bold fs-5 flex-shrink-0" style="width: 48px; height: 48px;">2</div>
+                        <div>
+                          <div class="text-white fw-bold fs-6 mb-1">衛星精準定位</div>
+                          <div class="text-white-50 small">一鍵啟用手機衛星地圖座標</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                      <div class="gps-step-card p-3 p-xl-4 rounded-3 h-100 d-flex align-items-center gap-3">
+                        <div class="gps-step-num rounded-circle d-flex align-items-center justify-content-center fw-bold fs-5 flex-shrink-0" style="width: 48px; height: 48px;">3</div>
+                        <div>
+                          <div class="text-white fw-bold fs-6 mb-1">填寫聯絡資訊</div>
+                          <div class="text-white-50 small">留下稱呼與電話由司機速聯繫</div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
               </div>
             </div>
 
           </div>
         </div>
-
-        <!-- 原有動態飄浮圖片 -->
-        <img src="images/icon/booking.png" alt="" width="512" height="512" class="moving-image1 white-image">
-        <img src="images/icon/image.png" alt="" width="512" height="512" class="moving-image2 white-image">
-        <img src="images/icon/map.png" alt="" width="512" height="512" class="moving-image3 white-image">
-
-        <!-- 原有背景幾何圖案 -->
-        <div class="shapeAll shape1"></div>
-        <div class="shapeAll shape2"></div>
-        <div class="shapeAll shape3"></div>
-        <div class="shapeAll shape4"></div>
-        <div class="shapeAll shape5"></div>
-        <div class="shapeAll shape6"></div>
-        <div class="shapeAll shape7"></div>
-        <div class="shapeAll shape8"></div>
-        <div class="shapeAll shape9"></div>
-
       </div>
-    </div>
-
+    </section>
 
     <!--------------------------------------------------------------------------------------->
 
