@@ -61,24 +61,108 @@
 
  //========================================================================
 
-  // 顯示所有評價
-  function displayAllReviews() {
-    const reviewsContainer = document.getElementById('reviews-container'); // 獲取評價容器      
-    reviews.forEach(review => {
-      const reviewElement = document.createElement('div'); // 創建評價元素
-      reviewElement.className = 'col-12 col-md-6 col-xl-4 mb-1'; // 設置元素的class，使用Bootstrap的網格系統
-      const altText = `拾捌拖吊車客戶評價：${review.alt}`;
-      reviewElement.innerHTML = `
-        <div class="review">
-          <img src="images/reviews/${review.id}.webp" 
-            alt="${altText}" 
-            aria-label="${review.alt}"
-            loading="lazy" 
-            class="img-fluid rounded"
-          >
-        </div>`; // 設置圖片元素
-      reviewsContainer.appendChild(reviewElement); // 將評價元素添加到容器中
+  // 初始化評價與分類/載入更多機制
+  let currentReviewFilter = 'all';
+  let displayedReviewCount = 12;
+
+  function initReviews() {
+    const grid = document.getElementById('reviews-grid');
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    const tabBtns = document.querySelectorAll('.review-tab-btn');
+
+    // 計算各分類數量
+    const googleReviews = reviews.filter(r => r.id.startsWith('google-map'));
+    const youtubeReviews = reviews.filter(r => r.id.startsWith('youtube'));
+
+    const countAllEl = document.getElementById('count-all');
+    const countGoogleEl = document.getElementById('count-google');
+    const countYoutubeEl = document.getElementById('count-youtube');
+
+    if (countAllEl) countAllEl.textContent = reviews.length;
+    if (countGoogleEl) countGoogleEl.textContent = googleReviews.length;
+    if (countYoutubeEl) countYoutubeEl.textContent = youtubeReviews.length;
+
+    function render() {
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      let filtered = reviews;
+      if (currentReviewFilter === 'google') {
+        filtered = googleReviews;
+      } else if (currentReviewFilter === 'youtube') {
+        filtered = youtubeReviews;
+      }
+
+      const sliceToRender = filtered.slice(0, displayedReviewCount);
+
+      if (sliceToRender.length === 0) {
+        grid.innerHTML = `<div class="col-12 text-center text-white-50 py-5">目前沒有相關評價記錄</div>`;
+        if (loadMoreBtn && loadMoreBtn.parentElement) loadMoreBtn.parentElement.style.display = 'none';
+        return;
+      }
+
+      sliceToRender.forEach(review => {
+        const col = document.createElement('div');
+        col.className = 'col-12 col-md-6 col-lg-4';
+        const altText = `拾捌拖吊車客戶評價：${review.alt}`;
+        col.innerHTML = `
+          <div class="p-3 rounded-4 h-100 position-relative overflow-hidden review-card-box" style="background: rgba(14, 16, 22, 0.95); border: 1px solid rgba(255, 220, 53, 0.18); backdrop-filter: blur(12px); transition: all 0.3s ease;">
+            <div class="position-absolute top-0 start-0 end-0" style="height: 2px; background: linear-gradient(90deg, #FFDC35 0%, #FFA000 100%);"></div>
+            <div class="overflow-hidden rounded-3 mb-3 shadow-sm bg-black bg-opacity-50 d-flex align-items-center justify-content-center p-2" style="min-height: 180px;">
+              <img src="images/reviews/${review.id}.webp" 
+                alt="${altText}" 
+                aria-label="${review.alt}"
+                loading="lazy" 
+                class="w-100 h-auto object-fit-contain review-img rounded"
+                style="max-height: 280px; transition: transform 0.4s ease;"
+              >
+            </div>
+            <div class="text-white-50 small px-1 pt-2" style="font-size: 0.82rem; line-height: 1.5; border-top: 1px solid rgba(255,255,255,0.06);">
+              <span class="material-symbols-outlined text-warning align-middle" style="font-size: 14px;">format_quote</span> ${review.alt}
+            </div>
+          </div>`;
+        grid.appendChild(col);
+      });
+
+      // 載入更多按鈕顯示控制
+      if (loadMoreBtn && loadMoreBtn.parentElement) {
+        if (displayedReviewCount >= filtered.length) {
+          loadMoreBtn.parentElement.style.display = 'none';
+        } else {
+          loadMoreBtn.parentElement.style.display = 'block';
+        }
+      }
+    }
+
+    // 綁定 Tab 切換事件
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => {
+          b.classList.remove('active', 'text-dark');
+          b.classList.add('text-white');
+          b.style.background = 'rgba(25, 28, 36, 0.9)';
+          b.style.border = '1px solid rgba(255, 220, 53, 0.3)';
+        });
+        btn.classList.add('active', 'text-dark');
+        btn.classList.remove('text-white');
+        btn.style.background = '#FFDC35';
+        btn.style.border = 'none';
+
+        currentReviewFilter = btn.getAttribute('data-filter');
+        displayedReviewCount = 12;
+        render();
+      });
     });
+
+    // 綁定載入更多事件
+    if (loadMoreBtn) {
+      loadMoreBtn.addEventListener('click', () => {
+        displayedReviewCount += 12;
+        render();
+      });
+    }
+
+    render();
   }
 
  //========================================================================
@@ -89,7 +173,7 @@
       duration: 800,
     });
 
-    displayAllReviews(); // 初次顯示所有評價
+    initReviews(); // 初始化評價模組
 
   };
 
