@@ -539,7 +539,7 @@
             min-height: 500px; /* 同步調降最小高度，避免超小螢幕撐開 */
         }
         .hero-caption-wrapper {
-          top: 48%;
+          top: 43%;
         }        
     }
      
