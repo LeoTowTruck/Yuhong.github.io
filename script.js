@@ -88,9 +88,8 @@
     if (countGoogleEl) countGoogleEl.textContent = googleReviews.length;
     if (countYoutubeEl) countYoutubeEl.textContent = youtubeReviews.length;
 
-    function render() {
+    function render(isAppend = false) {
       if (!grid) return;
-      grid.innerHTML = '';
 
       let filtered = reviews;
       if (currentReviewFilter === 'google') {
@@ -99,13 +98,17 @@
         filtered = youtubeReviews;
       }
 
-      const sliceToRender = filtered.slice(0, displayedReviewCount);
-
-      if (sliceToRender.length === 0) {
-        grid.innerHTML = `<div class="col-12 text-center text-white-50 py-5">目前沒有相關評價記錄</div>`;
-        if (loadMoreBtn && loadMoreBtn.parentElement) loadMoreBtn.parentElement.style.display = 'none';
-        return;
+      if (!isAppend) {
+        grid.innerHTML = '';
+        if (filtered.length === 0) {
+          grid.innerHTML = `<div class="col-12 text-center text-white-50 py-5">目前沒有相關評價記錄</div>`;
+          if (loadMoreBtn && loadMoreBtn.parentElement) loadMoreBtn.parentElement.style.display = 'none';
+          return;
+        }
       }
+
+      const startIndex = isAppend ? Math.max(0, displayedReviewCount - 12) : 0;
+      const sliceToRender = filtered.slice(startIndex, displayedReviewCount);
 
       sliceToRender.forEach(review => {
         const col = document.createElement('div');
@@ -138,11 +141,16 @@
           loadMoreBtn.parentElement.style.display = 'block';
         }
       }
+
+      if (isAppend && window.AOS && typeof window.AOS.refresh === 'function') {
+        window.AOS.refresh();
+      }
     }
 
     // 綁定 Tab 切換事件
     tabBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
         tabBtns.forEach(b => {
           b.classList.remove('active', 'text-dark');
           b.classList.add('text-white');
@@ -156,19 +164,20 @@
 
         currentReviewFilter = btn.getAttribute('data-filter');
         displayedReviewCount = 12;
-        render();
+        render(false);
       });
     });
 
     // 綁定載入更多事件
     if (loadMoreBtn) {
-      loadMoreBtn.addEventListener('click', () => {
+      loadMoreBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         displayedReviewCount += 12;
-        render();
+        render(true);
       });
     }
 
-    render();
+    render(false);
   }
 
  //========================================================================
@@ -376,10 +385,10 @@
         });
       }
 
-      // 顯示 Modal
+      // 鎖定背景並顯示 Modal
+      document.body.style.overflow = 'hidden';
       modal.classList.add('active');
       modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
 
       // 關鍵：必須在 Modal 展開（容器有寬度）後初始化 Swiper
       setTimeout(() => {
@@ -541,7 +550,7 @@
     // 原本的 LINE 網頁跳轉註解掉(Google ads 禁止使用直接跳轉Line介面)
     // window.open("https://line.me/ti/p/idtb0LETDp", "_blank");
     
-    // 改成跳轉到本地頁面    
+    // 改成跳轉到本地頁面
     window.location.href = "https://leotowtruck.github.io/Yuhong.github.io/line-tutorial.html";
   }
 
