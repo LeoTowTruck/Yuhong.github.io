@@ -46,7 +46,7 @@
     const aboutSwiper = new Swiper('.aboutSwiper', {
         slidesPerView: 1,
         spaceBetween: 24,
-        loop: true,
+        loop: false,
         grabCursor: true,
         pagination: {
           el: '.about-pagination',
