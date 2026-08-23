@@ -7,7 +7,7 @@
   3. `/style.css`
 - **Do Not Inspect**:
   - Do NOT list or read files in `/images/` directory or its subdirectories.
-  - Do NOT read secondary pages (`/GPS.html`, `/line-tutorial.html`) unless the user explicitly names them in the prompt.
+  - Do NOT read secondary pages (`/GPS.html`, `/gps.html`, `/404.html`, `/line-tutorial.html`) unless the user explicitly names them in the prompt.
   - Do NOT re-read configuration files (`package.json`, `server.js`, `metadata.json`) unless modifying dependencies or server routes.
 
 ## Optimization Guidelines

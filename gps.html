@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0; url=GPS.html">
+  <title>正在跳轉至 GPS 定位頁面...</title>
+  <script>
+    // 取得當前的 query 參數與 hash，自動轉向大寫 GPS.html
+    const targetUrl = 'GPS.html' + window.location.search + window.location.hash;
+    window.location.replace(targetUrl);
+  </script>
+</head>
+<body style="background:#0b0d14; color:#fff; font-family:sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; margin:0;">
+  <p>正在自動跳轉至 GPS 定位救援頁面，若無自動跳轉請 <a href="GPS.html" style="color:#ffdc35;">點擊此處</a>。</p>
+</body>
+</html>

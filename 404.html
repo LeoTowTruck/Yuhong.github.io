@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>頁面跳轉中 | 高雄屏東24H道路救援</title>
+  <script>
+    (function() {
+      var path = window.location.pathname;
+      var search = window.location.search || '';
+      var hash = window.location.hash || '';
+
+      // 檢查是否為大小寫不一的 gps 路徑 (如 /gps, /gps/, /Gps, /gps.html 等)
+      var pathLower = path.toLowerCase();
+      if (pathLower.indexOf('gps') !== -1) {
+        // 取得基礎目錄 (支援 GitHub Pages 專案路徑 /Yuhong.github.io/)
+        var base = path.substring(0, pathLower.lastIndexOf('gps'));
+        var target = base + 'GPS.html' + search + hash;
+        window.location.replace(target);
+        return;
+      }
+
+      // 若為其他未找到頁面，3 秒後引導回首頁
+      setTimeout(function() {
+        window.location.replace('/' + search + hash);
+      }, 3000);
+    })();
+  </script>
+  <style>
+    body {
+      background-color: #0b0d14;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #ffdc35;
+      margin-bottom: 1rem;
+    }
+    .desc {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    .btn {
+      display: inline-block;
+      background: #ffdc35;
+      color: #000000;
+      padding: 10px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: opacity 0.2s;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">拾捌拖吊車 24H 道路救援</div>
+  <p class="desc">正在為您自動重新導向至正確頁面...<br>若未自動跳轉，請點擊下方按鈕：</p>
+  <div>
+    <a href="GPS.html" class="btn" style="margin-right: 10px;">前往 GPS 定位救援</a>
+    <a href="index.html" class="btn" style="background: rgba(255,255,255,0.15); color: #fff;">返回首頁</a>
+  </div>
+</body>
+</html>
