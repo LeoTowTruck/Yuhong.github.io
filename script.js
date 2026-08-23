@@ -541,8 +541,8 @@
     // 原本的 LINE 網頁跳轉註解掉(Google ads 禁止使用直接跳轉Line介面)
     // window.open("https://line.me/ti/p/idtb0LETDp", "_blank");
     
-    // 改成跳轉到本地頁面
-    window.location.href = "/line-tutorial.html";
+    // 改成跳轉到本地頁面    
+    window.location.href = "https://leotowtruck.github.io/Yuhong.github.io/line-tutorial.html";
   }
 
   //========================================================================
