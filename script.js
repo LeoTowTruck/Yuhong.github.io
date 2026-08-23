@@ -1,4 +1,35 @@
 
+  //========================================================================
+  // 全域圖片載入失敗自動重試機制 (解決 GitHub Pages 偶發 503 / 網路瞬間中斷)
+  //========================================================================
+  window.addEventListener('error', function (event) {
+    const target = event.target;
+    if (target && target.tagName === 'IMG') {
+      const maxRetries = 3; // 最多重試 3 次
+      let retries = parseInt(target.getAttribute('data-retry-count') || '0', 10);
+
+      if (retries < maxRetries) {
+        retries += 1;
+        target.setAttribute('data-retry-count', retries);
+
+        // 記錄原始網址，避免重複疊加時間戳 query
+        const rawSrc = target.getAttribute('data-original-src') || target.src;
+        const cleanSrc = rawSrc.replace(/[?&]retry_t=\d+/g, '');
+        if (!target.hasAttribute('data-original-src')) {
+          target.setAttribute('data-original-src', cleanSrc);
+        }
+
+        // 漸進式延遲重試 (第1次 1秒，第2次 2秒，第3次 3秒)
+        const delay = retries * 1000;
+        setTimeout(() => {
+          const sep = cleanSrc.includes('?') ? '&' : '?';
+          // 附加快取重試時間戳，強制向 GitHub/伺服器重新請求
+          target.src = `${cleanSrc}${sep}retry_t=${Date.now()}`;
+        }, delay);
+      }
+    }
+  }, true); // 使用捕獲模式 (Capture Phase) 監聽不冒泡的 img error 事件
+
   document.addEventListener('DOMContentLoaded', function () {
 
     // 頁腳年份自動載入
