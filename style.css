@@ -1752,3 +1752,12 @@
     padding: 2rem;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
   }
+
+  /* Google map 深色模式套用濾鏡 */
+  @media (prefers-color-scheme: dark) {
+    .ratio iframe {
+      filter: invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%);
+    }
+  }
+
+
