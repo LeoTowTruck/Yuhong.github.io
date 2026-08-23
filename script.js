@@ -11,6 +11,8 @@
     const heroSwiper = new Swiper('.heroSwiper', {
         loop: true,
         speed: 800,
+        touchStartPreventDefault: false,
+        passiveListeners: true,
         autoplay: {
         delay: 5000,
         disableOnInteraction: false,
@@ -26,6 +28,8 @@
         slidesPerView: 1,
         spaceBetween: 24,
         loop: true,
+        touchStartPreventDefault: false,
+        passiveListeners: true,
         grabCursor: true,
         pagination: {
           el: '.services-pagination',
@@ -47,6 +51,8 @@
         slidesPerView: 1,
         spaceBetween: 24,
         loop: false,
+        touchStartPreventDefault: false,
+        passiveListeners: true,
         grabCursor: true,
         pagination: {
           el: '.about-pagination',
@@ -319,6 +325,8 @@
         slidesPerView: 'auto', // 依縮圖寬度彈性排列
         freeMode: true,
         watchSlidesProgress: true, // 必須開啟，主圖才能追蹤縮圖進度
+        touchStartPreventDefault: false,
+        passiveListeners: true,
       });
 
       // 上方主圖 Swiper (連動縮圖)
@@ -326,6 +334,8 @@
         spaceBetween: 10,
         speed: 500,
         grabCursor: true,
+        touchStartPreventDefault: false,
+        passiveListeners: true,
         navigation: {
           nextEl: '.modalMainSwiper .swiper-button-next',
           prevEl: '.modalMainSwiper .swiper-button-prev',
