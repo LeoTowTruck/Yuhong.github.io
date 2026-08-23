@@ -1,7 +1,13 @@
 
-  document.getElementById("year").textContent = new Date().getFullYear(); // 頁腳自動載入年份
-
   document.addEventListener('DOMContentLoaded', function () {
+
+    // 頁腳年份自動載入
+    const yearEl = document.getElementById("year");
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+
+    // 初始化所有 Swiper 輪播
     const heroSwiper = new Swiper('.heroSwiper', {
         loop: true,
         speed: 800,
@@ -173,7 +179,9 @@
       duration: 800,
     });
 
-    initReviews(); // 初始化評價模組
+    if (typeof initReviews === 'function') {
+        initReviews(); // 初始化評價模組
+    }
 
   };
 
@@ -203,22 +211,6 @@
       }
     }
 
-    // --- 閒置計時器變數 ---
-    let idleTimer; 
-    const idleWaitTime = 3500; // N毫秒
-
-    // 重置閒置計時器的函數
-    function resetIdleTimer() {
-      clearTimeout(idleTimer);
-      if (btnContainer) btnContainer.classList.remove('is-scrolled');
-      
-      idleTimer = setTimeout(() => {
-        if (btnContainer) btnContainer.classList.add('is-scrolled');
-      }, idleWaitTime); 
-    }
-
-    resetIdleTimer();
-
     // 滾動事件監聽器
     window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY; // 當前滾動位置
@@ -234,8 +226,6 @@
             navbar.classList.remove('hidden');
             hidden = false;
         }
-
-        resetIdleTimer();
         lastScrollY = currentScrollY; 
     });
 
@@ -249,10 +239,10 @@
 
   });
 
+
   //========================================================================
   // 案例展廳互動邏輯 (Swiper 雙重輪播與連動、分類篩選、Modal 彈窗)
   //========================================================================
-
   document.addEventListener('DOMContentLoaded', () => {
     const filterButtons = document.querySelectorAll('.minimal-filter-tab');
     const caseCards = document.querySelectorAll('.minimal-case-card');

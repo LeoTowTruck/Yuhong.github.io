@@ -583,17 +583,15 @@
     h1, h2, h3 {
         font-family: "Noto Serif HK", serif;         /* 設置字體為 "Noto Serif HK" 和預設字體為 serif */
         font-style: normal;                          /* 設置字體風格為正常 */
-        letter-spacing: 0.1em;                       /* 增加字母間距 */
+        letter-spacing: 0.05em;                      /* 字母間距 */
         color: #fff;                                 /* 設置文字顏色為白色 */
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);   /* 設置文字陰影 */
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8); /* 設置文字陰影 */
         text-decoration: none;                       /* 移除文字裝飾 */
-        align-items: center;                         /* 垂直居中對齊 */
-        padding: 5px 5px;                            /* 設置內邊距為 5px */
-        white-space: nowrap;                         /* 不換行 */
+        white-space: normal;                         /* 允許正常響應式折行，避免手機螢幕溢出截斷 */
+        word-break: normal;                          /* 保持文字完整性 */
+        overflow-wrap: break-word;                   /* 長字自動折行 */
         min-width: 0;                                /* 避免溢出 */
         z-index: 1;                                  /* 設置z-index，以確保元素在正確的層級 */
-        display: inline-flex;
-        align-items: center; /* 水平對齊 */
     }
 
     h1 {
@@ -1309,6 +1307,10 @@
     .modalMainSwiper .swiper-button-next,
     .modalMainSwiper .swiper-button-prev {
       color: #ffffff !important;
+    }
+    .modalMainSwiper .swiper-button-next::after,
+    .modalMainSwiper .swiper-button-prev::after {
+      font-size: 24px !important; 
     }
     
     /*********************************************************************/
