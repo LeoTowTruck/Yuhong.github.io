@@ -428,6 +428,10 @@
 
       // 鎖定背景並顯示 Modal
       document.body.style.overflow = 'hidden';
+      const modalDialog = modal.querySelector('.minimal-modal-dialog');
+      if (modalDialog) {
+        modalDialog.style.transform = '';
+      }
       modal.classList.add('active');
       modal.setAttribute('aria-hidden', 'false');
 
@@ -437,12 +441,25 @@
       }, 50);
     }
 
-    // 關閉 Modal
+    // 關閉 Modal (支援手機端平滑向右滑出)
     function closeModal() {
       if (!modal) return;
-      modal.classList.remove('active');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
+      const modalDialog = modal.querySelector('.minimal-modal-dialog');
+      const isMobile = window.innerWidth <= 768;
+
+      if (isMobile && modalDialog) {
+        modalDialog.style.transform = 'translate3d(100%, 0, 0)';
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        setTimeout(() => {
+          if (modalDialog) modalDialog.style.transform = '';
+          document.body.style.overflow = '';
+        }, 320);
+      } else {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
     }
 
     // 綁定卡片點擊與鍵盤開啟
@@ -467,6 +484,85 @@
         closeModal();
       }
     });
+
+    //========================================================================
+    // 手機端右滑關閉手勢 (Swipe Right to Close)
+    //========================================================================
+    const modalDialog = modal ? modal.querySelector('.minimal-modal-dialog') : null;
+    if (modalDialog) {
+      let startX = 0;
+      let startY = 0;
+      let currentX = 0;
+      let isSwiping = false;
+      let isIntentionalHorizontal = false;
+
+      modalDialog.addEventListener('touchstart', (e) => {
+        if (window.innerWidth > 768 || !modal.classList.contains('active')) return;
+        // 如果使用者觸摸的是 Swiper 輪播內部，讓 Swiper 優先處理照片切換
+        if (e.target.closest('.modalMainSwiper') || e.target.closest('.modalThumbsSwiper')) {
+          return;
+        }
+
+        const touch = e.touches[0];
+        startX = touch.clientX;
+        startY = touch.clientY;
+        currentX = startX;
+        isSwiping = false;
+        isIntentionalHorizontal = false;
+      }, { passive: true });
+
+      modalDialog.addEventListener('touchmove', (e) => {
+        if (window.innerWidth > 768 || !modal.classList.contains('active')) return;
+        if (e.target.closest('.modalMainSwiper') || e.target.closest('.modalThumbsSwiper')) {
+          return;
+        }
+
+        const touch = e.touches[0];
+        const diffX = touch.clientX - startX;
+        const diffY = touch.clientY - startY;
+
+        // 判斷是否為明確的水平右滑手勢
+        if (!isIntentionalHorizontal && Math.abs(diffX) > 10) {
+          if (diffX > 0 && diffX > Math.abs(diffY) * 1.2) {
+            isIntentionalHorizontal = true;
+            isSwiping = true;
+            modalDialog.classList.add('swiping');
+          }
+        }
+
+        if (isSwiping && diffX > 0) {
+          currentX = touch.clientX;
+          // 1:1 跟隨手指往右平移
+          modalDialog.style.transform = `translate3d(${diffX}px, 0, 0)`;
+        }
+      }, { passive: true });
+
+      const handleTouchEnd = () => {
+        if (!isSwiping) return;
+        modalDialog.classList.remove('swiping');
+        const diffX = currentX - startX;
+        const threshold = window.innerWidth * 0.28; // 滑動超過螢幕寬度的 28% 即判定關閉
+
+        if (diffX > threshold) {
+          // 超過門檻，觸發向右滑出關閉
+          closeModal();
+        } else {
+          // 未達門檻，彈性回彈至原位
+          modalDialog.style.transform = 'translate3d(0, 0, 0)';
+          setTimeout(() => {
+            if (modal.classList.contains('active')) {
+              modalDialog.style.transform = '';
+            }
+          }, 320);
+        }
+
+        isSwiping = false;
+        isIntentionalHorizontal = false;
+      };
+
+      modalDialog.addEventListener('touchend', handleTouchEnd, { passive: true });
+      modalDialog.addEventListener('touchcancel', handleTouchEnd, { passive: true });
+    }
 
     // 4. 支援點擊導航欄 #operations 自動跳轉並啟用吊掛分類
     const checkHashNavigation = () => {
