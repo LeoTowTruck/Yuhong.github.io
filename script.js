@@ -230,7 +230,7 @@
       }
     }
 
-    // 滾動事件監聽器
+    // 滾動事件監聽器 (加入 passive: true 提升滑動效能)
     window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY; // 當前滾動位置
         const scrollDifference = lastScrollY - currentScrollY; // 計算與上次滾動位置的差異
@@ -246,7 +246,7 @@
             hidden = false;
         }
         lastScrollY = currentScrollY; 
-    });
+    }, { passive: true });
 
     // 當點擊導航連結 (例如 #about-us) 時才自動關閉選單，避免全域無差別觸發
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
