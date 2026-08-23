@@ -183,6 +183,10 @@
         initReviews(); // 初始化評價模組
     }
 
+    if (typeof initFAQ === 'function') {
+        initFAQ(); // 初始化常見問題模組
+    }
+
   };
 
 
@@ -540,4 +544,141 @@
     // 改成跳轉到本地頁面
     window.location.href = "/line-tutorial.html";
   }
+
+  //========================================================================
+  // 常見問題 (FAQ) 折疊展開、分類篩選與即時搜尋功能
+  //========================================================================
+  function initFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    const categoryBtns = document.querySelectorAll('.faq-category-btn');
+    const searchInput = document.getElementById('faq-search-input');
+    const clearSearchBtn = document.getElementById('faq-search-clear');
+    const noResultsEl = document.getElementById('faq-no-results');
+    const resetFilterBtn = document.getElementById('faq-reset-filter-btn');
+
+    if (!faqItems.length) return;
+
+    let activeCategory = 'all';
+    let searchQuery = '';
+
+    // 1. FAQ 折疊/展開事件綁定
+    faqItems.forEach(item => {
+      const btn = item.querySelector('.faq-question-btn');
+      if (!btn) return;
+
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = item.classList.contains('active');
+
+        // 如需單一展開模式，可先收起其他項；此處提供平滑單項/多項自由展開體驗
+        if (isOpen) {
+          item.classList.remove('active');
+          btn.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('active');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // 2. 篩選與搜尋過濾器邏輯
+    function filterFaq() {
+      let visibleCount = 0;
+      const normalizedQuery = searchQuery.trim().toLowerCase();
+
+      faqItems.forEach(item => {
+        const itemCategory = item.getAttribute('data-category') || '';
+        const questionText = item.querySelector('.faq-question-text')?.textContent?.toLowerCase() || '';
+        const answerText = item.querySelector('.faq-answer-content')?.textContent?.toLowerCase() || '';
+        
+        const matchCategory = (activeCategory === 'all' || itemCategory === activeCategory);
+        const matchSearch = (!normalizedQuery || questionText.includes(normalizedQuery) || answerText.includes(normalizedQuery));
+
+        if (matchCategory && matchSearch) {
+          item.style.display = 'block';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      // 顯示/隱藏無搜尋結果區塊
+      if (noResultsEl) {
+        if (visibleCount === 0) {
+          noResultsEl.classList.remove('d-none');
+        } else {
+          noResultsEl.classList.add('d-none');
+        }
+      }
+    }
+
+    // 3. 分類按鈕切換
+    categoryBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        categoryBtns.forEach(b => {
+          b.classList.remove('active');
+        });
+
+        btn.classList.add('active');
+
+        activeCategory = btn.getAttribute('data-category') || 'all';
+        filterFaq();
+      });
+    });
+
+    // 4. 關鍵字搜尋輸入
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        if (clearSearchBtn) {
+          if (searchQuery.length > 0) {
+            clearSearchBtn.classList.remove('d-none');
+          } else {
+            clearSearchBtn.classList.add('d-none');
+          }
+        }
+        filterFaq();
+      });
+    }
+
+    // 5. 清除搜尋
+    if (clearSearchBtn && searchInput) {
+      clearSearchBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchQuery = '';
+        clearSearchBtn.classList.add('d-none');
+        searchInput.focus();
+        filterFaq();
+      });
+    }
+
+    // 6. 重設所有搜尋與分類
+    if (resetFilterBtn) {
+      resetFilterBtn.addEventListener('click', () => {
+        if (searchInput) {
+          searchInput.value = '';
+          searchQuery = '';
+        }
+        if (clearSearchBtn) clearSearchBtn.classList.add('d-none');
+        
+        activeCategory = 'all';
+        categoryBtns.forEach((b, idx) => {
+          if (idx === 0) {
+            b.classList.add('active');
+          } else {
+            b.classList.remove('active');
+          }
+        });
+        filterFaq();
+      });
+    }
+
+    // 預設展開第 1 個 FAQ 項目方便車主快速閱讀
+    if (faqItems[0]) {
+      faqItems[0].classList.add('active');
+      const firstBtn = faqItems[0].querySelector('.faq-question-btn');
+      if (firstBtn) firstBtn.setAttribute('aria-expanded', 'true');
+    }
+  }
+
 

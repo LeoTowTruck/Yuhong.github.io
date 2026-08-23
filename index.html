@@ -84,6 +84,80 @@
   }
   </script>
 
+  <!-- FAQ 結構化數據 (FAQPage Schema) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "道路救援與拖吊費用如何計算？會有事後惡意加價或隱藏收費嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "拾捌拖吊車堅持透明公開、預先報價原則。市區平面基本起步費 1,500 元起，特殊地形（如地下室限高、事故翻覆、全載平移）會在出車前與車主明確確認費用明細，絕無惡意加價。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "在高速公路（國道）拋錨或發生事故，你們可以上國道救援嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "可以！我們具備高公局審驗合格之合法國道拖吊資格，嚴格遵守國道拖吊作業規範與標準收費級距，提供 24 小時快速出動救援。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "超跑、改裝低底盤車、或是大型重型機車可以拖吊嗎？會傷到底盤嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "我們配備專業全載式氣壓升降拖吊車與超低角度輔助引板，上車時底盤貼近水平角度，並採用輪胎專用防刮束帶固定，保護下巴、側裙與底盤不刮傷。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "車輛受困在限高地下停車場或機械車位，拖吊車進得去嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "我們備有針對限高 1.8M-2.0M 的低底盤救援裝備、四輪輔助輪滑輪組與絞盤牽引系統，即便輪胎卡死或排入空檔困難亦能安全無損移出。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "通報救援後，一般需要等待多久才會到達現場？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "在高雄市區與屏東主要市區範圍內，平均抵達時間約 15 至 30 分鐘，並支援 GPS 定位一鍵派車直接導航抵達。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "除了整車拖吊，現場有提供電瓶接電、換備胎或送油水服務嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "有的，提供大容量應急電源接電啟動、輪胎充氣換備胎、緊急燃油與冷卻水補給等輕度故障排除。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "拖吊車能幫我把車送到指定的原廠或私人修車廠嗎？可以開收據報帳嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "目的地完全由車主自行指定，並提供合法正式收據與統一發票，方便向產險公司申請道路救援補貼或保險出險理賠。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "支援哪些付款方式？現場可以行動支付或轉帳嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "支援現金付款、LINE Pay 行動支付以及各大銀行手機網銀即時轉帳。"
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- 1. 預先連線 CDN 伺服器加速載入 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -150,6 +224,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#reviews">客戶評價</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#faq">常見問題</a>
           </li>
           <!-- 移至菜單內的電話按鈕 (使用 style 加強覆蓋色值) -->
           <li class="nav-item d-lg-none mt-2">
@@ -1270,6 +1347,268 @@
           <button id="load-more-btn" class="btn px-5 py-3 rounded-pill fw-bold text-dark shadow-lg d-inline-flex align-items-center gap-2" style="background: linear-gradient(135deg, #FFDC35 0%, #FFA000 100%); border: none; transition: all 0.3s;">
             <span class="material-symbols-outlined">expand_more</span> 載入更多評價
           </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!--------------------------------------------------------------------------------------->
+
+    <!-- 常見問題 (FAQ) -->
+    <section id="faq" class="section-bg-dark py-6 position-relative overflow-hidden">
+      <!-- 裝飾光暈 -->
+      <div class="position-absolute top-0 start-50 translate-middle-x pointer-event-none" style="width: 600px; height: 300px; background: radial-gradient(ellipse, rgba(255, 220, 53, 0.06) 0%, transparent 70%); filter: blur(90px);"></div>
+
+      <div class="container-xl py-4 position-relative z-1">
+        <!-- 區塊標題 -->
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3" style="background: rgba(255, 220, 53, 0.1); border: 1px solid rgba(255, 220, 53, 0.3);">
+            <span class="material-symbols-outlined text-warning" style="font-size: 16px;">help</span>
+            <span style="color: #FFDC35; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em;">救援疑惑・透明解答</span>
+          </div>
+          <h2 class="text-white fw-bold display-6 mb-3" style="letter-spacing: 0.02em; font-family: 'Noto Serif HK', serif;">常見問題與收費須知</h2>
+          <p class="text-white-50 mx-auto" style="max-width: 680px; line-height: 1.7;">
+            針對拖吊費用計算、國道救援、超跑低底盤全載作業與付款方式，我們整理了車主最常詢問的重點解答，讓您安心求援不踩雷。
+          </p>
+
+          <!-- 即時問答搜尋欄位 -->
+          <div class="row justify-content-center mt-4">
+            <div class="col-12 col-md-8 col-lg-6">
+              <div class="faq-search-box d-flex align-items-center gap-2">
+                <span class="material-symbols-outlined text-warning flex-shrink-0" style="font-size: 20px;">search</span>
+                <input type="text" id="faq-search-input" class="faq-search-input" placeholder="搜尋問題關鍵字 (例如：費用、國道、超跑、地下室、接電)..." aria-label="搜尋常見問題">
+                <button type="button" id="faq-search-clear" class="btn btn-sm text-white-50 p-0 d-none" style="border: none; background: none;" aria-label="清除搜尋">
+                  <span class="material-symbols-outlined" style="font-size: 18px;">close</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 分類切換按鈕 (過濾 Tabs) -->
+          <div class="d-flex justify-content-center flex-wrap gap-2 mt-4" id="faq-filter-tabs">
+            <button type="button" class="btn faq-category-btn active px-3 py-2 rounded-pill fw-bold text-dark shadow-sm" data-category="all" style="font-size: 0.88rem;">
+              <span class="material-symbols-outlined align-middle me-1" style="font-size: 16px;">apps</span>全部問題 (<span id="faq-count-all">8</span>)
+            </button>
+            <button type="button" class="btn faq-category-btn px-3 py-2 rounded-pill fw-bold text-white shadow-sm" data-category="pricing" style="font-size: 0.88rem;">
+              <span class="material-symbols-outlined align-middle me-1" style="font-size: 16px;">payments</span>費用與計價
+            </button>
+            <button type="button" class="btn faq-category-btn px-3 py-2 rounded-pill fw-bold text-white shadow-sm" data-category="highway" style="font-size: 0.88rem;">
+              <span class="material-symbols-outlined align-middle me-1" style="font-size: 16px;">add_road</span>國道高速救援
+            </button>
+            <button type="button" class="btn faq-category-btn px-3 py-2 rounded-pill fw-bold text-white shadow-sm" data-category="special" style="font-size: 0.88rem;">
+              <span class="material-symbols-outlined align-middle me-1" style="font-size: 16px;">directions_car</span>超跑與特殊救援
+            </button>
+            <button type="button" class="btn faq-category-btn px-3 py-2 rounded-pill fw-bold text-white shadow-sm" data-category="service" style="font-size: 0.88rem;">
+              <span class="material-symbols-outlined align-middle me-1" style="font-size: 16px;">build</span>一般道路救援
+            </button>
+          </div>
+        </div>
+
+        <!-- FAQ 折疊問答列表容器 -->
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10">
+            <div class="d-flex flex-column gap-3" id="faq-items-list" data-aos="fade-up" data-aos-delay="150">
+
+              <!-- FAQ Item 1 -->
+              <div class="faq-item" data-category="pricing" id="faq-item-1">
+                <button type="button" class="faq-question-btn" aria-expanded="false">
+                  <div class="d-flex align-items-center gap-3">
+                    <span class="faq-q-badge">Q1</span>
+                    <span class="faq-question-text">道路救援與拖吊費用如何計算？會有事後惡意加價或隱藏收費嗎？</span>
+                  </div>
+                  <span class="material-symbols-outlined faq-icon-arrow">expand_more</span>
+                </button>
+                <div class="faq-answer-collapse">
+                  <div class="faq-answer-content">
+                    <p class="mb-2"><strong>拾捌拖吊車堅持「透明公開、現場/通話前明確報價」的核心原則：</strong></p>
+                    <ul class="mb-2 ps-3">
+                      <li class="mb-1"><strong>市區平面道路拖吊</strong>：基本起步費 1,500 元起（包含基本起拖公里數，超出里程每公里透明累計）。</li>
+                      <li class="mb-1"><strong>特殊狀況作業費</strong>：如地下室低限高受困、車輪卡死/無鑰匙、山區陡坡翻覆、側翻吊掛或全載平移，出車前均會主動向車主說明作業難度與報價明細。</li>
+                      <li class="mb-1"><strong>無隱藏加價</strong>：雙方確認同意後才進行作業，絕無事後坐地起價，保障您的消費者權益。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ Item 2 -->
+              <div class="faq-item" data-category="highway" id="faq-item-2">
+                <button type="button" class="faq-question-btn" aria-expanded="false">
+                  <div class="d-flex align-items-center gap-3">
+                    <span class="faq-q-badge">Q2</span>
+                    <span class="faq-question-text">在高速公路（國道一號、三號、十號或台88線）拋錨或發生事故，你們可以上國道救援嗎？</span>
+                  </div>
+                  <span class="material-symbols-outlined faq-icon-arrow">expand_more</span>
+                </button>
+                <div class="faq-answer-collapse">
+                  <div class="faq-answer-content">
+                    <p class="mb-2"><strong>可以！我們具備交通部高公局審驗合格特約拖吊資質與專業重型拖吊救援車輛：</strong></p>
+                    <ul class="mb-2 ps-3">
+                      <li class="mb-1"><strong>合規合法</strong>：嚴格遵守國道拖吊作業規範與標準收費級距，司機皆具備專業證照與完整防護裝備。</li>
+                      <li class="mb-1"><strong>現場安全指引</strong>：國道事故或拋錨請務必先亮起雙黃警示燈，將車輛盡量滑行至路肩；於車後 100 公尺處放置紅色三角故障標誌，全員退至護欄外安全處。</li>
+                      <li class="mb-1"><strong>即刻出動</strong>：撥打 24H 專線 <a href="tel:0981263978" class="text-warning fw-bold text-decoration-none">0981-263-978</a>，我們將以最快速度前往排除，避免二次事故。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="faq-item" data-category="special" id="faq-item-3">
+                <button type="button" class="faq-question-btn" aria-expanded="false">
+                  <div class="d-flex align-items-center gap-3">
+                    <span class="faq-q-badge">Q3</span>
+                    <span class="faq-question-text">超跑、改裝低底盤降避震車、或是大型重型機車可以拖吊嗎？會傷到底盤嗎？</span>
+                  </div>
+                  <span class="material-symbols-outlined faq-icon-arrow">expand_more</span>
+                </button>
+                <div class="faq-answer-collapse">
+                  <div class="faq-answer-content">
+                    <p class="mb-2"><strong>請車主 100% 放心！我們擁有專門針對低底盤設計的「全載式氣壓升降拖吊車」：</strong></p>
+                    <ul class="mb-2 ps-3">
+                      <li class="mb-1"><strong>超微角度全平引板</strong>：車斗可完全平貼地面，進車角度低於一般車輛，絕不擦撞前下巴（前唇）、側裙或後擾流擴散器。</li>
+                      <li class="mb-1"><strong>專用輪胎固定防刮帶</strong>：全程使用專業高強度輪胎綁帶固定四輪，不拉扯底盤連桿與三角架，保護精準四輪定位與懸吊系統。</li>
+                      <li class="mb-1"><strong>重機專用夾輪固定架</strong>：大型重機配備專用車輪前輪夾具與多點拉繩，確保拖運過程穩固不倒車。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ Item 4 -->
+              <div class="faq-item" data-category="special" id="faq-item-4">
+                <button type="button" class="faq-question-btn" aria-expanded="false">
+                  <div class="d-flex align-items-center gap-3">
+                    <span class="faq-q-badge">Q4</span>
+                    <span class="faq-question-text">車輛受困在限高地下停車場（B1/B2/B3）或機械車位，拖吊車進得去嗎？</span>
+                  </div>
+                  <span class="material-symbols-outlined faq-icon-arrow">expand_more</span>
+                </button>
+                <div class="faq-answer-collapse">
+                  <div class="faq-answer-content">
+                    <p class="mb-2"><strong>完全沒問題！我們備有地下室專用特種救援裝備與小半徑轉向輔助滑輪組：</strong></p>
+                    <ul class="mb-2 ps-3">
+                      <li class="mb-1">針對限高 1.8 公尺至 2.0 公尺的各類型地下室，具備專屬低矮拖吊車與絞盤設備。</li>
+                      <li class="mb-1">配備「四輪輔助滑輪車（四輪輔助輪）」，即便車輛四輪鎖死、電子手煞車卡死或變速箱無法打入空檔（N檔），都能平順移出地下室至戶外開闊處再行全載裝載。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ Item 5 -->
+              <div class="faq-item" data-category="service" id="faq-item-5">
+                <button type="button" class="faq-question-btn" aria-expanded="false">
+                  <div class="d-flex align-items-center gap-3">
+                    <span class="faq-q-badge">Q5</span>
+                    <span class="faq-question-text">通報救援後，一般需要等待多久才會到達現場？</span>
+                  </div>
+                  <span class="material-symbols-outlined faq-icon-arrow">expand_more</span>
+                </button>
+                <div class="faq-answer-collapse">
+                  <div class="faq-answer-content">
+                    <p class="mb-2"><strong>高雄市區與屏東核心市區平均到達時間約為 15～30 分鐘：</strong></p>
+                    <ul class="mb-2 ps-3">
+                      <li class="mb-1"><strong>GPS 快速派車</strong>：車主可直接點擊網站上方「<a href="/GPS" class="text-warning text-decoration-none fw-bold">GPS定位派車</a>」，系統自動取得您當前精確經緯度座標並一鍵轉傳，司機直接開啟衛星導航奔赴現場，省去打電話反覆確認路名與地標的時間。</li>
+                      <li class="mb-1"><strong>全天候待命</strong>：高屏各大重要路段均有待命拖吊車隊，確保第一時間為您抵達救援。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ Item 6 -->
+              <div class="faq-item" data-category="service" id="faq-item-6">
+                <button type="button" class="faq-question-btn" aria-expanded="false">
+                  <div class="d-flex align-items-center gap-3">
+                    <span class="faq-q-badge">Q6</span>
+                    <span class="faq-question-text">除了整車拖吊，現場有提供電瓶接電、換備胎、打氣或送油水服務嗎？</span>
+                  </div>
+                  <span class="material-symbols-outlined faq-icon-arrow">expand_more</span>
+                </button>
+                <div class="faq-answer-collapse">
+                  <div class="faq-answer-content">
+                    <p class="mb-2"><strong>有的！我們提供完整的輕度道路故障即時排除服務：</strong></p>
+                    <ul class="mb-2 ps-3">
+                      <li class="mb-1"><strong>強效接電啟動</strong>：攜帶大容量 12V/24V 應急啟動電源，各類汽油車、柴油車與油電車均可安全搭電啟動。</li>
+                      <li class="mb-1"><strong>輪胎應急處理</strong>：現場輪胎充氣、更換車主備胎。</li>
+                      <li class="mb-1"><strong>應急油水補給</strong>：提供緊急燃油補給（汽油/柴油）與冷卻水補充，助您順利行駛至最近加油站或保養廠。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ Item 7 -->
+              <div class="faq-item" data-category="pricing" id="faq-item-7">
+                <button type="button" class="faq-question-btn" aria-expanded="false">
+                  <div class="d-flex align-items-center gap-3">
+                    <span class="faq-q-badge">Q7</span>
+                    <span class="faq-question-text">拖吊車能幫我把車送到我指定的原廠或信任的私人修車廠嗎？可以開收據報帳嗎？</span>
+                  </div>
+                  <span class="material-symbols-outlined faq-icon-arrow">expand_more</span>
+                </button>
+                <div class="faq-answer-collapse">
+                  <div class="faq-answer-content">
+                    <p class="mb-2"><strong>沒問題！目的地完全由車主自行指定，並提供合規憑證：</strong></p>
+                    <ul class="mb-2 ps-3">
+                      <li class="mb-1">您可以指定將車輛拖送至任何原廠經銷據點、外廠修車廠、住家車庫或指定停車場。</li>
+                      <li class="mb-1">可提供<strong>合法正式收據與統一發票</strong>，清楚載明出車時間、起訖地點與項目，方便您向各大保險公司申請道路救援補貼或事故出險理賠。</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ Item 8 -->
+              <div class="faq-item" data-category="pricing" id="faq-item-8">
+                <button type="button" class="faq-question-btn" aria-expanded="false">
+                  <div class="d-flex align-items-center gap-3">
+                    <span class="faq-q-badge">Q8</span>
+                    <span class="faq-question-text">支援哪些付款方式？身上沒帶足夠現金可以現場轉帳或行動支付嗎？</span>
+                  </div>
+                  <span class="material-symbols-outlined faq-icon-arrow">expand_more</span>
+                </button>
+                <div class="faq-answer-collapse">
+                  <div class="faq-answer-content">
+                    <p class="mb-2"><strong>我們支援多元便捷的付款機制，緊急時刻無需到處找 ATM 領錢：</strong></p>
+                    <ul class="mb-2 ps-3">
+                      <li class="mb-1"><strong>現金付款</strong>（司機隨車找零）</li>
+                      <li class="mb-1"><strong>LINE Pay 行動支付</strong>（掃碼即可秒速完成付款）</li>
+                      <li class="mb-1"><strong>手機網銀即時轉帳</strong>（各大銀行即時查帳）</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- 無搜尋結果提示 (預設隱藏) -->
+            <div id="faq-no-results" class="text-center text-white-50 py-5 d-none">
+              <span class="material-symbols-outlined text-warning mb-2" style="font-size: 42px;">search_off</span>
+              <h5 class="text-white fw-bold">找不到相符的常見問題</h5>
+              <p class="mb-3 text-white-50">請嘗試更換搜尋關鍵字，或直接撥打 24H 專線向我們洽詢！</p>
+              <button type="button" id="faq-reset-filter-btn" class="btn btn-outline-warning btn-sm rounded-pill px-4 py-2">
+                重設搜尋條件
+              </button>
+            </div>
+
+            <!-- 底部諮詢 CTA 卡片 -->
+            <div class="faq-cta-card mt-5 text-center" data-aos="fade-up">
+              <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-4">
+                <div class="text-md-start">
+                  <h4 class="text-white fw-bold mb-2 fs-5">還有其他疑問或需要即刻救援？</h4>
+                  <p class="text-white-50 mb-0" style="font-size: 0.92rem;">
+                    24 小時值班專員隨時為您解答與火速派車，高屏全區使命必達！
+                  </p>
+                </div>
+                <div class="d-flex flex-wrap gap-2 flex-shrink-0">
+                  <a href="tel:0981263978" class="btn px-4 py-2 rounded-pill fw-bold text-dark d-inline-flex align-items-center gap-2" style="background: linear-gradient(135deg, #FFDC35 0%, #FFA000 100%); border: none; font-size: 0.95rem;">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">call</span>
+                    <span>撥打 0981-263-978</span>
+                  </a>
+                  <a href="/GPS" class="btn px-4 py-2 rounded-pill fw-bold text-white d-inline-flex align-items-center gap-2" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 220, 53, 0.4); font-size: 0.95rem;">
+                    <span class="material-symbols-outlined text-warning" style="font-size: 20px;">my_location</span>
+                    <span>GPS 定位派車</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
 
       </div>
